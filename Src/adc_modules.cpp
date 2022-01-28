@@ -16,8 +16,6 @@ user::pin_t module_pins[MY_ADC_MAX_MODULES][2] =
 int16_t module_channels[MY_ADC_CHANNELS_PER_CHIP] = {MUX_AIN0_AIN1, MUX_AIN2_AIN3}; //Internal indexes
 void* modules[MY_ADC_MAX_MODULES];
 
-void channel_acquisition(float buffer[array_size(module_channels)][array_size(modules)], uint8_t i);
-
 //PUBLIC
 namespace adc
 {
@@ -32,6 +30,10 @@ namespace adc
 
     void probe()
     {
+        for (size_t i = 0; i < array_size(module_pins); i++)
+        {
+            module_present[i] = 
+        }
         
     }
 
@@ -44,7 +46,14 @@ namespace adc
     void read()
     {
         status = MY_ADC_STATUS_READING;
-
+        for (size_t i = 0; i < array_size(module_present); i++)
+        {
+            if (!module_present[i]) continue;
+            for (size_t j = 0; j < array_size(module_channels); j++)
+            {
+                
+            }
+        }
         status = MY_ADC_STATUS_WAITING;
     }
 }

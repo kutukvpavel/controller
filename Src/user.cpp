@@ -27,6 +27,7 @@ namespace user
     {
         LL_GPIO_TogglePin(led_pin.port, led_pin.mask);
         LL_mDelay(delay_length);
+        HAL_GetTick
     }
 }
 
