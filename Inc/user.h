@@ -5,6 +5,7 @@
 //Shared API
 #define user_prints(str) { uint8_t _buf[] = str; CDC_Transmit_FS(_buf, sizeof(_buf)); }
 #define _BV(i) (1u << i)
+#define MY_TIM_MICROS TIM5
 
 template<typename T, size_t s> constexpr size_t array_size(const T(&arr)[s]);
 template<typename T, size_t s> constexpr size_t array_size(const T(&arr)[s]) { return s; }
@@ -24,4 +25,6 @@ namespace user
         GPIO_TypeDef* port;
         uint32_t mask;
     };
+
+    uint32_t micros();
 }
