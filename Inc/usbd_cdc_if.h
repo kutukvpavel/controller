@@ -124,6 +124,13 @@ uint8_t CDC_IsConnected();
  */
 void CDC_Register_RX_Callback(void (*func)(uint8_t*, uint32_t*));
 
+/**
+ * @brief Checks Tx state
+ * 
+ * @return uint8_t (bool)
+ */
+uint8_t CDC_Can_Transmit();
+
 /* USER CODE END EXPORTED_FUNCTIONS */
 
 /**

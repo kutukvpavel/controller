@@ -337,6 +337,15 @@ void CDC_Register_RX_Callback(void (*func)(uint8_t*, uint32_t*))
   user_rx_callback = func;
 }
 
+uint8_t CDC_Can_Transmit()
+{
+  USBD_CDC_HandleTypeDef *hcdc = (USBD_CDC_HandleTypeDef*)hUsbDeviceFS.pClassData;
+  if (hcdc->TxState != 0){
+    return USBD_BUSY;
+  }
+  return USBD_OK;
+}
+
 /* USER CODE END PRIVATE_FUNCTIONS_IMPLEMENTATION */
 
 /**
