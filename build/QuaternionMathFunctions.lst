@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
   27:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_norm_f32.c ****  */
   28:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_norm_f32.c **** 
   29:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_norm_f32.c **** #include "dsp/quaternion_math_functions.h"
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 2
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 2
 
 
   30:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_norm_f32.c **** #include <math.h>
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
   84:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_norm_f32.c ****   uint32_t nbQuaternions)
   85:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_norm_f32.c **** {
   30              		.loc 1 85 1 view -0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 3
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 3
 
 
   31              		.cfi_startproc
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
   75 0036 67EEA77A 		vmul.f32	s15, s15, s15
   76              	.LVL3:
   94:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_norm_f32.c ****       pNorms[i] = sqrtf(temp);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 4
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 4
 
 
   77              		.loc 1 94 7 is_stmt 1 discriminator 3 view .LVU14
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
   13:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_inverse_f32.c ****  *
   14:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_inverse_f32.c ****  * SPDX-License-Identifier: Apache-2.0
   15:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_inverse_f32.c ****  *
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 5
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 5
 
 
   16:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_inverse_f32.c ****  * Licensed under the Apache License, Version 2.0 (the License); you may
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
   70:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_inverse_f32.c ****       vec1 = vld1q(pInputQuaternions);
   71:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_inverse_f32.c ****       vec2 = vmulq(vec1,vec1);
   72:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_inverse_f32.c ****       squaredSum = vecAddAcrossF32Mve(vec2);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 6
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 6
 
 
   73:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_inverse_f32.c ****       
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
   98:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_inverse_f32.c ****       temp = SQ(pInputQuaternions[4 * i + 0]) +
  143              		.loc 2 98 7 is_stmt 1 discriminator 3 view .LVU33
  144              		.loc 2 98 14 is_stmt 0 discriminator 3 view .LVU34
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 7
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 7
 
 
  145 000c 4FEA0C13 		lsl	r3, ip, #4
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  189              		.loc 2 105 7 is_stmt 1 discriminator 3 view .LVU51
  190              		.loc 2 105 58 is_stmt 0 discriminator 3 view .LVU52
  191 0070 97ED007A 		vldr.32	s14, [r7]
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 8
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 8
 
 
  192              		.loc 2 105 40 discriminator 3 view .LVU53
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  240              		.syntax unified
  241              		.thumb
  242              		.thumb_func
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 9
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 9
 
 
  244              	arm_quaternion_conjugate_f32:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
   51:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_conjugate_f32.c ****   @param[in]     nbQuaternions                number of quaternions in each vector
   52:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_conjugate_f32.c ****   @return        none
   53:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_conjugate_f32.c ****  */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 10
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 10
 
 
   54:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_conjugate_f32.c **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  270              	.LBB6:
   85:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_conjugate_f32.c ****    {
   86:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_conjugate_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 11
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 11
 
 
   87:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_conjugate_f32.c ****       pConjugateQuaternions[4 * i + 0] = pInputQuaternions[4 * i + 0];
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  318              		.loc 3 84 22 is_stmt 1 discriminator 3 view .LVU98
   84:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_conjugate_f32.c ****    {
  319              		.loc 3 84 4 is_stmt 0 discriminator 3 view .LVU99
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 12
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 12
 
 
  320 0062 9445     		cmp	ip, r2
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
   29:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_normalize_f32.c **** #include "dsp/quaternion_math_functions.h"
   30:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_normalize_f32.c **** #include <math.h>
   31:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_normalize_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 13
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 13
 
 
   32:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_normalize_f32.c **** /**
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  346              		.loc 4 85 1 is_stmt 1 view -0
  347              		.cfi_startproc
  348              		@ args = 0, pretend = 0, frame = 16
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 14
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 14
 
 
  349              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  395 0032 04F10802 		add	r2, r4, #8
  396 0036 0192     		str	r2, [sp, #4]
  397 0038 07EB0209 		add	r9, r7, r2
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 15
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 15
 
 
  398 003c D9ED007A 		vldr.32	s15, [r9]
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
   99:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_normalize_f32.c ****       pNormalizedQuaternions[4 * i + 3] = pInputQuaternions[4 * i + 3] / temp;
  445              		.loc 4 99 7 is_stmt 1 discriminator 3 view .LVU134
  446              		.loc 4 99 60 is_stmt 0 discriminator 3 view .LVU135
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 16
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 16
 
 
  447 0090 98ED007A 		vldr.32	s14, [r8]
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
   11:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_product_single_f32.c **** /*
   12:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_product_single_f32.c ****  * Copyright (C) 2010-2021 ARM Limited or its affiliates. All rights reserved.
   13:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_product_single_f32.c ****  *
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 17
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 17
 
 
   14:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_product_single_f32.c ****  * SPDX-License-Identifier: Apache-2.0
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
   68:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_product_single_f32.c ****     uint32x4_t vecA = vld1q_u32(patternA);
   69:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_product_single_f32.c ****     uint32x4_t vecB = vld1q_u32(patternB);
   70:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_product_single_f32.c ****     uint32x4_t vecC = vld1q_u32(patternC);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 18
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 18
 
 
   71:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_product_single_f32.c ****     f32x4_t vecSignA = vld1q_f32(signA);
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  513              		.loc 5 98 43 view .LVU157
  514 0028 77EEC77A 		vsub.f32	s15, s15, s14
  515              		.loc 5 98 63 view .LVU158
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 19
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 19
 
 
  516 002c 90ED037A 		vldr.32	s14, [r0, #12]
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  568 0090 D1ED006A 		vldr.32	s13, [r1]
  569              		.loc 5 100 35 view .LVU186
  570 0094 27EE267A 		vmul.f32	s14, s14, s13
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 20
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 20
 
 
  571              		.loc 5 100 27 view .LVU187
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  102:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_product_single_f32.c **** }
  624              		.loc 5 102 1 view .LVU214
  625 0100 7047     		bx	lr
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 21
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 21
 
 
  626              		.cfi_endproc
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
   43:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_product_f32.c ****   @ingroup QuatProd
   44:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_product_f32.c ****  */
   45:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_product_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 22
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 22
 
 
   46:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_product_f32.c **** /**
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  100:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_product_f32.c ****         vecTmpA = vldrwq_gather_shifted_offset_f32(qa, vecB);
  101:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_product_f32.c ****         vecTmpB = vldrwq_gather_shifted_offset_f32(qb, vecC);
  102:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_product_f32.c ****         /*
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 23
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 23
 
 
  103:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion_product_f32.c ****          * build [-b4, -b3, b2, b1]
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  661              	.LVL24:
  662              		.loc 6 135 17 is_stmt 0 view .LVU219
  663 000c 0027     		movs	r7, #0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 24
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 24
 
 
  664              		.loc 6 135 4 view .LVU220
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  706              		.syntax unified
  707              		.thumb
  708              		.thumb_func
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 25
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 25
 
 
  710              	arm_quaternion2rotation_f32:
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
   51:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion2rotation_f32.c **** 
   52:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion2rotation_f32.c **** /**
   53:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion2rotation_f32.c ****   @addtogroup QuatRot
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 26
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 26
 
 
   54:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion2rotation_f32.c ****   @{
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  108:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion2rotation_f32.c ****     // 2 (q0q1 q1^2 q2q1 q3q1)
  109:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion2rotation_f32.c ****     vec3 = vmulq_n_f32(vec0, vgetq_lane(vec0,1));
  110:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion2rotation_f32.c ****     vec3 = vmulq_n_f32(vec3, 2.0f);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 27
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 27
 
 
  111:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion2rotation_f32.c ****    
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  729              		.loc 7 147 1 view .LVU241
  730 0008 00B5     		push	{lr}
  731              	.LCFI9:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 28
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 28
 
 
  732              		.cfi_def_cfa_offset 4
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  777              	.LVL40:
  158:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_quaternion2rotation_f32.c ****         float32_t q13 =  pInputQuaternions[1 + nb * 4]*pInputQuaternions[3 + nb * 4];
  778              		.loc 7 158 9 is_stmt 1 discriminator 3 view .LVU262
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 29
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 29
 
 
  779              		.loc 7 158 19 is_stmt 0 discriminator 3 view .LVU263
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  825              	.LVL50:
  826              		.loc 7 166 19 discriminator 3 view .LVU285
  827 007a 37EE077A 		vadd.f32	s14, s14, s14
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 30
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 30
 
 
  828              	.LVL51:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  876 00c0 8EED007A 		vstr.32	s14, [lr]
  877              		.loc 7 172 44 is_stmt 1 discriminator 3 view .LVU308
  878              		.loc 7 172 60 is_stmt 0 discriminator 3 view .LVU309
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 31
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 31
 
 
  879 00c4 03F1100E 		add	lr, r3, #16
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  926              		.cfi_endproc
  927              	.LFE125:
  929              		.global	__aeabi_f2d
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 32
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 32
 
 
  930              		.global	__aeabi_dadd
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
   42:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_rotation2quaternion_f32.c ****   Conversions from rotation to quaternion.
   43:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_rotation2quaternion_f32.c ****  */
   44:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_rotation2quaternion_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 33
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 33
 
 
   45:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_rotation2quaternion_f32.c **** /**
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
   99:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_rotation2quaternion_f32.c **** 
  100:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_rotation2quaternion_f32.c **** 
  101:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_rotation2quaternion_f32.c ****       if (trace > 0)
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 34
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 34
 
 
  102:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_rotation2quaternion_f32.c ****       {
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  156:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_rotation2quaternion_f32.c ****       }
  157:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_rotation2quaternion_f32.c **** 
  158:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_rotation2quaternion_f32.c ****       vst1q(pOutputQuaternions, q);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 35
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 35
 
 
  159:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_rotation2quaternion_f32.c ****       pOutputQuaternions += 4;
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  174:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_rotation2quaternion_f32.c ****        float32_t trace = RI(0,0) + RI(1,1) + RI(2,2);
  175:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_rotation2quaternion_f32.c **** 
  176:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_rotation2quaternion_f32.c ****        float32_t doubler;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 36
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 36
 
 
  177:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_rotation2quaternion_f32.c ****        float32_t s;
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  1026 0056 86ED027A 		vstr.32	s14, [r6, #8]
  188:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_rotation2quaternion_f32.c ****         q[3] = (RI(1,0) - RI(0,1)) * s;
  1027              		.loc 8 188 9 is_stmt 1 view .LVU356
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 37
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 37
 
 
  1028              		.loc 8 188 17 is_stmt 0 view .LVU357
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  1068              		.loc 8 174 46 view .LVU376
  1069 008e 94ED089A 		vldr.32	s18, [r4, #32]
  174:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_rotation2quaternion_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 38
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 38
 
 
  1070              		.loc 8 174 18 view .LVU377
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  1107              		.loc 8 201 41 view .LVU390
  1108 00d4 18EE900A 		vmov	r0, s17
  1109 00d8 FFF7FEFF 		bl	__aeabi_f2d
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 39
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 39
 
 
  1110              	.LVL75:
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  1161              		.loc 8 204 25 view .LVU407
  1162 0134 37EE277A 		vadd.f32	s14, s14, s15
  1163              		.loc 8 204 36 view .LVU408
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 40
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 40
 
 
  1164 0138 27EE267A 		vmul.f32	s14, s14, s13
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  1211 018a 8046     		mov	r8, r0
  1212 018c 8946     		mov	r9, r1
  192:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_rotation2quaternion_f32.c ****         s = 1.0 / doubler;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 41
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 41
 
 
  1213              		.loc 8 192 51 view .LVU424
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  195:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_rotation2quaternion_f32.c ****         q[2] = (RI(0,1) + RI(1,0)) * s;
  1254              		.loc 8 195 14 view .LVU438
  1255 01d6 86ED010A 		vstr.32	s0, [r6, #4]
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 42
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 42
 
 
  196:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/QuaternionMathFunctions/arm_rotation2quaternion_f32.c ****         q[3] = (RI(0,2) + RI(2,0)) * s;
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  1294 0218 18EE900A 		vmov	r0, s17
  1295 021c FFF7FEFF 		bl	__aeabi_f2d
  1296              	.LVL99:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 43
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 43
 
 
  1297 0220 0246     		mov	r2, r0
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  1348 0278 37EE277A 		vadd.f32	s14, s14, s15
  1349              		.loc 8 213 36 view .LVU472
  1350 027c 27EE267A 		vmul.f32	s14, s14, s13
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 44
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 44
 
 
  1351              		.loc 8 213 14 view .LVU473
@@ -2636,28 +2636,28 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 1
  1398              		.file 10 "c:\\arm-none-eabi-gcc\\arm-none-eabi\\include\\sys\\_stdint.h"
  1399              		.file 11 "Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/arm_math_types.h"
  1400              		.file 12 "c:\\arm-none-eabi-gcc\\arm-none-eabi\\include\\math.h"
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s 			page 45
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s 			page 45
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 QuaternionMathFunctions.c
-C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s:20     .text.arm_quaternion_norm_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s:26     .text.arm_quaternion_norm_f32:00000000 arm_quaternion_norm_f32
-C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s:105    .text.arm_quaternion_inverse_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s:111    .text.arm_quaternion_inverse_f32:00000000 arm_quaternion_inverse_f32
-C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s:238    .text.arm_quaternion_conjugate_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s:244    .text.arm_quaternion_conjugate_f32:00000000 arm_quaternion_conjugate_f32
-C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s:336    .text.arm_quaternion_normalize_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s:342    .text.arm_quaternion_normalize_f32:00000000 arm_quaternion_normalize_f32
-C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s:477    .text.arm_quaternion_product_single_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s:483    .text.arm_quaternion_product_single_f32:00000000 arm_quaternion_product_single_f32
-C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s:630    .text.arm_quaternion_product_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s:636    .text.arm_quaternion_product_f32:00000000 arm_quaternion_product_f32
-C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s:704    .text.arm_quaternion2rotation_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s:710    .text.arm_quaternion2rotation_f32:00000000 arm_quaternion2rotation_f32
-C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s:934    .text.arm_rotation2quaternion_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s:940    .text.arm_rotation2quaternion_f32:00000000 arm_rotation2quaternion_f32
-C:\Users\7636~1\AppData\Local\Temp\cccf4Wmb.s:1391   .text.arm_rotation2quaternion_f32:000002b0 $d
+C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s:20     .text.arm_quaternion_norm_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s:26     .text.arm_quaternion_norm_f32:00000000 arm_quaternion_norm_f32
+C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s:105    .text.arm_quaternion_inverse_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s:111    .text.arm_quaternion_inverse_f32:00000000 arm_quaternion_inverse_f32
+C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s:238    .text.arm_quaternion_conjugate_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s:244    .text.arm_quaternion_conjugate_f32:00000000 arm_quaternion_conjugate_f32
+C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s:336    .text.arm_quaternion_normalize_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s:342    .text.arm_quaternion_normalize_f32:00000000 arm_quaternion_normalize_f32
+C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s:477    .text.arm_quaternion_product_single_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s:483    .text.arm_quaternion_product_single_f32:00000000 arm_quaternion_product_single_f32
+C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s:630    .text.arm_quaternion_product_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s:636    .text.arm_quaternion_product_f32:00000000 arm_quaternion_product_f32
+C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s:704    .text.arm_quaternion2rotation_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s:710    .text.arm_quaternion2rotation_f32:00000000 arm_quaternion2rotation_f32
+C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s:934    .text.arm_rotation2quaternion_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s:940    .text.arm_rotation2quaternion_f32:00000000 arm_rotation2quaternion_f32
+C:\Users\7636~1\AppData\Local\Temp\ccgAnFBm.s:1391   .text.arm_rotation2quaternion_f32:000002b0 $d
 
 UNDEFINED SYMBOLS
 sqrtf

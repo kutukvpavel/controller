@@ -1,14 +1,33 @@
 #include "usbd_cdc_if.h"
+#include "adc_modules.h"
+#include "dac_modules.h"
 #include "user.h"
 
 //Private vars
-static int delay_length = 500;
+//static int delay_length = 500;
+uint8_t output_buf[15 * MY_ADC_MAX_MODULES]; //Line format: "01F: +1.000000\n" 15 bytes/module (only one channel can be read at a time)
 static user::pin_t led_pin = user::pin_t(MASTER_ENABLE_GPIO_Port, MASTER_ENABLE_Pin);
 static user::Stream* cdc_stream = new user::Stream();
+int heartbeat_last_ticks = 0;
+int dac_last_ticks = 0;
 
-//Private forward-decls
-static void cdc_receive(uint8_t* buf, uint32_t* len);
-static void supervise_indexes(uint16_t* _tail, uint16_t* _head);
+/**
+ * PRIVATE
+ */
+
+static void supervise_indexes(uint16_t* _tail, uint16_t* _head)
+{
+    if (*_tail == *_head)
+    {
+        *_tail = 0;
+        *_head = 0;
+    }
+}
+
+static void cdc_receive(uint8_t* buf, uint32_t* len)
+{
+    cdc_stream->receive(buf, static_cast<uint16_t>(*len));
+}
 
 /**
  * PUBLIC, hide behind a namespace
@@ -19,16 +38,55 @@ namespace user
     /****
      * MAIN
      * */
-    void setup()
+    void setup(SPI_HandleTypeDef* adc_spi, SPI_HandleTypeDef* dac_spi, I2C_HandleTypeDef* dac_i2c)
     {
         while (CDC_IsConnected() != USBD_OK); //Note: requires DTR (i.e. hardware handshake)
         CDC_Register_RX_Callback(cdc_receive);
-        user_prints("Hello World!\n");
+        user_usb_prints("Hello World!\n");
+
+        //ADC
+        adc::init(adc_spi);
+        adc::probe();
+
+        //DAC
+        dac::init(dac_spi, dac_i2c);
+        dac::probe();
+
+        //Last preparations
+        adc::increment_and_sync();
     }
     void main()
     {
-        LL_GPIO_TogglePin(led_pin.port, led_pin.mask);
-        LL_mDelay(delay_length);
+        //ADC
+        adc::drdy_check();
+        if (adc::status == MY_ADC_STATUS_READ_PENDING) 
+        {
+            adc::read();
+            adc::increment_and_sync();
+            //Data Output
+            //CDC_Transmit_FS(reinterpret_cast<uint8_t*>(adc::last_results), sizeof(adc::last_results));
+            size_t written = adc::dump_last_data(reinterpret_cast<char*>(output_buf));
+            CDC_Transmit_FS(output_buf, static_cast<uint16_t>(written));
+        }
+
+        //DAC
+        auto us = micros();
+        if (us - dac_last_ticks > 1E7)
+        {
+            dac::read_current();
+            float v = dac::modules[0].last_setpoint + 0.2;
+            if (v > 2.5) v = 0;
+            dac::set_all(v);
+            dac_last_ticks = us;
+        }
+
+        //Heartbeat
+        us = micros();
+        if (us - heartbeat_last_ticks > 1E6)
+        {
+            LL_GPIO_TogglePin(led_pin.port, led_pin.mask);
+            heartbeat_last_ticks = us;
+        }
     }
 
     //API
@@ -51,6 +109,7 @@ namespace user
             buf[i] = _buffer[_head++];
         }
         supervise_indexes(&_tail, &_head);
+        return len;
     }
     uint16_t Stream::write(uint8_t* buf, uint16_t len)
     {
@@ -92,22 +151,4 @@ namespace user
     {
         return static_cast<uint16_t>(h) << 8 | l;
     }
-}
-
-/**
- * PRIVATE
- */
-
-static void supervise_indexes(uint16_t* _tail, uint16_t* _head)
-{
-    if (*_tail == *_head)
-    {
-        *_tail = 0;
-        *_head = 0;
-    }
-}
-
-static void cdc_receive(uint8_t* buf, uint32_t* len)
-{
-    cdc_stream->receive(buf, static_cast<uint16_t>(*len));
 }

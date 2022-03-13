@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 1
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccq7obkL.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 1
   27:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c ****  */
   28:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c **** 
   29:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c **** #include "dsp/bayes_functions.h"
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 2
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccq7obkL.s 			page 2
 
 
   30:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c **** #include <limits.h>
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 1
   84:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c **** 
   85:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c ****         vacc1 = vdupq_n_f32(0);
   86:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c ****         vacc2 = vdupq_n_f32(0);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 3
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccq7obkL.s 			page 3
 
 
   87:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 1
  141:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c **** 
  142:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c **** #else
  143:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 4
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccq7obkL.s 			page 4
 
 
  144:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c **** #if defined(ARM_MATH_NEON)
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 1
  198:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c ****            sigmaV = vld1q_f32(pSigma);
  199:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c ****            thetaV = vld1q_f32(pTheta);
  200:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 5
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccq7obkL.s 			page 5
 
 
  201:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c ****            sigmaV1 = vld1q_f32(pSigma1);
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 1
  255:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c ****            pSigma++;
  256:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c ****            pTheta1++;
  257:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c ****            pSigma1++;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 6
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccq7obkL.s 			page 6
 
 
  258:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c ****            vecBlkCnt--;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 1
  312:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c ****         {
  313:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c ****            sigma = *pSigma + S->epsilon;
  314:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c ****            tmp -= 0.5f*logf(2.0f * PI_F * sigma);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 7
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccq7obkL.s 			page 7
 
 
  315:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c ****            tmp -= 0.5f*(*pIn - *pTheta) * (*pIn - *pTheta) / sigma;
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 1
   59 000e 0192     		str	r2, [sp, #4]
  340:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c ****     uint32_t nbClass;
   60              		.loc 1 340 5 is_stmt 1 view .LVU2
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 8
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccq7obkL.s 			page 8
 
 
  341:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c ****     uint32_t nbDim;
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 1
  362:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c ****         pIn = in;
  363:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c **** 
  364:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c ****         tmp = 0.0;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 9
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccq7obkL.s 			page 9
 
 
  365:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c ****         acc1 = 0.0f;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 1
  134              	.L4:
  367:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c ****         {
  135              		.loc 1 367 24 is_stmt 1 discriminator 1 view .LVU43
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 10
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccq7obkL.s 			page 10
 
 
  367:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c ****         {
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 1
  358:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c ****     {
  176              		.loc 1 358 5 discriminator 1 view .LVU61
  177 0088 5145     		cmp	r1, r10
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 11
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccq7obkL.s 			page 11
 
 
  178 008a 06D9     		bls	.L7
@@ -658,21 +658,21 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 1
  223              	.Letext0:
  224              		.file 2 "c:\\arm-none-eabi-gcc\\arm-none-eabi\\include\\machine\\_default_types.h"
  225              		.file 3 "c:\\arm-none-eabi-gcc\\arm-none-eabi\\include\\sys\\_stdint.h"
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 12
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccq7obkL.s 			page 12
 
 
  226              		.file 4 "Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/arm_math_types.h"
  227              		.file 5 "Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/bayes_functions.h"
  228              		.file 6 "c:\\arm-none-eabi-gcc\\arm-none-eabi\\include\\math.h"
  229              		.file 7 "Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/statistics_functions.h"
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s 			page 13
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccq7obkL.s 			page 13
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 BayesFunctions.c
-C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s:20     .text.arm_gaussian_naive_bayes_predict_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s:26     .text.arm_gaussian_naive_bayes_predict_f32:00000000 arm_gaussian_naive_bayes_predict_f32
-C:\Users\7636~1\AppData\Local\Temp\ccXVMEKe.s:217    .text.arm_gaussian_naive_bayes_predict_f32:000000b0 $d
+C:\Users\7636~1\AppData\Local\Temp\ccq7obkL.s:20     .text.arm_gaussian_naive_bayes_predict_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccq7obkL.s:26     .text.arm_gaussian_naive_bayes_predict_f32:00000000 arm_gaussian_naive_bayes_predict_f32
+C:\Users\7636~1\AppData\Local\Temp\ccq7obkL.s:217    .text.arm_gaussian_naive_bayes_predict_f32:000000b0 $d
 
 UNDEFINED SYMBOLS
 logf

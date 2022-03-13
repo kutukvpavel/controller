@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
   27:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_init_f32.c ****  */
   28:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_init_f32.c **** 
   29:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_init_f32.c **** #include "dsp/svm_functions.h"
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 2
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 2
 
 
   30:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_init_f32.c **** #include <limits.h>
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
   34              		@ link register save eliminated.
   80:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_init_f32.c ****    S->nbOfSupportVectors = nbOfSupportVectors;
   35              		.loc 1 80 4 view .LVU1
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 3
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 3
 
 
   36              		.loc 1 80 26 is_stmt 0 view .LVU2
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
   14:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****  * SPDX-License-Identifier: Apache-2.0
   15:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****  *
   16:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****  * Licensed under the Apache License, Version 2.0 (the License); you may
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 4
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 4
 
 
   17:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****  * not use this file except in compliance with the License.
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
   71:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****      * compute 4 rows in parrallel
   72:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****      */
   73:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****     while (row >= 4) 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 5
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 5
 
 
   74:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****     {
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  128:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****          */
  129:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****         blkCnt = numCols & 3;
  130:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****         if (blkCnt > 0U) {
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 6
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 6
 
 
  131:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****             mve_pred16_t    p0 = vctp32q(blkCnt);
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  185:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****         pSrcA1Vec = pInA1;
  186:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c **** 
  187:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****         blkCnt = numCols >> 2;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 7
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 7
 
 
  188:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****         while (blkCnt > 0U) {
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  242:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****         /*
  243:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****          * reset accumulators
  244:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****          */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 8
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 8
 
 
  245:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****         acc0 = vdupq_n_f32(0.0f);
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  299:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c **** 
  300:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****     float32x4_t vec2,vec2a,vec2b,vec2c,vec2d;
  301:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 9
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 9
 
 
  302:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****     uint32_t blkCnt;   
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  356:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c **** 
  357:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****         accum2 = vpadd_f32(vget_low_f32(accumb),vget_high_f32(accumb));
  358:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****         dotV = vsetq_lane_f32(vget_lane_f32(accum2, 0) + vget_lane_f32(accum2, 1),dotV,1);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 10
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 10
 
 
  359:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  413:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c **** 
  414:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****             blkCnt -- ;
  415:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****         }
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 11
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 11
 
 
  416:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****         accum2 = vpadd_f32(vget_low_f32(accum),vget_high_f32(accum));
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
   97 000a 0022     		movs	r2, #0
   98              	.LVL5:
   99              		.loc 2 445 5 view .LVU25
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 12
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 12
 
 
  100 000c 18E0     		b	.L3
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  141 003e 0132     		adds	r2, r2, #1
  142              	.LVL14:
  143              	.L3:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 13
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 13
 
 
  445:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c ****     {
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
    1:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_init_f32.c **** /* ----------------------------------------------------------------------
    2:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_init_f32.c ****  * Project:      CMSIS DSP Library
    3:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_init_f32.c ****  * Title:        arm_svm_polynomial_init_f32.c
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 14
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 14
 
 
    4:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_init_f32.c ****  * Description:  SVM Polynomial Instance Initialization
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
   58:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_init_f32.c ****  * @param[in]    intercept              Intercept
   59:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_init_f32.c ****  * @param[in]    dualCoefficients       Array of dual coefficients
   60:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_init_f32.c ****  * @param[in]    supportVectors         Array of support vectors
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 15
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 15
 
 
   61:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_init_f32.c ****  * @param[in]    classes                Array of 2 classes ID
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
   88:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_init_f32.c ****    S->degree = degree;
  220              		.loc 3 88 4 is_stmt 1 view .LVU68
  221              		.loc 3 88 14 is_stmt 0 view .LVU69
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 16
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 16
 
 
  222 0012 029B     		ldr	r3, [sp, #8]
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
   30:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c **** #include <limits.h>
   31:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c **** #include <math.h>
   32:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 17
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 17
 
 
   33:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c **** #if defined(ARM_MATH_NEON) && !defined(ARM_MATH_AUTOVECTORIZE)
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
   87:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****          * Initialize the pointers to 4 consecutive MatrixA rows
   88:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****          */
   89:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****         pInA0 = pSrcA;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 18
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 18
 
 
   90:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****         pInA1 = pInA0 + numCols;
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  144:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****             acc1 = vfmaq(acc1, vecIn, vecA);
  145:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****             vecA = vldrwq_z_f32(pSrcA2Vec, p0);
  146:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****             acc2 = vfmaq(acc2, vecIn, vecA);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 19
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 19
 
 
  147:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****             vecA = vldrwq_z_f32(pSrcA3Vec, p0);
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  201:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****             vecIn = vld1q(pInVec);
  202:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****             pInVec += 4;
  203:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****             vecA = vld1q(pSrcA0Vec);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 20
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 20
 
 
  204:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****             pSrcA0Vec += 4;
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  258:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****          */
  259:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****         acc0 = vdupq_n_f32(0.0f);
  260:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 21
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 21
 
 
  261:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****         pSrcA0Vec = pInA0;
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  315:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c **** 
  316:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****     float32x4_t accuma,accumb,accumc,accumd,accum;
  317:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****     float32x2_t accum2;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 22
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 22
 
 
  318:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****     float32x4_t vec1;
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  372:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****             blkCnt -- ;
  373:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****         }
  374:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****         accum2 = vpadd_f32(vget_low_f32(accuma),vget_high_f32(accuma));
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 23
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 23
 
 
  375:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****         dotV = vsetq_lane_f32(vget_lane_f32(accum2, 0) + vget_lane_f32(accum2, 1),dotV,0);
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  429:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c **** 
  430:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****         blkCnt = S->vectorDimension >> 2;
  431:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****         while (blkCnt > 0U)
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 24
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 24
 
 
  432:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****         {
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  469:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****     uint32_t i,j;
  263              		.loc 4 469 5 view .LVU80
  470:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c ****     const float32_t *pSupport = S->supportVectors;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 25
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 25
 
 
  264              		.loc 4 470 5 view .LVU81
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  305 0032 DCED006A 		vldr.32	s13, [ip]
  306              		.loc 4 479 59 discriminator 2 view .LVU98
  307 0036 D0ED087A 		vldr.32	s15, [r0, #32]
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 26
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 26
 
 
  308              		.loc 4 479 67 discriminator 2 view .LVU99
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
   44:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/svm_functions.h **** /**
   45:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/svm_functions.h ****  * @defgroup groupSVM SVM Functions
   46:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/svm_functions.h ****  * This set of functions is implementing SVM classification on 2 classes.
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 27
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 27
 
 
   47:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/svm_functions.h ****  * The training must be done from scikit-learn. The parameters can be easily
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  345 005e F8DC     		bgt	.L16
   73:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/svm_functions.h ****     }
   74:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/svm_functions.h ****     return(r);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 28
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 28
 
 
  346              		.loc 5 74 5 view .LVU114
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  390              	.LVL41:
  391              	.L22:
  392              		.loc 4 483 1 view .LVU131
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 29
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 29
 
 
  393 0092 00BF     		.align	2
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
   40:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_init_f32.c ****   RBF SVM classifier
   41:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_init_f32.c ****  */
   42:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_init_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 30
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 30
 
 
   43:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_init_f32.c **** 
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  425              		.loc 6 81 24 is_stmt 0 view .LVU140
  426 0008 C360     		str	r3, [r0, #12]
   82:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_init_f32.c ****    S->supportVectors = supportVectors;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 31
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 31
 
 
  427              		.loc 6 82 4 is_stmt 1 view .LVU141
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
   25:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****  * See the License for the specific language governing permissions and
   26:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****  * limitations under the License.
   27:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****  */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 32
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 32
 
 
   28:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c **** 
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
   82:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c **** 
   83:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****         /*
   84:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****          * Initialize the pointers to 4 consecutive MatrixA rows
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 33
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 33
 
 
   85:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****          */
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  139:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****             mve_pred16_t    p0 = vctp32q(blkCnt);
  140:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****             f32x4_t         vecA;
  141:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****             f32x4_t         vecDif;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 34
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 34
 
 
  142:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c **** 
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  196:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****         /*
  197:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****          * reset accumulators
  198:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****          */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 35
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 35
 
 
  199:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****         acc0 = vdupq_n_f32(0.0f);
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  253:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****     }
  254:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c **** 
  255:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****     if (row >= 1) {
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 36
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 36
 
 
  256:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****         f32x4_t         vecIn, acc0;
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  310:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c **** 
  311:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****     }
  312:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 37
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 37
 
 
  313:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c **** 
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  367:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c **** 
  368:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****         pIn = in;
  369:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 38
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 38
 
 
  370:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****         blkCnt = S->vectorDimension >> 2;
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  424:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****             pSupportd++;
  425:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c **** 
  426:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****             pIn++;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 39
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 39
 
 
  427:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c **** 
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  481:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****             dot = dot + SQ(*pIn - *pSupport);
  482:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****             pIn++;
  483:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****             pSupport++;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 40
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 40
 
 
  484:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c **** 
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  488              		.loc 7 505 5 is_stmt 1 view .LVU157
  489              		.loc 7 505 10 is_stmt 0 view .LVU158
  490 0014 0027     		movs	r7, #0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 41
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 41
 
 
  491              		.loc 7 505 5 view .LVU159
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  533              		.loc 7 513 13 discriminator 2 view .LVU175
  534 0052 78EE888A 		vadd.f32	s17, s17, s16
  535              	.LVL53:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 42
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 42
 
 
  505:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c ****     {
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  580              	.LFE125:
  582              		.section	.text.arm_svm_sigmoid_init_f32,"ax",%progbits
  583              		.align	1
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 43
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 43
 
 
  584              		.global	arm_svm_sigmoid_init_f32
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
   47:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_init_f32.c **** 
   48:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_init_f32.c **** 
   49:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_init_f32.c **** /**
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 44
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 44
 
 
   50:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_init_f32.c ****  * @brief        SVM sigmoid instance init function
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  613              	.LVL57:
  614              		.loc 8 83 22 view .LVU201
  615 000c 0361     		str	r3, [r0, #16]
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 45
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 45
 
 
   84:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_init_f32.c ****    S->classes = classes;
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
   27:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****  */
   28:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c **** 
   29:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c **** #include "dsp/svm_functions.h"
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 46
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 46
 
 
   30:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c **** #include <limits.h>
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
   84:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****          * Initialize the pointers to 4 consecutive MatrixA rows
   85:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****          */
   86:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****         pInA0 = pSrcA;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 47
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 47
 
 
   87:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****         pInA1 = pInA0 + numCols;
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  141:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****             acc1 = vfmaq(acc1, vecIn, vecA);
  142:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****             vecA = vldrwq_z_f32(pSrcA2Vec, p0);
  143:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****             acc2 = vfmaq(acc2, vecIn, vecA);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 48
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 48
 
 
  144:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****             vecA = vldrwq_z_f32(pSrcA3Vec, p0);
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  198:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****             vecIn = vld1q(pInVec);
  199:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****             pInVec += 4;
  200:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****             vecA = vld1q(pSrcA0Vec);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 49
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 49
 
 
  201:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****             pSrcA0Vec += 4;
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  255:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****         acc0 = vdupq_n_f32(0.0f);
  256:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c **** 
  257:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****         pSrcA0Vec = pInA0;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 50
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 50
 
 
  258:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c **** 
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  312:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****     float32x4_t dotV; 
  313:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c **** 
  314:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****     float32x4_t accuma,accumb,accumc,accumd,accum;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 51
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 51
 
 
  315:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****     float32x2_t accum2;
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  369:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c **** 
  370:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****             blkCnt -- ;
  371:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****         }
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 52
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 52
 
 
  372:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****         accum2 = vpadd_f32(vget_low_f32(accuma),vget_high_f32(accuma));
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  426:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****         pIn = in;
  427:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c **** 
  428:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****         blkCnt = S->vectorDimension >> 2;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 53
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 53
 
 
  429:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****         while (blkCnt > 0U)
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  660              		.cfi_offset 81, -28
  661 0008 0546     		mov	r5, r0
  662 000a 0E46     		mov	r6, r1
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 54
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 54
 
 
  663 000c 9046     		mov	r8, r2
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  473:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****         {
  704              		.loc 9 473 18 is_stmt 1 discriminator 1 view .LVU229
  473:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****         {
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 55
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 55
 
 
  705              		.loc 9 473 9 is_stmt 0 discriminator 1 view .LVU230
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  479:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c ****     *pResult=S->classes[STEP(sum)];
  749              		.loc 9 479 5 is_stmt 1 view .LVU247
  750              		.loc 9 479 15 is_stmt 0 view .LVU248
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 56
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 56
 
 
  751 006e 6B69     		ldr	r3, [r5, #20]
@@ -3334,31 +3334,31 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 1
  781              		.file 11 "c:\\arm-none-eabi-gcc\\arm-none-eabi\\include\\sys\\_stdint.h"
  782              		.file 12 "Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/arm_math_types.h"
  783              		.file 13 "c:\\arm-none-eabi-gcc\\arm-none-eabi\\include\\math.h"
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s 			page 57
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s 			page 57
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 SVMFunctions.c
-C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s:20     .text.arm_svm_linear_init_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s:26     .text.arm_svm_linear_init_f32:00000000 arm_svm_linear_init_f32
-C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s:63     .text.arm_svm_linear_predict_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s:69     .text.arm_svm_linear_predict_f32:00000000 arm_svm_linear_predict_f32
-C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s:178    .text.arm_svm_linear_predict_f32:00000068 $d
-C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s:183    .text.arm_svm_polynomial_init_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s:189    .text.arm_svm_polynomial_init_f32:00000000 arm_svm_polynomial_init_f32
-C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s:236    .text.arm_svm_polynomial_predict_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s:242    .text.arm_svm_polynomial_predict_f32:00000000 arm_svm_polynomial_predict_f32
-C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s:395    .text.arm_svm_polynomial_predict_f32:00000094 $d
-C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s:400    .text.arm_svm_rbf_init_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s:406    .text.arm_svm_rbf_init_f32:00000000 arm_svm_rbf_init_f32
-C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s:446    .text.arm_svm_rbf_predict_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s:452    .text.arm_svm_rbf_predict_f32:00000000 arm_svm_rbf_predict_f32
-C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s:578    .text.arm_svm_rbf_predict_f32:00000088 $d
-C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s:583    .text.arm_svm_sigmoid_init_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s:589    .text.arm_svm_sigmoid_init_f32:00000000 arm_svm_sigmoid_init_f32
-C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s:632    .text.arm_svm_sigmoid_predict_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s:638    .text.arm_svm_sigmoid_predict_f32:00000000 arm_svm_sigmoid_predict_f32
-C:\Users\7636~1\AppData\Local\Temp\cc7HvPcb.s:774    .text.arm_svm_sigmoid_predict_f32:00000090 $d
+C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s:20     .text.arm_svm_linear_init_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s:26     .text.arm_svm_linear_init_f32:00000000 arm_svm_linear_init_f32
+C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s:63     .text.arm_svm_linear_predict_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s:69     .text.arm_svm_linear_predict_f32:00000000 arm_svm_linear_predict_f32
+C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s:178    .text.arm_svm_linear_predict_f32:00000068 $d
+C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s:183    .text.arm_svm_polynomial_init_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s:189    .text.arm_svm_polynomial_init_f32:00000000 arm_svm_polynomial_init_f32
+C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s:236    .text.arm_svm_polynomial_predict_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s:242    .text.arm_svm_polynomial_predict_f32:00000000 arm_svm_polynomial_predict_f32
+C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s:395    .text.arm_svm_polynomial_predict_f32:00000094 $d
+C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s:400    .text.arm_svm_rbf_init_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s:406    .text.arm_svm_rbf_init_f32:00000000 arm_svm_rbf_init_f32
+C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s:446    .text.arm_svm_rbf_predict_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s:452    .text.arm_svm_rbf_predict_f32:00000000 arm_svm_rbf_predict_f32
+C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s:578    .text.arm_svm_rbf_predict_f32:00000088 $d
+C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s:583    .text.arm_svm_sigmoid_init_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s:589    .text.arm_svm_sigmoid_init_f32:00000000 arm_svm_sigmoid_init_f32
+C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s:632    .text.arm_svm_sigmoid_predict_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s:638    .text.arm_svm_sigmoid_predict_f32:00000000 arm_svm_sigmoid_predict_f32
+C:\Users\7636~1\AppData\Local\Temp\ccg69xKz.s:774    .text.arm_svm_sigmoid_predict_f32:00000090 $d
 
 UNDEFINED SYMBOLS
 expf

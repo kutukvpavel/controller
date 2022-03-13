@@ -14,7 +14,8 @@
         "Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/",
         "Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include",
         "Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/",
-        "Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/PrivateInclude/"
+        "Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/PrivateInclude/",
+        "Src"
       ],
       "defines": [
         "STM32F401xC",

@@ -109,6 +109,11 @@ Src/usbd_desc.c
 
 
 CPP_SOURCES = \
+Src/ad5061.cpp \
+Src/adc_modules.cpp \
+Src/ads1220.cpp \
+Src/dac_modules.cpp \
+Src/ina219.cpp \
 Src/main.cpp \
 Src/user.cpp
 

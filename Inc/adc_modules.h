@@ -35,20 +35,42 @@
 #define MY_ADC_STATUS_READ_PENDING 2
 #define MY_ADC_STATUS_READING 3
 
+//PRIVATE
+
+//PUBLIC
+
 namespace adc
 {
+    struct channel_t
+    {
+        int mux_conf;
+        float cal_coeff;
+        float cal_offset;
+        float last_result;
+    };
+    struct module_t
+    {
+        SPI_HandleTypeDef* hspi;
+        user::pin_t* cs;
+        user::pin_t* drdy;
+        bool present;
+        uint8_t selected_channel;
+        uint8_t last_channel;
+        channel_t channels[MY_ADC_CHANNELS_PER_CHIP];
+    };
+
     //Globals
     extern volatile uint8_t status;
-    extern float calibration_coefficients[MY_ADC_MAX_MODULES][MY_ADC_CHANNELS_PER_CHIP];
-    extern float calibration_offset[MY_ADC_MAX_MODULES][MY_ADC_CHANNELS_PER_CHIP];
-    extern int16_t channel_gain[MY_ADC_MAX_MODULES][MY_ADC_CHANNELS_PER_CHIP];
     extern int16_t acquisition_speed;
-    extern uint16_t acquisition_period;
-    extern bool module_present[MY_ADC_MAX_MODULES];
+    extern module_t modules[];
 
     //Public methods
+    void init(SPI_HandleTypeDef* hspi);
     void probe();
-    void initialize();
+    void increment_and_sync();
     void read();
+    void drdy_callback();
+    size_t dump_last_data(char* buf);
+    void drdy_check();
 }
 

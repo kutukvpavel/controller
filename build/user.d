@@ -1,4 +1,8 @@
-build/user.o: Src/user.cpp Inc/user.h Inc/main.h \
+build/user.o: Src/user.cpp Inc/usbd_cdc_if.h \
+ Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h \
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
+ Inc/usbd_conf.h Inc/main.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  Inc/stm32f4xx_hal_conf.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -44,15 +48,16 @@ build/user.o: Src/user.cpp Inc/user.h Inc/main.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rcc.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_utils.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_pwr.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dma.h Inc/usbd_cdc_if.h \
- Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
- Inc/usbd_conf.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dma.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
-Inc/user.h:
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h \
+ Inc/adc_modules.h Inc/user.h Inc/usbd_cdc_if.h Inc/dac_modules.h
+Inc/usbd_cdc_if.h:
+Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h:
+Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
+Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
+Inc/usbd_conf.h:
 Inc/main.h:
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 Inc/stm32f4xx_hal_conf.h:
@@ -102,11 +107,10 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rcc.h:
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_utils.h:
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_pwr.h:
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dma.h:
-Inc/usbd_cdc_if.h:
-Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h:
-Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
-Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
-Inc/usbd_conf.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h:
+Inc/adc_modules.h:
+Inc/user.h:
+Inc/usbd_cdc_if.h:
+Inc/dac_modules.h:

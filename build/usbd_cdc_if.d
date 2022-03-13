@@ -52,7 +52,7 @@ build/usbd_cdc_if.o: Src/usbd_cdc_if.c Inc/usbd_cdc_if.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h \
- Inc/user.h Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
 Inc/usbd_cdc_if.h:
 Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
@@ -110,5 +110,4 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dma.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h:
-Inc/user.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:

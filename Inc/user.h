@@ -3,8 +3,15 @@
 #include "main.h"
 #include "usbd_cdc_if.h"
 
+#define USB_SERIAL_DEBUG 1
+
 //Shared API
-#define user_prints(str) { uint8_t _buf[] = str; CDC_Transmit_FS(_buf, sizeof(_buf)); }
+#if USB_SERIAL_DEBUG
+    #define user_usb_prints(str) { uint8_t _buf[] = str; CDC_Transmit_FS(_buf, sizeof(_buf)); }
+#else
+    #define user_usb_prints(str)
+#endif
+
 #define _BV(i) (1u << i)
 #define MY_TIM_MICROS TIM5
 #define SERIAL_BUFFER_SIZE APP_TX_DATA_SIZE
@@ -20,7 +27,7 @@ namespace user
     //Globals
 
     //MAIN
-    void setup();
+    void setup(SPI_HandleTypeDef* adc_spi, SPI_HandleTypeDef* dac_spi, I2C_HandleTypeDef* dac_i2c);
     void main();
 
     //API
