@@ -8,7 +8,13 @@
 #define MODULE_PINS_CS 0
 #define MODULE_PINS_DRDY 1
 #define MAX_INTERMODULE_DELAY 1 //mS
-#define OUTPUT_STRING_FORMAT "%X.3: %+f.6\n"
+#define OUTPUT_STRING_FORMAT "A%.2X: %+.6f\n" //Line format: "01F: +1.000000\n" 15 bytes/module (only one channel can be read at a time)
+#define OUTPUT_REPORT_FORMAT "ADC Module #%u" \
+    "\tSPI Handle: %p\n" \
+    "\tCS Pin: %.4lX - %.4lX\n" \
+    "\tDRDY Pin: %.4lX - %.4lX\n" \
+    "\tChannels (%u):\n%s"
+#define OUTPUT_CHANNEL_FORMAT "\t\tmux=%X cal={%.6f,%.6f};\n" // <tab>mux=X cal={1.000000,0.000000};<nl> 33 bytes/line min
 
 //PRIVATE
 ADS1220_regs regs_buffer = ADS1220_default_regs;
@@ -120,7 +126,7 @@ namespace adc
         if (!LL_GPIO_IsInputPinSet(nDRDY_GPIO_Port, nDRDY_Pin)) drdy_callback(); //Active low
     }
 
-    size_t dump_last_data(char* buf)
+    size_t dump_last_data(char* buf, size_t max_len)
     {
         size_t written = 0;
         for (size_t i = 0; i < array_size(modules); i++)
@@ -129,12 +135,37 @@ namespace adc
             float res = m.channels[m.last_channel].last_result;
             if (abs(res) < 9.999990)
             {
-                int w = sprintf(buf, OUTPUT_STRING_FORMAT, 0x10 * i + m.last_channel, res);
+                int w = snprintf(buf, max_len - written, OUTPUT_STRING_FORMAT, 0x10u * i + m.last_channel, res);
                 if (w > 0) //On success, increment the variables, on error overwrite the bad line
                 {
                     written += w;
                     buf += w;
                 }
+            }
+        }
+        return written;
+    }
+
+    size_t dump_module_report(char* buf, size_t max_len)
+    {
+        size_t written = 0;
+        for (size_t i = 0; i < array_size(modules); i++)
+        {
+            auto& m = modules[i];
+            char cbuf[36 * MY_ADC_CHANNELS_PER_CHIP];
+            char* cbuf_p = cbuf;
+            for (size_t j = 0; j < MY_ADC_CHANNELS_PER_CHIP; j++)
+            {
+                auto& c = m.channels[j];
+                cbuf_p += snprintf(cbuf_p, sizeof(cbuf) - (cbuf_p - cbuf), OUTPUT_CHANNEL_FORMAT, 
+                    c.mux_conf, c.cal_coeff, c.cal_offset);
+            }
+            int w = snprintf(buf, max_len - written, OUTPUT_REPORT_FORMAT, i,
+                m.hspi, m.cs->port->MODER, m.cs->mask, m.drdy->port->MODER, m.drdy->mask, MY_ADC_CHANNELS_PER_CHIP, cbuf);
+            if (w > 0) //On success, increment the variables, on error overwrite the bad line
+            {
+                written += w;
+                buf += w;
             }
         }
         return written;

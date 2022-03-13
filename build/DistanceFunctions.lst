@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   27:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****  * limitations under the License.
   28:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****  */
   29:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 2
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 2
 
 
   30:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   84:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****        , uint32_t *cFT
   85:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** #endif
   86:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****        )
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 3
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 3
 
 
   87:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** {
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  141:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** 
  142:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****     pA = (const uint32_t *)pA8;
  143:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****     pB = (const uint32_t *)pB8;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 4
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 4
 
 
  144:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  198:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** #ifdef FT
  199:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****           _cft += ((1 ^ ba) && bb);
  200:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** #endif
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 5
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 5
 
 
  201:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****           blkCnt --;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  255:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** #ifdef TT
  256:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****     uint32x4_t cttV;
  257:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** #endif
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 6
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 6
 
 
  258:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** #ifdef FF
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  312:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****        ctfV = vandq_u32(aV,vmvnq_u32(bV));
  313:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** #endif
  314:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** #ifdef FT
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 7
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 7
 
 
  315:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****        cftV = vandq_u32(vmvnq_u32(aV),bV);
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  369:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****     {
  370:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****        a = *pA++;
  371:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****        b = *pB++;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 8
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 8
 
 
  372:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****        shift = 0;
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  426:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** #ifdef TT
  427:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****     *cTT = _ctt;
  428:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** #endif
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 9
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 9
 
 
  429:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** #ifdef FF
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   51              	.LVL1:
  462:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** #endif
  463:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** #ifdef FF
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 10
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 10
 
 
  464:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****     uint32_t _cff=0;
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   73              		.loc 1 493 11 is_stmt 1 discriminator 6 view .LVU14
   74              		.loc 1 493 23 is_stmt 0 discriminator 6 view .LVU15
   75 001a 21B1     		cbz	r1, .L16
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 11
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 11
 
 
   76              		.loc 1 493 23 discriminator 1 view .LVU16
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  122 003e 0BDC     		bgt	.L27
  482:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****           bb = b & 1;
  123              		.loc 1 482 11 view .LVU32
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 12
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 12
 
 
  482:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****           bb = b & 1;
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  161              		.loc 1 477 10 is_stmt 0 view .LVU48
  162 005e 59F8042B 		ldr	r2, [r9], #4
  163              	.LVL17:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 13
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 13
 
 
  478:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****        shift = 0;
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  515:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****           b = b >> 1;
  516:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** 
  517:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** #ifdef TT
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 14
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 14
 
 
  518:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****           _ctt += (ba && bb);
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  241 009c 0023     		movs	r3, #0
  242              	.LVL29:
  243              	.L12:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 15
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 15
 
 
  244              		.loc 1 527 16 discriminator 6 view .LVU82
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  531:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** 
  532:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** #ifdef TT
  533:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****     *cTT = _ctt;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 16
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 16
 
 
  282              		.loc 1 533 5 is_stmt 1 view .LVU98
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  325 0006 0F46     		mov	r7, r1
  326 0008 1646     		mov	r6, r2
  327 000a 9946     		mov	r9, r3
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 17
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 17
 
 
  467:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** #endif
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  365 0024 0022     		movs	r2, #0
  366              	.LVL43:
  367              	.L34:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 18
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 18
 
 
  496:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** #endif
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  406              	.L50:
  501:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****     }
  407              		.loc 1 501 8 is_stmt 1 view .LVU141
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 19
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 19
 
 
  501:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****     }
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  445              	.LVL58:
  508:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** 
  446              		.loc 1 508 5 is_stmt 1 view .LVU159
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 20
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 20
 
 
  508:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  486 007c 013E     		subs	r6, r6, #1
  487              	.LVL66:
  488              	.L37:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 21
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 21
 
 
  510:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****     {
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  542:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** #endif
  526              		.loc 1 542 10 view .LVU192
  527 009e C3F800C0 		str	ip, [r3]
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 22
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 22
 
 
  528              		.loc 1 544 1 view .LVU193
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  574 000c 4FF0000C 		mov	ip, #0
  467:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** #endif
  575              		.loc 1 467 14 view .LVU205
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 23
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 23
 
 
  576 0010 E646     		mov	lr, ip
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  493:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** #endif
  615              		.loc 1 493 23 view .LVU221
  616 0038 4FF0000B 		mov	fp, #0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 24
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 24
 
 
  617 003c 04E0     		b	.L58
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  657              		.loc 1 480 13 is_stmt 1 view .LVU235
  658 005e 1F28     		cmp	r0, #31
  659 0060 0CDC     		bgt	.L85
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 25
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 25
 
 
  482:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****           bb = b & 1;
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  477:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****        b = *pB++;
  698              		.loc 1 477 10 is_stmt 0 view .LVU252
  699 0082 59F8042B 		ldr	r2, [r9], #4
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 26
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 26
 
 
  700              	.LVL91:
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  736              		.loc 1 518 23 view .LVU270
  737 00a0 0024     		movs	r4, #0
  738              	.L63:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 27
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 27
 
 
  518:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** #endif
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  778 00c2 A644     		add	lr, lr, r4
  779              	.LVL101:
  527:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** #endif
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 28
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 28
 
 
  780              		.loc 1 527 11 is_stmt 1 discriminator 6 view .LVU286
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  514:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****           b = b >> 1;
  819              		.loc 1 514 13 is_stmt 0 view .LVU302
  820 00e0 4908     		lsrs	r1, r1, #1
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 29
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 29
 
 
  821              	.LVL109:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  862              		.syntax unified
  863              		.thumb
  864              		.thumb_func
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 30
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 30
 
 
  866              	arm_boolean_distance_TT:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  908              	.LVL118:
  909              	.L90:
  480:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****        {
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 31
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 31
 
 
  910              		.loc 1 480 13 is_stmt 1 view .LVU331
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  501:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****     }
  949              		.loc 1 501 8 is_stmt 1 view .LVU347
  501:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h ****     }
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 32
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 32
 
 
  950              		.loc 1 501 22 is_stmt 0 view .LVU348
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  508:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** 
  988              		.loc 1 508 5 is_stmt 1 view .LVU365
  508:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 33
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 33
 
 
  989              		.loc 1 508 7 is_stmt 0 view .LVU366
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  1027              		.loc 1 518 11 is_stmt 1 view .LVU382
  518:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h **** #endif
  1028              		.loc 1 518 23 is_stmt 0 view .LVU383
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 34
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 34
 
 
  1029 006a 0028     		cmp	r0, #0
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   12:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_braycurtis_distance_f32.c **** /*
   13:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_braycurtis_distance_f32.c ****  * Copyright (C) 2010-2021 ARM Limited or its affiliates. All rights reserved.
   14:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_braycurtis_distance_f32.c ****  *
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 35
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 35
 
 
   15:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_braycurtis_distance_f32.c ****  * SPDX-License-Identifier: Apache-2.0
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   69:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_braycurtis_distance_f32.c ****         c = vabdq(a, b);
   70:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_braycurtis_distance_f32.c ****         accumDiffV = vaddq(accumDiffV, c);
   71:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_braycurtis_distance_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 36
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 36
 
 
   72:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_braycurtis_distance_f32.c ****         c = vaddq_f32(a, b);
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  126:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_braycurtis_distance_f32.c ****         c = vabdq_f32(a,b);
  127:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_braycurtis_distance_f32.c ****         accumDiffV = vaddq_f32(accumDiffV,c);
  128:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_braycurtis_distance_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 37
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 37
 
 
  129:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_braycurtis_distance_f32.c ****         c = vaddq_f32(a,b);
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  166:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_braycurtis_distance_f32.c ****       tmpA = *pA++;
  1082              		.loc 2 166 7 is_stmt 1 view .LVU399
  1083              		.loc 2 166 12 is_stmt 0 view .LVU400
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 38
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 38
 
 
  1084 000a F0EC017A 		vldmia.32	r0!, {s15}
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  1124 0038 00000000 		.word	0
  1125              		.cfi_endproc
  1126              	.LFE124:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 39
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 39
 
 
  1128              		.section	.text.arm_canberra_distance_f32,"ax",%progbits
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   45:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_canberra_distance_f32.c ****  * The result of the computation will be correct. So the division per zero may be
   46:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_canberra_distance_f32.c ****  * ignored.
   47:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_canberra_distance_f32.c ****  *
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 40
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 40
 
 
   48:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_canberra_distance_f32.c ****  * @param[in]    pA         First vector
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  102:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_canberra_distance_f32.c ****         b = vldrwq_z_f32(pB, p0);
  103:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_canberra_distance_f32.c **** 
  104:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_canberra_distance_f32.c ****         c = vabdq(a, b);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 41
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 41
 
 
  105:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_canberra_distance_f32.c **** 
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  159:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_canberra_distance_f32.c ****          * May divide by zero when a and b have both the same lane at zero.
  160:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_canberra_distance_f32.c ****          */
  161:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_canberra_distance_f32.c ****         a = vinvq_f32(a);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 42
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 42
 
 
  162:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_canberra_distance_f32.c ****         
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  202:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_canberra_distance_f32.c ****    {
  203:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_canberra_distance_f32.c ****       tmpA = *pA++;
  204:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_canberra_distance_f32.c ****       tmpB = *pB++;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 43
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 43
 
 
  205:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_canberra_distance_f32.c **** 
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  207:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_canberra_distance_f32.c ****       if ((tmpA != 0.0f) || (tmpB != 0.0f))
  1187              		.loc 3 207 11 view .LVU438
  1188 002a 37EE257A 		vadd.f32	s14, s14, s11
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 44
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 44
 
 
  1189              	.LVL166:
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   17:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_chebyshev_distance_f32.c ****  * Licensed under the Apache License, Version 2.0 (the License); you may
   18:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_chebyshev_distance_f32.c ****  * not use this file except in compliance with the License.
   19:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_chebyshev_distance_f32.c ****  * You may obtain a copy of the License at
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 45
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 45
 
 
   20:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_chebyshev_distance_f32.c ****  *
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   74:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_chebyshev_distance_f32.c ****          * Decrement the blockSize loop counter
   75:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_chebyshev_distance_f32.c ****          */
   76:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_chebyshev_distance_f32.c ****         blkCnt--;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 46
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 46
 
 
   77:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_chebyshev_distance_f32.c ****     }
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  131:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_chebyshev_distance_f32.c ****       }
  132:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_chebyshev_distance_f32.c ****    }
  133:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_chebyshev_distance_f32.c ****    else
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 47
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 47
 
 
  134:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_chebyshev_distance_f32.c ****    {
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  1226              		@ frame_needed = 0, uses_anonymous_args = 0
  1227              		@ link register save eliminated.
  185:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_chebyshev_distance_f32.c ****    float32_t diff=0.0f,  maxVal,tmpA, tmpB;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 48
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 48
 
 
  1228              		.loc 4 185 4 view .LVU445
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  195:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_chebyshev_distance_f32.c ****       tmpB = *pB++;
  1263              		.loc 4 195 12 is_stmt 0 view .LVU462
  1264 0018 F0EC017A 		vldmia.32	r0!, {s15}
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 49
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 49
 
 
  1265              	.LVL177:
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
    3:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_cityblock_distance_f32.c ****  * Project:      CMSIS DSP Library
    4:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_cityblock_distance_f32.c ****  * Title:        arm_cityblock_distance_f32.c
    5:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_cityblock_distance_f32.c ****  * Description:  Cityblock (Manhattan) distance between two vectors
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 50
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 50
 
 
    6:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_cityblock_distance_f32.c ****  *
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   60:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_cityblock_distance_f32.c ****     blkCnt = blockSize >> 2;
   61:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_cityblock_distance_f32.c ****     while (blkCnt > 0U) {
   62:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_cityblock_distance_f32.c ****         a = vld1q(pA);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 51
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 51
 
 
   63:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_cityblock_distance_f32.c ****         b = vld1q(pB);
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  117:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_cityblock_distance_f32.c ****    }
  118:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_cityblock_distance_f32.c ****    accumV2 = vpadd_f32(vget_low_f32(accumV),vget_high_f32(accumV));
  119:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_cityblock_distance_f32.c ****    accumV2 = vpadd_f32(accumV2,accumV2);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 52
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 52
 
 
  120:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_cityblock_distance_f32.c ****    accum = vget_lane_f32(accumV2,0);
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  1333 0012 F0EEE77A 		vabs.f32	s15, s15
  1334              		.loc 5 145 14 view .LVU487
  1335 0016 30EE270A 		vadd.f32	s0, s0, s15
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 53
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 53
 
 
  1336              	.LVL188:
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   20:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_correlation_distance_f32.c ****  *
   21:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_correlation_distance_f32.c ****  * www.apache.org/licenses/LICENSE-2.0
   22:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_correlation_distance_f32.c ****  *
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 54
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 54
 
 
   23:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_correlation_distance_f32.c ****  * Unless required by applicable law or agreed to in writing, software
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   58:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_correlation_distance_f32.c ****     arm_mean_f32(pA, blockSize, &ma);
  1385              		.loc 6 58 5 view .LVU496
  1386 000a 05AA     		add	r2, sp, #20
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 55
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 55
 
 
  1387              	.LVL191:
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  1432 005a 3046     		mov	r0, r6
  1433 005c FFF7FEFF 		bl	arm_dot_prod_f32
  1434              	.LVL199:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 56
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 56
 
 
   68:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_correlation_distance_f32.c **** 
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   23:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h ****  * limitations under the License.
   24:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h ****  */
   25:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 57
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 57
 
 
   26:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h ****  
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   80:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h **** 
   81:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h **** 
   82:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h ****   /**
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 58
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 58
 
 
   83:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h ****    * @brief  Fast approximation to the trigonometric sine function for Q31 data.
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  137:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h **** 
  138:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h **** 
  139:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h **** /**
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 59
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 59
 
 
  140:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h ****   @brief         Floating-point vector of log values.
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  194:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h ****                    - \ref ARM_MATH_SUCCESS        : input value is positive
  195:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h ****                    - \ref ARM_MATH_ARGUMENT_ERROR : input value is negative; *pOut is set to 0
  196:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h ****  */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 60
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 60
 
 
  197:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h **** __STATIC_FORCEINLINE arm_status arm_sqrt_f32(
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  1485 00ae 06B0     		add	sp, sp, #24
  1486              	.LCFI6:
  1487              		.cfi_remember_state
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 61
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 61
 
 
  1488              		.cfi_def_cfa_offset 16
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   19:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_cosine_distance_f32.c ****  * You may obtain a copy of the License at
   20:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_cosine_distance_f32.c ****  *
   21:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_cosine_distance_f32.c ****  * www.apache.org/licenses/LICENSE-2.0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 62
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 62
 
 
   22:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_cosine_distance_f32.c ****  *
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  1541              		.loc 8 56 5 view .LVU530
  1542 000a 03AA     		add	r2, sp, #12
  1543              	.LVL206:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 63
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 63
 
 
  1544              		.loc 8 56 5 is_stmt 0 view .LVU531
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   62:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_cosine_distance_f32.c ****     return(1.0f - dot / tmp);
  1586              		.loc 8 62 5 is_stmt 1 view .LVU543
  1587              		.loc 8 62 23 is_stmt 0 view .LVU544
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 64
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 64
 
 
  1588 0042 9DED017A 		vldr.32	s14, [sp, #4]
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
    8:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_dice_distance.c ****  * $Revision:    V1.9.0
    9:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_dice_distance.c ****  *
   10:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_dice_distance.c ****  * Target Processor: Cortex-M and Cortex-A cores
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 65
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 65
 
 
   11:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_dice_distance.c ****  * -------------------------------------------------------------------- */
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   65:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_dice_distance.c **** 
   66:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_dice_distance.c **** /**
   67:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_dice_distance.c ****  * @brief        Dice distance between two vectors
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 66
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 66
 
 
   68:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_dice_distance.c ****  *
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  1674 0024 08EB0900 		add	r0, r8, r9
  1675 0028 FFF7FEFF 		bl	__aeabi_ui2d
  1676              	.LVL218:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 67
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 67
 
 
  1677 002c 0446     		mov	r4, r0
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  1731              		.thumb_func
  1733              	arm_euclidean_distance_f32:
  1734              	.LVL227:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 68
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 68
 
 
  1735              	.LFB131:
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   53:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_euclidean_distance_f32.c **** #include "arm_vec_math.h"
   54:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_euclidean_distance_f32.c **** float32_t arm_euclidean_distance_f32(const float32_t *pA,const float32_t *pB, uint32_t blockSize)
   55:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_euclidean_distance_f32.c **** {
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 69
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 69
 
 
   56:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_euclidean_distance_f32.c ****     uint32_t        blkCnt;
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  110:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_euclidean_distance_f32.c ****         b = vld1q_f32(pB);
  111:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_euclidean_distance_f32.c **** 
  112:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_euclidean_distance_f32.c ****         a = vsubq_f32(a,b);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 70
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 70
 
 
  113:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_euclidean_distance_f32.c ****         accumV = vmlaq_f32(accumV,a,a);
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  1762              	.LVL232:
  1763              		.loc 10 140 13 view .LVU574
  1764 0016 30EE270A 		vadd.f32	s0, s0, s15
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 71
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 71
 
 
  1765              	.LVL233:
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  1806              	.LCFI16:
  1807              		.cfi_def_cfa_offset 0
  1808              		.cfi_restore 3
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 72
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 72
 
 
  1809              		.cfi_restore 14
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   26:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_hamming_distance.c ****  * See the License for the specific language governing permissions and
   27:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_hamming_distance.c ****  * limitations under the License.
   28:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_hamming_distance.c ****  */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 73
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 73
 
 
   29:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_hamming_distance.c **** 
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   61:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_hamming_distance.c **** 
   62:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_hamming_distance.c ****     arm_boolean_distance_TF_FT(pA, pB, numberOfBools, &ctf, &cft);
  1861              		.loc 11 62 5 is_stmt 1 view .LVU596
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 74
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 74
 
 
  1862 000c 02AB     		add	r3, sp, #8
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
    6:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_jaccard_distance.c ****  *
    7:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_jaccard_distance.c ****  * $Date:        23 April 2021
    8:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_jaccard_distance.c ****  * $Revision:    V1.9.0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 75
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 75
 
 
    9:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_jaccard_distance.c ****  *
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  1911              		.cfi_startproc
  1912              		@ args = 0, pretend = 0, frame = 16
  1913              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 76
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 76
 
 
  1914              		.loc 12 61 1 is_stmt 0 view .LVU603
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  1963 003a FFF7FEFF 		bl	__aeabi_ddiv
  1964              	.LVL249:
  1965 003e FFF7FEFF 		bl	__aeabi_d2f
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 77
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 77
 
 
  1966              	.LVL250:
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   34:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_jensenshannon_distance_f32.c **** 
   35:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_jensenshannon_distance_f32.c **** /**
   36:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_jensenshannon_distance_f32.c ****   @addtogroup JensenShannon
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 78
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 78
 
 
   37:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_jensenshannon_distance_f32.c ****   @{
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   91:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_jensenshannon_distance_f32.c ****         a = vldrwq_z_f32(pA, p0);
   92:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_jensenshannon_distance_f32.c ****         b = vldrwq_z_f32(pB, p0);
   93:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_jensenshannon_distance_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 79
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 79
 
 
   94:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_jensenshannon_distance_f32.c ****         t = vaddq(a, b);
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  148:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_jensenshannon_distance_f32.c **** 
  149:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_jensenshannon_distance_f32.c ****     blkCnt = blockSize >> 2;
  150:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_jensenshannon_distance_f32.c ****     while(blkCnt > 0)
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 80
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 80
 
 
  151:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_jensenshannon_distance_f32.c ****     {
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  205:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_jensenshannon_distance_f32.c ****  * Otherwise the result of the computation does not make sense
  206:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_jensenshannon_distance_f32.c ****  * and for speed reasons, the cases returning NaN or Infinity are not
  207:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_jensenshannon_distance_f32.c ****  * managed.
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 81
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 81
 
 
  208:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_jensenshannon_distance_f32.c ****  *
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  2020              		.loc 13 227 11 view .LVU623
  2021 0010 DFED1D9A 		vldr.32	s19, .L176
  226:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_jensenshannon_distance_f32.c ****     right = 0.0f;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 82
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 82
 
 
  2022              		.loc 13 226 10 view .LVU624
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  2066              		.loc 13 42 27 is_stmt 1 discriminator 3 view .LVU640
  2067              	.LBB33:
   44:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_jensenshannon_distance_f32.c **** }
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 83
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 83
 
 
  2068              		.loc 13 44 5 discriminator 3 view .LVU641
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  2107 0074 05DB     		blt	.L174
  218:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h **** #endif
  2108              		.loc 7 218 7 is_stmt 1 view .LVU656
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 84
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 84
 
 
  218:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h **** #endif
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  2156              		.thumb_func
  2158              	arm_kulsinski_distance:
  2159              	.LVL269:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 85
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 85
 
 
  2160              	.LFB136:
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   53:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_kulsinski_distance.c ****  *
   54:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_kulsinski_distance.c ****  * @param[in]    pA              First vector of packed booleans
   55:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_kulsinski_distance.c ****  * @param[in]    pB              Second vector of packed booleans
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 86
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 86
 
 
   56:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_kulsinski_distance.c ****  * @param[in]    numberOfBools   Number of booleans
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  2204 0026 2044     		add	r0, r0, r4
  2205 0028 FFF7FEFF 		bl	__aeabi_ui2d
  2206              	.LVL271:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 87
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 87
 
 
  2207 002c 0646     		mov	r6, r0
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   20:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_minkowski_distance_f32.c ****  *
   21:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_minkowski_distance_f32.c ****  * www.apache.org/licenses/LICENSE-2.0
   22:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_minkowski_distance_f32.c ****  *
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 88
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 88
 
 
   23:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_minkowski_distance_f32.c ****  * Unless required by applicable law or agreed to in writing, software
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   77:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_minkowski_distance_f32.c **** {
   78:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_minkowski_distance_f32.c ****     uint32_t        blkCnt;
   79:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_minkowski_distance_f32.c ****     f32x4_t         a, b, tmpV, sumV;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 89
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 89
 
 
   80:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_minkowski_distance_f32.c **** 
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  134:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_minkowski_distance_f32.c ****     {
  135:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_minkowski_distance_f32.c ****        aV = vld1q_f32(pA);
  136:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_minkowski_distance_f32.c ****        bV = vld1q_f32(pB);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 90
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 90
 
 
  137:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_minkowski_distance_f32.c ****        pA += 4;
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  2265 000e 1D46     		mov	r5, r3
  169:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_minkowski_distance_f32.c ****     float32_t sum;
  2266              		.loc 15 169 5 is_stmt 1 view .LVU682
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 91
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 91
 
 
  170:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_minkowski_distance_f32.c ****     uint32_t i;
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  2306              		.loc 15 179 12 is_stmt 0 view .LVU700
  2307 0042 F8EEE88A 		vcvt.f32.s32	s17, s17
  2308              	.LVL281:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 92
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 92
 
 
  2309              		.loc 15 179 12 view .LVU701
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   20:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_rogerstanimoto_distance.c ****  *
   21:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_rogerstanimoto_distance.c ****  * www.apache.org/licenses/LICENSE-2.0
   22:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_rogerstanimoto_distance.c ****  *
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 93
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 93
 
 
   23:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_rogerstanimoto_distance.c ****  * Unless required by applicable law or agreed to in writing, software
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  2358              		.cfi_def_cfa_offset 48
   63:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_rogerstanimoto_distance.c ****     uint32_t ctt=0,cff=0,ctf=0,cft=0,r;
  2359              		.loc 16 63 5 is_stmt 1 view .LVU707
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 94
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 94
 
 
  2360              		.loc 16 63 14 is_stmt 0 view .LVU708
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  2408              	.LVL291:
  2409 004a FFF7FEFF 		bl	__aeabi_d2f
  2410              	.LVL292:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 95
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 95
 
 
   70:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_rogerstanimoto_distance.c **** }
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   34:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_russellrao_distance.c **** 
   35:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_russellrao_distance.c **** 
   36:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_russellrao_distance.c **** extern void arm_boolean_distance_TT(const uint32_t *pA
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 96
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 96
 
 
   37:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_russellrao_distance.c ****        , const uint32_t *pB
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  2457              		.loc 17 66 5 view .LVU726
  2458              		.loc 17 66 15 is_stmt 0 view .LVU727
  2459 0010 0198     		ldr	r0, [sp, #4]
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 97
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 97
 
 
  2460 0012 201A     		subs	r0, r4, r0
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   14:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_sokalmichener_distance.c ****  *
   15:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_sokalmichener_distance.c ****  * SPDX-License-Identifier: Apache-2.0
   16:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_sokalmichener_distance.c ****  *
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 98
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 98
 
 
   17:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_sokalmichener_distance.c ****  * Licensed under the Apache License, Version 2.0 (the License); you may
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  2511 0002 2DED028B 		vpush.64	{d8}
  2512              	.LCFI40:
  2513              		.cfi_def_cfa_offset 12
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 99
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 99
 
 
  2514              		.cfi_offset 80, -12
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  2561 0040 079B     		ldr	r3, [sp, #28]
  2562 0042 1844     		add	r0, r0, r3
  2563 0044 FFF7FEFF 		bl	__aeabi_ui2d
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 100
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 100
 
 
  2564              	.LVL306:
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   17:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_sokalsneath_distance.c ****  * Licensed under the Apache License, Version 2.0 (the License); you may
   18:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_sokalsneath_distance.c ****  * not use this file except in compliance with the License.
   19:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_sokalsneath_distance.c ****  * You may obtain a copy of the License at
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 101
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 101
 
 
   20:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_sokalsneath_distance.c ****  *
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  2613              		.loc 19 61 5 is_stmt 1 view .LVU754
  2614              		.loc 19 61 14 is_stmt 0 view .LVU755
  2615 0004 0023     		movs	r3, #0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 102
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 102
 
 
  2616 0006 0593     		str	r3, [sp, #20]
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  2663              		.align	1
  2664              		.global	arm_yule_distance
  2665              		.syntax unified
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 103
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 103
 
 
  2666              		.thumb
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
   49:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_yule_distance.c **** 
   50:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_yule_distance.c **** /**
   51:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_yule_distance.c ****  * @brief        Yule distance between two vectors
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 104
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 104
 
 
   52:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_yule_distance.c ****  *
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  2712 0022 049B     		ldr	r3, [sp, #16]
  2713 0024 03FB00F0 		mul	r0, r3, r0
  2714              	.LVL318:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 105
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 105
 
 
   67:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/DistanceFunctions/arm_yule_distance.c **** 
@@ -6298,73 +6298,73 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 1
  2767              		.file 21 "c:\\arm-none-eabi-gcc\\arm-none-eabi\\include\\machine\\_default_types.h"
  2768              		.file 22 "c:\\arm-none-eabi-gcc\\arm-none-eabi\\include\\sys\\_stdint.h"
  2769              		.file 23 "Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/arm_math_types.h"
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 106
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 106
 
 
  2770              		.file 24 "c:\\arm-none-eabi-gcc\\arm-none-eabi\\include\\math.h"
  2771              		.file 25 "Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/statistics_functions.h"
  2772              		.file 26 "Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/basic_math_functions.h"
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 107
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 107
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 DistanceFunctions.c
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:20     .text.arm_boolean_distance_TT_TF_FT:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:26     .text.arm_boolean_distance_TT_TF_FT:00000000 arm_boolean_distance_TT_TF_FT
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:300    .text.arm_boolean_distance_TF_FT:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:306    .text.arm_boolean_distance_TF_FT:00000000 arm_boolean_distance_TF_FT
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:535    .text.arm_boolean_distance_TT_FF_TF_FT:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:541    .text.arm_boolean_distance_TT_FF_TF_FT:00000000 arm_boolean_distance_TT_FF_TF_FT
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:860    .text.arm_boolean_distance_TT:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:866    .text.arm_boolean_distance_TT:00000000 arm_boolean_distance_TT
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1057   .text.arm_braycurtis_distance_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1063   .text.arm_braycurtis_distance_f32:00000000 arm_braycurtis_distance_f32
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1124   .text.arm_braycurtis_distance_f32:00000038 $d
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1129   .text.arm_canberra_distance_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1135   .text.arm_canberra_distance_f32:00000000 arm_canberra_distance_f32
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1208   .text.arm_canberra_distance_f32:00000048 $d
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1213   .text.arm_chebyshev_distance_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1219   .text.arm_chebyshev_distance_f32:00000000 arm_chebyshev_distance_f32
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1296   .text.arm_cityblock_distance_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1302   .text.arm_cityblock_distance_f32:00000000 arm_cityblock_distance_f32
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1351   .text.arm_cityblock_distance_f32:00000024 $d
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1356   .text.arm_correlation_distance_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1362   .text.arm_correlation_distance_f32:00000000 arm_correlation_distance_f32
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1505   .text.arm_correlation_distance_f32:000000b8 $d
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1512   .text.arm_cosine_distance_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1518   .text.arm_cosine_distance_f32:00000000 arm_cosine_distance_f32
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1614   .text.arm_cosine_distance_f32:0000005c $d
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1625   .text.arm_dice_distance:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1631   .text.arm_dice_distance:00000000 arm_dice_distance
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1727   .text.arm_euclidean_distance_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1733   .text.arm_euclidean_distance_f32:00000000 arm_euclidean_distance_f32
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1824   .text.arm_euclidean_distance_f32:00000038 $d
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1829   .text.arm_hamming_distance:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1835   .text.arm_hamming_distance:00000000 arm_hamming_distance
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1900   .text.arm_jaccard_distance:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1906   .text.arm_jaccard_distance:00000000 arm_jaccard_distance
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1978   .text.arm_jensenshannon_distance_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:1984   .text.arm_jensenshannon_distance_f32:00000000 arm_jensenshannon_distance_f32
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:2147   .text.arm_jensenshannon_distance_f32:00000088 $d
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:2152   .text.arm_kulsinski_distance:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:2158   .text.arm_kulsinski_distance:00000000 arm_kulsinski_distance
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:2233   .text.arm_minkowski_distance_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:2239   .text.arm_minkowski_distance_f32:00000000 arm_minkowski_distance_f32
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:2329   .text.arm_minkowski_distance_f32:0000005c $d
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:2334   .text.arm_rogerstanimoto_distance:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:2340   .text.arm_rogerstanimoto_distance:00000000 arm_rogerstanimoto_distance
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:2423   .text.arm_russellrao_distance:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:2429   .text.arm_russellrao_distance:00000000 arm_russellrao_distance
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:2492   .text.arm_sokalmichener_distance:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:2498   .text.arm_sokalmichener_distance:00000000 arm_sokalmichener_distance
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:2591   .text.arm_sokalsneath_distance:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:2597   .text.arm_sokalsneath_distance:00000000 arm_sokalsneath_distance
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:2663   .text.arm_yule_distance:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:2669   .text.arm_yule_distance:00000000 arm_yule_distance
-C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s:2761   .text.arm_yule_distance:0000006c $d
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:20     .text.arm_boolean_distance_TT_TF_FT:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:26     .text.arm_boolean_distance_TT_TF_FT:00000000 arm_boolean_distance_TT_TF_FT
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:300    .text.arm_boolean_distance_TF_FT:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:306    .text.arm_boolean_distance_TF_FT:00000000 arm_boolean_distance_TF_FT
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:535    .text.arm_boolean_distance_TT_FF_TF_FT:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:541    .text.arm_boolean_distance_TT_FF_TF_FT:00000000 arm_boolean_distance_TT_FF_TF_FT
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:860    .text.arm_boolean_distance_TT:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:866    .text.arm_boolean_distance_TT:00000000 arm_boolean_distance_TT
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1057   .text.arm_braycurtis_distance_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1063   .text.arm_braycurtis_distance_f32:00000000 arm_braycurtis_distance_f32
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1124   .text.arm_braycurtis_distance_f32:00000038 $d
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1129   .text.arm_canberra_distance_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1135   .text.arm_canberra_distance_f32:00000000 arm_canberra_distance_f32
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1208   .text.arm_canberra_distance_f32:00000048 $d
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1213   .text.arm_chebyshev_distance_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1219   .text.arm_chebyshev_distance_f32:00000000 arm_chebyshev_distance_f32
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1296   .text.arm_cityblock_distance_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1302   .text.arm_cityblock_distance_f32:00000000 arm_cityblock_distance_f32
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1351   .text.arm_cityblock_distance_f32:00000024 $d
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1356   .text.arm_correlation_distance_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1362   .text.arm_correlation_distance_f32:00000000 arm_correlation_distance_f32
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1505   .text.arm_correlation_distance_f32:000000b8 $d
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1512   .text.arm_cosine_distance_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1518   .text.arm_cosine_distance_f32:00000000 arm_cosine_distance_f32
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1614   .text.arm_cosine_distance_f32:0000005c $d
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1625   .text.arm_dice_distance:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1631   .text.arm_dice_distance:00000000 arm_dice_distance
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1727   .text.arm_euclidean_distance_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1733   .text.arm_euclidean_distance_f32:00000000 arm_euclidean_distance_f32
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1824   .text.arm_euclidean_distance_f32:00000038 $d
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1829   .text.arm_hamming_distance:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1835   .text.arm_hamming_distance:00000000 arm_hamming_distance
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1900   .text.arm_jaccard_distance:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1906   .text.arm_jaccard_distance:00000000 arm_jaccard_distance
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1978   .text.arm_jensenshannon_distance_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:1984   .text.arm_jensenshannon_distance_f32:00000000 arm_jensenshannon_distance_f32
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:2147   .text.arm_jensenshannon_distance_f32:00000088 $d
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:2152   .text.arm_kulsinski_distance:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:2158   .text.arm_kulsinski_distance:00000000 arm_kulsinski_distance
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:2233   .text.arm_minkowski_distance_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:2239   .text.arm_minkowski_distance_f32:00000000 arm_minkowski_distance_f32
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:2329   .text.arm_minkowski_distance_f32:0000005c $d
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:2334   .text.arm_rogerstanimoto_distance:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:2340   .text.arm_rogerstanimoto_distance:00000000 arm_rogerstanimoto_distance
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:2423   .text.arm_russellrao_distance:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:2429   .text.arm_russellrao_distance:00000000 arm_russellrao_distance
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:2492   .text.arm_sokalmichener_distance:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:2498   .text.arm_sokalmichener_distance:00000000 arm_sokalmichener_distance
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:2591   .text.arm_sokalsneath_distance:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:2597   .text.arm_sokalsneath_distance:00000000 arm_sokalsneath_distance
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:2663   .text.arm_yule_distance:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:2669   .text.arm_yule_distance:00000000 arm_yule_distance
+C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s:2761   .text.arm_yule_distance:0000006c $d
 
 UNDEFINED SYMBOLS
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccxombE8.s 			page 108
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXv4CRk.s 			page 108
 
 
 arm_mean_f32

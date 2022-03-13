@@ -70,7 +70,8 @@ namespace adc
     void increment_and_sync();
     void read();
     void drdy_callback();
-    size_t dump_last_data(char* buf);
+    size_t dump_last_data(char* buf, size_t max_len);
     void drdy_check();
+    size_t dump_module_report(char* buf, size_t max_len);
 }
 

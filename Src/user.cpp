@@ -5,7 +5,7 @@
 
 //Private vars
 //static int delay_length = 500;
-uint8_t output_buf[15 * MY_ADC_MAX_MODULES]; //Line format: "01F: +1.000000\n" 15 bytes/module (only one channel can be read at a time)
+char output_buf[256];
 static user::pin_t led_pin = user::pin_t(MASTER_ENABLE_GPIO_Port, MASTER_ENABLE_Pin);
 static user::Stream* cdc_stream = new user::Stream();
 int heartbeat_last_ticks = 0;
@@ -29,6 +29,11 @@ static void cdc_receive(uint8_t* buf, uint32_t* len)
     cdc_stream->receive(buf, static_cast<uint16_t>(*len));
 }
 
+static void send_output(size_t len)
+{
+    CDC_Transmit_FS(reinterpret_cast<uint8_t*>(output_buf), static_cast<uint16_t>(len));
+}
+
 /**
  * PUBLIC, hide behind a namespace
  */
@@ -46,34 +51,37 @@ namespace user
 
         //ADC
         adc::init(adc_spi);
+        user_usb_prints("Probing ADC modules... ");
         adc::probe();
+        send_output(adc::dump_module_report(output_buf, sizeof(output_buf)));
 
         //DAC
         dac::init(dac_spi, dac_i2c);
+        user_usb_prints("Probing DAC modules... ");
         dac::probe();
+        send_output(dac::dump_module_report(output_buf, sizeof(output_buf)));
 
         //Last preparations
         adc::increment_and_sync();
     }
     void main()
     {
+        auto us = micros();
         //ADC
         adc::drdy_check();
         if (adc::status == MY_ADC_STATUS_READ_PENDING) 
         {
             adc::read();
             adc::increment_and_sync();
-            //Data Output
-            //CDC_Transmit_FS(reinterpret_cast<uint8_t*>(adc::last_results), sizeof(adc::last_results));
-            size_t written = adc::dump_last_data(reinterpret_cast<char*>(output_buf));
-            CDC_Transmit_FS(output_buf, static_cast<uint16_t>(written));
+            send_output(adc::dump_last_data(output_buf, sizeof(output_buf)));
         }
 
         //DAC
-        auto us = micros();
+        us = micros();
         if (us - dac_last_ticks > 1E7)
         {
             dac::read_current();
+            send_output(dac::dump_last_currents(output_buf, sizeof(output_buf)));
             float v = dac::modules[0].last_setpoint + 0.2;
             if (v > 2.5) v = 0;
             dac::set_all(v);
@@ -89,7 +97,7 @@ namespace user
         }
     }
 
-    //API
+    //Compatibility API
     bool Stream::available()
     {
         supervise_indexes(&_tail, &_head);

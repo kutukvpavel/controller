@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
   27:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_cos_f32.c ****  */
   28:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_cos_f32.c **** 
   29:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_cos_f32.c **** #include "dsp/fast_math_functions.h"
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 2
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 2
 
 
   30:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_cos_f32.c **** #include "arm_common_tables.h"
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
   76:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_cos_f32.c ****   int32_t n;
   38              		.loc 1 76 3 view .LVU4
   77:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_cos_f32.c ****   float32_t findex;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 3
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 3
 
 
   39              		.loc 1 77 3 view .LVU5
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
   73 002e FCEEC07A 		vcvt.u32.f32	s15, s0
   74 0032 17EE903A 		vmov	r3, s15	@ int
   75 0036 9BB2     		uxth	r3, r3
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 4
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 4
 
 
   76              	.LVL7:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  113              		.loc 1 113 3 is_stmt 1 view .LVU34
  114              		.loc 1 113 18 is_stmt 0 view .LVU35
  115 0068 F7EE007A 		vmov.f32	s15, #1.0e+0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 5
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 5
 
 
  116 006c 77EEC07A 		vsub.f32	s15, s15, s0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
    8:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_cos_q15.c ****  *
    9:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_cos_q15.c ****  * Target Processor: Cortex-M and Cortex-A cores
   10:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_cos_q15.c ****  * -------------------------------------------------------------------- */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 6
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 6
 
 
   11:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_cos_q15.c **** /*
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
   56:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_cos_q15.c **** 
   57:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_cos_q15.c ****   /* add 0.25 (pi/2) to read sine table */
   58:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_cos_q15.c ****   x = (uint16_t)x + 0x2000;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 7
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 7
 
 
  167              		.loc 2 58 3 view .LVU49
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  204 0020 C2F50040 		rsb	r0, r2, #32768
  205              		.loc 2 75 37 view .LVU67
  206 0024 00FB03F3 		mul	r3, r0, r3
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 8
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 8
 
 
  207              	.LVL26:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
    3:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_cos_q31.c ****  * Title:        arm_cos_q31.c
    4:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_cos_q31.c ****  * Description:  Fast cosine calculation for Q31 values
    5:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_cos_q31.c ****  *
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 9
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 9
 
 
    6:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_cos_q31.c ****  * $Date:        23 April 2021
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  260              		.cfi_offset 14, -4
   52:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_cos_q31.c ****   q31_t cosVal;                                  /* Temporary input, output variables */
  261              		.loc 3 52 3 is_stmt 1 view .LVU81
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 10
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 10
 
 
   53:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_cos_q31.c ****   int32_t index;                                 /* Index variable */
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
   74:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_cos_q31.c ****   /* Linear interpolation process */
   75:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_cos_q31.c ****   cosVal = (q63_t) (0x80000000 - fract) * a >> 32;
  295              		.loc 3 75 3 is_stmt 1 view .LVU98
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 11
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 11
 
 
  296              		.loc 3 75 32 is_stmt 0 view .LVU99
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  344              	arm_sin_f32:
  345              	.LVL47:
  346              	.LFB123:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 12
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 12
 
 
  347              		.file 4 "Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sin_f32.c"
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
   54:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sin_f32.c ****   <pre>
   55:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sin_f32.c ****      b = Table[index];
   56:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sin_f32.c ****      c = Table[index+1];
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 13
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 13
 
 
   57:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sin_f32.c ****   </pre>
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  370 0010 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
  371 0014 2FD4     		bmi	.L25
  372              	.L21:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 14
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 14
 
 
   89:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sin_f32.c ****   {
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  407              		.loc 4 107 20 is_stmt 0 view .LVU138
  408 0040 07EE903A 		vmov	s15, r3	@ int
  409 0044 F8EE677A 		vcvt.f32.u32	s15, s15
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 15
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 15
 
 
  410              		.loc 4 107 9 view .LVU139
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  450              		.loc 4 90 6 view .LVU154
  451 0080 C9E7     		b	.L21
  452              	.L27:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 16
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 16
 
 
  453 0082 00BF     		.align	2
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
   38:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sin_q15.c ****   @{
   39:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sin_q15.c ****  */
   40:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sin_q15.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 17
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 17
 
 
   41:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sin_q15.c **** /**
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  499              	.LVL70:
   68:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sin_q15.c **** 
   69:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sin_q15.c ****   /* Read two nearest values of input value from the sin table */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 18
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 18
 
 
   70:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sin_q15.c ****   a = sinTable_q15[index];
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
   60:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sin_q15.c ****   }
  541              		.loc 5 60 7 view .LVU186
  542 0036 00B2     		sxth	r0, r0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 19
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 19
 
 
  543              	.LVL78:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
   35:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sin_q31.c **** 
   36:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sin_q31.c **** /**
   37:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sin_q31.c ****   @addtogroup sin
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 20
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 20
 
 
   38:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sin_q31.c ****   @{
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  589 0008 C0F31500 		ubfx	r0, r0, #0, #22
  590              	.LVL81:
  591              		.loc 6 66 9 view .LVU201
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 21
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 21
 
 
  592 000c 4002     		lsls	r0, r0, #9
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  634              	.L36:
   59:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sin_q31.c ****   }
  635              		.loc 6 59 5 is_stmt 1 view .LVU218
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 22
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 22
 
 
   59:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sin_q31.c ****   }
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
   32:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q15.c **** /**
   33:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q15.c ****   @ingroup groupFastMath
   34:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q15.c ****  */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 23
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 23
 
 
   35:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q15.c **** 
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
   67:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q15.c ****   {
   68:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q15.c ****     signBits1 = __CLZ(number) - 17;
  680              		.loc 7 68 5 is_stmt 1 view .LVU231
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 24
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 24
 
 
  681              		.loc 7 68 17 is_stmt 0 view .LVU232
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
   89:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q15.c ****     bits_val1 = tempconv.fracval;
  715              		.loc 7 89 5 view .LVU248
   90:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q15.c ****     /* Subtract the shifted value from the magic number to give intial guess */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 25
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 25
 
 
   91:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q15.c ****     bits_val1 = 0x5f3759df - (bits_val1 >> 1);  /* gives initial guess */
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  752              		.loc 7 103 72 view .LVU265
  753 0060 9B00     		lsls	r3, r3, #2
   99:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q15.c ****                                      ((q15_t)
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 26
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 26
 
 
  754              		.loc 7 99 10 view .LVU266
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  788              		.loc 7 111 45 view .LVU282
  789 0094 CCF5405C 		rsb	ip, ip, #12288
  111:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q15.c ****                                      ((q15_t)
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 27
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 27
 
 
  790              		.loc 7 111 35 view .LVU283
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  130:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q15.c **** 
  131:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q15.c ****     return (ARM_MATH_SUCCESS);
  827              		.loc 7 131 5 is_stmt 1 view .LVU300
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 28
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 28
 
 
  828              		.loc 7 131 12 is_stmt 0 view .LVU301
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  862              	.L40:
  863              	.LCFI3:
  864              		.cfi_def_cfa_offset 0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 29
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 29
 
 
  865              		.cfi_restore 4
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
   23:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q31.c ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
   24:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q31.c ****  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   25:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q31.c ****  * See the License for the specific language governing permissions and
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 30
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 30
 
 
   26:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q31.c ****  * limitations under the License.
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  908 0002 40F3B380 		ble	.L53
   53:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q31.c ****   q31_t bits_val1;
  909              		.loc 8 53 1 view .LVU328
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 31
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 31
 
 
  910 0006 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  944 0026 9FED547A 		vldr.32	s14, .L63
  945 002a 67EE877A 		vmul.f32	s15, s15, s14
  946 002e 17EE902A 		vmov	r2, s15
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 32
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 32
 
 
  947              	.LVL129:
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  982 0064 03FB0699 		mla	r9, r3, r6, r9
  983 0068 A2FB0362 		umull	r6, r2, r2, r3
  984 006c 9144     		add	r9, r9, r2
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 33
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 33
 
 
  985              		.loc 8 103 55 view .LVU358
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  105:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q31.c ****                                      ((q31_t)
  1027              		.loc 8 105 35 view .LVU372
  1028 00c6 06FB08F8 		mul	r8, r6, r8
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 34
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 34
 
 
  1029 00ca 02FB0787 		mla	r7, r2, r7, r8
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  1071 011c 3344     		add	r3, r3, r6
  1072              		.loc 8 115 64 view .LVU387
  1073 011e D20F     		lsrs	r2, r2, #31
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 35
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 35
 
 
  1074 0120 42EA4302 		orr	r2, r2, r3, lsl #1
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  1111 014c 0020     		movs	r0, #0
  1112              	.LVL144:
  132:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q31.c ****   }
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 36
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 36
 
 
  133:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q31.c ****   /* If the number is a negative number then store zero as its square root value */
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  1149              		.loc 8 136 5 is_stmt 1 view .LVU414
  136:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q31.c **** 
  1150              		.loc 8 136 11 is_stmt 0 view .LVU415
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 37
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 37
 
 
  1151 016c 0023     		movs	r3, #0
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
   28:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_vexp_f32.c **** 
   29:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_vexp_f32.c **** #include "dsp/fast_math_functions.h"
   30:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_vexp_f32.c **** #include "arm_common_tables.h"
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 38
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 38
 
 
   31:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_vexp_f32.c **** 
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
   69:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_vexp_f32.c ****    while (blkCnt > 0U)
   70:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_vexp_f32.c ****    {
   71:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_vexp_f32.c ****       src = vld1q_f32(pSrc);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 39
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 39
 
 
   72:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_vexp_f32.c ****       dst = vexpq_f32(src);
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  1221              		.loc 9 97 1 view .LVU433
  1222              		.cfi_endproc
  1223              	.LFE128:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 40
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 40
 
 
  1225              		.section	.text.arm_vlog_f32,"ax",%progbits
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  1240              		.loc 10 40 1 is_stmt 0 view .LVU435
  1241 0000 70B5     		push	{r4, r5, r6, lr}
  1242              	.LCFI7:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 41
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 41
 
 
  1243              		.cfi_def_cfa_offset 16
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
   84:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_vlog_f32.c **** #endif
   85:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_vlog_f32.c **** #endif
   86:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_vlog_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 42
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 42
 
 
   87:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_vlog_f32.c ****    while (blkCnt > 0U)
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
    5:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_divide_q15.c ****  *
    6:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_divide_q15.c ****  * $Date:        23 April 2021
    7:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_divide_q15.c ****  * $Revision:    V1.9.0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 43
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 43
 
 
    8:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_divide_q15.c ****  *
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
   62:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_divide_q15.c ****   q15_t *quotient,
   63:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_divide_q15.c ****   int16_t *shift)
   64:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/FastMathFunctions/arm_divide_q15.c **** {
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 44
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 44
 
 
  1294              		.loc 11 64 1 is_stmt 1 view -0
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  1326 001c 4042     		rsblt	r0, r0, #0
  1327              	.LVL168:
  1328              		.loc 11 86 13 view .LVU462
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 45
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 45
 
 
  1329 001e 00B2     		sxth	r0, r0
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  1369              		.loc 11 100 5 is_stmt 1 view .LVU480
  1370              		.loc 11 100 10 is_stmt 0 view .LVU481
  1371 0044 4942     		rsbs	r1, r1, #0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 46
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 46
 
 
  1372              	.LVL176:
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  1409              		.loc 11 81 19 view .LVU497
  1410 0060 1380     		strh	r3, [r2]	@ movhi
  1411 0062 F8E7     		b	.L76
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 47
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 47
 
 
  1412              		.cfi_endproc
@@ -2770,41 +2770,41 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 1
  1419              		.file 14 "Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/arm_math_types.h"
  1420              		.file 15 "Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/arm_common_tables.h"
  1421              		.file 16 "c:\\arm-none-eabi-gcc\\arm-none-eabi\\include\\math.h"
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s 			page 48
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s 			page 48
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 FastMathFunctions.c
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:20     .text.arm_cos_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:26     .text.arm_cos_f32:00000000 arm_cos_f32
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:141    .text.arm_cos_f32:0000008c $d
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:148    .text.arm_cos_q15:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:154    .text.arm_cos_q15:00000000 arm_cos_q15
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:237    .text.arm_cos_q15:00000040 $d
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:242    .text.arm_cos_q31:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:248    .text.arm_cos_q31:00000000 arm_cos_q31
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:333    .text.arm_cos_q31:00000048 $d
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:338    .text.arm_sin_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:344    .text.arm_sin_f32:00000000 arm_sin_f32
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:455    .text.arm_sin_f32:00000084 $d
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:462    .text.arm_sin_q15:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:468    .text.arm_sin_q15:00000000 arm_sin_q15
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:549    .text.arm_sin_q15:0000003c $d
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:554    .text.arm_sin_q31:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:560    .text.arm_sin_q31:00000000 arm_sin_q31
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:644    .text.arm_sin_q31:00000044 $d
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:649    .text.arm_sqrt_q15:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:655    .text.arm_sqrt_q15:00000000 arm_sqrt_q15
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:879    .text.arm_sqrt_q15:000000e0 $d
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:885    .text.arm_sqrt_q31:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:891    .text.arm_sqrt_q31:00000000 arm_sqrt_q31
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:1162   .text.arm_sqrt_q31:00000178 $d
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:1168   .text.arm_vexp_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:1174   .text.arm_vexp_f32:00000000 arm_vexp_f32
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:1226   .text.arm_vlog_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:1232   .text.arm_vlog_f32:00000000 arm_vlog_f32
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:1284   .text.arm_divide_q15:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccl4XF83.s:1290   .text.arm_divide_q15:00000000 arm_divide_q15
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:20     .text.arm_cos_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:26     .text.arm_cos_f32:00000000 arm_cos_f32
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:141    .text.arm_cos_f32:0000008c $d
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:148    .text.arm_cos_q15:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:154    .text.arm_cos_q15:00000000 arm_cos_q15
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:237    .text.arm_cos_q15:00000040 $d
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:242    .text.arm_cos_q31:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:248    .text.arm_cos_q31:00000000 arm_cos_q31
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:333    .text.arm_cos_q31:00000048 $d
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:338    .text.arm_sin_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:344    .text.arm_sin_f32:00000000 arm_sin_f32
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:455    .text.arm_sin_f32:00000084 $d
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:462    .text.arm_sin_q15:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:468    .text.arm_sin_q15:00000000 arm_sin_q15
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:549    .text.arm_sin_q15:0000003c $d
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:554    .text.arm_sin_q31:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:560    .text.arm_sin_q31:00000000 arm_sin_q31
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:644    .text.arm_sin_q31:00000044 $d
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:649    .text.arm_sqrt_q15:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:655    .text.arm_sqrt_q15:00000000 arm_sqrt_q15
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:879    .text.arm_sqrt_q15:000000e0 $d
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:885    .text.arm_sqrt_q31:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:891    .text.arm_sqrt_q31:00000000 arm_sqrt_q31
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:1162   .text.arm_sqrt_q31:00000178 $d
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:1168   .text.arm_vexp_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:1174   .text.arm_vexp_f32:00000000 arm_vexp_f32
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:1226   .text.arm_vlog_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:1232   .text.arm_vlog_f32:00000000 arm_vlog_f32
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:1284   .text.arm_divide_q15:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccWKPkBh.s:1290   .text.arm_divide_q15:00000000 arm_divide_q15
 
 UNDEFINED SYMBOLS
 sinTable_f32

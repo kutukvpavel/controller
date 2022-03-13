@@ -40,4 +40,6 @@ namespace dac
     void probe();
     void set_all(float volts);
     void read_current();
+    size_t dump_module_report(char* buf, size_t max_len);
+    size_t dump_last_currents(char* buf, size_t max_len);
 }

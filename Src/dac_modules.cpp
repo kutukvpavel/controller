@@ -9,6 +9,14 @@
 #define MY_INA219_CURRENT_LSB 1.2207E-6
 #define MY_DAC_FULL_SCALE 0xFF
 #define MY_DAC_REFERENCE_VOLTAGE 2.5 //V
+#define OUTPUT_CURRENT_FORMAT "C%.2X: %+8.5f\n"
+#define OUTPUT_REPORT_FORMAT "DAC Module #%u\n" \
+    "\tSPI Handle: %p\n" \
+    "\tCS Pin: %.4lX - %.4lX\n" \
+    "\tI2C Handle: %p\n" \
+    "\tAddress: %u\n" \
+    "\tCal: {%.6f,%.6f}\n" \
+    "\tRShunt: %.3f\n"
 
 uint16_t volts_to_code(float volts)
 {
@@ -86,5 +94,38 @@ namespace dac
             if (!m.present) continue;
             set_module(&m, volts);
         }
+    }
+
+    size_t dump_last_currents(char* buf, size_t max_len)
+    {
+        size_t written = 0;
+        for (size_t i = 0; i < array_size(modules); i++)
+        {
+            auto& m = modules[i];
+            int w = snprintf(buf, max_len - written, OUTPUT_CURRENT_FORMAT, 0x10u * i, m.last_current);
+            if (w > 0)
+            {
+                buf += w;
+                written += w;
+            }
+        }
+        return written;
+    }
+
+    size_t dump_module_report(char* buf, size_t max_len)
+    {
+        size_t written = 0;
+        for (size_t i = 0; i < array_size(modules); i++)
+        {
+            auto& m = modules[i];
+            int w = snprintf(buf, max_len - written, OUTPUT_REPORT_FORMAT, i,
+                m.hspi, m.cs->port->MODER, m.cs->mask, m.hi2c, m.addr, m.cal_coeff, m.cal_offset, m.r_shunt);
+            if (w > 0)
+            {
+                buf += w;
+                written += w;
+            }
+        }
+        return written;
     }
 }
