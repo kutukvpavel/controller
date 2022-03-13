@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   27:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_entropy_f32.c ****  */
   28:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_entropy_f32.c **** 
   29:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_entropy_f32.c **** #include "dsp/statistics_functions.h"
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 2
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 2
 
 
   30:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_entropy_f32.c **** #include <limits.h>
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   84:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_entropy_f32.c ****     while(blkCnt > 0)
   85:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_entropy_f32.c ****     {
   86:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_entropy_f32.c ****        p = *pSrcA++;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 3
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 3
 
 
   87:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_entropy_f32.c ****        accum += p * logf(p);
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  141:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_entropy_f32.c ****     }
  142:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_entropy_f32.c **** 
  143:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_entropy_f32.c ****     return(-accum);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 4
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 4
 
 
  144:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_entropy_f32.c **** }
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   66              	.LVL3:
  161:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_entropy_f32.c ****        accum += p * logf(p);
   67              		.loc 1 161 8 is_stmt 1 view .LVU13
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 5
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 5
 
 
   68              		.loc 1 161 21 is_stmt 0 view .LVU14
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
    1:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_entropy_f64.c **** /* ----------------------------------------------------------------------
    2:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_entropy_f64.c ****  * Project:      CMSIS DSP Library
    3:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_entropy_f64.c ****  * Title:        arm_logsumexp_f64.c
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 6
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 6
 
 
    4:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_entropy_f64.c ****  * Description:  LogSumExp
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  125              		.cfi_offset 4, -28
  126              		.cfi_offset 5, -24
  127              		.cfi_offset 6, -20
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 7
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 7
 
 
  128              		.cfi_offset 7, -16
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  167 002a 3046     		mov	r0, r6
  168 002c 3946     		mov	r1, r7
  169 002e FFF7FEFF 		bl	__aeabi_dadd
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 8
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 8
 
 
  170              	.LVL14:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   13:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_kullback_leibler_f32.c ****  *
   14:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_kullback_leibler_f32.c ****  * SPDX-License-Identifier: Apache-2.0
   15:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_kullback_leibler_f32.c ****  *
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 9
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 9
 
 
   16:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_kullback_leibler_f32.c ****  * Licensed under the Apache License, Version 2.0 (the License); you may
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   70:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_kullback_leibler_f32.c ****     f32x4_t         vSum = vdupq_n_f32(0.0f);
   71:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_kullback_leibler_f32.c ****     blkCnt = blockSize >> 2;
   72:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_kullback_leibler_f32.c ****     while(blkCnt > 0)
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 10
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 10
 
 
   73:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_kullback_leibler_f32.c ****     {
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  127:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_kullback_leibler_f32.c ****     blkCnt = blockSize >> 2;
  128:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_kullback_leibler_f32.c ****     while(blkCnt > 0)
  129:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_kullback_leibler_f32.c ****     {
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 11
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 11
 
 
  130:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_kullback_leibler_f32.c ****       tmpVA = vld1q_f32(pInA);
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  224 0008 0C46     		mov	r4, r1
  225 000a 1646     		mov	r6, r2
  166:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_kullback_leibler_f32.c ****     const float32_t *pInA, *pInB;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 12
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 12
 
 
  226              		.loc 3 166 5 is_stmt 1 view .LVU50
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  263 002a 013E     		subs	r6, r6, #1
  264              	.LVL26:
  265              	.L12:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 13
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 13
 
 
  176:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_kullback_leibler_f32.c ****     {
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   18:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_kullback_leibler_f64.c ****  * You may obtain a copy of the License at
   19:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_kullback_leibler_f64.c ****  *
   20:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_kullback_leibler_f64.c ****  * www.apache.org/licenses/LICENSE-2.0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 14
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 14
 
 
   21:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_kullback_leibler_f64.c ****  *
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   53:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_kullback_leibler_f64.c ****  
   54:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_kullback_leibler_f64.c ****     pInA = pSrcA;
  321              		.loc 4 54 5 view .LVU80
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 15
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 15
 
 
  322              	.LVL29:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  364              	.LVL36:
  365 0040 0646     		mov	r6, r0
  366              	.LVL37:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 16
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 16
 
 
  367              		.loc 4 65 15 view .LVU96
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   17:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_logsumexp_f32.c ****  * not use this file except in compliance with the License.
   18:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_logsumexp_f32.c ****  * You may obtain a copy of the License at
   19:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_logsumexp_f32.c ****  *
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 17
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 17
 
 
   20:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_logsumexp_f32.c ****  * www.apache.org/licenses/LICENSE-2.0
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   74:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_logsumexp_f32.c ****     float32_t       accum=0.0f;
   75:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_logsumexp_f32.c ****     float32_t       tmp;
   76:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_logsumexp_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 18
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 18
 
 
   77:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_logsumexp_f32.c **** 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  131:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_logsumexp_f32.c ****     uint32x4_t idxV;
  132:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_logsumexp_f32.c ****     float32x4_t accumV;
  133:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_logsumexp_f32.c ****     float32x2_t accumV2;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 19
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 19
 
 
  134:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_logsumexp_f32.c **** 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  188:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_logsumexp_f32.c ****             maxVal = tmp;
  189:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_logsumexp_f32.c ****          }
  190:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_logsumexp_f32.c ****          blkCnt--;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 20
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 20
 
 
  191:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_logsumexp_f32.c ****       }
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  411              		.cfi_offset 14, -4
  412 0002 2DED028B 		vpush.64	{d8}
  413              	.LCFI9:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 21
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 21
 
 
  414              		.cfi_def_cfa_offset 24
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  447              	.L22:
  246:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_logsumexp_f32.c ****     {
  448              		.loc 5 246 10 is_stmt 1 view .LVU122
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 22
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 22
 
 
  449 0016 4AB1     		cbz	r2, .L29
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  486              		.loc 5 265 8 is_stmt 1 view .LVU136
  487              		.loc 5 265 14 is_stmt 0 view .LVU137
  488 0042 013D     		subs	r5, r5, #1
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 23
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 23
 
 
  489              	.LVL56:
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
    7:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_logsumexp_dot_prod_f32.c ****  * $Revision:    V1.9.0
    8:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_logsumexp_dot_prod_f32.c ****  *
    9:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_logsumexp_dot_prod_f32.c ****  * Target Processor: Cortex-M and Cortex-A cores
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 24
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 24
 
 
   10:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_logsumexp_dot_prod_f32.c ****  * -------------------------------------------------------------------- */
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  537 0000 38B5     		push	{r3, r4, r5, lr}
  538              	.LCFI11:
  539              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 25
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 25
 
 
  540              		.cfi_offset 3, -16
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   11:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c **** /*
   12:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c ****  * Copyright (C) 2010-2021 ARM Limited or its affiliates. All rights reserved.
   13:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c ****  *
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 26
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 26
 
 
   14:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c ****  * SPDX-License-Identifier: Apache-2.0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   68:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c ****     f32x4_t vecSrc;
   69:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c ****     f32x4_t curExtremValVec = vdupq_n_f32(F32_MIN);
   70:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c ****     float32_t maxValue = F32_MIN;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 27
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 27
 
 
   71:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c ****     uint32_t idx = blockSize;
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  125:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c ****       /* compare for the maximum value */
  126:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c ****       if (maxValue < tmp)
  127:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c ****       {
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 28
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 28
 
 
  128:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c ****         /* Update the maximum value and it's index */
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  182:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c ****       blkCnt = blockSize - 1;
  183:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c **** 
  184:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c ****       while (blkCnt > 0U)
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 29
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 29
 
 
  185:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c ****       {
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  239:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c ****       {
  240:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c ****         /* Initialize maxVal to the next consecutive values one by one */
  241:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c ****         maxVal1 = *pSrc++;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 30
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 30
 
 
  242:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c ****     
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  595              		.loc 7 280 3 view .LVU162
  596              		.loc 7 280 7 is_stmt 0 view .LVU163
  597 0002 B0EC017A 		vldmia.32	r0!, {s14}
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 31
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 31
 
 
  598              	.LVL68:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  334:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c ****   /* Initialize blkCnt with number of samples */
  335:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c ****   blkCnt = (blockSize - 1U);
  599              		.loc 7 335 3 is_stmt 1 view .LVU164
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 32
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 32
 
 
  600              		.loc 7 335 10 is_stmt 0 view .LVU165
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  349:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c ****     }
  629              		.loc 7 349 7 view .LVU177
  349:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c ****     }
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 33
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 33
 
 
  630              		.loc 7 349 16 is_stmt 0 view .LVU178
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   13:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q15.c ****  *
   14:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q15.c ****  * SPDX-License-Identifier: Apache-2.0
   15:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q15.c ****  *
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 34
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 34
 
 
   16:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q15.c ****  * Licensed under the Apache License, Version 2.0 (the License); you may
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   70:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q15.c ****         mve_pred16_t    p = vctp16q(blkCnt);
   71:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q15.c ****         q15x8_t         extremIdxVal = vld1q_z_s16(pSrc, p);
   72:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q15.c ****         /*
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 35
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 35
 
 
   73:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q15.c ****          * Get current max per lane and current index per lane
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  114:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q15.c **** 
  115:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q15.c ****   /* Initialise index value to zero. */
  116:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q15.c ****   outIndex = 0U;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 36
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 36
 
 
  680              		.loc 8 116 3 view .LVU190
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  165:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q15.c ****   }
  166:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q15.c **** 
  167:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q15.c ****   /* Loop unrolling: Compute remaining outputs */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 37
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 37
 
 
  168:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q15.c ****   blkCnt = (blockSize - 1U) % 4U;
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  710              		.loc 8 183 8 is_stmt 0 view .LVU204
  711 0014 E645     		cmp	lr, ip
  712 0016 F9DA     		bge	.L44
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 38
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 38
 
 
  186:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q15.c ****       outIndex = blockSize - blkCnt;
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   13:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q31.c ****  *
   14:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q31.c ****  * SPDX-License-Identifier: Apache-2.0
   15:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q31.c ****  *
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 39
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 39
 
 
   16:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q31.c ****  * Licensed under the Apache License, Version 2.0 (the License); you may
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   70:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q31.c ****         mve_pred16_t    p = vctp32q(blkCnt);
   71:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q31.c ****         q31x4_t         extremIdxVal = vld1q_z_s32(pSrc, p);
   72:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q31.c ****         /*
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 40
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 40
 
 
   73:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q31.c ****          * Get current max per lane and current index per lane
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  112:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q31.c ****         uint32_t index;                                /* index of maximum value */
  113:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q31.c **** #endif
  114:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q31.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 41
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 41
 
 
  115:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q31.c ****   /* Initialise index value to zero. */
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  163:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q31.c ****     /* Decrement loop counter */
  164:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q31.c ****     blkCnt--;
  165:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q31.c ****   }
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 42
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 42
 
 
  166:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q31.c **** 
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  791              		.loc 9 183 5 is_stmt 1 view .LVU232
  183:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q31.c ****     {
  792              		.loc 9 183 8 is_stmt 0 view .LVU233
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 43
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 43
 
 
  793 0014 AE42     		cmp	r6, r5
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
    3:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q7.c ****  * Title:        arm_max_q7.c
    4:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q7.c ****  * Description:  Maximum value of a Q7 vector
    5:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q7.c ****  *
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 44
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 44
 
 
    6:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q7.c ****  * $Date:        23 April 2021
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   60:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q7.c ****     q7_t           maxValue = Q7_MIN;
   61:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q7.c ****     uint8x16_t     indexVec;
   62:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q7.c ****     uint8x16_t     extremIdxVec;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 45
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 45
 
 
   63:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q7.c ****     mve_pred16_t   p0;
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  117:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q7.c ****         q7_t      curBlkExtr = Q7_MIN;
  118:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q7.c ****         uint32_t  curBlkPos = 0;
  119:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q7.c ****         uint32_t  curBlkIdx = 0;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 46
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 46
 
 
  120:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q7.c ****         /*
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  848              		.loc 10 162 9 is_stmt 1 view .LVU246
  163:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q7.c ****         uint32_t blkCnt, outIndex;                     /* Loop counter */
  849              		.loc 10 163 9 view .LVU247
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 47
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 47
 
 
  164:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q7.c **** 
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  212:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q7.c ****       outIndex = index + 4U;
  213:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q7.c ****     }
  214:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q7.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 48
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 48
 
 
  215:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q7.c ****     index += 4U;
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  234:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q7.c **** 
  876              		.loc 10 234 12 is_stmt 0 view .LVU260
  877 0010 10F901CB 		ldrsb	ip, [r0], #1
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 49
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 49
 
 
  878              	.LVL108:
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
    6:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_no_idx_f32.c ****  * $Date:        23 April 2021
    7:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_no_idx_f32.c ****  * $Revision:    V1.9.0
    8:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_no_idx_f32.c ****  *
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 50
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 50
 
 
    9:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_no_idx_f32.c ****  * Target Processor: Cortex-M and Cortex-A cores
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   63:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_no_idx_f32.c ****    uint32_t    blkCnt;
   64:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_no_idx_f32.c **** 
   65:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_no_idx_f32.c ****    /* Loop unrolling: Compute 4 outputs at a time */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 51
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 51
 
 
   66:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_no_idx_f32.c ****    blkCnt = blockSize >> 2U;
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  922              		.loc 11 114 4 view .LVU274
  115:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_no_idx_f32.c ****    float32_t   newVal;
  923              		.loc 11 115 4 view .LVU275
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 52
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 52
 
 
  116:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_no_idx_f32.c **** 
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  131:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_max_no_idx_f32.c ****    *pResult = maxValue;
  955              		.loc 11 131 4 is_stmt 1 view .LVU288
  956              		.loc 11 131 13 is_stmt 0 view .LVU289
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 53
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 53
 
 
  957 001e 82ED007A 		vstr.32	s14, [r2]
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   35:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_f32.c **** 
   36:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_f32.c **** /**
   37:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_f32.c ****   @addtogroup mean
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 54
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 54
 
 
   38:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_f32.c ****   @{
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   92:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_f32.c **** #if defined(ARM_MATH_NEON_EXPERIMENTAL) && !defined(ARM_MATH_AUTOVECTORIZE)
   93:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_f32.c **** void arm_mean_f32(
   94:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_f32.c ****   const float32_t * pSrc,
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 55
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 55
 
 
   95:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_f32.c ****   uint32_t blockSize,
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  980              		@ args = 0, pretend = 0, frame = 8
  981              		@ frame_needed = 0, uses_anonymous_args = 0
  982              		@ link register save eliminated.
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 56
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 56
 
 
  983              		.loc 12 146 1 is_stmt 0 view .LVU292
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  181:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_f32.c ****   {
  182:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_f32.c ****     /* C = (A[0] + A[1] + A[2] + ... + A[blockSize-1]) */
  183:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_f32.c ****     sum += *pSrc++;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 57
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 57
 
 
  1001              		.loc 12 183 5 is_stmt 1 view .LVU300
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
    1:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q15.c **** /* ----------------------------------------------------------------------
    2:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q15.c ****  * Project:      CMSIS DSP Library
    3:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q15.c ****  * Title:        arm_mean_q15.c
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 58
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 58
 
 
    4:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q15.c ****  * Description:  Mean value of a Q15 vector
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   58:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q15.c ****   const q15_t * pSrc,
   59:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q15.c ****         uint32_t blockSize,
   60:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q15.c ****         q15_t * pResult)
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 59
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 59
 
 
   61:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q15.c **** {
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  109:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q15.c **** #if defined (ARM_MATH_LOOPUNROLL)
  110:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q15.c **** 
  111:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q15.c ****   /* Loop unrolling: Compute 4 outputs at a time */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 60
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 60
 
 
  112:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q15.c ****   blkCnt = blockSize >> 2U;
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  1073              		.loc 13 142 9 view .LVU321
  1074 000e F444     		add	ip, ip, lr
  1075              	.LVL129:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 61
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 61
 
 
  143:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q15.c **** 
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
    2:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q31.c ****  * Project:      CMSIS DSP Library
    3:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q31.c ****  * Title:        arm_mean_q31.c
    4:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q31.c ****  * Description:  Mean value of a Q31 vector
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 62
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 62
 
 
    5:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q31.c ****  *
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   59:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q31.c ****         q31_t * pResult)
   60:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q31.c **** {
   61:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q31.c ****     uint32_t  blkCnt;           /* loop counters */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 63
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 63
 
 
   62:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q31.c ****     q31x4_t vecSrc;
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  100:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q31.c ****         q63_t sum = 0;                                 /* Temporary result storage */
  1134              		.loc 14 100 9 view .LVU335
  1135              	.LVL135:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 64
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 64
 
 
  101:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q31.c **** 
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  1152 0010 53F8044B 		ldr	r4, [r3], #4
  1153              	.LVL139:
  1154              		.loc 14 135 9 view .LVU344
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 65
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 65
 
 
  1155 0014 2018     		adds	r0, r4, r0
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
    5:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q7.c ****  *
    6:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q7.c ****  * $Date:        23 April 2021
    7:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q7.c ****  * $Revision:    V1.9.0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 66
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 66
 
 
    8:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q7.c ****  *
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   62:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q7.c **** {
   63:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q7.c ****     uint32_t  blkCnt;           /* loop counters */
   64:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q7.c ****     q7x16_t vecSrc;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 67
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 67
 
 
   65:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q7.c ****     q31_t     sum = 0L;
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  113:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q7.c ****   while (blkCnt > 0U)
  114:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q7.c ****   {
  115:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q7.c ****     /* C = (A[0] + A[1] + A[2] + ... + A[blockSize-1]) */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 68
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 68
 
 
  116:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q7.c ****     in = read_q7x4_ia ((q7_t **) &pSrc);
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  1227              		.loc 15 142 11 is_stmt 0 view .LVU369
  1228 0010 013B     		subs	r3, r3, #1
  1229              	.LVL151:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 69
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 69
 
 
  136:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q7.c ****   {
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   10:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c ****  * -------------------------------------------------------------------- */
   11:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c **** /*
   12:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c ****  * Copyright (C) 2010-2021 ARM Limited or its affiliates. All rights reserved.
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 70
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 70
 
 
   13:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c ****  *
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   67:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c ****   float32_t * pResult,
   68:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c ****   uint32_t * pIndex)
   69:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c **** {
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 71
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 71
 
 
   70:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c ****     uint32_t  blkCnt;           /* loop counters */
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  124:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c **** 
  125:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c ****     while (blkCnt > 0U)
  126:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c ****     {
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 72
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 72
 
 
  127:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c ****       /* Initialize minVal to the next consecutive values one by one */
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  181:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c **** 
  182:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c ****       blkCnt = blockSize - 1;
  183:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 73
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 73
 
 
  184:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c ****       while (blkCnt > 0U)
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  238:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c ****       while (blkCnt > 0U)
  239:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c ****       {
  240:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c ****         /* Initialize maxVal to the next consecutive values one by one */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 74
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 74
 
 
  241:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c ****         maxVal1 = *pSrc++;
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  1283              		.loc 16 278 7 is_stmt 0 view .LVU384
  1284 0002 B0EC017A 		vldmia.32	r0!, {s14}
  1285              	.LVL157:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 75
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 75
 
 
  279:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c **** 
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  333:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c ****   blkCnt = (blockSize - 1U);
  1286              		.loc 16 333 3 is_stmt 1 view .LVU385
  1287              		.loc 16 333 10 is_stmt 0 view .LVU386
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 76
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 76
 
 
  1288 0006 4C1E     		subs	r4, r1, #1
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  1316              		.loc 16 347 7 view .LVU398
  347:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c ****     }
  1317              		.loc 16 347 16 is_stmt 0 view .LVU399
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 77
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 77
 
 
  1318 001e 0D1B     		subs	r5, r1, r4
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   14:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q15.c ****  * SPDX-License-Identifier: Apache-2.0
   15:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q15.c ****  *
   16:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q15.c ****  * Licensed under the Apache License, Version 2.0 (the License); you may
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 78
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 78
 
 
   17:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q15.c ****  * not use this file except in compliance with the License.
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   71:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q15.c ****     do {
   72:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q15.c ****         mve_pred16_t    p = vctp16q(blkCnt);
   73:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q15.c ****         q15x8_t         extremIdxVal = vld1q_z_s16(pSrc, p);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 79
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 79
 
 
   74:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q15.c ****         /*
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  115:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q15.c **** 
  116:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q15.c ****   /* Initialise index value to zero. */
  117:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q15.c ****   outIndex = 0U;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 80
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 80
 
 
  1367              		.loc 17 117 3 view .LVU411
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  166:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q15.c ****   }
  167:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q15.c **** 
  168:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q15.c ****   /* Loop unrolling: Compute remaining outputs */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 81
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 81
 
 
  169:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q15.c ****   blkCnt = (blockSize - 1U) % 4U;
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  1397              		.loc 17 184 8 is_stmt 0 view .LVU425
  1398 0014 E645     		cmp	lr, ip
  1399 0016 F9DD     		ble	.L104
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 82
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 82
 
 
  187:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q15.c ****       outIndex = blockSize - blkCnt;
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   13:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q31.c ****  *
   14:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q31.c ****  * SPDX-License-Identifier: Apache-2.0
   15:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q31.c ****  *
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 83
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 83
 
 
   16:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q31.c ****  * Licensed under the Apache License, Version 2.0 (the License); you may
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   70:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q31.c ****     do {
   71:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q31.c ****         mve_pred16_t    p = vctp32q(blkCnt);
   72:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q31.c ****         q31x4_t         extremIdxVal = vld1q_z_s32(pSrc, p);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 84
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 84
 
 
   73:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q31.c ****         /*
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  112:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q31.c **** #if defined (ARM_MATH_LOOPUNROLL)
  113:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q31.c ****         uint32_t index;                                /* index of maximum value */
  114:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q31.c **** #endif
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 85
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 85
 
 
  115:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q31.c **** 
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  163:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q31.c **** 
  164:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q31.c ****     /* Decrement loop counter */
  165:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q31.c ****     blkCnt--;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 86
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 86
 
 
  166:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q31.c ****   }
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  184:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q31.c ****     {
  1478              		.loc 18 184 5 is_stmt 1 view .LVU453
  184:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q31.c ****     {
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 87
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 87
 
 
  1479              		.loc 18 184 8 is_stmt 0 view .LVU454
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
    2:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q7.c ****  * Project:      CMSIS DSP Library
    3:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q7.c ****  * Title:        arm_min_q7.c
    4:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q7.c ****  * Description:  Minimum value of a Q7 vector
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 88
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 88
 
 
    5:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q7.c ****  *
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   59:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q7.c ****     uint32_t  blkCnt;           /* loop counters */
   60:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q7.c ****     q7x16_t        vecSrc;
   61:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q7.c ****     q7x16_t        curExtremValVec = vdupq_n_s8(Q7_MAX);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 89
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 89
 
 
   62:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q7.c ****     q7_t            minValue = Q7_MAX,temp;
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  116:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q7.c ****         minValue = temp;
  117:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q7.c ****         idx = blockSize - blkCnt;
  118:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q7.c ****       }
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 90
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 90
 
 
  119:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q7.c ****   
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  173:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q7.c ****         if (*pResult < curBlkExtr)
  174:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q7.c ****         {
  175:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q7.c ****             curBlkExtr = *pResult;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 91
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 91
 
 
  176:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q7.c ****             curBlkPos = *pIndex;
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  211:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q7.c ****     /* Initialize minVal to next consecutive values one by one */
  212:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q7.c ****     minVal = *pSrc++;
  213:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q7.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 92
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 92
 
 
  214:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q7.c ****     /* compare for the minimum value */
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  1550              		.loc 19 259 9 view .LVU476
  1551 000a 00E0     		b	.L115
  1552              	.LVL194:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 93
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 93
 
 
  1553              	.L116:
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  277:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q7.c ****   *pResult = out;
  1581              		.loc 19 277 3 is_stmt 1 view .LVU488
  1582              		.loc 19 277 12 is_stmt 0 view .LVU489
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 94
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 94
 
 
  1583 001e 82F800E0 		strb	lr, [r2]
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   34:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_f32.c **** 
   35:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_f32.c **** /**
   36:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_f32.c ****   @defgroup power Power
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 95
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 95
 
 
   37:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_f32.c **** 
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   91:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_f32.c ****     }
   92:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_f32.c ****     sum = vecAddAcrossF32Mve(sumVec);
   93:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 96
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 96
 
 
   94:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_f32.c ****     /*
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  148:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_f32.c **** 
  149:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_f32.c ****   while (blkCnt > 0U)
  150:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_f32.c ****   {
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 97
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 97
 
 
  151:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_f32.c ****     /* C = A[0] * A[0] + A[1] * A[1] + A[2] * A[2] + ... + A[blockSize-1] * A[blockSize-1] */
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  197:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_f32.c ****   }
  198:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_f32.c **** 
  199:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_f32.c ****   /* Loop unrolling: Compute remaining outputs */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 98
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 98
 
 
  200:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_f32.c ****   blkCnt = blockSize % 0x4U;
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  1641 0018 82ED007A 		vstr.32	s14, [r2]
  223:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_f32.c **** }
  1642              		.loc 20 223 1 view .LVU512
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 99
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 99
 
 
  1643 001c 7047     		bx	lr
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   38:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q15.c ****  */
   39:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q15.c **** 
   40:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q15.c **** /**
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 100
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 100
 
 
   41:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q15.c ****   @brief         Sum of the squares of the elements of a Q15 vector.
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   95:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q15.c ****       blkCnt--;
   96:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q15.c ****     }
   97:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q15.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 101
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 101
 
 
   98:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q15.c ****     *pResult = sum;
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  137:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q15.c ****     in = *pSrc++;
  138:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q15.c ****     sum += ((q31_t) in * in);
  139:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q15.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 102
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 102
 
 
  140:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q15.c ****     in = *pSrc++;
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  1702 0016 0139     		subs	r1, r1, #1
  1703              	.LVL214:
  1704              	.L126:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 103
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 103
 
 
  158:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q15.c ****   {
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   21:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q31.c ****  *
   22:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q31.c ****  * Unless required by applicable law or agreed to in writing, software
   23:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q31.c ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 104
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 104
 
 
   24:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q31.c ****  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   78:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q31.c ****         blkCnt --;
   79:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q31.c ****         pSrc += 4;
   80:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q31.c ****     }
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 105
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 105
 
 
   81:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q31.c **** 
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  120:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q31.c ****     in = *pSrc++;
  121:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q31.c ****     sum += ((q63_t) in * in) >> 14U;
  122:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q31.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 106
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 106
 
 
  123:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q31.c ****     in = *pSrc++;
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  1773 001c 9B0B     		lsrs	r3, r3, #14
  1774 001e 43EA8C43 		orr	r3, r3, ip, lsl #18
  1775              		.loc 22 152 9 view .LVU551
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 107
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 107
 
 
  1776 0022 1C19     		adds	r4, r3, r4
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   14:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q7.c ****  * SPDX-License-Identifier: Apache-2.0
   15:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q7.c ****  *
   16:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q7.c ****  * Licensed under the Apache License, Version 2.0 (the License); you may
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 108
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 108
 
 
   17:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q7.c ****  * not use this file except in compliance with the License.
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   71:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q7.c ****         vecSrc = vldrbq_s8(pSrc);
   72:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q7.c ****         /*
   73:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q7.c ****          * sum lanes
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 109
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 109
 
 
   74:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q7.c ****          */
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  114:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q7.c **** #if defined (ARM_MATH_LOOPUNROLL)
  115:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q7.c **** 
  116:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q7.c ****   /* Loop unrolling: Compute 4 outputs at a time */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 110
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 110
 
 
  117:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q7.c ****   blkCnt = blockSize >> 2U;
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  162:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q7.c ****   {
  163:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q7.c ****     /* C = A[0] * A[0] + A[1] * A[1] + ... + A[blockSize-1] * A[blockSize-1] */
  164:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q7.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 111
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 111
 
 
  165:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q7.c ****     /* Compute Power and store result in a temporary variable, sum. */
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
    4:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_f32.c ****  * Description:  Root mean square value of the elements of a floating-point vector
    5:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_f32.c ****  *
    6:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_f32.c ****  * $Date:        23 April 2021
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 112
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 112
 
 
    7:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_f32.c ****  * $Revision:    V1.9.0
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   61:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_f32.c **** #if defined(ARM_MATH_MVEF) && !defined(ARM_MATH_AUTOVECTORIZE)
   62:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_f32.c **** void arm_rms_f32(
   63:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_f32.c ****   const float32_t * pSrc,
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 113
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 113
 
 
   64:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_f32.c ****   uint32_t blockSize,
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  118:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_f32.c **** 
  119:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_f32.c ****     /* Decrement the loop counter */
  120:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_f32.c ****     blkCnt--;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 114
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 114
 
 
  121:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_f32.c ****   }
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  156:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_f32.c ****     sum += in * in;
  157:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_f32.c **** 
  158:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_f32.c ****     /* Decrement loop counter */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 115
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 115
 
 
  159:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_f32.c ****     blkCnt--;
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  1920 0020 F6D1     		bne	.L139
  182:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_f32.c ****   }
  183:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 116
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 116
 
 
  184:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_f32.c ****   /* Compute Rms and store result in destination */
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   43:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h ****    */
   44:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h **** 
   45:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h **** #define FAST_MATH_TABLE_SIZE  512
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 117
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 117
 
 
   46:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h **** #define FAST_MATH_Q31_SHIFT   (32 - 10)
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  100:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h ****   @} end of sin group
  101:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h ****  */
  102:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 118
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 118
 
 
  103:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h **** /**
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  157:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h ****  */
  158:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h ****   void arm_vexp_f32(
  159:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h ****   const float32_t * pSrc,
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 119
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 119
 
 
  160:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h ****         float32_t * pDst,
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  207:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h ****       *pOut = sqrtf(in);
  208:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h ****   #endif
  209:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 120
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 120
 
 
  210:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h **** #elif defined ( __ICCARM__ )
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  1974              		.loc 24 186 1 view .LVU615
  1975 0048 FAE7     		b	.L137
  1976              	.L147:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 121
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 121
 
 
  1977 004a 00BF     		.align	2
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   40:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_q15.c **** /**
   41:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_q15.c ****   @brief         Root Mean Square of the elements of a Q15 vector.
   42:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_q15.c ****   @param[in]     pSrc       points to the input vector
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 122
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 122
 
 
   43:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_q15.c ****   @param[in]     blockSize  number of samples in input vector
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   79:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_q15.c ****         q15_t in;                                      /* Temporary variable to store input value *
  2012              		.loc 26 79 9 view .LVU620
   80:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_q15.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 123
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 123
 
 
   81:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_q15.c **** #if defined (ARM_MATH_LOOPUNROLL) && defined (ARM_MATH_DSP)
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   78:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_q15.c ****         q15_t in;                                      /* Temporary variable to store input value *
  2017              		.loc 26 78 15 view .LVU624
  2018 000a 0020     		movs	r0, #0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 124
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 124
 
 
  2019              	.LVL246:
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  2057              	.LVL255:
  2058              		.loc 26 143 16 view .LVU639
  2059 002c C00B     		lsrs	r0, r0, #15
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 125
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 125
 
 
  2060 002e 40EA4140 		orr	r0, r0, r1, lsl #17
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   18:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_q31.c ****  * You may obtain a copy of the License at
   19:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_q31.c ****  *
   20:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_q31.c ****  * www.apache.org/licenses/LICENSE-2.0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 126
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 126
 
 
   21:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_q31.c ****  *
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   75:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_q31.c **** #else
   76:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_q31.c **** void arm_rms_q31(
   77:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_q31.c ****   const q31_t * pSrc,
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 127
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 127
 
 
   78:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_q31.c ****         uint32_t blockSize,
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  113:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_q31.c **** 
  114:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_q31.c **** #else
  115:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_q31.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 128
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 128
 
 
  116:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_q31.c ****   /* Initialize blkCnt with number of samples */
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  2153              	.LVL269:
  2154              	.L153:
  121:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_q31.c ****   {
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 129
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 129
 
 
  2155              		.loc 27 121 9 is_stmt 1 view .LVU668
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   34:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/none.h **** 
   35:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/none.h **** */
   36:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/none.h ****  
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 130
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 130
 
 
   37:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/none.h **** #ifndef _NONE_H_
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   91:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/none.h ****       }
   92:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/none.h ****     }
   93:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/none.h ****     return val;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 131
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 131
 
 
   94:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/none.h ****   }
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  140:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/none.h ****       ((0x7FFFFFFF ^ ((q31_t) (x >> 63)))) : (q31_t) x;
  2179              		.loc 28 140 44 view .LVU676
  2180 0042 B3EBD17F 		cmp	r3, r1, lsr #31
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 132
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 132
 
 
  2181 0046 01D0     		beq	.L155
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   28:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q15.c **** 
   29:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q15.c **** #include "dsp/statistics_functions.h"
   30:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q15.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 133
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 133
 
 
   31:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q15.c **** /**
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  2220              		.cfi_offset 6, -20
  2221              		.cfi_offset 7, -16
  2222              		.cfi_offset 8, -12
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 134
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 134
 
 
  2223              		.cfi_offset 9, -8
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  113:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q15.c ****     in = *pSrc++;
  114:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q15.c ****     sumOfSquares += (in * in);
  115:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q15.c ****     sum += in;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 135
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 135
 
 
  116:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q15.c **** 
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  143:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q15.c **** 
  144:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q15.c ****   while (blkCnt > 0U)
  145:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q15.c ****   {
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 136
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 136
 
 
  146:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q15.c ****     /* C = A[0] * A[0] + A[1] * A[1] + ... + A[blockSize-1] * A[blockSize-1] */
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  161:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q15.c **** 
  162:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q15.c ****   /* Compute square of mean */
  163:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q15.c ****   squareOfMean = (q31_t) ((q63_t) sum * sum / (q63_t)(blockSize * (blockSize - 1U)));
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 137
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 137
 
 
  2297              		.loc 29 163 3 is_stmt 1 view .LVU713
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  2347              		.thumb_func
  2349              	arm_std_q31:
  2350              	.LVL296:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 138
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 138
 
 
  2351              	.LFB148:
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   53:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q31.c ****                    There is no saturation on intermediate additions.
   54:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q31.c ****                    If the accumulator overflows it wraps around and distorts the result.
   55:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q31.c ****                    In order to avoid overflows completely the input signal must be scaled down by
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 139
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 139
 
 
   56:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q31.c ****                    log2(blockSize)-8 bits, as a total of blockSize additions are performed internal
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   83:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q31.c ****   if (blockSize <= 1U)
  2380              		.loc 30 83 3 view .LVU733
  2381              		.loc 30 83 6 is_stmt 0 view .LVU734
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 140
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 140
 
 
  2382 0008 0129     		cmp	r1, #1
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   80:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q31.c ****         q31_t in;                                      /* Temporary variable to store input value *
  2391              		.loc 30 80 15 view .LVU737
  2392 0014 0146     		mov	r1, r0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 141
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 141
 
 
  2393              	.LVL299:
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  2430 003e DB19     		adds	r3, r3, r7
  2431              	.LVL306:
  2432              		.loc 30 140 9 view .LVU752
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 142
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 142
 
 
  2433 0040 1F46     		mov	r7, r3
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  152:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q31.c ****   /* Compute standard deviation and store result in destination */
  153:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q31.c ****   arm_sqrt_q31((meanOfSquares - squareOfMean) >> 15U, pResult);
  2475              		.loc 30 153 3 is_stmt 1 view .LVU767
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 143
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 143
 
 
  2476              		.loc 30 153 31 is_stmt 0 view .LVU768
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   21:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_f32.c ****  *
   22:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_f32.c ****  * Unless required by applicable law or agreed to in writing, software
   23:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_f32.c ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 144
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 144
 
 
   24:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_f32.c ****  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   78:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_f32.c ****     if (blockSize <= 1U) {
   79:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_f32.c ****         *pResult = 0;
   80:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_f32.c ****         return;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 145
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 145
 
 
   81:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_f32.c ****     }
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  135:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_f32.c ****   float32x4_t avg;
  136:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_f32.c **** 
  137:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_f32.c ****   arm_mean_f32(pSrc,blockSize,&mean);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 146
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 146
 
 
  138:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_f32.c ****   avg = vdupq_n_f32(mean);
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  187:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_f32.c ****         uint32_t blkCnt;                               /* Loop counter */
  2516              		.loc 31 187 9 view .LVU775
  188:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_f32.c ****         float32_t sum = 0.0f;                          /* Temporary result storage */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 147
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 147
 
 
  2517              		.loc 31 188 9 view .LVU776
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  2533 0008 0C46     		mov	r4, r1
  188:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_f32.c ****         float32_t fSum = 0.0f;
  2534              		.loc 31 188 19 view .LVU785
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 148
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 148
 
 
  2535 000a DFED167A 		vldr.32	s15, .L182
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  2570 0028 B8EE476A 		vcvt.f32.u32	s12, s14
  2571              		.loc 31 239 9 view .LVU797
  2572 002c C7EE866A 		vdiv.f32	s13, s15, s12
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 149
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 149
 
 
  2573              	.LVL324:
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  2587              	.LVL327:
  2588              		.loc 31 278 12 view .LVU805
  2589 003a 77EEE67A 		vsub.f32	s15, s15, s13
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 150
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 150
 
 
  2590              	.LVL328:
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  2636              	.LFB146:
  2637              		.file 32 "Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_f32.c"
    1:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_f32.c **** /* ----------------------------------------------------------------------
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 151
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 151
 
 
    2:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_f32.c ****  * Project:      CMSIS DSP Library
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   56:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_f32.c ****   There are separate functions for floating point, Q31, and Q15 data types.
   57:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_f32.c ****  */
   58:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 152
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 152
 
 
   59:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_std_f32.c **** /**
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  2669 0014 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
  2670 0018 05DB     		blt	.L189
  218:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h **** #endif
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 153
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 153
 
 
  2671              		.loc 25 218 7 is_stmt 1 view .LVU826
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  2720              		.file 33 "Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q15.c"
    1:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q15.c **** /* ----------------------------------------------------------------------
    2:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q15.c ****  * Project:      CMSIS DSP Library
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 154
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 154
 
 
    3:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q15.c ****  * Title:        arm_var_q15.c
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   57:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q15.c **** #if defined(ARM_MATH_MVEI) && !defined(ARM_MATH_AUTOVECTORIZE)
   58:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q15.c **** void arm_var_q15(
   59:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q15.c ****   const q15_t * pSrc,
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 155
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 155
 
 
   60:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q15.c ****         uint32_t blockSize,
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  114:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q15.c ****     meanOfSquares = arm_div_q63_to_q31(sumOfSquares, (blockSize - 1U));
  115:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q15.c **** 
  116:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q15.c ****     /* Compute square of mean */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 156
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 156
 
 
  117:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q15.c ****     squareOfMean = arm_div_q63_to_q31((q63_t)sum * sum, (q31_t)(blockSize * (blockSize - 1U)));
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  142:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q15.c ****   }
  143:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q15.c **** 
  144:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q15.c **** #if defined (ARM_MATH_LOOPUNROLL)
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 157
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 157
 
 
  145:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q15.c **** 
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  2753              		.loc 33 131 15 view .LVU847
  2754 0010 0020     		movs	r0, #0
  2755              	.LVL343:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 158
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 158
 
 
  131:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q15.c ****         q15_t in;                                      /* Temporary variable to store input value *
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   14:Drivers/CMSIS/Include/cmsis_gcc.h ****  * You may obtain a copy of the License at
   15:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
   16:Drivers/CMSIS/Include/cmsis_gcc.h ****  * www.apache.org/licenses/LICENSE-2.0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 159
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 159
 
 
   17:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   71:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
   72:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
   73:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 160
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 160
 
 
   74:Drivers/CMSIS/Include/cmsis_gcc.h ****   struct __attribute__((packed)) T_UINT32 { uint32_t v; };
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  128:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  129:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __enable_irq(void)
  130:Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 161
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 161
 
 
  131:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsie i" : : : "memory");
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  185:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  186:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  187:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 162
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 162
 
 
  188:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  242:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  243:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get Process Stack Pointer
  244:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current value of the Process Stack Pointer (PSP).
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 163
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 163
 
 
  245:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               PSP Register value
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  299:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               MSP Register value
  300:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  301:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_MSP(void)
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 164
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 164
 
 
  302:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  356:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_SP_NS(void)
  357:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  358:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 165
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 165
 
 
  359:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  413:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  414:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR primask, %0" : : "r" (priMask) : "memory");
  415:Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 166
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 166
 
 
  416:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  470:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
  471:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  472:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get Base Priority (non-secure)
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 167
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 167
 
 
  473:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current value of the non-secure Base Priority register when in secure state.
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  527:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_FAULTMASK(void)
  528:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  529:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 168
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 168
 
 
  530:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  584:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get Process Stack Pointer Limit
  585:Drivers/CMSIS/Include/cmsis_gcc.h ****   Devices without ARMv8-M Main Extensions (i.e. Cortex-M23) lack the non-secure
  586:Drivers/CMSIS/Include/cmsis_gcc.h ****   Stack Pointer Limit register hence zero is returned always in non-secure
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 169
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 169
 
 
  587:Drivers/CMSIS/Include/cmsis_gcc.h ****   mode.
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  641:Drivers/CMSIS/Include/cmsis_gcc.h ****   // without main extensions, the non-secure PSPLIM is RAZ/WI
  642:Drivers/CMSIS/Include/cmsis_gcc.h ****   (void)ProcStackPtrLimit;
  643:Drivers/CMSIS/Include/cmsis_gcc.h **** #else
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 170
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 170
 
 
  644:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR psplim, %0" : : "r" (ProcStackPtrLimit));
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  698:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  699:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current value of the non-secure Main Stack Pointer Limit(MSPLIM) when in sec
  700:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               MSPLIM Register value
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 171
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 171
 
 
  701:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  755:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  756:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  757:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif /* ((defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) || \
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 172
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 172
 
 
  758:Drivers/CMSIS/Include/cmsis_gcc.h ****            (defined (__ARM_ARCH_8M_BASE__ ) && (__ARM_ARCH_8M_BASE__ == 1))    ) */
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  812:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  813:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ##########################  Core Instruction Access  ######################### */
  814:Drivers/CMSIS/Include/cmsis_gcc.h **** /** \defgroup CMSIS_Core_InstructionInterface CMSIS Core Instruction Interface
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 173
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 173
 
 
  815:Drivers/CMSIS/Include/cmsis_gcc.h ****   Access to dedicated instructions
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  869:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  870:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  871:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 174
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 174
 
 
  872:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -10438,7 +10438,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  926:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  927:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  928:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 175
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 175
 
 
  929:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Reverse byte order (16 bit)
@@ -10498,7 +10498,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  983:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
  984:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  985:Drivers/CMSIS/Include/cmsis_gcc.h **** #if ((defined (__ARM_ARCH_7M__      ) && (__ARM_ARCH_7M__      == 1)) || \
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 176
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 176
 
 
  986:Drivers/CMSIS/Include/cmsis_gcc.h ****      (defined (__ARM_ARCH_7EM__     ) && (__ARM_ARCH_7EM__     == 1)) || \
@@ -10558,7 +10558,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
 1040:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
 1041:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   LDR Exclusive (16 bit)
 1042:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Executes a exclusive LDR instruction for 16 bit values.
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 177
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 177
 
 
 1043:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
@@ -10618,7 +10618,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
 1097:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]  value  Value to store
 1098:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to location
 1099:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return          0  Function succeeded
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 178
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 178
 
 
 1100:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return          1  Function failed
@@ -10678,7 +10678,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
 1154:Drivers/CMSIS/Include/cmsis_gcc.h **** __extension__ \
 1155:Drivers/CMSIS/Include/cmsis_gcc.h **** ({                          \
 1156:Drivers/CMSIS/Include/cmsis_gcc.h ****   int32_t __RES, __ARG1 = (ARG1); \
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 179
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 179
 
 
 1157:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM ("ssat %0, %1, %2" : "=r" (__RES) :  "I" (ARG2), "r" (__ARG1) ); \
@@ -10738,7 +10738,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
 1211:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
 1212:Drivers/CMSIS/Include/cmsis_gcc.h ****    return ((uint8_t) result);    /* Add explicit type cast here */
 1213:Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 180
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 180
 
 
 1214:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -10798,7 +10798,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
 1268:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]  value  Value to store
 1269:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to location
 1270:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 181
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 181
 
 
 1271:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __STRHT(uint16_t value, volatile uint16_t *ptr)
@@ -10858,7 +10858,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
 1325:Drivers/CMSIS/Include/cmsis_gcc.h **** {
 1326:Drivers/CMSIS/Include/cmsis_gcc.h ****   if (sat <= 31U)
 1327:Drivers/CMSIS/Include/cmsis_gcc.h ****   {
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 182
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 182
 
 
 1328:Drivers/CMSIS/Include/cmsis_gcc.h ****     const uint32_t max = ((1U << sat) - 1U);
@@ -10918,7 +10918,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
 1382:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return        value of type uint32_t at (*ptr)
 1383:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
 1384:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __LDA(volatile uint32_t *ptr)
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 183
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 183
 
 
 1385:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -10978,7 +10978,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
 1439:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("ldaexb %0, %1" : "=r" (result) : "Q" (*ptr) );
 1440:Drivers/CMSIS/Include/cmsis_gcc.h ****    return ((uint8_t) result);
 1441:Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 184
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 184
 
 
 1442:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -11038,7 +11038,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
 1496:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return          0  Function succeeded
 1497:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return          1  Function failed
 1498:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 185
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 185
 
 
 1499:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __STLEXH(uint16_t value, volatile uint16_t *ptr)
@@ -11098,7 +11098,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
 1553:Drivers/CMSIS/Include/cmsis_gcc.h **** 
 1554:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __SHADD8(uint32_t op1, uint32_t op2)
 1555:Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 186
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 186
 
 
 1556:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
@@ -11158,7 +11158,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
 1610:Drivers/CMSIS/Include/cmsis_gcc.h **** 
 1611:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __USUB8(uint32_t op1, uint32_t op2)
 1612:Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 187
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 187
 
 
 1613:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
@@ -11218,7 +11218,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
 1667:Drivers/CMSIS/Include/cmsis_gcc.h **** 
 1668:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __UQADD16(uint32_t op1, uint32_t op2)
 1669:Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 188
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 188
 
 
 1670:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
@@ -11278,7 +11278,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
 1724:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __UHSUB16(uint32_t op1, uint32_t op2)
 1725:Drivers/CMSIS/Include/cmsis_gcc.h **** {
 1726:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 189
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 189
 
 
 1727:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -11338,7 +11338,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
 1781:Drivers/CMSIS/Include/cmsis_gcc.h **** {
 1782:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
 1783:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 190
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 190
 
 
 1784:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("ssax %0, %1, %2" : "=r" (result) : "r" (op1), "r" (op2) );
@@ -11398,7 +11398,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
 1838:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
 1839:Drivers/CMSIS/Include/cmsis_gcc.h **** 
 1840:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("usada8 %0, %1, %2, %3" : "=r" (result) : "r" (op1), "r" (op2), "r" (op3) );
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 191
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 191
 
 
 1841:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
@@ -11458,7 +11458,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
 1895:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
 1896:Drivers/CMSIS/Include/cmsis_gcc.h **** }
 1897:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 192
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 192
 
 
 1898:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __SMUADX (uint32_t op1, uint32_t op2)
@@ -11518,7 +11518,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  2795              	.LBE94:
  207:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q15.c **** #else
  208:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q15.c ****     sumOfSquares += (in * in);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 193
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 193
 
 
  209:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q15.c **** #endif /* #if defined (ARM_MATH_DSP) */
@@ -11578,7 +11578,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  2836 0054 FFF7FEFF 		bl	__aeabi_ldivmod
  2837              	.LVL356:
  222:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q15.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 194
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 194
 
 
  223:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q15.c ****   /* mean of squares minus the square of mean. */
@@ -11638,7 +11638,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   27:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q31.c ****  */
   28:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q31.c **** 
   29:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q31.c **** #include "dsp/statistics_functions.h"
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 195
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 195
 
 
   30:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q31.c **** 
@@ -11698,7 +11698,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   84:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q31.c ****         /* C = (A[0] * A[0] + A[1] * A[1] + ... + A[blockSize-1] * A[blockSize-1]) */
   85:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q31.c ****         /* Compute Sum of squares of the input samples
   86:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q31.c ****          * and then store the result in a temporary variable, sumOfSquares. */
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 196
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 196
 
 
   87:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q31.c **** 
@@ -11758,7 +11758,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  2873              		.cfi_offset 4, -36
  2874              		.cfi_offset 5, -32
  2875              		.cfi_offset 6, -28
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 197
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 197
 
 
  2876              		.cfi_offset 7, -24
@@ -11818,7 +11818,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  165:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q31.c ****     in = *pSrc++ >> 8U;
  166:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q31.c ****     sumOfSquares += ((q63_t) (in) * (in));
  167:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q31.c ****     sum += in;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 198
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 198
 
 
  168:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q31.c **** 
@@ -11878,7 +11878,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  2921              		.loc 35 192 10 is_stmt 0 view .LVU901
  2922 0022 5CF8042B 		ldr	r2, [ip], #4
  2923              	.LVL365:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 199
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 199
 
 
  2924              		.loc 35 192 8 view .LVU902
@@ -11938,7 +11938,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  2966 0058 FFF7FEFF 		bl	__aeabi_ldivmod
  2967              	.LVL373:
  2968              		.loc 35 203 17 view .LVU919
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 200
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 200
 
 
  2969 005c 8B46     		mov	fp, r1
@@ -11998,7 +11998,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  3017              		.thumb_func
  3019              	arm_absmax_f32:
  3020              	.LVL382:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 201
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 201
 
 
  3021              	.LFB152:
@@ -12058,7 +12058,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   53:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_f32.c ****   @param[in]     pSrc       points to the input vector
   54:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_f32.c ****   @param[in]     blockSize  number of samples in input vector
   55:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_f32.c ****   @param[out]    pResult    maximum value returned here
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 202
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 202
 
 
   56:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_f32.c ****   @param[out]    pIndex     index of maximum value returned here
@@ -12118,7 +12118,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  110:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_f32.c ****      */
  111:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_f32.c ****     p0 = vcmpgeq(curExtremValVec, maxValue);
  112:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_f32.c ****     indexVec = vpselq(curExtremIdxVec, vdupq_n_u32(blockSize), p0);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 203
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 203
 
 
  113:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_f32.c ****     /*
@@ -12178,7 +12178,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  167:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_f32.c ****     }                                                                                              
  168:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_f32.c ****                                                                                                    
  169:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_f32.c ****     cur_absmax = *pSrc++;                                                                          
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 204
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 204
 
 
  170:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_f32.c ****     cur_absmax = (cur_absmax > 0.0f) ? cur_absmax : -cur_absmax;                                   
@@ -12238,7 +12238,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  3027              		@ link register save eliminated.
  3028              		.loc 36 219 1 is_stmt 0 view .LVU933
  3029 0000 30B4     		push	{r4, r5}
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 205
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 205
 
 
  3030              	.LCFI58:
@@ -12298,7 +12298,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  247:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_f32.c **** 
  248:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_f32.c ****     /* Decrement loop counter */
  249:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_f32.c ****     blkCnt--;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 206
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 206
 
 
  3056              		.loc 36 249 5 is_stmt 1 view .LVU945
@@ -12358,7 +12358,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  3094 0034 30BC     		pop	{r4, r5}
  3095              	.LCFI59:
  3096              		.cfi_restore 5
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 207
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 207
 
 
  3097              		.cfi_restore 4
@@ -12418,7 +12418,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   38:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q15.c ****  */
   39:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q15.c **** 
   40:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q15.c **** /**
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 208
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 208
 
 
   41:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q15.c ****   @brief         Maximum value of absolute values of a Q15 vector.
@@ -12478,7 +12478,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   95:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q15.c ****     p0 = vcmpgeq(extremValVec, maxValue);
   96:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q15.c ****     extremIdxVec = vld1q_u16(extremIdxArr);
   97:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q15.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 209
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 209
 
 
   98:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q15.c ****     indexVec = vpselq(extremIdxVec, vdupq_n_u16(blockSize - 1), p0);
@@ -12538,7 +12538,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  122:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q15.c ****                                                                                                    
  123:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q15.c ****   /* Loop unrolling: Compute 4 outputs at a time */                                                
  124:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q15.c ****   blkCnt = (blockSize - 1U) >> 2U;                                                                 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 210
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 210
 
 
  3146              		.loc 37 124 3 discriminator 4 view .LVU974
@@ -12598,7 +12598,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  3188              		.loc 34 1694 3 discriminator 1 view .LVU988
 1696:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
  3189              		.loc 34 1696 3 discriminator 1 view .LVU989
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 211
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 211
 
 
  3190 0024 4FF00008 		mov	r8, #0
@@ -12658,7 +12658,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  139:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q15.c ****     cur_absmax = *pSrc++;                                                                          
  140:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q15.c ****     cur_absmax = (cur_absmax > 0) ? cur_absmax : (q15_t)__QSUB16(0, cur_absmax);                   
  3225              		.loc 37 140 16 discriminator 1 view .LVU998
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 212
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 212
 
 
  3226 003a 0FFA8EFE 		sxth	lr, lr
@@ -12718,7 +12718,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  3264              	.LVL410:
 1697:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  3265              		.loc 34 1697 3 discriminator 1 view .LVU1008
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 213
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 213
 
 
 1697:Drivers/CMSIS/Include/cmsis_gcc.h **** }
@@ -12778,7 +12778,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  130:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q15.c ****     /* compare for the extrema value */                                                            
  3296              		.loc 37 130 16 is_stmt 0 view .LVU1020
  3297 0066 BEF1000F 		cmp	lr, #0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 214
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 214
 
 
  3298 006a DBDD     		ble	.L232
@@ -12838,7 +12838,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  3336 0084 F446     		mov	ip, lr
  3337              	.LVL425:
  3338              	.L219:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 215
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 215
 
 
  147:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q15.c ****     cur_absmax = (cur_absmax > 0) ? cur_absmax : (q15_t)__QSUB16(0, cur_absmax);                   
@@ -12898,7 +12898,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  157:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q15.c ****     {                                                                                              
  3377              		.loc 37 157 8 is_stmt 0 discriminator 4 view .LVU1053
  3378 00a4 8445     		cmp	ip, r0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 216
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 216
 
 
  3379 00a6 D8DA     		bge	.L223
@@ -12958,7 +12958,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  3417              	.LBE106:
  174:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q15.c ****   {                                                                                                
  175:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q15.c ****     cur_absmax = *pSrc++;                                                                          
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 217
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 217
 
 
  176:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q15.c ****     cur_absmax = (cur_absmax > 0) ? cur_absmax : (q15_t)__QSUB16(0, cur_absmax);                   
@@ -13018,7 +13018,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  3452 00d4 F446     		mov	ip, lr
  3453 00d6 F3E7     		b	.L227
  3454              	.LVL447:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 218
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 218
 
 
  3455              	.L236:
@@ -13078,7 +13078,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   27:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q31.c ****  */
   28:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q31.c **** 
   29:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q31.c **** #include "dsp/statistics_functions.h"
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 219
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 219
 
 
   30:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q31.c **** 
@@ -13138,7 +13138,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   84:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q31.c ****         indexVec += 4;
   85:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q31.c ****         pSrc += 4;
   86:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q31.c ****         blkCnt -= 4;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 220
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 220
 
 
   87:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q31.c ****     }
@@ -13198,7 +13198,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  3502              	.LVL450:
  118:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q31.c ****   out = (out > 0) ? out : (q31_t)__QSUB(0, out);                                                   
  3503              		.loc 38 118 3 is_stmt 1 view .LVU1095
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 221
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 221
 
 
  3504              		.loc 38 118 25 is_stmt 0 view .LVU1096
@@ -13258,7 +13258,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
 1959:Drivers/CMSIS/Include/cmsis_gcc.h **** 
 1960:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("smusd %0, %1, %2" : "=r" (result) : "r" (op1), "r" (op2) );
 1961:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 222
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 222
 
 
 1962:Drivers/CMSIS/Include/cmsis_gcc.h **** }
@@ -13318,7 +13318,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
 2016:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("smlsldx %0, %1, %2, %3" : "=r" (llr.w32[1]), "=r" (llr.w32[0]): "r" (op1), "r" (
 2017:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
 2018:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 223
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 223
 
 
 2019:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(llr.w64);
@@ -13378,7 +13378,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  3553              		.syntax unified
  3554              	@ 2042 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
  3555 0026 84FAA8F4 		qsub r4, r8, r4
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 224
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 224
 
 
  3556              	@ 0 "" 2
@@ -13438,7 +13438,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  3604              	.LBE115:
  3605              	.LBE114:
  3606 003e 1CE0     		b	.L245
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 225
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 225
 
 
  3607              	.LVL461:
@@ -13498,7 +13498,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  154:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q31.c ****     cur_absmax = *pSrc++;                                                                          
  155:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q31.c ****     cur_absmax = (cur_absmax > 0) ? cur_absmax : (q31_t)__QSUB(0, cur_absmax);                     
  156:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q31.c ****     if (cur_absmax > out)                                                                          
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 226
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 226
 
 
  157:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q31.c ****     {                                                                                              
@@ -13558,7 +13558,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  3664              	.LVL471:
  134:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q31.c ****       outIndex = index + 1U;                                                                       
  3665              		.loc 38 134 11 view .LVU1145
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 227
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 227
 
 
  3666 0062 2646     		mov	r6, r4
@@ -13618,7 +13618,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  3704              		.loc 38 148 8 is_stmt 0 discriminator 4 view .LVU1161
  3705 007a A642     		cmp	r6, r4
  3706 007c 02DA     		bge	.L246
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 228
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 228
 
 
  150:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q31.c ****       outIndex = index + 3U;                                                                       
@@ -13678,7 +13678,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  167:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q31.c ****                                                                                                    
  168:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q31.c ****   /* Loop unrolling: Compute remaining outputs */                                                  
  169:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q31.c ****   blkCnt = (blockSize - 1U) % 4U;                                                                  
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 229
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 229
 
 
  3745              		.loc 38 169 3 is_stmt 1 view .LVU1177
@@ -13738,7 +13738,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  3781 00ac 45B1     		cbz	r5, .L261
  174:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q31.c ****     cur_absmax = (cur_absmax > 0) ? cur_absmax : (q31_t)__QSUB(0, cur_absmax);                     
  3782              		.loc 38 174 5 view .LVU1189
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 230
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 230
 
 
  3783              	.LVL494:
@@ -13798,7 +13798,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  3823              		.syntax unified
  3824              		.thumb
  3825              		.thumb_func
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 231
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 231
 
 
  3827              	arm_absmax_q7:
@@ -13858,7 +13858,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   51:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q7.c **** #include <stdint.h>
   52:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q7.c **** #include "arm_helium_utils.h"
   53:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q7.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 232
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 232
 
 
   54:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q7.c **** #define MAX_BLKSZ_S8  (UINT8_MAX+1)
@@ -13918,7 +13918,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  108:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q7.c ****   const q7_t * pSrc,
  109:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q7.c ****         uint32_t blockSize,
  110:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q7.c ****         q7_t * pResult,
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 233
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 233
 
 
  111:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q7.c ****         uint32_t * pIndex)
@@ -13978,7 +13978,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  165:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q7.c ****         q7_t * pResult,
  166:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q7.c ****         uint32_t * pIndex)
  167:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q7.c **** {
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 234
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 234
 
 
  3831              		.loc 39 167 1 is_stmt 1 view -0
@@ -14038,7 +14038,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  3868              		.loc 39 178 9 is_stmt 0 discriminator 4 view .LVU1220
  3869 0012 0024     		movs	r4, #0
  173:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q7.c ****   /* Load first input value that act as reference value for comparision */                         
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 235
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 235
 
 
  3870              		.loc 39 173 12 discriminator 4 view .LVU1221
@@ -14098,7 +14098,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  3913              		.thumb
  3914              		.syntax unified
  3915              	.LBE123:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 236
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 236
 
 
  3916              	.LBE122:
@@ -14158,7 +14158,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  3949              		.loc 34 1597 3 discriminator 1 view .LVU1242
 1599:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
  3950              		.loc 34 1599 3 discriminator 1 view .LVU1243
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 237
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 237
 
 
  3951 0040 4FF00008 		mov	r8, #0
@@ -14218,7 +14218,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  210:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q7.c ****     }                                                                                              
  211:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q7.c ****                                                                                                    
  212:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q7.c ****     cur_absmax = *pSrc++;                                                                          
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 238
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 238
 
 
  213:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q7.c ****     cur_absmax = (cur_absmax > 0) ? cur_absmax : (q7_t)__QSUB8(0, cur_absmax);                     
@@ -14278,7 +14278,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  4020              		.loc 39 192 7 is_stmt 1 view .LVU1265
  4021              	.LVL522:
  193:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q7.c ****     }                                                                                              
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 239
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 239
 
 
  4022              		.loc 39 193 7 view .LVU1266
@@ -14338,7 +14338,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  4060 008a BEF1000F 		cmp	lr, #0
  4061 008e D7DD     		ble	.L284
  4062              	.LVL531:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 240
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 240
 
 
  4063              	.L270:
@@ -14398,7 +14398,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  216:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q7.c ****       outIndex = index + 4U;                                                                       
  4101              		.loc 39 216 11 view .LVU1299
  4102 00aa 8446     		mov	ip, r0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 241
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 241
 
 
  4103 00ac D5E7     		b	.L273
@@ -14458,7 +14458,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  238:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q7.c ****     }                                                                                              
  239:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q7.c ****                                                                                                    
  240:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q7.c ****     /* Decrement loop counter */                                                                   
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 242
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 242
 
 
  241:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q7.c ****     blkCnt--;                                                                                      
@@ -14518,7 +14518,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  4175              		.loc 39 246 11 is_stmt 0 view .LVU1326
  4176 00dc 1D60     		str	r5, [r3]
  247:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmax_q7.c **** }
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 243
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 243
 
 
  4177              		.loc 39 247 1 view .LVU1327
@@ -14578,7 +14578,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   40:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_f32.c **** /**
   41:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_f32.c ****   @defgroup AbsMin Absolute Minimum
   42:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 244
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 244
 
 
   43:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_f32.c ****   Computes the minimum value of absolute values of an array of data.
@@ -14638,7 +14638,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   97:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_f32.c ****         curExtremValVec = vpselq(vecSrc, curExtremValVec, p0);
   98:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_f32.c ****         curExtremIdxVec = vpselq(indexVec, curExtremIdxVec, p0);
   99:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_f32.c **** 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 245
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 245
 
 
  100:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_f32.c ****         indexVec = indexVec +  4;
@@ -14698,7 +14698,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  154:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_f32.c ****         float32_t cur_absmin, out;                     /* Temporary variables to store the output v
  155:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_f32.c ****         uint32_t blkCnt, outIndex;                     /* Loop counter */                          
  156:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_f32.c ****         uint32_t index;                                /* index of maximum value */                
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 246
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 246
 
 
  157:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_f32.c ****                                                                                                    
@@ -14758,7 +14758,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  211:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_f32.c ****                                                                                                    
  212:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_f32.c ****   /* Loop unrolling: Compute remaining outputs */                                                  
  213:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_f32.c ****   blkCnt = (blockSize - 1U) % 4U;                                                                  
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 247
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 247
 
 
  214:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_f32.c ****                                                                                                    
@@ -14818,7 +14818,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  4213              		.loc 40 248 7 view .LVU1336
  4214 0006 B0EEC77A 		vabs.f32	s14, s14
  4215              	.LVL555:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 248
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 248
 
 
  249:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_f32.c **** 
@@ -14878,7 +14878,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  4244 001c B4EEE77A 		vcmpe.f32	s14, s15
  4245 0020 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
  4246 0024 F4DD     		ble	.L290
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 249
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 249
 
 
  262:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_f32.c ****       outIndex = blockSize - blkCnt;
@@ -14938,7 +14938,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
    7:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q15.c ****  * $Revision:    V1.9.0
    8:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q15.c ****  *
    9:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q15.c ****  * Target Processor: Cortex-M and Cortex-A cores
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 250
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 250
 
 
   10:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q15.c ****  * -------------------------------------------------------------------- */
@@ -14998,7 +14998,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   64:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q15.c ****     uint16_t        idx = blockSize;
   65:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q15.c ****     uint16x8_t    indexVec;
   66:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q15.c ****     uint16x8_t    curExtremIdxVec;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 251
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 251
 
 
   67:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q15.c ****     uint32_t        startIdx = 0;
@@ -15058,7 +15058,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  121:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q15.c ****      */
  122:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q15.c ****     p0 = vcmpleq(curExtremValVec, minValue);
  123:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q15.c ****     indexVec = vpselq(curExtremIdxVec, vdupq_n_u16(blockSize), p0);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 252
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 252
 
 
  124:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q15.c ****     /*
@@ -15118,7 +15118,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  4313 000c 04DD     		ble	.L313
  4314              	.LVL569:
  4315              	.L297:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 253
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 253
 
 
  152:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q15.c ****   /* Initialize index of extrema value. */                                                         
@@ -15178,7 +15178,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  4355              	.LBB134:
  4356              	.LBI134:
 1692:Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 254
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 254
 
 
  4357              		.loc 34 1692 31 is_stmt 1 discriminator 1 view .LVU1384
@@ -15238,7 +15238,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  165:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q15.c ****     {                                                                                              
  166:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q15.c ****       /* Update the extrema value and it's index */                                                
  167:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q15.c ****       out = cur_absmin;                                                                            
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 255
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 255
 
 
  168:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q15.c ****       outIndex = index + 1U;                                                                       
@@ -15298,7 +15298,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  4429              		.loc 34 1696 3 discriminator 1 view .LVU1404
  4430 004e 4FF00008 		mov	r8, #0
  4431              		.syntax unified
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 256
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 256
 
 
  4432              	@ 1696 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
@@ -15358,7 +15358,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  161:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q15.c ****     cur_absmin = (cur_absmin > 0) ? cur_absmin : (q15_t)__QSUB16(0, cur_absmin);                   
  4463              		.loc 41 161 16 is_stmt 0 view .LVU1415
  4464 0062 B0F900E0 		ldrsh	lr, [r0]
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 257
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 257
 
 
  4465              	.LVL586:
@@ -15418,7 +15418,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  176:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q15.c ****     }                                                                                              
  4503              		.loc 41 176 16 is_stmt 0 view .LVU1432
  4504 0082 A51C     		adds	r5, r4, #2
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 258
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 258
 
 
  4505              	.LVL594:
@@ -15478,7 +15478,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  4543 00a0 0028     		cmp	r0, #0
  4544 00a2 D4DD     		ble	.L318
  4545              	.LVL603:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 259
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 259
 
 
  4546              	.L305:
@@ -15538,7 +15538,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  4583              		.loc 34 1697 3 discriminator 1 view .LVU1462
 1697:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  4584              		.loc 34 1697 3 is_stmt 0 discriminator 1 view .LVU1463
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 260
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 260
 
 
  4585              		.thumb
@@ -15598,7 +15598,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  212:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q15.c ****     }                                                                                              
  4619              		.loc 41 212 16 is_stmt 0 view .LVU1476
  4620 00d2 8D1B     		subs	r5, r1, r6
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 261
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 261
 
 
  4621              	.LVL616:
@@ -15658,7 +15658,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   21:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q31.c ****  *
   22:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q31.c ****  * Unless required by applicable law or agreed to in writing, software
   23:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q31.c ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 262
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 262
 
 
   24:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q31.c ****  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15718,7 +15718,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   78:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q31.c ****     {
   79:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q31.c ****         vecSrc = vldrwq_s32(pSrcVec);  
   80:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q31.c ****         pSrcVec += 4;
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 263
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 263
 
 
   81:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q31.c ****         vecSrc = vabsq(vecSrc);
@@ -15778,7 +15778,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  135:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q31.c **** 
  136:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q31.c **** #else
  137:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q31.c **** #if defined(ARM_MATH_DSP)
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 264
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 264
 
 
  138:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q31.c **** void arm_absmin_q31(
@@ -15838,7 +15838,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  4684              		.loc 42 157 10 discriminator 4 view .LVU1497
  4685 0010 AB08     		lsrs	r3, r5, #2
  4686              	.LVL622:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 265
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 265
 
 
  158:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q31.c ****                                                                                                    
@@ -15898,7 +15898,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  4731              		.thumb
  4732              		.syntax unified
  4733              	.LBE147:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 266
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 266
 
 
  4734              	.LBE146:
@@ -15958,7 +15958,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
 2038:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  4782              		.loc 34 2038 31 is_stmt 1 view .LVU1522
  4783              	.LBB153:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 267
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 267
 
 
 2040:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -16018,7 +16018,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  195:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q31.c ****                                                                                                    
  196:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q31.c ****     index += 4U;                                                                                   
  4801              		.loc 42 196 5 is_stmt 1 view .LVU1527
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 268
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 268
 
 
  4802              		.loc 42 196 11 is_stmt 0 view .LVU1528
@@ -16078,7 +16078,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  4840              		.loc 42 172 5 is_stmt 1 view .LVU1543
  172:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q31.c ****     cur_absmin = (cur_absmin > 0) ? cur_absmin : (q31_t)__QSUB(0, cur_absmin);                     
  4841              		.loc 42 172 16 is_stmt 0 view .LVU1544
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 269
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 269
 
 
  4842 0064 4468     		ldr	r4, [r0, #4]
@@ -16138,7 +16138,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  4880              		.loc 42 185 7 view .LVU1560
  185:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q31.c ****     }                                                                                              
  4881              		.loc 42 185 16 is_stmt 0 view .LVU1561
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 270
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 270
 
 
  4882 007e 0CF10307 		add	r7, ip, #3
@@ -16198,7 +16198,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  204:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q31.c ****                                                                                                    
  205:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q31.c ****                                                                                                    
  206:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q31.c ****   while (blkCnt > 0U)                                                                              
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 271
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 271
 
 
  4920              		.loc 42 206 3 is_stmt 1 view .LVU1576
@@ -16258,7 +16258,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  4957              	.LVL665:
  209:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q31.c ****     if (cur_absmin < out)                                                                         \
  4958              		.loc 42 209 5 is_stmt 1 view .LVU1588
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 272
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 272
 
 
  209:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q31.c ****     if (cur_absmin < out)                                                                         \
@@ -16318,7 +16318,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
    1:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c **** /* ----------------------------------------------------------------------
    2:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****  * Project:      CMSIS DSP Library
    3:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****  * Title:        arm_absmin_q7.c
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 273
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 273
 
 
    4:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****  * Description:  Minimum value of absolute values of a Q7 vector
@@ -16378,7 +16378,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
   58:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****     uint32_t     blockSize,
   59:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****     q7_t        *pResult,
   60:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****     uint32_t    *pIndex)
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 274
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 274
 
 
   61:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c **** {
@@ -16438,7 +16438,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  115:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****         curExtremValVec = vpselq(vecSrc, curExtremValVec, p0);
  116:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****         curExtremIdxVec = vpselq(indexVec, curExtremIdxVec, p0);
  117:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****     }
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 275
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 275
 
 
  118:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****     /*
@@ -16498,7 +16498,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  172:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****             totalSize -= MAX_BLKSZ_S8;
  173:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****         }
  174:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****         /*
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 276
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 276
 
 
  175:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****          * remainder
@@ -16558,7 +16558,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  5025              		.loc 43 205 3 is_stmt 1 view .LVU1610
  5026              		.loc 43 205 7 is_stmt 0 view .LVU1611
  5027 0008 BCF1000F 		cmp	ip, #0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 277
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 277
 
 
  5028 000c 04DD     		ble	.L363
@@ -16618,7 +16618,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  5067 0022 F4E7     		b	.L347
  5068              	.LVL677:
  5069              	.L365:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 278
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 278
 
 
  5070              	.LBB158:
@@ -16678,7 +16678,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  5110              	.LBE160:
  217:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****     /* compare for the extrema value */                                                            
  218:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****     if (cur_absmin < out)                                                                         \
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 279
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 279
 
 
  219:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****     {                                                                                              
@@ -16738,7 +16738,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
 1597:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  5143              		.loc 34 1597 3 discriminator 1 view .LVU1645
 1599:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 280
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 280
 
 
  5144              		.loc 34 1599 3 discriminator 1 view .LVU1646
@@ -16798,7 +16798,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  215:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****     cur_absmin = (cur_absmin > 0) ? cur_absmin : (q7_t)__QSUB8(0, cur_absmin);                     
  5176              		.loc 43 215 5 view .LVU1656
  5177              	.LVL689:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 281
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 281
 
 
  215:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****     cur_absmin = (cur_absmin > 0) ? cur_absmin : (q7_t)__QSUB8(0, cur_absmin);                     
@@ -16858,7 +16858,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  5216              	.LVL697:
  230:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****     }                                                                                              
  5217              		.loc 43 230 7 view .LVU1673
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 282
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 282
 
 
  230:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****     }                                                                                              
@@ -16918,7 +16918,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  5256              		.loc 43 242 5 is_stmt 1 view .LVU1689
  242:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****     if (cur_absmin < out)                                                                          
  5257              		.loc 43 242 16 is_stmt 0 view .LVU1690
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 283
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 283
 
 
  5258 00a0 0028     		cmp	r0, #0
@@ -16978,7 +16978,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  5296              	@ 0 "" 2
  5297              	.LVL713:
 1600:Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 284
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 284
 
 
  5298              		.loc 34 1600 3 discriminator 1 view .LVU1704
@@ -17038,7 +17038,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  5332              	.LVL719:
  266:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****     }                                                                                              
  5333              		.loc 43 266 7 view .LVU1717
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 285
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 285
 
 
  266:Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/StatisticsFunctions/arm_absmin_q7.c ****     }                                                                                              
@@ -17075,102 +17075,102 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 1
  5358              		.file 46 "Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/arm_math_types.h"
  5359              		.file 47 "c:\\arm-none-eabi-gcc\\arm-none-eabi\\include\\math.h"
  5360              		.file 48 "Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/dsp/basic_math_functions.h"
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 286
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 286
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 StatisticsFunctions.c
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:20     .text.arm_entropy_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:26     .text.arm_entropy_f32:00000000 arm_entropy_f32
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:99     .text.arm_entropy_f32:00000034 $d
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:106    .text.arm_entropy_f64:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:112    .text.arm_entropy_f64:00000000 arm_entropy_f64
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:196    .text.arm_kullback_leibler_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:202    .text.arm_kullback_leibler_f32:00000000 arm_kullback_leibler_f32
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:283    .text.arm_kullback_leibler_f32:0000003c $d
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:289    .text.arm_kullback_leibler_f64:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:295    .text.arm_kullback_leibler_f64:00000000 arm_kullback_leibler_f64
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:390    .text.arm_logsumexp_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:396    .text.arm_logsumexp_f32:00000000 arm_logsumexp_f32
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:517    .text.arm_logsumexp_f32:0000005c $d
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:522    .text.arm_logsumexp_dot_prod_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:528    .text.arm_logsumexp_dot_prod_f32:00000000 arm_logsumexp_dot_prod_f32
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:570    .text.arm_max_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:576    .text.arm_max_f32:00000000 arm_max_f32
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:657    .text.arm_max_q15:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:663    .text.arm_max_q15:00000000 arm_max_q15
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:737    .text.arm_max_q31:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:743    .text.arm_max_q31:00000000 arm_max_q31
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:827    .text.arm_max_q7:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:833    .text.arm_max_q7:00000000 arm_max_q7
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:907    .text.arm_max_no_idx_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:913    .text.arm_max_no_idx_f32:00000000 arm_max_no_idx_f32
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:963    .text.arm_max_no_idx_f32:00000024 $d
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:968    .text.arm_mean_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:974    .text.arm_mean_f32:00000000 arm_mean_f32
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1032   .text.arm_mean_f32:00000030 $d
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1037   .text.arm_mean_q15:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1043   .text.arm_mean_q15:00000000 arm_mean_q15
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1108   .text.arm_mean_q31:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1114   .text.arm_mean_q31:00000000 arm_mean_q31
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1187   .text.arm_mean_q7:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1193   .text.arm_mean_q7:00000000 arm_mean_q7
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1257   .text.arm_min_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1263   .text.arm_min_f32:00000000 arm_min_f32
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1344   .text.arm_min_q15:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1350   .text.arm_min_q15:00000000 arm_min_q15
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1424   .text.arm_min_q31:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1430   .text.arm_min_q31:00000000 arm_min_q31
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1514   .text.arm_min_q7:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1520   .text.arm_min_q7:00000000 arm_min_q7
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1594   .text.arm_power_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1600   .text.arm_power_f32:00000000 arm_power_f32
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1647   .text.arm_power_f32:00000020 $d
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1652   .text.arm_power_q15:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1658   .text.arm_power_q15:00000000 arm_power_q15
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1725   .text.arm_power_q31:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1731   .text.arm_power_q31:00000000 arm_power_q31
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1800   .text.arm_power_q7:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1806   .text.arm_power_q7:00000000 arm_power_q7
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1863   .text.arm_rms_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1869   .text.arm_rms_f32:00000000 arm_rms_f32
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1979   .text.arm_rms_f32:0000004c $d
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s 			page 287
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:20     .text.arm_entropy_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:26     .text.arm_entropy_f32:00000000 arm_entropy_f32
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:99     .text.arm_entropy_f32:00000034 $d
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:106    .text.arm_entropy_f64:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:112    .text.arm_entropy_f64:00000000 arm_entropy_f64
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:196    .text.arm_kullback_leibler_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:202    .text.arm_kullback_leibler_f32:00000000 arm_kullback_leibler_f32
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:283    .text.arm_kullback_leibler_f32:0000003c $d
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:289    .text.arm_kullback_leibler_f64:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:295    .text.arm_kullback_leibler_f64:00000000 arm_kullback_leibler_f64
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:390    .text.arm_logsumexp_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:396    .text.arm_logsumexp_f32:00000000 arm_logsumexp_f32
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:517    .text.arm_logsumexp_f32:0000005c $d
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:522    .text.arm_logsumexp_dot_prod_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:528    .text.arm_logsumexp_dot_prod_f32:00000000 arm_logsumexp_dot_prod_f32
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:570    .text.arm_max_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:576    .text.arm_max_f32:00000000 arm_max_f32
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:657    .text.arm_max_q15:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:663    .text.arm_max_q15:00000000 arm_max_q15
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:737    .text.arm_max_q31:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:743    .text.arm_max_q31:00000000 arm_max_q31
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:827    .text.arm_max_q7:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:833    .text.arm_max_q7:00000000 arm_max_q7
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:907    .text.arm_max_no_idx_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:913    .text.arm_max_no_idx_f32:00000000 arm_max_no_idx_f32
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:963    .text.arm_max_no_idx_f32:00000024 $d
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:968    .text.arm_mean_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:974    .text.arm_mean_f32:00000000 arm_mean_f32
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1032   .text.arm_mean_f32:00000030 $d
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1037   .text.arm_mean_q15:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1043   .text.arm_mean_q15:00000000 arm_mean_q15
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1108   .text.arm_mean_q31:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1114   .text.arm_mean_q31:00000000 arm_mean_q31
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1187   .text.arm_mean_q7:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1193   .text.arm_mean_q7:00000000 arm_mean_q7
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1257   .text.arm_min_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1263   .text.arm_min_f32:00000000 arm_min_f32
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1344   .text.arm_min_q15:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1350   .text.arm_min_q15:00000000 arm_min_q15
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1424   .text.arm_min_q31:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1430   .text.arm_min_q31:00000000 arm_min_q31
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1514   .text.arm_min_q7:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1520   .text.arm_min_q7:00000000 arm_min_q7
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1594   .text.arm_power_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1600   .text.arm_power_f32:00000000 arm_power_f32
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1647   .text.arm_power_f32:00000020 $d
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1652   .text.arm_power_q15:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1658   .text.arm_power_q15:00000000 arm_power_q15
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1725   .text.arm_power_q31:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1731   .text.arm_power_q31:00000000 arm_power_q31
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1800   .text.arm_power_q7:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1806   .text.arm_power_q7:00000000 arm_power_q7
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1863   .text.arm_rms_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1869   .text.arm_rms_f32:00000000 arm_rms_f32
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1979   .text.arm_rms_f32:0000004c $d
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s 			page 287
 
 
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1984   .text.arm_rms_q15:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:1990   .text.arm_rms_q15:00000000 arm_rms_q15
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:2088   .text.arm_rms_q31:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:2094   .text.arm_rms_q31:00000000 arm_rms_q31
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:2199   .text.arm_std_q15:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:2205   .text.arm_std_q15:00000000 arm_std_q15
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:2343   .text.arm_std_q31:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:2349   .text.arm_std_q31:00000000 arm_std_q31
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:2501   .text.arm_var_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:2507   .text.arm_var_f32:00000000 arm_var_f32
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:2623   .text.arm_var_f32:00000064 $d
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:2628   .text.arm_std_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:2634   .text.arm_std_f32:00000000 arm_std_f32
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:2711   .text.arm_var_q15:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:2717   .text.arm_var_q15:00000000 arm_var_q15
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:2855   .text.arm_var_q31:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:2861   .text.arm_var_q31:00000000 arm_var_q31
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:3013   .text.arm_absmax_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:3019   .text.arm_absmax_f32:00000000 arm_absmax_f32
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:3106   .text.arm_absmax_q15:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:3112   .text.arm_absmax_q15:00000000 arm_absmax_q15
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:3469   .text.arm_absmax_q31:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:3475   .text.arm_absmax_q31:00000000 arm_absmax_q31
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:3821   .text.arm_absmax_q7:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:3827   .text.arm_absmax_q7:00000000 arm_absmax_q7
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:4184   .text.arm_absmin_f32:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:4190   .text.arm_absmin_f32:00000000 arm_absmin_f32
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:4277   .text.arm_absmin_q15:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:4283   .text.arm_absmin_q15:00000000 arm_absmin_q15
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:4640   .text.arm_absmin_q31:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:4646   .text.arm_absmin_q31:00000000 arm_absmin_q31
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:4992   .text.arm_absmin_q7:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\ccDCNdLT.s:4998   .text.arm_absmin_q7:00000000 arm_absmin_q7
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1984   .text.arm_rms_q15:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:1990   .text.arm_rms_q15:00000000 arm_rms_q15
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:2088   .text.arm_rms_q31:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:2094   .text.arm_rms_q31:00000000 arm_rms_q31
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:2199   .text.arm_std_q15:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:2205   .text.arm_std_q15:00000000 arm_std_q15
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:2343   .text.arm_std_q31:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:2349   .text.arm_std_q31:00000000 arm_std_q31
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:2501   .text.arm_var_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:2507   .text.arm_var_f32:00000000 arm_var_f32
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:2623   .text.arm_var_f32:00000064 $d
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:2628   .text.arm_std_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:2634   .text.arm_std_f32:00000000 arm_std_f32
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:2711   .text.arm_var_q15:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:2717   .text.arm_var_q15:00000000 arm_var_q15
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:2855   .text.arm_var_q31:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:2861   .text.arm_var_q31:00000000 arm_var_q31
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:3013   .text.arm_absmax_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:3019   .text.arm_absmax_f32:00000000 arm_absmax_f32
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:3106   .text.arm_absmax_q15:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:3112   .text.arm_absmax_q15:00000000 arm_absmax_q15
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:3469   .text.arm_absmax_q31:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:3475   .text.arm_absmax_q31:00000000 arm_absmax_q31
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:3821   .text.arm_absmax_q7:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:3827   .text.arm_absmax_q7:00000000 arm_absmax_q7
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:4184   .text.arm_absmin_f32:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:4190   .text.arm_absmin_f32:00000000 arm_absmin_f32
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:4277   .text.arm_absmin_q15:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:4283   .text.arm_absmin_q15:00000000 arm_absmin_q15
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:4640   .text.arm_absmin_q31:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:4646   .text.arm_absmin_q31:00000000 arm_absmin_q31
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:4992   .text.arm_absmin_q7:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccXbVkgE.s:4998   .text.arm_absmin_q7:00000000 arm_absmin_q7
 
 UNDEFINED SYMBOLS
 logf

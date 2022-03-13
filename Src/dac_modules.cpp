@@ -18,15 +18,42 @@
     "\tCal: {%.6f,%.6f}\n" \
     "\tRShunt: %.3f\n"
 
+//User-friendly index to I2C address lower nibble mapping. Based on DIP switch board layout.
+enum : uint8_t
+{
+    MY_DAC_0 = 5,
+    MY_DAC_1 = 6,
+    MY_DAC_2 = 4,
+    MY_DAC_3 = 13,
+    MY_DAC_4 = 1
+};
+
 uint16_t volts_to_code(float volts)
 {
     return static_cast<uint16_t>(roundf(volts * MY_DAC_FULL_SCALE / MY_DAC_REFERENCE_VOLTAGE));
 }
 
+void activate_cs(dac::module_t* m)
+{
+    user::pin_t* cs = m->cs;
+    LL_GPIO_ResetOutputPin(cs->port, cs->mask); // Active-low
+
+}
+
+void deactivate_cs(dac::module_t* m)
+{
+    user::pin_t* cs = m->cs;
+    LL_GPIO_SetOutputPin(cs->port, cs->mask); // Active-low
+}
+
 void set_module(dac::module_t* m, float volts)
 {
+    activate_cs(m);
+    //10nS have to pass before bits can be clocked into ad5061 after /CS assertion
+    //We are running at 84MHz, 1/84e6 ~ 1/100e6 = 10e-9 = 10nS, i.e. single CPU cycle delay is sufficient
     ad5061_set_code(m->hspi, volts_to_code(volts));
     m->last_setpoint = volts;
+    deactivate_cs(m);
 }
 
 //PUBLIC
@@ -39,7 +66,7 @@ namespace dac
     {  
         {
             .cs = new user::pin_t(nCS_GPIO_Port, 1),
-            .addr = 1
+            .addr = MY_DAC_0
         }
     };
 

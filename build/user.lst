@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 1
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 1
   58 0006 FFF7FEFF 		bl	CDC_Transmit_FS
   59 000a 08BD     		pop	{r3, pc}
   60              	.L7:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 2
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s 			page 2
 
 
   61              		.align	2
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 1
  115 0010 50726F62 		.ascii	"Probing ADC modules... \000"
  115      696E6720 
  115      41444320 
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 3
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s 			page 3
 
 
  115      6D6F6475 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 1
  165 004e 4FF48071 		mov	r1, #256
  166 0052 2846     		mov	r0, r5
  167 0054 FFF7FEFF 		bl	_ZN3adc18dump_module_reportEPcj
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 4
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s 			page 4
 
 
  168 0058 FFF7FEFF 		bl	_ZL11send_outputj
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 1
  224              		.fnend
  226              		.section	.text._ZN4user6Stream4readEv,"ax",%progbits
  227              		.align	1
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 5
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s 			page 5
 
 
  228              		.global	_ZN4user6Stream4readEv
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 1
  287              		.fnstart
  288              	.LFB657:
  289              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 6
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s 			page 6
 
 
  290              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 1
  348 0010 022B     		cmp	r3, #2
  349 0012 1ED0     		beq	.L45
  350              	.L39:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 7
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s 			page 7
 
 
  351 0014 FFF7FEFF 		bl	_ZN4user6microsEv
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 1
  405 00a4 9FED0E0A 		vldr.32	s0, .L47+40
  406              	.L41:
  407 00a8 FFF7FEFF 		bl	_ZN3dac7set_allEf
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 8
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s 			page 8
 
 
  408 00ac 054B     		ldr	r3, .L47+12
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 1
  465              	_ZN4user7pinModeENS_5pin_tEh:
  466              		.fnstart
  467              	.LFB661:
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 9
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s 			page 9
 
 
  468              		@ args = 0, pretend = 0, frame = 8
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 1
  524 0002 0846     		mov	r0, r1
  525 0004 8B42     		cmp	r3, r1
  526 0006 00DA     		bge	.L58
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 10
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s 			page 10
 
 
  527 0008 1846     		mov	r0, r3
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 1
  585              	.LFB658:
  586              		@ args = 0, pretend = 0, frame = 0
  587              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 11
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s 			page 11
 
 
  588 0000 70B5     		push	{r4, r5, r6, lr}
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 1
  645              		.syntax unified
  646              		.thumb
  647              		.thumb_func
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 12
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s 			page 12
 
 
  649              	_ZN4user4wordEhh:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 1
  713              		.section	.bss.output_buf,"aw",%nobits
  714              		.align	2
  715              		.set	.LANCHOR0,. + 0
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 13
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s 			page 13
 
 
  718              	output_buf:
@@ -728,88 +728,88 @@ ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 1
  719      00000000 
  719      00000000 
  720              		.ident	"GCC: (xPack GNU Arm Embedded GCC i386) 10.3.1 20210824 (release)"
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 14
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s 			page 14
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 user.cpp
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:18     .text._ZL17supervise_indexesPtS_:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:23     .text._ZL17supervise_indexesPtS_:00000000 _ZL17supervise_indexesPtS_
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:18     .text._ZL17supervise_indexesPtS_:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:23     .text._ZL17supervise_indexesPtS_:00000000 _ZL17supervise_indexesPtS_
 .ARM.exidx.text._ZL17supervise_indexesPtS_:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:44     .text._ZL11send_outputj:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:49     .text._ZL11send_outputj:00000000 _ZL11send_outputj
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:63     .text._ZL11send_outputj:0000000c $d
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:44     .text._ZL11send_outputj:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:49     .text._ZL11send_outputj:00000000 _ZL11send_outputj
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:63     .text._ZL11send_outputj:0000000c $d
 .ARM.extab.text._ZL11send_outputj:00000000 $d
 .ARM.exidx.text._ZL11send_outputj:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:67     .text._Z41__static_initialization_and_destruction_0ii:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:72     .text._Z41__static_initialization_and_destruction_0ii:00000000 _Z41__static_initialization_and_destruction_0ii
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:103    .text._Z41__static_initialization_and_destruction_0ii:00000038 $d
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:67     .text._Z41__static_initialization_and_destruction_0ii:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:72     .text._Z41__static_initialization_and_destruction_0ii:00000000 _Z41__static_initialization_and_destruction_0ii
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:103    .text._Z41__static_initialization_and_destruction_0ii:00000038 $d
 .ARM.exidx.text._Z41__static_initialization_and_destruction_0ii:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:110    .rodata._ZN4user5setupEP19__SPI_HandleTypeDefS1_P17I2C_HandleTypeDef.str1.4:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:120    .text._ZN4user5setupEP19__SPI_HandleTypeDefS1_P17I2C_HandleTypeDef:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:126    .text._ZN4user5setupEP19__SPI_HandleTypeDefS1_P17I2C_HandleTypeDef:00000000 _ZN4user5setupEP19__SPI_HandleTypeDefS1_P17I2C_HandleTypeDef
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:193    .text._ZN4user5setupEP19__SPI_HandleTypeDefS1_P17I2C_HandleTypeDef:00000098 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:623    .text._ZL11cdc_receivePhPm:00000000 _ZL11cdc_receivePhPm
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:110    .rodata._ZN4user5setupEP19__SPI_HandleTypeDefS1_P17I2C_HandleTypeDef.str1.4:00000000 $d
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:120    .text._ZN4user5setupEP19__SPI_HandleTypeDefS1_P17I2C_HandleTypeDef:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:126    .text._ZN4user5setupEP19__SPI_HandleTypeDefS1_P17I2C_HandleTypeDef:00000000 _ZN4user5setupEP19__SPI_HandleTypeDefS1_P17I2C_HandleTypeDef
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:193    .text._ZN4user5setupEP19__SPI_HandleTypeDefS1_P17I2C_HandleTypeDef:00000098 $d
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:623    .text._ZL11cdc_receivePhPm:00000000 _ZL11cdc_receivePhPm
 .ARM.exidx.text._ZN4user5setupEP19__SPI_HandleTypeDefS1_P17I2C_HandleTypeDef:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:201    .text._ZN4user6Stream9availableEv:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:207    .text._ZN4user6Stream9availableEv:00000000 _ZN4user6Stream9availableEv
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:201    .text._ZN4user6Stream9availableEv:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:207    .text._ZN4user6Stream9availableEv:00000000 _ZN4user6Stream9availableEv
 .ARM.exidx.text._ZN4user6Stream9availableEv:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:227    .text._ZN4user6Stream4readEv:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:233    .text._ZN4user6Stream4readEv:00000000 _ZN4user6Stream4readEv
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:227    .text._ZN4user6Stream4readEv:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:233    .text._ZN4user6Stream4readEv:00000000 _ZN4user6Stream4readEv
 .ARM.exidx.text._ZN4user6Stream4readEv:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:253    .text._ZN4user6Stream5writeEPht:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:259    .text._ZN4user6Stream5writeEPht:00000000 _ZN4user6Stream5writeEPht
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:253    .text._ZN4user6Stream5writeEPht:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:259    .text._ZN4user6Stream5writeEPht:00000000 _ZN4user6Stream5writeEPht
 .ARM.exidx.text._ZN4user6Stream5writeEPht:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:280    .text._ZN4user6Stream17availableForWriteEv:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:286    .text._ZN4user6Stream17availableForWriteEv:00000000 _ZN4user6Stream17availableForWriteEv
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:280    .text._ZN4user6Stream17availableForWriteEv:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:286    .text._ZN4user6Stream17availableForWriteEv:00000000 _ZN4user6Stream17availableForWriteEv
 .ARM.extab.text._ZN4user6Stream17availableForWriteEv:00000000 $d
 .ARM.exidx.text._ZN4user6Stream17availableForWriteEv:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:304    .text._ZN4user6microsEv:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:310    .text._ZN4user6microsEv:00000000 _ZN4user6microsEv
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:322    .text._ZN4user6microsEv:00000008 $d
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:304    .text._ZN4user6microsEv:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:310    .text._ZN4user6microsEv:00000000 _ZN4user6microsEv
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:322    .text._ZN4user6microsEv:00000008 $d
 .ARM.exidx.text._ZN4user6microsEv:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:330    .text._ZN4user4mainEv:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:336    .text._ZN4user4mainEv:00000000 _ZN4user4mainEv
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:414    .text._ZN4user4mainEv:000000b8 $d
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:330    .text._ZN4user4mainEv:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:336    .text._ZN4user4mainEv:00000000 _ZN4user4mainEv
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:414    .text._ZN4user4mainEv:000000b8 $d
   .ARM.exidx.text._ZN4user4mainEv:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:428    .text._ZN4user12digitalWriteENS_5pin_tEh:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:434    .text._ZN4user12digitalWriteENS_5pin_tEh:00000000 _ZN4user12digitalWriteENS_5pin_tEh
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:428    .text._ZN4user12digitalWriteENS_5pin_tEh:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:434    .text._ZN4user12digitalWriteENS_5pin_tEh:00000000 _ZN4user12digitalWriteENS_5pin_tEh
 .ARM.exidx.text._ZN4user12digitalWriteENS_5pin_tEh:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:459    .text._ZN4user7pinModeENS_5pin_tEh:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:465    .text._ZN4user7pinModeENS_5pin_tEh:00000000 _ZN4user7pinModeENS_5pin_tEh
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:459    .text._ZN4user7pinModeENS_5pin_tEh:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:465    .text._ZN4user7pinModeENS_5pin_tEh:00000000 _ZN4user7pinModeENS_5pin_tEh
 .ARM.exidx.text._ZN4user7pinModeENS_5pin_tEh:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:511    .text._ZN4user3minEii:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:517    .text._ZN4user3minEii:00000000 _ZN4user3minEii
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:511    .text._ZN4user3minEii:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:517    .text._ZN4user3minEii:00000000 _ZN4user3minEii
   .ARM.exidx.text._ZN4user3minEii:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:534    .text._ZN4user6Stream9readBytesEPht:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:540    .text._ZN4user6Stream9readBytesEPht:00000000 _ZN4user6Stream9readBytesEPht
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:534    .text._ZN4user6Stream9readBytesEPht:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:540    .text._ZN4user6Stream9readBytesEPht:00000000 _ZN4user6Stream9readBytesEPht
 .ARM.exidx.text._ZN4user6Stream9readBytesEPht:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:577    .text._ZN4user6Stream7receiveEPht:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:583    .text._ZN4user6Stream7receiveEPht:00000000 _ZN4user6Stream7receiveEPht
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:577    .text._ZN4user6Stream7receiveEPht:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:583    .text._ZN4user6Stream7receiveEPht:00000000 _ZN4user6Stream7receiveEPht
 .ARM.exidx.text._ZN4user6Stream7receiveEPht:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:618    .text._ZL11cdc_receivePhPm:00000000 $t
-ARM GAS  C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s 			page 15
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:618    .text._ZL11cdc_receivePhPm:00000000 $t
+ARM GAS  C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s 			page 15
 
 
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:638    .text._ZL11cdc_receivePhPm:00000010 $d
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:638    .text._ZL11cdc_receivePhPm:00000010 $d
 .ARM.exidx.text._ZL11cdc_receivePhPm:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:643    .text._ZN4user4wordEhh:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:649    .text._ZN4user4wordEhh:00000000 _ZN4user4wordEhh
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:643    .text._ZN4user4wordEhh:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:649    .text._ZN4user4wordEhh:00000000 _ZN4user4wordEhh
  .ARM.exidx.text._ZN4user4wordEhh:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:661    .text._GLOBAL__sub_I_output_buf:00000000 $t
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:666    .text._GLOBAL__sub_I_output_buf:00000000 _GLOBAL__sub_I_output_buf
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:661    .text._GLOBAL__sub_I_output_buf:00000000 $t
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:666    .text._GLOBAL__sub_I_output_buf:00000000 _GLOBAL__sub_I_output_buf
 .ARM.exidx.text._GLOBAL__sub_I_output_buf:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:680    .init_array:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:704    .bss.dac_last_ticks:00000000 dac_last_ticks
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:711    .bss.heartbeat_last_ticks:00000000 heartbeat_last_ticks
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:718    .bss.output_buf:00000000 output_buf
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:686    .bss._ZL10cdc_stream:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:690    .bss._ZL10cdc_stream:00000000 _ZL10cdc_stream
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:693    .bss._ZL7led_pin:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:697    .bss._ZL7led_pin:00000000 _ZL7led_pin
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:700    .bss.dac_last_ticks:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:707    .bss.heartbeat_last_ticks:00000000 $d
-C:\Users\7636~1\AppData\Local\Temp\cc1vXFyp.s:714    .bss.output_buf:00000000 $d
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:680    .init_array:00000000 $d
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:704    .bss.dac_last_ticks:00000000 dac_last_ticks
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:711    .bss.heartbeat_last_ticks:00000000 heartbeat_last_ticks
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:718    .bss.output_buf:00000000 output_buf
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:686    .bss._ZL10cdc_stream:00000000 $d
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:690    .bss._ZL10cdc_stream:00000000 _ZL10cdc_stream
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:693    .bss._ZL7led_pin:00000000 $d
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:697    .bss._ZL7led_pin:00000000 _ZL7led_pin
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:700    .bss.dac_last_ticks:00000000 $d
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:707    .bss.heartbeat_last_ticks:00000000 $d
+C:\Users\7636~1\AppData\Local\Temp\ccdOU2r3.s:714    .bss.output_buf:00000000 $d
 
 UNDEFINED SYMBOLS
 CDC_Transmit_FS

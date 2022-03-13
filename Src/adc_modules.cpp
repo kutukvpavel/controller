@@ -23,6 +23,12 @@ void activate_cs(adc::module_t* m)
 {
     user::pin_t* cs = m->cs;
     LL_GPIO_ResetOutputPin(cs->port, cs->mask); // Active-low
+    //Setup time after /CS assertion is 50nS for ads1220
+    //On STM32F401 at 84MHz this is approximately 5 CPU cycles
+    __NOP();
+    __NOP();
+    __NOP();
+    __NOP();
 }
 
 void deactivate_cs(adc::module_t* m)
