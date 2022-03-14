@@ -5,9 +5,11 @@
 
 #define USB_SERIAL_DEBUG 1
 
+void cdc_transmit_blocking(uint8_t* buf, uint16_t len);
+
 //Shared API
 #if USB_SERIAL_DEBUG
-    #define user_usb_prints(str) { uint8_t _buf[] = str; CDC_Transmit_FS(_buf, sizeof(_buf)); }
+    #define user_usb_prints(str) { uint8_t _buf[] = str; cdc_transmit_blocking(_buf, sizeof(_buf)); }
 #else
     #define user_usb_prints(str)
 #endif

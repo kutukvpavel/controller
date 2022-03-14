@@ -28,7 +28,14 @@ void ADS1220_reset(SPI_HandleTypeDef *hspi)
 	HAL_SPI_Transmit(hspi, (uint8_t*) &cmd, 1, 100);
 }
 
-uint8_t ADS1220_init(SPI_HandleTypeDef *hspi, ADS1220_regs *r)
+/**
+ * @brief Reset device, load configuration, read it back
+ * 
+ * @param hspi 
+ * @param r 
+ * @return device present
+ */
+bool ADS1220_init(SPI_HandleTypeDef *hspi, ADS1220_regs *r)
 {
 	ADS1220_reset(hspi);
 	HAL_Delay(100);

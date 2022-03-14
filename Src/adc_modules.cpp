@@ -49,11 +49,13 @@ namespace adc
     //Globals
     volatile uint8_t status = MY_ADC_STATUS_INITIALIZING;
     int16_t acquisition_speed = ADS1220_DR_20SPS;
+    user::pin_t drdy_pin = { nDRDY_GPIO_Port, 8 };
+    user::pin_t enable_pin = { GPIOB, 15 };
     module_t modules[] = 
     {
         {
             .cs = new user::pin_t(nCS_GPIO_Port, 1),
-            .drdy = new user::pin_t(nDRDY_GPIO_Port, 1),
+            .drdy = &drdy_pin,
             .channels = {
                 {
                     .mux_conf = ADS1220_MUX_AIN0_AIN1
@@ -69,12 +71,19 @@ namespace adc
     {
         static_assert(array_size(modules) <= MY_ADC_MAX_MODULES, "Too many ADC modules.");
         if (!hspi) user_usb_prints("ADC SPI interface handle is NULL!\n");
+        //Configure communication members
         for (size_t i = 0; i < array_size(modules); i++)
         {
             auto& m = modules[i];
             m.hspi = hspi;
             m.present = false;
+            LL_GPIO_SetPinMode(m.cs->port, m.cs->mask, LL_GPIO_MODE_OUTPUT);
+            LL_GPIO_SetOutputPin(m.cs->port, m.cs->mask); //Set /CS high
         }
+        LL_GPIO_SetPinMode(drdy_pin.port, drdy_pin.mask, LL_GPIO_MODE_INPUT);
+        //Enable power and transievers
+        LL_GPIO_SetPinMode(enable_pin.port, enable_pin.mask, LL_GPIO_MODE_OUTPUT);
+        LL_GPIO_SetOutputPin(enable_pin.port, enable_pin.mask); //Set ENABLE high
     }
 
     void probe()
@@ -138,6 +147,7 @@ namespace adc
         for (size_t i = 0; i < array_size(modules); i++)
         {
             auto& m = modules[i];
+            if (!m.present) continue;
             float res = m.channels[m.last_channel].last_result;
             if (abs(res) < 9.999990)
             {
@@ -158,6 +168,7 @@ namespace adc
         for (size_t i = 0; i < array_size(modules); i++)
         {
             auto& m = modules[i];
+            if (!m.present) continue;
             char cbuf[36 * MY_ADC_CHANNELS_PER_CHIP];
             char* cbuf_p = cbuf;
             for (size_t j = 0; j < MY_ADC_CHANNELS_PER_CHIP; j++)

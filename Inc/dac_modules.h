@@ -33,7 +33,8 @@ namespace dac
 
     //Globals
     extern volatile uint8_t status;
-    extern module_t modules[];   
+    extern module_t modules[];
+    extern user::pin_t enable_pin;
 
     // Public methods
     void init(SPI_HandleTypeDef* spi_instance, I2C_HandleTypeDef* i2c_instance);

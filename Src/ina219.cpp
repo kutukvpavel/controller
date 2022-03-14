@@ -134,19 +134,19 @@ void INA219_setPowerMode(I2C_HandleTypeDef* hi2c, uint8_t addr, uint8_t Mode)
  * 
  * @param hi2c 
  * @param addr 
- * @return uint8_t (0 for success)
+ * @return device present
  */
-uint8_t INA219_Init(I2C_HandleTypeDef* hi2c, uint8_t addr)
+bool INA219_Init(I2C_HandleTypeDef* hi2c, uint8_t addr)
 {
 	uint8_t ready = HAL_I2C_IsDeviceReady(hi2c, (addr << 1), 3, 2);
 
 	if (ready == HAL_OK)
 	{
 		INA219_Reset(hi2c, addr);
-		return 0;
+		return true;
 	}
 	else
 	{
-		return 1;
+		return false;
 	}
 }

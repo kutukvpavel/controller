@@ -62,6 +62,8 @@ namespace adc
     //Globals
     extern volatile uint8_t status;
     extern int16_t acquisition_speed;
+    extern user::pin_t drdy_pin;
+    extern user::pin_t enable_pin;
     extern module_t modules[];
 
     //Public methods

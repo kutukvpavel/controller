@@ -62,11 +62,13 @@ namespace dac
 {
     //Globals
     volatile uint8_t status;
+    user::pin_t enable_pin = { GPIOB, 15 };
     module_t modules[] = 
     {  
         {
-            .cs = new user::pin_t(nCS_GPIO_Port, 1),
-            .addr = MY_DAC_0
+            .cs = new user::pin_t(nCS_GPIO_Port, 3),
+            .addr = MY_DAC_1,
+            .r_shunt = 1
         }
     };
 
@@ -75,12 +77,18 @@ namespace dac
     {
         static_assert(array_size(modules) <= MY_DAC_MAX_MODULES, "Too many DAC modules.");
         if (!spi_instance || !i2c_instance) user_usb_prints("DAC SPI/I2C interface handle is NULL!\n");
+        //Configure communication members
         for (size_t i = 0; i < array_size(modules); i++)
         {
             auto& m = modules[i];
             m.hspi = spi_instance;
             m.hi2c = i2c_instance;
+            LL_GPIO_SetPinMode(m.cs->port, m.cs->mask, LL_GPIO_MODE_OUTPUT);
+            LL_GPIO_SetOutputPin(m.cs->port, m.cs->mask); //Set /CS high
         }
+        //Enable power and transievers
+        LL_GPIO_SetPinMode(enable_pin.port, enable_pin.mask, LL_GPIO_MODE_OUTPUT);
+        LL_GPIO_SetOutputPin(enable_pin.port, enable_pin.mask); //Set ENABLE high
     }
 
     void probe()
@@ -129,6 +137,7 @@ namespace dac
         for (size_t i = 0; i < array_size(modules); i++)
         {
             auto& m = modules[i];
+            if (!m.present) continue;
             int w = snprintf(buf, max_len - written, OUTPUT_CURRENT_FORMAT, 0x10u * i, m.last_current);
             if (w > 0)
             {
@@ -145,6 +154,7 @@ namespace dac
         for (size_t i = 0; i < array_size(modules); i++)
         {
             auto& m = modules[i];
+            if (!m.present) continue;
             int w = snprintf(buf, max_len - written, OUTPUT_REPORT_FORMAT, i,
                 m.hspi, m.cs->port->MODER, m.cs->mask, m.hi2c, m.addr, m.cal_coeff, m.cal_offset, m.r_shunt);
             if (w > 0)

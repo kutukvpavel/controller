@@ -78,7 +78,7 @@ struct ADS1220_regs
 extern ADS1220_regs ADS1220_default_regs;
 
 void ADS1220_reset(SPI_HandleTypeDef *hspi);
-uint8_t ADS1220_init(SPI_HandleTypeDef *hspi, ADS1220_regs *r);
+bool ADS1220_init(SPI_HandleTypeDef *hspi, ADS1220_regs *r);
 void ADS1220_start_conversion(SPI_HandleTypeDef *hspi);
 void ADS1220_enable_PGA(SPI_HandleTypeDef *hspi, ADS1220_regs *r);
 void ADS1220_disable_PGA(SPI_HandleTypeDef *hspi, ADS1220_regs *r);

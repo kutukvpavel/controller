@@ -4,16 +4,19 @@
 #include "user.h"
 
 //Private vars
-//static int delay_length = 500;
 char output_buf[256];
 static user::pin_t led_pin = user::pin_t(MASTER_ENABLE_GPIO_Port, MASTER_ENABLE_Pin);
 static user::Stream* cdc_stream = new user::Stream();
-int heartbeat_last_ticks = 0;
-int dac_last_ticks = 0;
 
 /**
  * PRIVATE
  */
+
+void cdc_transmit_blocking(uint8_t* buf, uint16_t len)
+{
+    while (CDC_Can_Transmit() != USBD_OK);
+    CDC_Transmit_FS(buf, len);
+}
 
 static void supervise_indexes(uint16_t* _tail, uint16_t* _head)
 {
@@ -31,7 +34,15 @@ static void cdc_receive(uint8_t* buf, uint32_t* len)
 
 static void send_output(size_t len)
 {
-    CDC_Transmit_FS(reinterpret_cast<uint8_t*>(output_buf), static_cast<uint16_t>(len));
+    cdc_transmit_blocking(reinterpret_cast<uint8_t*>(output_buf), static_cast<uint16_t>(len));
+}
+
+static void wait_for_input()
+{
+    user_usb_prints("Send anything to continue...\n");
+    while (!cdc_stream->available()) LL_mDelay(10);
+    while (cdc_stream->read() != '\0') LL_mDelay(1);
+    user_usb_prints("Starting execution.\n");
 }
 
 /**
@@ -48,25 +59,29 @@ namespace user
         while (CDC_IsConnected() != USBD_OK); //Note: requires DTR (i.e. hardware handshake)
         CDC_Register_RX_Callback(cdc_receive);
         user_usb_prints("Hello World!\n");
+        wait_for_input();
 
         //ADC
         adc::init(adc_spi);
-        user_usb_prints("Probing ADC modules... ");
+        LL_mDelay(1000); //Allow the boards to power up
+        user_usb_prints("Probing ADC modules...\n");
         adc::probe();
         send_output(adc::dump_module_report(output_buf, sizeof(output_buf)));
+        wait_for_input();
 
         //DAC
         dac::init(dac_spi, dac_i2c);
-        user_usb_prints("Probing DAC modules... ");
+        LL_mDelay(1000); //Allow the boards to power up
+        user_usb_prints("Probing DAC modules...\n");
         dac::probe();
         send_output(dac::dump_module_report(output_buf, sizeof(output_buf)));
+        wait_for_input();
 
         //Last preparations
         adc::increment_and_sync();
     }
     void main()
     {
-        auto us = micros();
         //ADC
         adc::drdy_check();
         if (adc::status == MY_ADC_STATUS_READ_PENDING) 
@@ -77,24 +92,16 @@ namespace user
         }
 
         //DAC
-        us = micros();
-        if (us - dac_last_ticks > 1E7)
-        {
-            dac::read_current();
-            send_output(dac::dump_last_currents(output_buf, sizeof(output_buf)));
-            float v = dac::modules[0].last_setpoint + 0.2;
-            if (v > 2.5) v = 0;
-            dac::set_all(v);
-            dac_last_ticks = us;
-        }
+        dac::read_current();
+        send_output(dac::dump_last_currents(output_buf, sizeof(output_buf)));
+        float v = dac::modules[0].last_setpoint + 0.2;
+        if (v > 2.5) v = 0;
+        dac::set_all(v);
 
         //Heartbeat
-        us = micros();
-        if (us - heartbeat_last_ticks > 1E6)
-        {
-            LL_GPIO_TogglePin(led_pin.port, led_pin.mask);
-            heartbeat_last_ticks = us;
-        }
+        LL_GPIO_TogglePin(led_pin.port, led_pin.mask);
+        user_usb_prints("Cycle completed.\n");
+        wait_for_input();
     }
 
     //Compatibility API
@@ -105,6 +112,7 @@ namespace user
     }
     uint8_t Stream::read()
     {
+        if (!available()) return '\0';
         uint8_t r = _buffer[_head++];
         supervise_indexes(&_tail, &_head);
         return r;

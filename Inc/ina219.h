@@ -72,7 +72,7 @@
 #define	INA219_CONFIG_MODE_BVOLT_CONTINUOUS		0x06 /**< bus voltage continuous */
 #define	INA219_CONFIG_MODE_SANDBVOLT_CONTINUOUS 0x07
 
-uint8_t INA219_Init(I2C_HandleTypeDef* hi2c, uint8_t addr);
+bool INA219_Init(I2C_HandleTypeDef* hi2c, uint8_t addr);
 float INA219_ReadCurrent(I2C_HandleTypeDef* hi2c, uint8_t addr);
 int16_t INA219_ReadCurrent_raw(I2C_HandleTypeDef* hi2c, uint8_t addr);
 float INA219_ReadShuntVolage(I2C_HandleTypeDef* hi2c, uint8_t addr);
