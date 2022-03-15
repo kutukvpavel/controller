@@ -445,7 +445,7 @@ static void MX_SPI1_Init(void)
   hspi1.Init.Direction = SPI_DIRECTION_2LINES;
   hspi1.Init.DataSize = SPI_DATASIZE_8BIT;
   hspi1.Init.CLKPolarity = SPI_POLARITY_LOW;
-  hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
+  hspi1.Init.CLKPhase = SPI_PHASE_2EDGE;
   hspi1.Init.NSS = SPI_NSS_SOFT;
   hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_128;
   hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
@@ -859,8 +859,7 @@ static void MX_GPIO_Init(void)
   LL_GPIO_Init(BUTTON_GPIO_Port, &GPIO_InitStruct);
 
   /**/
-  GPIO_InitStruct.Pin = GPIO_SHIFT_Pin|BOARD_ADDR0_Pin|BOARD_ADDR1_Pin|BOARD_ADDR2_Pin
-                          |nCS_Pin;
+  GPIO_InitStruct.Pin = GPIO_SHIFT_Pin|BOARD_ADDR0_Pin|BOARD_ADDR1_Pin|BOARD_ADDR2_Pin|nCS_Pin;
   GPIO_InitStruct.Mode = LL_GPIO_MODE_OUTPUT;
   GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_LOW;
   GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;

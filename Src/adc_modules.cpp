@@ -21,20 +21,23 @@ ADS1220_regs regs_buffer = ADS1220_default_regs;
 
 void activate_cs(adc::module_t* m)
 {
-    user::pin_t* cs = m->cs;
+    /*user::pin_t* cs = m->cs;
     LL_GPIO_ResetOutputPin(cs->port, cs->mask); // Active-low
     //Setup time after /CS assertion is 50nS for ads1220
     //On STM32F401 at 84MHz this is approximately 5 CPU cycles
     __NOP();
     __NOP();
     __NOP();
-    __NOP();
+    __NOP();*/
+
+    //TODO: CS MUX code
 }
 
 void deactivate_cs(adc::module_t* m)
 {
-    user::pin_t* cs = m->cs;
-    LL_GPIO_SetOutputPin(cs->port, cs->mask); // Active-low
+    /*user::pin_t* cs = m->cs;
+    LL_GPIO_SetOutputPin(cs->port, cs->mask); // Active-low*/
+    //TODO: remove?
 }
 
 float convert(int32_t adc_reading, adc::module_t* m)
@@ -58,10 +61,12 @@ namespace adc
             .drdy = &drdy_pin,
             .channels = {
                 {
-                    .mux_conf = ADS1220_MUX_AIN0_AIN1
+                    .mux_conf = ADS1220_MUX_AIN0_AIN1,
+                    .cal_coeff = 1
                 },
                 {
-                    .mux_conf = ADS1220_MUX_AIN2_AIN3
+                    .mux_conf = ADS1220_MUX_AIN2_AIN3,
+                    .cal_coeff = 1
                 }
             }
         }
@@ -77,8 +82,6 @@ namespace adc
             auto& m = modules[i];
             m.hspi = hspi;
             m.present = false;
-            LL_GPIO_SetPinMode(m.cs->port, m.cs->mask, LL_GPIO_MODE_OUTPUT);
-            LL_GPIO_SetOutputPin(m.cs->port, m.cs->mask); //Set /CS high
         }
         LL_GPIO_SetPinMode(drdy_pin.port, drdy_pin.mask, LL_GPIO_MODE_INPUT);
         //Enable power and transievers

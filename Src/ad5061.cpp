@@ -5,14 +5,20 @@
 #define AD5061_SOFTWARE_RESET 0xFFF
 #define AD5061_MODE_MASK (_BV(16) | _BV(17))
 #define AD5061_CODE_MASK 0xFF
+#define AD5061_CONTROL_REG_WIDTH 3 //24 bits = 3 bytes
 
 uint32_t register_template = AD5061_MODE_NORMAL;
+uint8_t buffer[AD5061_CONTROL_REG_WIDTH];
 
 void send(SPI_HandleTypeDef* hspi, uint32_t reg)
 {
     register_template = reg;
     uint8_t* bytes = reinterpret_cast<uint8_t*>(&reg);
-    HAL_SPI_Transmit(hspi, bytes, 3, 100); //24 bits
+    for (size_t i = 0; i < AD5061_CONTROL_REG_WIDTH; i++)
+    {
+        buffer[i] = bytes[AD5061_CONTROL_REG_WIDTH - 1 - i]; //Sadly, AD5061 accepts data in big-endian format
+    }
+    HAL_SPI_Transmit(hspi, buffer, AD5061_CONTROL_REG_WIDTH, 100);
 }
 
 //PUBLIC

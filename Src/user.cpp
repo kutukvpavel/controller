@@ -6,6 +6,7 @@
 //Private vars
 char output_buf[256];
 static user::pin_t led_pin = user::pin_t(MASTER_ENABLE_GPIO_Port, MASTER_ENABLE_Pin);
+user::pin_t cs_pin = { nCS_GPIO_Port, nCS_Pin };
 static user::Stream* cdc_stream = new user::Stream();
 
 /**
@@ -62,15 +63,15 @@ namespace user
         wait_for_input();
 
         //ADC
-        adc::init(adc_spi);
+        /*adc::init(adc_spi);
         LL_mDelay(1000); //Allow the boards to power up
         user_usb_prints("Probing ADC modules...\n");
         adc::probe();
         send_output(adc::dump_module_report(output_buf, sizeof(output_buf)));
-        wait_for_input();
+        wait_for_input();*/
 
         //DAC
-        dac::init(dac_spi, dac_i2c);
+        dac::init(dac_spi, &cs_pin, dac_i2c);
         LL_mDelay(1000); //Allow the boards to power up
         user_usb_prints("Probing DAC modules...\n");
         dac::probe();
@@ -79,24 +80,23 @@ namespace user
 
         //Last preparations
         adc::increment_and_sync();
+        dac::set_all(1);
     }
     void main()
     {
         //ADC
-        adc::drdy_check();
+        /*adc::drdy_check();
         if (adc::status == MY_ADC_STATUS_READ_PENDING) 
         {
             adc::read();
             adc::increment_and_sync();
             send_output(adc::dump_last_data(output_buf, sizeof(output_buf)));
-        }
+        }*/
 
         //DAC
         dac::read_current();
+        dac::correct_for_current();
         send_output(dac::dump_last_currents(output_buf, sizeof(output_buf)));
-        float v = dac::modules[0].last_setpoint + 0.2;
-        if (v > 2.5) v = 0;
-        dac::set_all(v);
 
         //Heartbeat
         LL_GPIO_TogglePin(led_pin.port, led_pin.mask);

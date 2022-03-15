@@ -7,12 +7,12 @@
 
 #define MY_INA219_CAL_MAGIC 33554.4 /* Divide by ohms */
 #define MY_INA219_CURRENT_LSB 1.2207E-6
-#define MY_DAC_FULL_SCALE 0xFF
+#define MY_DAC_FULL_SCALE 0xFFFF
 #define MY_DAC_REFERENCE_VOLTAGE 2.5 //V
 #define OUTPUT_CURRENT_FORMAT "C%.2X: %+8.5f\n"
 #define OUTPUT_REPORT_FORMAT "DAC Module #%u\n" \
     "\tSPI Handle: %p\n" \
-    "\tCS Pin: %.4lX - %.4lX\n" \
+    "\tCS MUX Mask: %u\n" \
     "\tI2C Handle: %p\n" \
     "\tAddress: %u\n" \
     "\tCal: {%.6f,%.6f}\n" \
@@ -35,15 +35,14 @@ uint16_t volts_to_code(float volts)
 
 void activate_cs(dac::module_t* m)
 {
-    user::pin_t* cs = m->cs;
-    LL_GPIO_ResetOutputPin(cs->port, cs->mask); // Active-low
-
+    LL_GPIO_SetOutputPin(dac::cs_mux_port, m->cs_mux_mask);
+    LL_GPIO_ResetOutputPin(dac::cs_pin->port, dac::cs_pin->mask); // Active-low
 }
 
 void deactivate_cs(dac::module_t* m)
 {
-    user::pin_t* cs = m->cs;
-    LL_GPIO_SetOutputPin(cs->port, cs->mask); // Active-low
+    LL_GPIO_ResetOutputPin(dac::cs_mux_port, m->cs_mux_mask);
+    LL_GPIO_SetOutputPin(dac::cs_pin->port, dac::cs_pin->mask); // Active-low
 }
 
 void set_module(dac::module_t* m, float volts)
@@ -56,38 +55,48 @@ void set_module(dac::module_t* m, float volts)
     deactivate_cs(m);
 }
 
+void apply_correction(dac::module_t* m)
+{
+    float drop = m->last_current * (m->r_shunt + AD5061_INTERNAL_RESISTANCE); //V
+    activate_cs(m);
+    ad5061_set_code(m->hspi, volts_to_code(m->last_setpoint + drop));
+    deactivate_cs(m);
+}
+
 //PUBLIC
 
 namespace dac
 {
     //Globals
     volatile uint8_t status;
-    user::pin_t enable_pin = { GPIOB, 15 };
+    user::pin_t enable_pin = { GPIOB, LL_GPIO_PIN_15 };
+    user::pin_t* cs_pin;
+    GPIO_TypeDef* cs_mux_port = BOARD_ADDR0_GPIO_Port;
     module_t modules[] = 
     {  
         {
-            .cs = new user::pin_t(nCS_GPIO_Port, 3),
+            .cs_mux_mask = 1,
             .addr = MY_DAC_1,
+            .cal_coeff = 1,
             .r_shunt = 1
         }
     };
 
     //Public methods
-    void init(SPI_HandleTypeDef* spi_instance, I2C_HandleTypeDef* i2c_instance)
+    void init(SPI_HandleTypeDef* spi_instance, user::pin_t* spi_cs_pin, I2C_HandleTypeDef* i2c_instance)
     {
         static_assert(array_size(modules) <= MY_DAC_MAX_MODULES, "Too many DAC modules.");
-        if (!spi_instance || !i2c_instance) user_usb_prints("DAC SPI/I2C interface handle is NULL!\n");
+        if (!spi_instance || !i2c_instance || !spi_cs_pin) user_usb_prints("DAC SPI/I2C/CS pin interface handle is NULL!\n");
+        cs_pin = spi_cs_pin;
+        LL_GPIO_SetOutputPin(cs_pin->port, cs_pin->mask); //Set /CS HIGH
         //Configure communication members
         for (size_t i = 0; i < array_size(modules); i++)
         {
             auto& m = modules[i];
             m.hspi = spi_instance;
             m.hi2c = i2c_instance;
-            LL_GPIO_SetPinMode(m.cs->port, m.cs->mask, LL_GPIO_MODE_OUTPUT);
-            LL_GPIO_SetOutputPin(m.cs->port, m.cs->mask); //Set /CS high
         }
         //Enable power and transievers
-        LL_GPIO_SetPinMode(enable_pin.port, enable_pin.mask, LL_GPIO_MODE_OUTPUT);
         LL_GPIO_SetOutputPin(enable_pin.port, enable_pin.mask); //Set ENABLE high
     }
 
@@ -107,7 +116,9 @@ namespace dac
             INA219_setCalibration(m.hi2c, m.addr, 
                 static_cast<uint16_t>(roundf(MY_INA219_CAL_MAGIC / m.r_shunt)), 
                 MY_INA219_CURRENT_LSB);
+            activate_cs(&m);
             ad5061_set_mode(m.hspi, AD5061_MODE_NORMAL);
+            deactivate_cs(&m);
         }
     }
 
@@ -128,6 +139,16 @@ namespace dac
             auto& m = modules[i];
             if (!m.present) continue;
             set_module(&m, volts);
+        }
+    }
+
+    void correct_for_current()
+    {
+        for (size_t i = 0; i < array_size(modules); i++)
+        {
+            auto& m = modules[i];
+            if (!m.present) continue;
+            apply_correction(&m);
         }
     }
 
@@ -156,7 +177,7 @@ namespace dac
             auto& m = modules[i];
             if (!m.present) continue;
             int w = snprintf(buf, max_len - written, OUTPUT_REPORT_FORMAT, i,
-                m.hspi, m.cs->port->MODER, m.cs->mask, m.hi2c, m.addr, m.cal_coeff, m.cal_offset, m.r_shunt);
+                m.hspi, m.cs_mux_mask, m.hi2c, m.addr, m.cal_coeff, m.cal_offset, m.r_shunt);
             if (w > 0)
             {
                 buf += w;

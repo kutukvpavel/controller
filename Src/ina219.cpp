@@ -1,5 +1,7 @@
 #include "ina219.h"
 
+#define INA219_ADDRESS_BASE 0x40u
+
 float ina219_current_lsb;
 
 /*
@@ -12,9 +14,9 @@ uint16_t Read16(I2C_HandleTypeDef* hi2c, uint8_t addr, uint8_t Register)
 {
 	uint8_t Value[2];
 
-	HAL_I2C_Mem_Read(hi2c, (addr << 1), Register, 1, Value, 2, 1000);
+	HAL_I2C_Mem_Read(hi2c, (INA219_ADDRESS_BASE | addr) << 1, Register, 1, Value, 2, 1000);
 
-	return ((Value[0] << 8) | Value[1]);
+	return ((static_cast<uint16_t>(Value[0]) << 8) | Value[1]);
 }
 
 /*
@@ -37,7 +39,7 @@ HAL_StatusTypeDef Write16(I2C_HandleTypeDef* hi2c, uint8_t addr, uint8_t Registe
 	uint8_t buf[2];
 	buf[0] = (Value >> 8) & 0xff;  // upper byte
 	buf[1] = (Value >> 0) & 0xff; // lower byte
-	return HAL_I2C_Mem_Write(hi2c, (addr << 1), Register, 1, buf, 2, 1000);
+	return HAL_I2C_Mem_Write(hi2c, (INA219_ADDRESS_BASE | addr) << 1, Register, 1, buf, 2, 1000);
 }
 
 /*
@@ -87,7 +89,7 @@ void INA219_Reset(I2C_HandleTypeDef* hi2c, uint8_t addr)
 
 void INA219_setCalibration(I2C_HandleTypeDef* hi2c, uint8_t addr, uint16_t CalibrationData, float current_lsb)
 {
-    ina219_current_lsb = 0;
+    ina219_current_lsb = current_lsb;
 	Write16(hi2c, addr, INA219_REG_CALIBRATION, CalibrationData);
 }
 
@@ -138,7 +140,7 @@ void INA219_setPowerMode(I2C_HandleTypeDef* hi2c, uint8_t addr, uint8_t Mode)
  */
 bool INA219_Init(I2C_HandleTypeDef* hi2c, uint8_t addr)
 {
-	uint8_t ready = HAL_I2C_IsDeviceReady(hi2c, (addr << 1), 3, 2);
+	uint8_t ready = HAL_I2C_IsDeviceReady(hi2c, (INA219_ADDRESS_BASE | addr) << 1, 3, 2);
 
 	if (ready == HAL_OK)
 	{
