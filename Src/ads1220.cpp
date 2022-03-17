@@ -18,7 +18,7 @@ uint8_t ADS1220_readRegister(SPI_HandleTypeDef *hspi, uint8_t address)
 	uint8_t txd[2] =
 	{ static_cast<uint8_t>(ADS1220_RREG | (address << 2)), 0xFF };
 
-	HAL_SPI_TransmitReceive(hspi, txd, data, 2, 1000); // When doing bidirectional, transmit a dummy byte(0xFF), 2 in total, received register is in [1]
+	HAL_SPI_TransmitReceive(hspi, txd, data, 2, 100); // When doing bidirectional, transmit a dummy byte(0xFF), 2 in total, received register is in [1]
 	return data[1];
 }
 

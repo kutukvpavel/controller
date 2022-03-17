@@ -9,9 +9,9 @@
 #define MODULE_PINS_DRDY 1
 #define MAX_INTERMODULE_DELAY 1 //mS
 #define OUTPUT_STRING_FORMAT "A%.2X: %+.6f\n" //Line format: "01F: +1.000000\n" 15 bytes/module (only one channel can be read at a time)
-#define OUTPUT_REPORT_FORMAT "ADC Module #%u" \
+#define OUTPUT_REPORT_FORMAT "ADC Module #%u\n" \
     "\tSPI Handle: %p\n" \
-    "\tCS Pin: %.4lX - %.4lX\n" \
+    "\tCS MUX Mask: %u\n" \
     "\tDRDY Pin: %.4lX - %.4lX\n" \
     "\tChannels (%u):\n%s"
 #define OUTPUT_CHANNEL_FORMAT "\t\tmux=%X cal={%.6f,%.6f};\n" // <tab>mux=X cal={1.000000,0.000000};<nl> 33 bytes/line min
@@ -21,23 +21,19 @@ ADS1220_regs regs_buffer = ADS1220_default_regs;
 
 void activate_cs(adc::module_t* m)
 {
-    /*user::pin_t* cs = m->cs;
-    LL_GPIO_ResetOutputPin(cs->port, cs->mask); // Active-low
+    LL_GPIO_SetOutputPin(adc::cs_mux_port, m->cs_mux_mask);
+    LL_GPIO_ResetOutputPin(adc::cs_pin->port, adc::cs_pin->mask); // Active-low
     //Setup time after /CS assertion is 50nS for ads1220
-    //On STM32F401 at 84MHz this is approximately 5 CPU cycles
-    __NOP();
-    __NOP();
+    //On STM32F401 at 84MHz this is approximately 5 CPU cycles (3 NOPs because 2 cycles are guaranteed)
+    /*__NOP();
     __NOP();
     __NOP();*/
-
-    //TODO: CS MUX code
 }
 
 void deactivate_cs(adc::module_t* m)
 {
-    /*user::pin_t* cs = m->cs;
-    LL_GPIO_SetOutputPin(cs->port, cs->mask); // Active-low*/
-    //TODO: remove?
+    LL_GPIO_ResetOutputPin(adc::cs_mux_port, m->cs_mux_mask);
+    LL_GPIO_SetOutputPin(adc::cs_pin->port, adc::cs_pin->mask); // Active-low
 }
 
 float convert(int32_t adc_reading, adc::module_t* m)
@@ -52,12 +48,14 @@ namespace adc
     //Globals
     volatile uint8_t status = MY_ADC_STATUS_INITIALIZING;
     int16_t acquisition_speed = ADS1220_DR_20SPS;
-    user::pin_t drdy_pin = { nDRDY_GPIO_Port, 8 };
-    user::pin_t enable_pin = { GPIOB, 15 };
+    user::pin_t drdy_pin = { nDRDY_GPIO_Port, nDRDY_Pin };
+    user::pin_t enable_pin = { GPIOB, LL_GPIO_PIN_15 };
+    user::pin_t* cs_pin; //main CS pin, not the MUX address pins
+    GPIO_TypeDef* cs_mux_port = BOARD_ADDR0_GPIO_Port;
     module_t modules[] = 
     {
         {
-            .cs = new user::pin_t(nCS_GPIO_Port, 1),
+            .cs_mux_mask = 1,
             .drdy = &drdy_pin,
             .channels = {
                 {
@@ -72,10 +70,12 @@ namespace adc
         }
     };
 
-    void init(SPI_HandleTypeDef* hspi)
+    void init(SPI_HandleTypeDef* hspi, user::pin_t* spi_cs_pin)
     {
         static_assert(array_size(modules) <= MY_ADC_MAX_MODULES, "Too many ADC modules.");
         if (!hspi) user_usb_prints("ADC SPI interface handle is NULL!\n");
+        cs_pin = spi_cs_pin;
+        LL_GPIO_SetOutputPin(cs_pin->port, cs_pin->mask); //Set /CS HIGH
         //Configure communication members
         for (size_t i = 0; i < array_size(modules); i++)
         {
@@ -83,9 +83,7 @@ namespace adc
             m.hspi = hspi;
             m.present = false;
         }
-        LL_GPIO_SetPinMode(drdy_pin.port, drdy_pin.mask, LL_GPIO_MODE_INPUT);
         //Enable power and transievers
-        LL_GPIO_SetPinMode(enable_pin.port, enable_pin.mask, LL_GPIO_MODE_OUTPUT);
         LL_GPIO_SetOutputPin(enable_pin.port, enable_pin.mask); //Set ENABLE high
     }
 
@@ -128,7 +126,9 @@ namespace adc
         {
             auto& m = modules[i];
             if (!m.present) continue;
+            activate_cs(&m);
             int32_t res = ADS1220_read_blocking(m.hspi, m.drdy->port, m.drdy->mask, MAX_INTERMODULE_DELAY);
+            deactivate_cs(&m);
             m.channels[m.selected_channel].last_result = convert(res, &m);
         }
         status = MY_ADC_STATUS_WAITING;
@@ -181,7 +181,7 @@ namespace adc
                     c.mux_conf, c.cal_coeff, c.cal_offset);
             }
             int w = snprintf(buf, max_len - written, OUTPUT_REPORT_FORMAT, i,
-                m.hspi, m.cs->port->MODER, m.cs->mask, m.drdy->port->MODER, m.drdy->mask, MY_ADC_CHANNELS_PER_CHIP, cbuf);
+                m.hspi, m.cs_mux_mask, m.drdy->port->MODER, m.drdy->mask, MY_ADC_CHANNELS_PER_CHIP, cbuf);
             if (w > 0) //On success, increment the variables, on error overwrite the bad line
             {
                 written += w;

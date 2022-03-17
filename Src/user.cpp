@@ -5,6 +5,7 @@
 
 //Private vars
 char output_buf[256];
+static uint8_t zero_arr[1] = { 0 };
 static user::pin_t led_pin = user::pin_t(MASTER_ENABLE_GPIO_Port, MASTER_ENABLE_Pin);
 user::pin_t cs_pin = { nCS_GPIO_Port, nCS_Pin };
 static user::Stream* cdc_stream = new user::Stream();
@@ -63,14 +64,16 @@ namespace user
         wait_for_input();
 
         //ADC
-        /*adc::init(adc_spi);
+        HAL_SPI_Transmit(adc_spi, zero_arr, 1, 100); //Get SPI pins into an approptiate idle state before any /CS is asserted (SPI_MspInit doesn't do that FSR)
+        adc::init(adc_spi, &cs_pin);
         LL_mDelay(1000); //Allow the boards to power up
         user_usb_prints("Probing ADC modules...\n");
         adc::probe();
         send_output(adc::dump_module_report(output_buf, sizeof(output_buf)));
-        wait_for_input();*/
+        wait_for_input();
 
         //DAC
+        HAL_SPI_Transmit(dac_spi, zero_arr, 1, 100); //Get SPI pins into an approptiate idle state before any /CS is asserted (SPI_MspInit doesn't do that FSR)
         dac::init(dac_spi, &cs_pin, dac_i2c);
         LL_mDelay(1000); //Allow the boards to power up
         user_usb_prints("Probing DAC modules...\n");
@@ -85,13 +88,13 @@ namespace user
     void main()
     {
         //ADC
-        /*adc::drdy_check();
+        adc::drdy_check();
         if (adc::status == MY_ADC_STATUS_READ_PENDING) 
         {
             adc::read();
             adc::increment_and_sync();
             send_output(adc::dump_last_data(output_buf, sizeof(output_buf)));
-        }*/
+        }
 
         //DAC
         dac::read_current();

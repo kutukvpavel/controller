@@ -51,7 +51,7 @@ namespace adc
     struct module_t
     {
         SPI_HandleTypeDef* hspi;
-        user::pin_t* cs;
+        uint8_t cs_mux_mask;
         user::pin_t* drdy;
         bool present;
         uint8_t selected_channel;
@@ -64,10 +64,12 @@ namespace adc
     extern int16_t acquisition_speed;
     extern user::pin_t drdy_pin;
     extern user::pin_t enable_pin;
+    extern user::pin_t* cs_pin; //main CS pin, not the MUX address pins
+    extern GPIO_TypeDef* cs_mux_port;
     extern module_t modules[];
 
     //Public methods
-    void init(SPI_HandleTypeDef* hspi);
+    void init(SPI_HandleTypeDef* hspi, user::pin_t* spi_cs_pin);
     void probe();
     void increment_and_sync();
     void read();
