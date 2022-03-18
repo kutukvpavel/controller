@@ -15,9 +15,11 @@
     "\tDRDY Pin: %.4lX - %.4lX\n" \
     "\tChannels (%u):\n%s"
 #define OUTPUT_CHANNEL_FORMAT "\t\tmux=%X cal={%.6f,%.6f};\n" // <tab>mux=X cal={1.000000,0.000000};<nl> 33 bytes/line min
+#define CS_MUX_MASK(index) ((index) << 3u) //Lower half of 8 addresses coded with PA3-PA5 (shifted accordingly)
 
 //PRIVATE
 ADS1220_regs regs_buffer = ADS1220_default_regs;
+uint32_t last_drdy_assertion_ticks = 0;
 
 void activate_cs(adc::module_t* m)
 {
@@ -28,12 +30,17 @@ void activate_cs(adc::module_t* m)
     /*__NOP();
     __NOP();
     __NOP();*/
+    //Optocoupler needs a far longer delay
+    user::uDelay(100);
+    //LL_mDelay(1);
 }
 
 void deactivate_cs(adc::module_t* m)
 {
     LL_GPIO_ResetOutputPin(adc::cs_mux_port, m->cs_mux_mask);
     LL_GPIO_SetOutputPin(adc::cs_pin->port, adc::cs_pin->mask); // Active-low
+    user::uDelay(100);
+    //LL_mDelay(1);
 }
 
 float convert(int32_t adc_reading, adc::module_t* m)
@@ -55,7 +62,7 @@ namespace adc
     module_t modules[] = 
     {
         {
-            .cs_mux_mask = 1,
+            .cs_mux_mask = CS_MUX_MASK(0u),
             .drdy = &drdy_pin,
             .channels = {
                 {
@@ -73,9 +80,10 @@ namespace adc
     void init(SPI_HandleTypeDef* hspi, user::pin_t* spi_cs_pin)
     {
         static_assert(array_size(modules) <= MY_ADC_MAX_MODULES, "Too many ADC modules.");
-        if (!hspi) user_usb_prints("ADC SPI interface handle is NULL!\n");
+        if (!hspi) dbg_usb_prints("ADC SPI interface handle is NULL!\n");
         cs_pin = spi_cs_pin;
         LL_GPIO_SetOutputPin(cs_pin->port, cs_pin->mask); //Set /CS HIGH
+        LL_GPIO_ResetOutputPin(cs_mux_port, CS_MUX_MASK(3u)); //Clear CS MUX outputs (index = 0-3)
         //Configure communication members
         for (size_t i = 0; i < array_size(modules); i++)
         {
@@ -136,12 +144,19 @@ namespace adc
 
     void drdy_callback()
     {
-        if (status == MY_ADC_STATUS_WAITING) status = MY_ADC_STATUS_READ_PENDING;
+        if (status == MY_ADC_STATUS_WAITING)
+        {
+            status = MY_ADC_STATUS_READ_PENDING;
+            last_drdy_assertion_ticks = HAL_GetTick();
+        }
     }
 
     void drdy_check()
     {
         if (!LL_GPIO_IsInputPinSet(nDRDY_GPIO_Port, nDRDY_Pin)) drdy_callback(); //Active low
+        if ((status != MY_ADC_STATUS_READ_PENDING) && 
+            ((HAL_GetTick() - last_drdy_assertion_ticks) > 100u)) 
+            increment_and_sync();
     }
 
     size_t dump_last_data(char* buf, size_t max_len)

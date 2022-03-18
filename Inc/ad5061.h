@@ -17,14 +17,16 @@
 #include "main.h"
 
 #ifndef _BV
-	#define _BV(val) (1u << val)
+	#define _BV(val) (1u << (val))
 #endif
 
 #define AD5061_MODE_NORMAL 0x00
 #define AD5061_MODE_TRISTATE _BV(16)
 #define AD5061_MODE_100K_GND _BV(17)
 #define AD5061_MODE_1K_GND (_BV(16) | _BV(17))
+#define AD5061_FULL_SCALE 0xFFFF
 
+#define AD5061_REFERENCE_VOLTAGE 2.5 //V
 #define AD5061_INTERNAL_RESISTANCE 0.015
 
 void ad5061_set_code(SPI_HandleTypeDef* hspi, uint16_t code);

@@ -15,7 +15,7 @@
 #include "main.h" // Your project's main should include HAL
 
 #ifndef _BV
-	#define _BV(val) (1u << val)
+	#define _BV(val) (1u << (val))
 #endif
 
 //Commands

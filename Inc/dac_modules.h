@@ -28,6 +28,7 @@ namespace dac
         float last_setpoint;
         float cal_coeff;
         float cal_offset;
+        float current_cal_offset;
         float r_shunt;
     };
 

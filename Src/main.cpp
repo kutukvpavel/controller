@@ -127,13 +127,13 @@ int main(void)
   MX_SPI1_Init();
   MX_TIM1_Init();
   MX_TIM3_Init();
+  MX_TIM5_Init();
   MX_TIM9_Init();
   MX_TIM10_Init();
   MX_TIM11_Init();
   MX_RTC_Init();
   MX_USART1_UART_Init();
   MX_USB_DEVICE_Init();
-  MX_TIM5_Init();
   /* USER CODE BEGIN 2 */
   user::setup(&hspi1, &hspi1, &hi2c1);
   /* USER CODE END 2 */
@@ -578,6 +578,7 @@ static void MX_TIM5_Init(void)
   TIM_MasterConfigTypeDef sMasterConfig = {0};
 
   /* USER CODE BEGIN TIM5_Init 1 */
+  __HAL_RCC_TIM5_CLK_ENABLE(); //For some reason MspInit is not generated for TIM5
 
   /* USER CODE END TIM5_Init 1 */
   htim5.Instance = TIM5;
@@ -602,7 +603,7 @@ static void MX_TIM5_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN TIM5_Init 2 */
-
+  HAL_TIM_Base_Start(&htim5);
   /* USER CODE END TIM5_Init 2 */
 
 }
@@ -897,7 +898,7 @@ void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
-  user_usb_prints("HAL ERROR!!!");
+  dbg_usb_prints("HAL ERROR!!!");
   __disable_irq();
   while (1)
   {

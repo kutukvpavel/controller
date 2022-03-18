@@ -3,18 +3,19 @@
 #include "main.h"
 #include "usbd_cdc_if.h"
 
-#define USB_SERIAL_DEBUG 1
+#define DEBUG_USB_SERIAL 0
+#define DEBUG_STEP_BY_STEP 0
 
 void cdc_transmit_blocking(uint8_t* buf, uint16_t len);
 
 //Shared API
-#if USB_SERIAL_DEBUG
-    #define user_usb_prints(str) { uint8_t _buf[] = str; cdc_transmit_blocking(_buf, sizeof(_buf)); }
+#if DEBUG_USB_SERIAL
+    #define dbg_usb_prints(str) { uint8_t _buf[] = (str); cdc_transmit_blocking(_buf, sizeof(_buf)); }
 #else
-    #define user_usb_prints(str)
+    #define dbg_usb_prints(str)
 #endif
 
-#define _BV(i) (1u << i)
+#define _BV(i) (1u << (i))
 #define MY_TIM_MICROS TIM5
 #define SERIAL_BUFFER_SIZE APP_TX_DATA_SIZE
 #define LOW 0
@@ -56,6 +57,7 @@ namespace user
     };
 
     uint32_t micros();
+    void uDelay(uint32_t us);
     void digitalWrite(pin_t p, uint8_t state);
     void pinMode(pin_t p, uint8_t mode);
     int min(int x, int y);

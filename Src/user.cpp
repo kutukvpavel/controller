@@ -5,9 +5,10 @@
 
 //Private vars
 char output_buf[256];
+user::pin_t cs_pin = { nCS_GPIO_Port, nCS_Pin };
+uint32_t last_tick = 0;
 static uint8_t zero_arr[1] = { 0 };
 static user::pin_t led_pin = user::pin_t(MASTER_ENABLE_GPIO_Port, MASTER_ENABLE_Pin);
-user::pin_t cs_pin = { nCS_GPIO_Port, nCS_Pin };
 static user::Stream* cdc_stream = new user::Stream();
 
 /**
@@ -39,12 +40,14 @@ static void send_output(size_t len)
     cdc_transmit_blocking(reinterpret_cast<uint8_t*>(output_buf), static_cast<uint16_t>(len));
 }
 
-static void wait_for_input()
+static void dbg_wait_for_input()
 {
-    user_usb_prints("Send anything to continue...\n");
+#if DEBUG_STEP_BY_STEP
+    dbg_usb_prints("Send anything to continue...\n");
     while (!cdc_stream->available()) LL_mDelay(10);
     while (cdc_stream->read() != '\0') LL_mDelay(1);
-    user_usb_prints("Starting execution.\n");
+    dbg_usb_prints("Starting execution.\n");
+#endif
 }
 
 /**
@@ -60,33 +63,39 @@ namespace user
     {
         while (CDC_IsConnected() != USBD_OK); //Note: requires DTR (i.e. hardware handshake)
         CDC_Register_RX_Callback(cdc_receive);
-        user_usb_prints("Hello World!\n");
-        wait_for_input();
+        dbg_usb_prints("Hello World!\n");
+        dbg_wait_for_input();
 
         //ADC
         HAL_SPI_Transmit(adc_spi, zero_arr, 1, 100); //Get SPI pins into an approptiate idle state before any /CS is asserted (SPI_MspInit doesn't do that FSR)
         adc::init(adc_spi, &cs_pin);
         LL_mDelay(1000); //Allow the boards to power up
-        user_usb_prints("Probing ADC modules...\n");
+        dbg_usb_prints("Probing ADC modules...\n");
         adc::probe();
         send_output(adc::dump_module_report(output_buf, sizeof(output_buf)));
-        wait_for_input();
+        dbg_wait_for_input();
 
         //DAC
         HAL_SPI_Transmit(dac_spi, zero_arr, 1, 100); //Get SPI pins into an approptiate idle state before any /CS is asserted (SPI_MspInit doesn't do that FSR)
         dac::init(dac_spi, &cs_pin, dac_i2c);
         LL_mDelay(1000); //Allow the boards to power up
-        user_usb_prints("Probing DAC modules...\n");
+        dbg_usb_prints("Probing DAC modules...\n");
         dac::probe();
         send_output(dac::dump_module_report(output_buf, sizeof(output_buf)));
-        wait_for_input();
+        dbg_wait_for_input();
 
         //Last preparations
+        LL_mDelay(1000);
         adc::increment_and_sync();
         dac::set_all(1);
     }
     void main()
     {
+        last_tick = HAL_GetTick();
+
+        //PC commands
+
+
         //ADC
         adc::drdy_check();
         if (adc::status == MY_ADC_STATUS_READ_PENDING) 
@@ -103,8 +112,9 @@ namespace user
 
         //Heartbeat
         LL_GPIO_TogglePin(led_pin.port, led_pin.mask);
-        user_usb_prints("Cycle completed.\n");
-        wait_for_input();
+        dbg_usb_prints("Cycle completed.\n");
+        dbg_wait_for_input();
+        while ((HAL_GetTick() - last_tick) < 5);
     }
 
     //Compatibility API
@@ -152,6 +162,11 @@ namespace user
     uint32_t micros()
     {
         return MY_TIM_MICROS->CNT;
+    }
+    void uDelay(uint32_t us)
+    {
+        uint32_t start = micros();
+        while ((micros() - start) < us);
     }
     void digitalWrite(pin_t p, uint8_t state)
     {

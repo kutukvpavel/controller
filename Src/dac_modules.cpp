@@ -7,8 +7,6 @@
 
 #define MY_INA219_CAL_MAGIC 33554.4 /* Divide by ohms */
 #define MY_INA219_CURRENT_LSB 1.2207E-6
-#define MY_DAC_FULL_SCALE 0xFFFF
-#define MY_DAC_REFERENCE_VOLTAGE 2.5 //V
 #define OUTPUT_CURRENT_FORMAT "C%.2X: %+8.5f\n"
 #define OUTPUT_REPORT_FORMAT "DAC Module #%u\n" \
     "\tSPI Handle: %p\n" \
@@ -17,6 +15,7 @@
     "\tAddress: %u\n" \
     "\tCal: {%.6f,%.6f}\n" \
     "\tRShunt: %.3f\n"
+#define CS_MUX_MASK(index) (((index) + 4u) << 3u) //Higher half of 8 addresses coded with PA3-PA5 (shifted accordingly)
 
 //User-friendly index to I2C address lower nibble mapping. Based on DIP switch board layout.
 enum : uint8_t
@@ -30,7 +29,7 @@ enum : uint8_t
 
 uint16_t volts_to_code(float volts)
 {
-    return static_cast<uint16_t>(roundf(volts * MY_DAC_FULL_SCALE / MY_DAC_REFERENCE_VOLTAGE));
+    return static_cast<uint16_t>(roundf(volts * AD5061_FULL_SCALE / AD5061_REFERENCE_VOLTAGE));
 }
 
 void activate_cs(dac::module_t* m)
@@ -75,9 +74,10 @@ namespace dac
     module_t modules[] = 
     {  
         {
-            .cs_mux_mask = 1,
+            .cs_mux_mask = CS_MUX_MASK(0u),
             .addr = MY_DAC_1,
             .cal_coeff = 1,
+            .current_cal_offset = -0.00005,
             .r_shunt = 1
         }
     };
@@ -86,9 +86,10 @@ namespace dac
     void init(SPI_HandleTypeDef* spi_instance, user::pin_t* spi_cs_pin, I2C_HandleTypeDef* i2c_instance)
     {
         static_assert(array_size(modules) <= MY_DAC_MAX_MODULES, "Too many DAC modules.");
-        if (!spi_instance || !i2c_instance || !spi_cs_pin) user_usb_prints("DAC SPI/I2C/CS pin interface handle is NULL!\n");
+        if (!spi_instance || !i2c_instance || !spi_cs_pin) dbg_usb_prints("DAC SPI/I2C/CS pin interface handle is NULL!\n");
         cs_pin = spi_cs_pin;
         LL_GPIO_SetOutputPin(cs_pin->port, cs_pin->mask); //Set /CS HIGH
+        LL_GPIO_ResetOutputPin(cs_mux_port, CS_MUX_MASK(3u)); //Clear CS MUX outputs (index = 0-3)
         //Configure communication members
         for (size_t i = 0; i < array_size(modules); i++)
         {
@@ -110,14 +111,16 @@ namespace dac
         {
             auto& m = modules[i];
             if (!m.hspi || !m.hi2c) continue;
-            m.present = INA219_Init(m.hi2c, m.addr);
-            if (!m.present) continue;
-            INA219_setConfig(m.hi2c, m.addr, cfg);
-            INA219_setCalibration(m.hi2c, m.addr, 
-                static_cast<uint16_t>(roundf(MY_INA219_CAL_MAGIC / m.r_shunt)), 
-                MY_INA219_CURRENT_LSB);
             activate_cs(&m);
-            ad5061_set_mode(m.hspi, AD5061_MODE_NORMAL);
+            m.present = INA219_Init(m.hi2c, m.addr);
+            if (m.present) 
+            {
+                INA219_setConfig(m.hi2c, m.addr, cfg);
+                INA219_setCalibration(m.hi2c, m.addr, 
+                    static_cast<uint16_t>(roundf(MY_INA219_CAL_MAGIC / m.r_shunt)), 
+                    MY_INA219_CURRENT_LSB);
+                ad5061_set_mode(m.hspi, AD5061_MODE_NORMAL);
+            }
             deactivate_cs(&m);
         }
     }
@@ -128,7 +131,7 @@ namespace dac
         {
             auto& m = modules[i];
             if (!m.present) continue;
-            m.last_current = INA219_ReadCurrent(m.hi2c, m.addr);
+            m.last_current = INA219_ReadCurrent(m.hi2c, m.addr) + m.current_cal_offset;
         }
     }
 
