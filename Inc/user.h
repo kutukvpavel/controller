@@ -22,12 +22,22 @@ void cdc_transmit_blocking(uint8_t* buf, uint16_t len);
 #define HIGH 1
 #define OUTPUT 1
 
+#define MY_STATUS_DUMP_DATA _BV(0)
+#define MY_STATUS_CORRECT_DAC _BV(1)
+#define MY_STATUS_DEPOLARIZE _BV(2)
+#define MY_STATUS_ACQUIRE _BV(3)
+#define MY_STATUS_HEARTBEAT _BV(4)
+
 template<typename T, size_t s> constexpr size_t array_size(const T(&arr)[s]);
 template<typename T, size_t s> constexpr size_t array_size(const T(&arr)[s]) { return s; }
+
+void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc);
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim);
 
 namespace user
 {
     //Globals
+    extern volatile uint8_t status;
 
     //MAIN
     void setup(SPI_HandleTypeDef* adc_spi, SPI_HandleTypeDef* dac_spi, I2C_HandleTypeDef* dac_i2c);

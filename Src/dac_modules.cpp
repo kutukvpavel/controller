@@ -44,21 +44,13 @@ void deactivate_cs(dac::module_t* m)
     LL_GPIO_SetOutputPin(dac::cs_pin->port, dac::cs_pin->mask); // Active-low
 }
 
-void set_module(dac::module_t* m, float volts)
+void set_module_internal(dac::module_t* m, float volts)
 {
     activate_cs(m);
     //10nS have to pass before bits can be clocked into ad5061 after /CS assertion
     //We are running at 84MHz, 1/84e6 ~ 1/100e6 = 10e-9 = 10nS, i.e. single CPU cycle delay is sufficient
     ad5061_set_code(m->hspi, volts_to_code(volts));
-    m->last_setpoint = volts;
-    deactivate_cs(m);
-}
-
-void apply_correction(dac::module_t* m)
-{
-    float drop = m->last_current * (m->r_shunt + AD5061_INTERNAL_RESISTANCE); //V
-    activate_cs(m);
-    ad5061_set_code(m->hspi, volts_to_code(m->last_setpoint + drop));
+    m->setpoint = volts;
     deactivate_cs(m);
 }
 
@@ -131,8 +123,13 @@ namespace dac
         {
             auto& m = modules[i];
             if (!m.present) continue;
-            m.last_current = INA219_ReadCurrent(m.hi2c, m.addr) + m.current_cal_offset;
+            m.current = INA219_ReadCurrent(m.hi2c, m.addr) + m.current_cal_offset;
         }
+    }
+
+    void set_module(size_t i, float volts)
+    {
+        set_module_internal(&(modules[i]), volts);
     }
 
     void set_all(float volts)
@@ -141,7 +138,7 @@ namespace dac
         {
             auto& m = modules[i];
             if (!m.present) continue;
-            set_module(&m, volts);
+            set_module_internal(&m, volts);
         }
     }
 
@@ -151,7 +148,28 @@ namespace dac
         {
             auto& m = modules[i];
             if (!m.present) continue;
-            apply_correction(&m);
+            float drop = m.current * (m.r_shunt + AD5061_INTERNAL_RESISTANCE); //V
+            activate_cs(&m);
+            ad5061_set_code(m.hspi, volts_to_code(m.setpoint + drop));
+            deactivate_cs(&m);
+        }
+    }
+
+    void toggle_depolarization()
+    {
+        for (size_t i = 0; i < array_size(modules); i++)
+        {
+            auto& m = modules[i];
+            if (!m.present) continue;
+            if (isnan(m.depolarization_setpoint)) continue;
+            if (m.is_depolarizing)
+            {
+                set_module_internal(&m, m.setpoint);
+            }
+            else
+            {
+                set_module_internal(&m, m.depolarization_setpoint);
+            }
         }
     }
 
@@ -162,7 +180,7 @@ namespace dac
         {
             auto& m = modules[i];
             if (!m.present) continue;
-            int w = snprintf(buf, max_len - written, OUTPUT_CURRENT_FORMAT, 0x10u * i, m.last_current);
+            int w = snprintf(buf, max_len - written, OUTPUT_CURRENT_FORMAT, 0x10u * i, m.current);
             if (w > 0)
             {
                 buf += w;

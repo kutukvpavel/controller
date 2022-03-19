@@ -1,15 +1,35 @@
 #include "usbd_cdc_if.h"
+#include "commands.h"
 #include "adc_modules.h"
 #include "dac_modules.h"
 #include "user.h"
 
 //Private vars
+volatile uint8_t status;
 char output_buf[256];
 user::pin_t cs_pin = { nCS_GPIO_Port, nCS_Pin };
 uint32_t last_tick = 0;
 static uint8_t zero_arr[1] = { 0 };
 static user::pin_t led_pin = user::pin_t(MASTER_ENABLE_GPIO_Port, MASTER_ENABLE_Pin);
 static user::Stream* cdc_stream = new user::Stream();
+
+/**
+ * ISRs
+ */
+
+void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
+{
+    status ^= MY_STATUS_HEARTBEAT;
+    if (status & MY_STATUS_ACQUIRE) status |= MY_STATUS_DUMP_DATA;
+}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
+{
+    if (htim->Instance == TIM3) //0.1mS timer: grab INA219 current data
+    {
+        status |= MY_STATUS_CORRECT_DAC;
+    }
+}
 
 /**
  * PRIVATE
@@ -87,14 +107,22 @@ namespace user
         //Last preparations
         LL_mDelay(1000);
         adc::increment_and_sync();
-        dac::set_all(1);
+        //dac::set_all(0);
     }
     void main()
     {
         last_tick = HAL_GetTick();
 
         //PC commands
+        cmd::process(cdc_stream);
 
+        //Data output
+        if (status & MY_STATUS_DUMP_DATA)
+        {
+            send_output(adc::dump_last_data(output_buf, sizeof(output_buf)));
+            send_output(dac::dump_last_currents(output_buf, sizeof(output_buf)));
+            status &= ~MY_STATUS_DUMP_DATA;
+        }
 
         //ADC
         adc::drdy_check();
@@ -102,19 +130,24 @@ namespace user
         {
             adc::read();
             adc::increment_and_sync();
-            send_output(adc::dump_last_data(output_buf, sizeof(output_buf)));
         }
 
         //DAC
-        dac::read_current();
-        dac::correct_for_current();
-        send_output(dac::dump_last_currents(output_buf, sizeof(output_buf)));
+        if (status & MY_STATUS_CORRECT_DAC)
+        {
+            dac::read_current();
+            dac::correct_for_current();
+            status &= ~MY_STATUS_CORRECT_DAC;
+        }
+        if (status & MY_STATUS_DEPOLARIZE)
+        {
+            dac::toggle_depolarization();
+        }
 
         //Heartbeat
-        LL_GPIO_TogglePin(led_pin.port, led_pin.mask);
+        if (status & MY_STATUS_HEARTBEAT) LL_GPIO_TogglePin(led_pin.port, led_pin.mask);
         dbg_usb_prints("Cycle completed.\n");
         dbg_wait_for_input();
-        while ((HAL_GetTick() - last_tick) < 5);
     }
 
     //Compatibility API

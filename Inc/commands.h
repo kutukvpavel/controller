@@ -13,3 +13,7 @@
 
 #include "user.h"
 
+namespace cmd
+{
+    void process(user::Stream* stream);
+}

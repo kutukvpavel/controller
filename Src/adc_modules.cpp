@@ -31,16 +31,14 @@ void activate_cs(adc::module_t* m)
     __NOP();
     __NOP();*/
     //Optocoupler needs a far longer delay
-    user::uDelay(100);
-    //LL_mDelay(1);
+    user::uDelay(25);
 }
 
 void deactivate_cs(adc::module_t* m)
 {
     LL_GPIO_ResetOutputPin(adc::cs_mux_port, m->cs_mux_mask);
     LL_GPIO_SetOutputPin(adc::cs_pin->port, adc::cs_pin->mask); // Active-low
-    user::uDelay(100);
-    //LL_mDelay(1);
+    user::uDelay(50); //Optocoupler turn OFF time is longer than turn ON time!
 }
 
 float convert(int32_t adc_reading, adc::module_t* m)

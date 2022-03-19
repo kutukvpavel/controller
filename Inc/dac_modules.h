@@ -24,12 +24,14 @@ namespace dac
         I2C_HandleTypeDef* hi2c;
         uint8_t addr;
         bool present;
-        float last_current;
-        float last_setpoint;
+        float current;
+        float setpoint;
+        float depolarization_setpoint;
         float cal_coeff;
         float cal_offset;
         float current_cal_offset;
         float r_shunt;
+        bool is_depolarizing;
     };
 
     //Globals
@@ -42,7 +44,9 @@ namespace dac
     // Public methods
     void init(SPI_HandleTypeDef* spi_instance, user::pin_t* spi_cs_pin, I2C_HandleTypeDef* i2c_instance);
     void probe();
+    void set_module(size_t i, float volts);
     void set_all(float volts);
+    void toggle_depolarization();
     void read_current();
     void correct_for_current();
     size_t dump_module_report(char* buf, size_t max_len);
