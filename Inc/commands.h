@@ -15,5 +15,6 @@
 
 namespace cmd
 {
+    void report_ready();
     void process(user::Stream* stream);
 }

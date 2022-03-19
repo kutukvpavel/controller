@@ -5,7 +5,6 @@
 #include "user.h"
 
 //Private vars
-volatile uint8_t status;
 char output_buf[256];
 user::pin_t cs_pin = { nCS_GPIO_Port, nCS_Pin };
 uint32_t last_tick = 0;
@@ -19,15 +18,19 @@ static user::Stream* cdc_stream = new user::Stream();
 
 void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
 {
-    status ^= MY_STATUS_HEARTBEAT;
-    if (status & MY_STATUS_ACQUIRE) status |= MY_STATUS_DUMP_DATA;
+    if (user::status & MY_STATUS_ACQUIRE) user::status |= MY_STATUS_DUMP_DATA;
+    LL_GPIO_TogglePin(led_pin.port, led_pin.mask);
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 {
-    if (htim->Instance == TIM3) //0.1mS timer: grab INA219 current data
+    if (htim->Instance == TIM3) //0.1S timer: grab INA219 current data, and depolarize
     {
-        status |= MY_STATUS_CORRECT_DAC;
+        user::status |= MY_STATUS_DEPOLARIZE;
+    }
+    if (htim->Instance == TIM4) //0.1S+X offset timer for PWM, stop depolarization and correct DAC
+    {
+        user::status |= MY_STATUS_CORRECT_DAC;
     }
 }
 
@@ -76,6 +79,8 @@ static void dbg_wait_for_input()
 
 namespace user 
 {
+    volatile uint8_t status;
+
     /****
      * MAIN
      * */
@@ -106,8 +111,9 @@ namespace user
 
         //Last preparations
         LL_mDelay(1000);
+        cmd::report_ready();
         adc::increment_and_sync();
-        //dac::set_all(0);
+        dac::set_all(1);
     }
     void main()
     {
@@ -120,7 +126,7 @@ namespace user
         if (status & MY_STATUS_DUMP_DATA)
         {
             send_output(adc::dump_last_data(output_buf, sizeof(output_buf)));
-            send_output(dac::dump_last_currents(output_buf, sizeof(output_buf)));
+            send_output(dac::dump_last_data(output_buf, sizeof(output_buf)));
             status &= ~MY_STATUS_DUMP_DATA;
         }
 
@@ -133,19 +139,20 @@ namespace user
         }
 
         //DAC
-        if (status & MY_STATUS_CORRECT_DAC)
+        if (status & MY_STATUS_DEPOLARIZE)
         {
             dac::read_current();
+            dac::start_depolarization();
+            status &= ~MY_STATUS_DEPOLARIZE;
+        }
+        if (status & MY_STATUS_CORRECT_DAC)
+        {
+            dac::stop_depolarization();
             dac::correct_for_current();
             status &= ~MY_STATUS_CORRECT_DAC;
         }
-        if (status & MY_STATUS_DEPOLARIZE)
-        {
-            dac::toggle_depolarization();
-        }
 
         //Heartbeat
-        if (status & MY_STATUS_HEARTBEAT) LL_GPIO_TogglePin(led_pin.port, led_pin.mask);
         dbg_usb_prints("Cycle completed.\n");
         dbg_wait_for_input();
     }

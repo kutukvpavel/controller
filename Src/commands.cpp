@@ -8,13 +8,27 @@ void clear_stream(user::Stream* stream)
 
 namespace cmd
 {
+    void report_ready()
+    {
+        user_usb_prints("READY...\n");
+    }
+
     void process(user::Stream* stream)
     {
         if (!stream->available()) return;
         char c = stream->read();
+        user_usb_prints("PARSED.\n");
         switch (c)
         {
         case 'A':
+            if (user::status & MY_STATUS_ACQUIRE)
+            {
+                user_usb_prints("END.\n");
+            }
+            else
+            {
+                user_usb_prints("ACQ.\n");
+            }
             user::status ^= MY_STATUS_ACQUIRE;
             break;
         default:

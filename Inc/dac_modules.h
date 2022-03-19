@@ -24,8 +24,10 @@ namespace dac
         I2C_HandleTypeDef* hi2c;
         uint8_t addr;
         bool present;
+        float prev_current;
         float current;
         float setpoint;
+        float corrected_setpoint;
         float depolarization_setpoint;
         float cal_coeff;
         float cal_offset;
@@ -46,9 +48,10 @@ namespace dac
     void probe();
     void set_module(size_t i, float volts);
     void set_all(float volts);
-    void toggle_depolarization();
+    void start_depolarization();
+    void stop_depolarization();
     void read_current();
     void correct_for_current();
     size_t dump_module_report(char* buf, size_t max_len);
-    size_t dump_last_currents(char* buf, size_t max_len);
+    size_t dump_last_data(char* buf, size_t max_len);
 }

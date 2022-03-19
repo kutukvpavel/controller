@@ -47,6 +47,7 @@ namespace adc
         float cal_coeff;
         float cal_offset;
         float last_result;
+        bool invert;
     };
     struct module_t
     {

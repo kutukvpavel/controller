@@ -7,7 +7,7 @@
 #define FULL_SCALE 0x7FFFFF //3-byte-wide integer
 #define MODULE_PINS_CS 0
 #define MODULE_PINS_DRDY 1
-#define MAX_INTERMODULE_DELAY 1 //mS
+#define MAX_INTERMODULE_DELAY 2 //mS
 #define OUTPUT_STRING_FORMAT "A%.2X: %+.6f\n" //Line format: "01F: +1.000000\n" 15 bytes/module (only one channel can be read at a time)
 #define OUTPUT_REPORT_FORMAT "ADC Module #%u\n" \
     "\tSPI Handle: %p\n" \
@@ -19,7 +19,6 @@
 
 //PRIVATE
 ADS1220_regs regs_buffer = ADS1220_default_regs;
-uint32_t last_drdy_assertion_ticks = 0;
 
 void activate_cs(adc::module_t* m)
 {
@@ -38,12 +37,13 @@ void deactivate_cs(adc::module_t* m)
 {
     LL_GPIO_ResetOutputPin(adc::cs_mux_port, m->cs_mux_mask);
     LL_GPIO_SetOutputPin(adc::cs_pin->port, adc::cs_pin->mask); // Active-low
-    user::uDelay(50); //Optocoupler turn OFF time is longer than turn ON time!
+    user::uDelay(75); //Optocoupler turn OFF time is longer than turn ON time!
 }
 
 float convert(int32_t adc_reading, adc::module_t* m)
 {
     float res = (adc_reading * REFERENCE_VOLTAGE) / FULL_SCALE;
+    if (m->channels[m->selected_channel].invert) res = -res;
     return res * m->channels[m->selected_channel].cal_coeff + m->channels[m->selected_channel].cal_offset;
 }
 
@@ -65,11 +65,15 @@ namespace adc
             .channels = {
                 {
                     .mux_conf = ADS1220_MUX_AIN0_AIN1,
-                    .cal_coeff = 1
+                    .cal_coeff = 1,
+                    .cal_offset = -0.0002,
+                    .invert = false
                 },
                 {
                     .mux_conf = ADS1220_MUX_AIN2_AIN3,
-                    .cal_coeff = 1
+                    .cal_coeff = 1,
+                    .cal_offset = -0.00015,
+                    .invert = true
                 }
             }
         }
@@ -145,16 +149,12 @@ namespace adc
         if (status == MY_ADC_STATUS_WAITING)
         {
             status = MY_ADC_STATUS_READ_PENDING;
-            last_drdy_assertion_ticks = HAL_GetTick();
         }
     }
 
     void drdy_check()
     {
         if (!LL_GPIO_IsInputPinSet(nDRDY_GPIO_Port, nDRDY_Pin)) drdy_callback(); //Active low
-        if ((status != MY_ADC_STATUS_READ_PENDING) && 
-            ((HAL_GetTick() - last_drdy_assertion_ticks) > 100u)) 
-            increment_and_sync();
     }
 
     size_t dump_last_data(char* buf, size_t max_len)
@@ -164,14 +164,17 @@ namespace adc
         {
             auto& m = modules[i];
             if (!m.present) continue;
-            float res = m.channels[m.last_channel].last_result;
-            if (abs(res) < 9.999990)
+            for (size_t j = 0; j < MY_ADC_CHANNELS_PER_CHIP; j++)
             {
-                int w = snprintf(buf, max_len - written, OUTPUT_STRING_FORMAT, 0x10u * i + m.last_channel, res);
-                if (w > 0) //On success, increment the variables, on error overwrite the bad line
+                float res = m.channels[j].last_result;
+                if (abs(res) < 9.999990)
                 {
-                    written += w;
-                    buf += w;
+                    int w = snprintf(buf, max_len - written, OUTPUT_STRING_FORMAT, 0x10u * i + j, res);
+                    if (w > 0) //On success, increment the variables, on error overwrite the bad line
+                    {
+                        written += w;
+                        buf += w;
+                    }
                 }
             }
         }
