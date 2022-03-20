@@ -15,6 +15,8 @@
 
 namespace cmd
 {
+    extern float dac_setpoint;
+
     void report_ready();
     void process(user::Stream* stream);
 }

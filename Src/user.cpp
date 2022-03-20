@@ -113,7 +113,7 @@ namespace user
         LL_mDelay(1000);
         cmd::report_ready();
         adc::increment_and_sync();
-        dac::set_all(1);
+        dac::set_all(0.2);
     }
     void main()
     {
@@ -151,6 +151,11 @@ namespace user
             dac::correct_for_current();
             status &= ~MY_STATUS_CORRECT_DAC;
         }
+        if (status & MY_STATUS_SETPOINT_CHANGED)
+        {
+            dac::set_all(cmd::dac_setpoint);
+            status &= ~MY_STATUS_SETPOINT_CHANGED;
+        }
 
         //Heartbeat
         dbg_usb_prints("Cycle completed.\n");
@@ -177,6 +182,7 @@ namespace user
         {
             buf[i] = _buffer[_head++];
         }
+        buf[len] = '\0';
         supervise_indexes(&_tail, &_head);
         return len;
     }

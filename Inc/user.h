@@ -27,6 +27,7 @@ void cdc_transmit_blocking(uint8_t* buf, uint16_t len);
 #define MY_STATUS_CORRECT_DAC _BV(1)
 #define MY_STATUS_DEPOLARIZE _BV(2)
 #define MY_STATUS_ACQUIRE _BV(3)
+#define MY_STATUS_SETPOINT_CHANGED _BV(4)
 
 template<typename T, size_t s> constexpr size_t array_size(const T(&arr)[s]);
 template<typename T, size_t s> constexpr size_t array_size(const T(&arr)[s]) { return s; }
