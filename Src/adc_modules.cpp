@@ -66,13 +66,13 @@ namespace adc
                 {
                     .mux_conf = ADS1220_MUX_AIN0_AIN1,
                     .cal_coeff = 1,
-                    .cal_offset = -0.000000,
+                    .cal_offset = -0.000010,
                     .invert = false
                 },
                 {
                     .mux_conf = ADS1220_MUX_AIN2_AIN3,
                     .cal_coeff = 1,
-                    .cal_offset = +0.000010,
+                    .cal_offset = +0.000020,
                     .invert = true
                 }
             }

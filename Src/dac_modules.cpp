@@ -8,7 +8,8 @@
 #define MY_INA219_CAL_MAGIC 33554.4 /* Divide by ohms */
 #define MY_INA219_CURRENT_LSB 1.2207E-6
 #define OUTPUT_DATA_FORMAT "C%.2X: %+8.5f\n" \
-    "D%.2X: %8.6f\n"
+    "D%.2X: %8.6f\n" \
+    "F%.2X: %8.6f\n"
 #define OUTPUT_REPORT_FORMAT "DAC Module #%u\n" \
     "\tSPI Handle: %p\n" \
     "\tCS MUX Mask: %u\n" \
@@ -18,7 +19,7 @@
     "\tRShunt: %.3f\n" \
     "\tINA Cal: %.5f\n"
 #define CS_MUX_MASK(index) (((index) + 4u) << 3u) //Higher half of 8 addresses coded with PA3-PA5 (shifted accordingly)
-#define MY_INA219_CURRENT_THRESHOLD 0.00001
+#define MY_INA219_CURRENT_THRESHOLD 0.00002
 
 //User-friendly index to I2C address lower nibble mapping. Based on DIP switch board layout.
 enum : uint8_t
@@ -138,6 +139,7 @@ namespace dac
         if (!m.present) return;
         set_module_internal(&m, volts);
         m.setpoint = volts;
+        m.corrected_setpoint = m.setpoint;
     }
 
     void set_all(float volts)
@@ -203,7 +205,7 @@ namespace dac
             auto& m = modules[i];
             if (!m.present) continue;
             uint8_t c = 0x10u * i;
-            int w = snprintf(buf, max_len - written, OUTPUT_DATA_FORMAT, c, m.current, c, m.setpoint);
+            int w = snprintf(buf, max_len - written, OUTPUT_DATA_FORMAT, c, m.current, c, m.setpoint, c, m.corrected_setpoint);
             if (w > 0)
             {
                 buf += w;
