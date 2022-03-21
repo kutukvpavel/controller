@@ -147,7 +147,7 @@ namespace user
         if (status & MY_STATUS_CORRECT_DAC)
         {
             dac::stop_depolarization();
-            dac::correct_for_current();
+            if (cmd::status & MY_CMD_STATUS_DAC_CORRECTION) dac::correct_for_current();
             status &= ~MY_STATUS_CORRECT_DAC;
         }
 

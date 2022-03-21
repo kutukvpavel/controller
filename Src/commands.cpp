@@ -74,6 +74,9 @@ namespace cmd
             while (CDC_Can_Transmit() != HAL_OK); //Ensure the PARSED message gets transmitted
             HAL_NVIC_SystemReset();
             break;
+        case 'C':
+            status ^= MY_CMD_STATUS_DAC_CORRECTION;
+            break;
         default:
             break;
         }
