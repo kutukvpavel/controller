@@ -1,6 +1,6 @@
 #include "ads1220.h"
 
-ADS1220_regs ADS1220_default_regs = { 0x00, 0x04, 0x10, 0x00 };
+ADS1220_regs ADS1220_default_regs = { 0x00, 0x04, 0x20, 0x00 }; //0x20 - 50Hz-only rejection
 
 void ADS1220_writeRegister(SPI_HandleTypeDef *hspi, uint8_t address, uint8_t value)
 {

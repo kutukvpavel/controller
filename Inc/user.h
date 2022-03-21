@@ -18,6 +18,7 @@ void cdc_transmit_blocking(uint8_t* buf, uint16_t len);
 
 #define _BV(i) (1u << (i))
 #define MY_TIM_MICROS TIM5
+#define MY_TIM_DEPOLARIZATION TIM4
 #define SERIAL_BUFFER_SIZE APP_TX_DATA_SIZE
 #define LOW 0
 #define HIGH 1
@@ -26,8 +27,6 @@ void cdc_transmit_blocking(uint8_t* buf, uint16_t len);
 #define MY_STATUS_DUMP_DATA _BV(0)
 #define MY_STATUS_CORRECT_DAC _BV(1)
 #define MY_STATUS_DEPOLARIZE _BV(2)
-#define MY_STATUS_ACQUIRE _BV(3)
-#define MY_STATUS_SETPOINT_CHANGED _BV(4)
 
 template<typename T, size_t s> constexpr size_t array_size(const T(&arr)[s]);
 template<typename T, size_t s> constexpr size_t array_size(const T(&arr)[s]) { return s; }

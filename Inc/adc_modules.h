@@ -26,9 +26,12 @@
 #pragma once
 
 #include "user.h"
+#include "average.h"
 
 #define MY_ADC_MAX_MODULES 4 //Hardware-determined
 #define MY_ADC_CHANNELS_PER_CHIP 2
+
+#define MY_ADC_AVERAGING 10 //Window length in counts
 
 #define MY_ADC_STATUS_INITIALIZING 0
 #define MY_ADC_STATUS_WAITING 1
@@ -46,8 +49,8 @@ namespace adc
         int mux_conf;
         float cal_coeff;
         float cal_offset;
-        float last_result;
         bool invert;
+        average* averaging_container;
     };
     struct module_t
     {

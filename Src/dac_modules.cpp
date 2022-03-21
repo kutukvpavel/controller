@@ -8,7 +8,7 @@
 #define MY_INA219_CAL_MAGIC 33554.4 /* Divide by ohms */
 #define MY_INA219_CURRENT_LSB 1.2207E-6
 #define OUTPUT_DATA_FORMAT "C%.2X: %+8.5f\n" \
-    "D%.2X: %+8.6f\n"
+    "D%.2X: %8.6f\n"
 #define OUTPUT_REPORT_FORMAT "DAC Module #%u\n" \
     "\tSPI Handle: %p\n" \
     "\tCS MUX Mask: %u\n" \
@@ -32,7 +32,9 @@ enum : uint8_t
 
 uint16_t volts_to_code(float volts)
 {
-    return static_cast<uint16_t>(roundf(volts * AD5061_FULL_SCALE / AD5061_REFERENCE_VOLTAGE));
+    float code = roundf(volts * AD5061_FULL_SCALE / AD5061_REFERENCE_VOLTAGE);
+    if (code < 0) code = 0;
+    return static_cast<uint16_t>(code);
 }
 
 void activate_cs(dac::module_t* m)
@@ -72,7 +74,7 @@ namespace dac
             .addr = MY_DAC_1,
             .depolarization_setpoint = NAN,
             .cal_coeff = 1,
-            .current_cal_offset = -0.00005,
+            .current_cal_offset = -0.00000,
             .r_shunt = 1
         }
     };
@@ -100,7 +102,7 @@ namespace dac
     {
         uint16_t cfg = INA219_CONFIG_BVOLTAGERANGE_16V |
 	             INA219_CONFIG_GAIN_1_40MV | INA219_CONFIG_BADCRES_12BIT |
-	             INA219_CONFIG_SADCRES_12BIT_32S_17MS |
+	             INA219_CONFIG_SADCRES_12BIT_64S_34MS |
 	             INA219_CONFIG_MODE_SVOLT_CONTINUOUS;
         for (size_t i = 0; i < array_size(modules); i++)
         {
@@ -152,12 +154,10 @@ namespace dac
         {
             auto& m = modules[i];
             if (!m.present) continue;
-            if ((m.prev_current - m.current) < MY_INA219_CURRENT_THRESHOLD) continue;
+            if (abs(m.prev_current - m.current) <= MY_INA219_CURRENT_THRESHOLD) continue;
             m.prev_current = m.current;
             m.corrected_setpoint = m.setpoint + m.current * (m.r_shunt + AD5061_INTERNAL_RESISTANCE); //V
-            activate_cs(&m);
-            ad5061_set_code(m.hspi, volts_to_code(m.corrected_setpoint));
-            deactivate_cs(&m);
+            set_module_internal(&m, m.corrected_setpoint);
         }
     }
 
@@ -186,6 +186,15 @@ namespace dac
         }
     }
 
+    void set_depolarization(float volts)
+    {
+        for (size_t i = 0; i < array_size(modules); i++)
+        {
+            auto& m = modules[i];
+            m.depolarization_setpoint = volts;
+        }
+    }
+
     size_t dump_last_data(char* buf, size_t max_len)
     {
         size_t written = 0;
@@ -194,7 +203,7 @@ namespace dac
             auto& m = modules[i];
             if (!m.present) continue;
             uint8_t c = 0x10u * i;
-            int w = snprintf(buf, max_len - written, OUTPUT_DATA_FORMAT, c, m.current, c, m.corrected_setpoint);
+            int w = snprintf(buf, max_len - written, OUTPUT_DATA_FORMAT, c, m.current, c, m.setpoint);
             if (w > 0)
             {
                 buf += w;

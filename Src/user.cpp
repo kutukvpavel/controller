@@ -18,7 +18,7 @@ static user::Stream* cdc_stream = new user::Stream();
 
 void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
 {
-    if (user::status & MY_STATUS_ACQUIRE) user::status |= MY_STATUS_DUMP_DATA;
+    if (cmd::status & MY_CMD_ACQUIRE) user::status |= MY_STATUS_DUMP_DATA;
     LL_GPIO_TogglePin(led_pin.port, led_pin.mask);
 }
 
@@ -113,7 +113,6 @@ namespace user
         LL_mDelay(1000);
         cmd::report_ready();
         adc::increment_and_sync();
-        dac::set_all(0.2);
     }
     void main()
     {
@@ -150,11 +149,6 @@ namespace user
             dac::stop_depolarization();
             dac::correct_for_current();
             status &= ~MY_STATUS_CORRECT_DAC;
-        }
-        if (status & MY_STATUS_SETPOINT_CHANGED)
-        {
-            dac::set_all(cmd::dac_setpoint);
-            status &= ~MY_STATUS_SETPOINT_CHANGED;
         }
 
         //Heartbeat

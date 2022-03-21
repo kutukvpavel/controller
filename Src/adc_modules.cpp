@@ -66,13 +66,13 @@ namespace adc
                 {
                     .mux_conf = ADS1220_MUX_AIN0_AIN1,
                     .cal_coeff = 1,
-                    .cal_offset = -0.0002,
+                    .cal_offset = -0.000000,
                     .invert = false
                 },
                 {
                     .mux_conf = ADS1220_MUX_AIN2_AIN3,
                     .cal_coeff = 1,
-                    .cal_offset = -0.00015,
+                    .cal_offset = +0.000010,
                     .invert = true
                 }
             }
@@ -92,6 +92,10 @@ namespace adc
             auto& m = modules[i];
             m.hspi = hspi;
             m.present = false;
+            for (size_t j = 0; j < MY_ADC_CHANNELS_PER_CHIP; j++)
+            {
+                m.channels[j].averaging_container = new average(MY_ADC_AVERAGING);
+            }
         }
         //Enable power and transievers
         LL_GPIO_SetOutputPin(enable_pin.port, enable_pin.mask); //Set ENABLE high
@@ -139,7 +143,7 @@ namespace adc
             activate_cs(&m);
             int32_t res = ADS1220_read_blocking(m.hspi, m.drdy->port, m.drdy->mask, MAX_INTERMODULE_DELAY);
             deactivate_cs(&m);
-            m.channels[m.selected_channel].last_result = convert(res, &m);
+            m.channels[m.selected_channel].averaging_container->enqueue(convert(res, &m));
         }
         status = MY_ADC_STATUS_WAITING;
     }
@@ -166,7 +170,7 @@ namespace adc
             if (!m.present) continue;
             for (size_t j = 0; j < MY_ADC_CHANNELS_PER_CHIP; j++)
             {
-                float res = m.channels[j].last_result;
+                float res = m.channels[j].averaging_container->get_average();
                 if (abs(res) < 9.999990)
                 {
                     int w = snprintf(buf, max_len - written, OUTPUT_STRING_FORMAT, 0x10u * i + j, res);
