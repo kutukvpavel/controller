@@ -3,7 +3,7 @@
 #include "main.h"
 #include "usbd_cdc_if.h"
 
-#define DEBUG_USB_SERIAL 0
+#define DEBUG_USB_SERIAL 1
 #define DEBUG_STEP_BY_STEP 0
 
 void cdc_transmit_blocking(uint8_t* buf, uint16_t len);
