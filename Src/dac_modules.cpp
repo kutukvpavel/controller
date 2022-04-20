@@ -9,7 +9,8 @@
 #define MY_INA219_CURRENT_LSB 1.2207E-6
 #define OUTPUT_DATA_FORMAT "C%.2X: %+8.5f\n" \
     "D%.2X: %8.6f\n" \
-    "F%.2X: %8.6f\n"
+    "F%.2X: %8.6f\n" \
+    "E%.2X: %8.6f\n"
 #define OUTPUT_REPORT_FORMAT "DAC Module #%u\n" \
     "\tSPI Handle: %p\n" \
     "\tCS MUX Mask: %u\n" \
@@ -73,7 +74,7 @@ namespace dac
         {
             .cs_mux_mask = CS_MUX_MASK(0u),
             .addr = MY_DAC_1,
-            .depolarization_setpoint = NAN,
+            .depolarization_setpoint = 0,
             .cal_coeff = 1,
             .current_cal_offset = -0.00000,
             .r_shunt = 1
@@ -169,7 +170,6 @@ namespace dac
         {
             auto& m = modules[i];
             if (!m.present) continue;
-            if (isnan(m.depolarization_setpoint)) continue;
             if (m.is_depolarizing) continue;
             set_module_internal(&m, m.depolarization_setpoint);
             m.is_depolarizing = true;
@@ -205,7 +205,8 @@ namespace dac
             auto& m = modules[i];
             if (!m.present) continue;
             uint8_t c = 0x10u * i;
-            int w = snprintf(buf, max_len - written, OUTPUT_DATA_FORMAT, c, m.current, c, m.setpoint, c, m.corrected_setpoint);
+            int w = snprintf(buf, max_len - written, OUTPUT_DATA_FORMAT, c, m.current, c, m.setpoint, c, m.corrected_setpoint,
+                c, m.depolarization_setpoint);
             if (w > 0)
             {
                 buf += w;

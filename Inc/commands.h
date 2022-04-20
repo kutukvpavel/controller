@@ -14,17 +14,18 @@
 #include "user.h"
 
 #define MY_CMD_ACQUIRE _BV(0)
-#define MY_CMD_DAC_SETPOINT_CHANGED _BV(1)
-#define MY_CMD_DAC_DEPOLARIZATION_CHANGED _BV(2)
-#define MY_CMD_STATUS_DAC_CORRECTION _BV(3)
+#define MY_CMD_STATUS_DAC_CORRECT _BV(1) //Single-shot
+
+#define DEPOLARIZATION_REPORT_FORMAT "BFF: %3.2f\n"
 
 namespace cmd
 {
     extern uint8_t status;
     extern float dac_setpoint;
-    extern uint16_t depolarization_time;
+    extern float depolarization_percent;
     extern float depolarization_setpoint;
 
     void report_ready();
-    void process(user::Stream* stream);
+    void process(user::Stream* stream, char* output_buf, size_t max_len);
+    size_t report_depolarization_percent(char* output_buf, size_t max_len);
 }

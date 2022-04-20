@@ -56,10 +56,12 @@ namespace user
         uint16_t _head;
         uint16_t _tail;
         uint8_t _buffer[SERIAL_BUFFER_SIZE * 2];
+        bool _newline_present;
     
     public:
         void receive(uint8_t* buf, uint16_t len);
         bool available();
+        bool new_line_reached();
         uint8_t read();
         uint16_t readBytes(uint8_t* buf, uint16_t len);
         uint16_t write(uint8_t* buf, uint16_t len);

@@ -1,5 +1,6 @@
 #include "commands.h"
 #include "dac_modules.h"
+#include "adc_modules.h"
 #include <math.h>
 
 void clear_stream(user::Stream* stream)
@@ -15,16 +16,11 @@ void read_float(user::Stream* stream, float* val)
     sscanf(buf, "%f", val);
 }
 
-void supervise_depolarization()
-{
-    if (cmd::depolarization_setpoint == cmd::dac_setpoint) cmd::depolarization_setpoint = NAN;
-}
-
 namespace cmd
 {
-    uint8_t status = MY_CMD_DAC_SETPOINT_CHANGED;
+    uint8_t status = 0;
     float dac_setpoint = 0.2;
-    uint16_t depolarization_time = 10000;
+    float depolarization_percent = 0;
     float depolarization_setpoint = 0;
 
     void report_ready()
@@ -32,9 +28,15 @@ namespace cmd
         user_usb_prints("READY...\n");
     }
 
-    void process(user::Stream* stream)
+    size_t report_depolarization_percent(char* output_buf, size_t max_len)
+    {
+        return snprintf(output_buf, max_len, DEPOLARIZATION_REPORT_FORMAT, depolarization_percent);
+    }
+
+    void process(user::Stream* stream, char* output_buf, size_t max_len)
     {
         if (!stream->available()) return;
+        if (!stream->new_line_reached()) return;
         char c = stream->read();
         user_usb_prints("PARSED.\n");
         switch (c)
@@ -52,7 +54,6 @@ namespace cmd
             break;
         case 'S':
             read_float(stream, &dac_setpoint);
-            supervise_depolarization();
             dac::set_all(dac_setpoint);
             break;
         case 'P':
@@ -60,23 +61,31 @@ namespace cmd
             float temp;
             read_float(stream, &temp);
             if (temp > 1) temp = 1;
-            if (temp < 0.01) temp = 0.01;
-            depolarization_time = static_cast<uint16_t>(roundf(temp * 30000));
-            MY_TIM_DEPOLARIZATION->ARR = depolarization_time;
+            depolarization_percent = temp;
+            if (depolarization_percent < 0.01) depolarization_percent = 0;
+            if (temp < 0.01) temp = 0.01; //So that the timer doesn't fire constantly
+            MY_TIM_DEPOLARIZATION->ARR = static_cast<uint16_t>(roundf(temp * 30000));
             break;
         }
-        case 'D':
+        case 'D': //Setting to DAC setpoint disables depolarization
             read_float(stream, &depolarization_setpoint);
-            supervise_depolarization();
             dac::set_depolarization(depolarization_setpoint);
             break;
         case 'R':
             while (CDC_Can_Transmit() != HAL_OK); //Ensure the PARSED message gets transmitted
             HAL_NVIC_SystemReset();
             break;
-        case 'C':
-            status ^= MY_CMD_STATUS_DAC_CORRECTION;
+        case 'E':
+            status |= MY_CMD_STATUS_DAC_CORRECT; //Single-shot
             break;
+        case 'I':
+        {
+            size_t len = adc::dump_module_report(output_buf, max_len);
+            cdc_transmit_blocking(reinterpret_cast<uint8_t*>(output_buf), len);
+            len = dac::dump_module_report(output_buf, max_len);
+            cdc_transmit_blocking(reinterpret_cast<uint8_t*>(output_buf), len);
+            break;
+        }
         default:
             break;
         }

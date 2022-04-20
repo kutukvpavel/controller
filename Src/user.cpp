@@ -119,13 +119,14 @@ namespace user
         last_tick = HAL_GetTick();
 
         //PC commands
-        cmd::process(cdc_stream);
+        cmd::process(cdc_stream, output_buf, sizeof(output_buf));
 
         //Data output
         if (status & MY_STATUS_DUMP_DATA)
         {
             send_output(adc::dump_last_data(output_buf, sizeof(output_buf)));
             send_output(dac::dump_last_data(output_buf, sizeof(output_buf)));
+            send_output(cmd::report_depolarization_percent(output_buf, size_t(output_buf)));
             status &= ~MY_STATUS_DUMP_DATA;
         }
 
@@ -141,13 +142,17 @@ namespace user
         if (status & MY_STATUS_DEPOLARIZE)
         {
             dac::read_current();
-            dac::start_depolarization();
+            if (cmd::depolarization_percent > 0) dac::start_depolarization();
             status &= ~MY_STATUS_DEPOLARIZE;
         }
         if (status & MY_STATUS_CORRECT_DAC)
         {
             dac::stop_depolarization();
-            if (cmd::status & MY_CMD_STATUS_DAC_CORRECTION) dac::correct_for_current();
+            if (cmd::status & MY_CMD_STATUS_DAC_CORRECT) 
+            {
+                dac::correct_for_current(); //Single-shot
+                cmd::status &= ~MY_CMD_STATUS_DAC_CORRECT;
+            }
             status &= ~MY_STATUS_CORRECT_DAC;
         }
 
@@ -161,6 +166,12 @@ namespace user
     {
         supervise_indexes(&_tail, &_head);
         return _tail != _head;
+    }
+    bool Stream::new_line_reached()
+    {
+        bool tmp = _newline_present;
+        if (tmp) _newline_present = false;
+        return tmp;
     }
     uint8_t Stream::read()
     {
@@ -196,6 +207,14 @@ namespace user
         for (size_t i = 0; i < len; i++)
         {
             _buffer[_tail++] = buf[i];
+        }
+        for (size_t i = 0; i < len; i++)
+        {
+            if (buf[i] == '\n')
+            {
+                _newline_present = true;
+                break;
+            }
         }
     }
 
