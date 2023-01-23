@@ -96,6 +96,7 @@ void Error_Handler(void);
 #define nDRDY_GPIO_Port GPIOA
 #define nCS_Pin LL_GPIO_PIN_15
 #define nCS_GPIO_Port GPIOA
+
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
@@ -105,5 +106,3 @@ void Error_Handler(void);
 #endif
 
 #endif /* __MAIN_H */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

@@ -60,10 +60,8 @@ void TIM1_UP_TIM10_IRQHandler(void);
 void TIM3_IRQHandler(void);
 void TIM4_IRQHandler(void);
 void RTC_Alarm_IRQHandler(void);
-void DMA2_Stream2_IRQHandler(void);
 void DMA2_Stream4_IRQHandler(void);
 void OTG_FS_IRQHandler(void);
-void DMA2_Stream7_IRQHandler(void);
 /* USER CODE BEGIN EFP */
 
 /* USER CODE END EFP */
@@ -73,5 +71,3 @@ void DMA2_Stream7_IRQHandler(void);
 #endif
 
 #endif /* __STM32F4xx_IT_H */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
