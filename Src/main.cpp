@@ -627,7 +627,7 @@ static void MX_TIM9_Init(void)
   htim9.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim9.Init.Period = 65535;
   htim9.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim9.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  htim9.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   if (HAL_TIM_Base_Init(&htim9) != HAL_OK)
   {
     Error_Handler();
@@ -678,7 +678,7 @@ static void MX_TIM10_Init(void)
   htim10.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim10.Init.Period = 65535;
   htim10.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim10.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  htim10.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   if (HAL_TIM_Base_Init(&htim10) != HAL_OK)
   {
     Error_Handler();
@@ -724,7 +724,7 @@ static void MX_TIM11_Init(void)
   htim11.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim11.Init.Period = 65535;
   htim11.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim11.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  htim11.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   if (HAL_TIM_Base_Init(&htim11) != HAL_OK)
   {
     Error_Handler();
@@ -795,11 +795,11 @@ static void MX_DMA_Init(void)
   HAL_NVIC_SetPriority(DMA2_Stream2_IRQn, 2, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream2_IRQn);
   /* DMA2_Stream4_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA2_Stream4_IRQn, 2, 0);
-  HAL_NVIC_EnableIRQ(DMA2_Stream4_IRQn);
+  /*HAL_NVIC_SetPriority(DMA2_Stream4_IRQn, 2, 0);
+  HAL_NVIC_EnableIRQ(DMA2_Stream4_IRQn);*/
   /* DMA2_Stream7_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA2_Stream7_IRQn, 3, 0);
-  HAL_NVIC_EnableIRQ(DMA2_Stream7_IRQn);
+  /*HAL_NVIC_SetPriority(DMA2_Stream7_IRQn, 3, 0);
+  HAL_NVIC_EnableIRQ(DMA2_Stream7_IRQn);*/
 
 }
 
