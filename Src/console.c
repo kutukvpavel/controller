@@ -1,7 +1,9 @@
 #include "console.h"
 
-#include "user.h"
+#include "usbd_cdc_if.h"
 #include <errno.h>
+
+_BEGIN_STD_C
 
 #if !defined(OS_USE_SEMIHOSTING)
 
@@ -90,3 +92,5 @@ int fputc(int c, FILE *stream)
 
       return _write(fileno(stdout), &tOut, 1);
 }
+
+_END_STD_C
