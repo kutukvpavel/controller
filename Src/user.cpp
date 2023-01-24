@@ -1,16 +1,20 @@
+#include "user.h"
+
 #include "usbd_cdc_if.h"
 #include "commands.h"
 #include "adc_modules.h"
 #include "dac_modules.h"
-#include "user.h"
+#include "sr_io.h"
+#include "../ModbusPort/src/ModbusSlave.h"
+
+#define SR_SYNC_INTERVAL 50 //mS
 
 //Private vars
 char output_buf[256];
 user::pin_t cs_pin = { nCS_GPIO_Port, nCS_Pin };
-uint32_t last_tick = 0;
 static uint8_t zero_arr[1] = { 0 };
 static user::pin_t led_pin = user::pin_t(MASTER_ENABLE_GPIO_Port, MASTER_ENABLE_Pin);
-static user::Stream* cdc_stream = new user::Stream();
+static user::Stream cdc_stream = user::Stream();
 
 /**
  * ISRs
@@ -18,7 +22,7 @@ static user::Stream* cdc_stream = new user::Stream();
 
 void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
 {
-    if (cmd::status & MY_CMD_ACQUIRE) user::status |= MY_STATUS_DUMP_DATA;
+    if (cmd::get_status_bit_set(MY_CMD_ACQUIRE)) cmd::set_status_bit(MY_CMD_STATUS_HAVE_NEW_DATA);
     LL_GPIO_TogglePin(led_pin.port, led_pin.mask);
 }
 
@@ -55,7 +59,7 @@ static void supervise_indexes(uint16_t* _tail, uint16_t* _head)
 
 static void cdc_receive(uint8_t* buf, uint32_t* len)
 {
-    cdc_stream->receive(buf, static_cast<uint16_t>(*len));
+    cdc_stream.receive(buf, static_cast<uint16_t>(*len));
 }
 
 static void send_output(size_t len)
@@ -66,10 +70,10 @@ static void send_output(size_t len)
 static void dbg_wait_for_input()
 {
 #if DEBUG_STEP_BY_STEP
-    dbg_usb_prints("Send anything to continue...\n");
+    puts("Send anything to continue...\n");
     while (!cdc_stream->available()) LL_mDelay(10);
     while (cdc_stream->read() != '\0') LL_mDelay(1);
-    dbg_usb_prints("Starting execution.\n");
+    puts("Starting execution.\n");
 #endif
 }
 
@@ -88,14 +92,15 @@ namespace user
     {
         while (CDC_IsConnected() != USBD_OK); //Note: requires DTR (i.e. hardware handshake)
         CDC_Register_RX_Callback(cdc_receive);
-        dbg_usb_prints("Hello World!\n");
+        cmd::init(cdc_stream, );
+        puts("Hello World!\n");
         dbg_wait_for_input();
 
         //ADC
         HAL_SPI_Transmit(adc_spi, zero_arr, 1, 100); //Get SPI pins into an approptiate idle state before any /CS is asserted (SPI_MspInit doesn't do that FSR)
         adc::init(adc_spi, &cs_pin);
         LL_mDelay(1000); //Allow the boards to power up
-        dbg_usb_prints("Probing ADC modules...\n");
+        puts("Probing ADC modules...\n");
         adc::probe();
         send_output(adc::dump_module_report(output_buf, sizeof(output_buf)));
         dbg_wait_for_input();
@@ -104,7 +109,7 @@ namespace user
         HAL_SPI_Transmit(dac_spi, zero_arr, 1, 100); //Get SPI pins into an approptiate idle state before any /CS is asserted (SPI_MspInit doesn't do that FSR)
         dac::init(dac_spi, &cs_pin, dac_i2c);
         LL_mDelay(1000); //Allow the boards to power up
-        dbg_usb_prints("Probing DAC modules...\n");
+        puts("Probing DAC modules...\n");
         dac::probe();
         send_output(dac::dump_module_report(output_buf, sizeof(output_buf)));
         dbg_wait_for_input();
@@ -116,19 +121,31 @@ namespace user
     }
     void main()
     {
-        last_tick = HAL_GetTick();
+        static uint32_t tick;
+        static uint32_t last_gpio_sync = 0;
+
+        tick = HAL_GetTick();
+
+        //GPIO
+        if (tick - last_gpio_sync > SR_SYNC_INTERVAL)
+        {
+            sr_io::sync();
+            last_gpio_sync = tick;
+        }
 
         //PC commands
-        cmd::process(cdc_stream, output_buf, sizeof(output_buf));
+        cmd::poll();
+        //cmd::process(&cdc_stream, output_buf, sizeof(output_buf));
 
         //Data output
-        if (status & MY_STATUS_DUMP_DATA)
+        /*if (status & MY_STATUS_DUMP_DATA)
         {
             send_output(adc::dump_last_data(output_buf, sizeof(output_buf)));
             send_output(dac::dump_last_data(output_buf, sizeof(output_buf)));
             send_output(cmd::report_depolarization_percent(output_buf, size_t(output_buf)));
+            
             status &= ~MY_STATUS_DUMP_DATA;
-        }
+        }*/
 
         //ADC
         adc::drdy_check();
@@ -142,22 +159,22 @@ namespace user
         if (status & MY_STATUS_DEPOLARIZE)
         {
             dac::read_current();
-            if (cmd::depolarization_percent > 0) dac::start_depolarization();
+            if (cmd::get_depolarization_percent() > 0) dac::start_depolarization();
             status &= ~MY_STATUS_DEPOLARIZE;
         }
         if (status & MY_STATUS_CORRECT_DAC)
         {
             dac::stop_depolarization();
-            if (cmd::status & MY_CMD_STATUS_DAC_CORRECT) 
+            if (cmd::get_status_bit_set(MY_CMD_STATUS_DAC_CORRECT))
             {
                 dac::correct_for_current(); //Single-shot
-                cmd::status &= ~MY_CMD_STATUS_DAC_CORRECT;
+                cmd::reset_status_bit(MY_CMD_STATUS_DAC_CORRECT);
             }
             status &= ~MY_STATUS_CORRECT_DAC;
         }
 
         //Heartbeat
-        dbg_usb_prints("Cycle completed.\n");
+        puts("Cycle completed.\n");
         dbg_wait_for_input();
     }
 

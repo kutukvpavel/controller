@@ -5,13 +5,16 @@
 
 #include <stdint.h>
 
+#define MOTORS_NUM 3
+
 struct motor_params_t
 {
     float rate_to_speed; //Characterizes tubing
-    uint8_t microsteps;
+    uint16_t microsteps;
     uint16_t teeth; //Usually 200 (1.8 deg stepper)
-    bool invert_enable;
-    bool invert_error;
+    uint16_t invert_enable;
+    uint16_t invert_error;
+    uint16_t direction;
 };
 
 class motor
@@ -23,7 +26,7 @@ private:
     sr_io::in err_input;
     sr_io::out en_output;
 public:
-    motor(TIM_TypeDef*, motor_params_t*, sr_io::in, sr_io::out);
+    motor(TIM_TypeDef* t, motor_params_t* c, sr_io::in err, sr_io::out en, sr_io::out dir);
 
     /// @brief 
     /// @param v Speed in rotations per second (RPS, Hz)

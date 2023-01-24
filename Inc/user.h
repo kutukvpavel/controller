@@ -9,7 +9,7 @@
 void cdc_transmit_blocking(uint8_t* buf, uint16_t len);
 
 //Shared API
-#define user_usb_prints(str) { uint8_t _buf[] = (str); cdc_transmit_blocking(_buf, sizeof(_buf)); }
+//#define user_usb_prints(str) { uint8_t _buf[] = (str); cdc_transmit_blocking(_buf, sizeof(_buf)); }
 #if DEBUG_USB_SERIAL
     #define dbg_usb_prints(str) user_usb_prints(str)
 #else
@@ -27,6 +27,8 @@ void cdc_transmit_blocking(uint8_t* buf, uint16_t len);
 #define MY_STATUS_DUMP_DATA _BV(0)
 #define MY_STATUS_CORRECT_DAC _BV(1)
 #define MY_STATUS_DEPOLARIZE _BV(2)
+#define MY_STATUS_ACQUIRE _BV(3)
+#define MY_STATUS_
 
 template<typename T, size_t s> constexpr size_t array_size(const T(&arr)[s]);
 template<typename T, size_t s> constexpr size_t array_size(const T(&arr)[s]) { return s; }

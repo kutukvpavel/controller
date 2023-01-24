@@ -26,13 +26,14 @@ void motor::set_enable(bool v)
     sr_io::set_output(en_output, cal->invert_enable ? !v : v);
 }
 
-motor::motor(TIM_TypeDef* t, motor_params_t* c, sr_io::in err, sr_io::out en)
+motor::motor(TIM_TypeDef* t, motor_params_t* c, sr_io::in err, sr_io::out en, sr_io::out dir)
 {
     tim = t;
     cal = c;
     clk = static_cast<float>(HAL_RCC_GetSysClockFreq()) / tim->PSC;
     err_input = err;
     en_output = en;
+    sr_io::set_output(dir, c->direction);
 }
 motor::~motor()
 {

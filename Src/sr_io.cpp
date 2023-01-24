@@ -2,7 +2,6 @@
 
 #include "user.h"
 #include <math.h>
-#include <stddef.h>
 
 typedef uint32_t buf_t;
 #define BUF_WORD_BITS (__CHAR_BIT__ * sizeof(buf_t))
@@ -17,6 +16,11 @@ namespace sr_io
     buf_t input_buffer[BUF_LEN(in::INPUT_NUM)];
     buf_t output_buffer[BUF_LEN(out::OUTPUT_NUM)];
 
+    size_t get_inputs(const uint16_t*& buffer)
+    {
+        buffer = reinterpret_cast<uint16_t*>(&(input_buffer[0]));
+        return sizeof(input_buffer) / sizeof(uint16_t);
+    }
     bool get_input(in i)
     {
         return input_buffer[BIT_TO_WORD_IDX(i)] & BV(BIT_REMAINDER_IDX(i));
@@ -32,6 +36,10 @@ namespace sr_io
             output_buffer[BIT_TO_WORD_IDX(i)] &= ~BV(BIT_REMAINDER_IDX(i));
         }
     }
+    bool get_output(size_t i)
+    {
+        return output_buffer[BIT_TO_WORD_IDX(i)] & BV(BIT_REMAINDER_IDX(i));
+    }
 
     /// @brief Private, or for debug purposes
     void set_input(size_t i, bool v)
@@ -45,18 +53,14 @@ namespace sr_io
             input_buffer[BIT_TO_WORD_IDX(i)] &= ~BV(BIT_REMAINDER_IDX(i));
         }
     }
-    /// @brief Private, or for debug purposes
-    bool get_output(size_t i)
-    {
-        return output_buffer[BIT_TO_WORD_IDX(i)] & BV(BIT_REMAINDER_IDX(i));
-    }
+
 
     void pulse_output(GPIO_TypeDef* port, uint16_t pin)
     {
         user::uDelay(1);
-        HAL_GPIO_WritePin(port, pin, GPIO_PinState::GPIO_PIN_SET);
+        LL_GPIO_SetOutputPin(port, pin);
         user::uDelay(1);
-        HAL_GPIO_WritePin(port, pin, GPIO_PinState::GPIO_PIN_RESET);
+        LL_GPIO_ResetOutputPin(port, pin);
         user::uDelay(1);
     }
     void sync()

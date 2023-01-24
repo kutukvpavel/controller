@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stddef.h>
+
 namespace sr_io
 {
     enum in
@@ -37,8 +39,10 @@ namespace sr_io
         OUTPUT_NUM
     };
 
+    size_t get_inputs(const uint16_t*& buffer);
     bool get_input(in i);
     void set_output(out i, bool v);
+    bool get_output(size_t i);
 
     void sync();
 }
