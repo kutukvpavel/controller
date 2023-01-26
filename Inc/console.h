@@ -2,6 +2,8 @@
 
 #include <stdio.h>
 #include <sys/stat.h>
+#include <stm32f4xx.h>
+#include <stm32f4xx_hal_uart.h>
 
 _BEGIN_STD_C
 

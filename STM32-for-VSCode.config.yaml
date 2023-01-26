@@ -68,11 +68,11 @@ excludes:
 # If a CubeMX makefile is present it will automatically include the include directories from that makefile.
 includeDirectories: 
   - Inc/**
-  - Core/Inc/**
-  - Core/Lib/**
   - Src/**
-  - Core/Src/**
-  - Core/Lib/**
+  - ModbusPort/src/**
+  - Drivers/STM32F4xx_HAL_Driver/Inc/**
+  - Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include**
+  - Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/PrivateInclude
 
 
 # Files that should be included in the compilation.
@@ -82,8 +82,9 @@ includeDirectories:
 # these should be escaped with a: \ or the name should be in double quotes e.g. "HARDWARE_DRIVER*.c"
 sourceFiles:  
   - Src/**
-  - Core/Src/**
-  - Core/Lib/**
+  - ModbusPort/src/**
+  - Drivers/STM32F4xx_HAL_Driver/Src/**
+  - Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source**
 
 
 # When no makefile is present it will show a warning pop-up.

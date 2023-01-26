@@ -30,7 +30,7 @@ namespace cmd
 {
     typedef uint8_t status_t;
 
-    void init(user::Stream&, motor_params_t*);
+    void init(user::Stream&, const motor_params_t*);
     void poll();
 
     void report_ready();

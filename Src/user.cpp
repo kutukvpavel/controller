@@ -5,6 +5,7 @@
 #include "adc_modules.h"
 #include "dac_modules.h"
 #include "sr_io.h"
+#include "nvs.h"
 #include "../ModbusPort/src/ModbusSlave.h"
 
 #define SR_SYNC_INTERVAL 50 //mS
@@ -92,7 +93,7 @@ namespace user
     {
         while (CDC_IsConnected() != USBD_OK); //Note: requires DTR (i.e. hardware handshake)
         CDC_Register_RX_Callback(cdc_receive);
-        cmd::init(cdc_stream, );
+        cmd::init(cdc_stream, nvs::get_motor_params(0));
         puts("Hello World!\n");
         dbg_wait_for_input();
 

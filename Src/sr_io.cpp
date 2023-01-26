@@ -19,7 +19,7 @@ namespace sr_io
     size_t get_inputs(const uint16_t*& buffer)
     {
         buffer = reinterpret_cast<uint16_t*>(&(input_buffer[0]));
-        return sizeof(input_buffer) / sizeof(uint16_t);
+        return sizeof(input_buffer) / (sizeof(uint16_t));
     }
     bool get_input(in i)
     {

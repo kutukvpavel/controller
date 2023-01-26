@@ -144,12 +144,13 @@ namespace cmd
         return STATUS_OK;
     }
 
-    void init(user::Stream& stream, motor_params_t* m)
+    void init(user::Stream& stream, const motor_params_t* m)
     {
         static_assert(sizeof(modbus_registers) % 2 == 0);
 
-        if (modbus) return;
+        memcpy(regs.motors, m, sizeof(regs.motors));
 
+        if (modbus) return;
         modbus = new Modbus(stream);
         modbus->cbVector[CB_WRITE_COILS] = write_cb;
         modbus->cbVector[CB_WRITE_HOLDING_REGISTERS] = write_cb;
