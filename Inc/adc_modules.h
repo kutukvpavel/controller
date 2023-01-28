@@ -44,12 +44,16 @@
 
 namespace adc
 {
+    struct ch_cal_t
+    {
+        float k;
+        float b;
+        bool invert;
+    };
     struct channel_t
     {
+        const ch_cal_t* cal;
         int mux_conf;
-        float cal_coeff;
-        float cal_offset;
-        bool invert;
         average* averaging_container;
     };
     struct module_t
@@ -73,7 +77,7 @@ namespace adc
     extern module_t modules[];
 
     //Public methods
-    void init(SPI_HandleTypeDef* hspi, user::pin_t* spi_cs_pin);
+    void init(SPI_HandleTypeDef* hspi, user::pin_t* spi_cs_pin, const ch_cal_t* cals);
     void probe();
     void increment_and_sync();
     void read();

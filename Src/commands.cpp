@@ -3,6 +3,8 @@
 #include "dac_modules.h"
 #include "adc_modules.h"
 #include "sr_io.h"
+#include "a_io.h"
+#include "nvs.h"
 #include "../ModbusPort/src/ModbusSlave.h"
 
 #include <math.h>
@@ -22,35 +24,60 @@ void read_float(user::Stream* stream, float* val)
 
 namespace cmd
 {
-#define STATUS_BITS_NUM (sizeof(status_t) * __CHAR_BIT__)
+#define STATUS_BITS_NUM (sizeof(bitfield_t) * __CHAR_BIT__)
 #define COILS_NUM (STATUS_BITS_NUM + sr_io::out::OUTPUT_NUM)
-#define REGISTERS_NUM (sizeof(modbus_registers) * __CHAR_BIT__ / 16u)
+#define HOLDING_REGISTERS_NUM (sizeof(modbus_holding_registers) * __CHAR_BIT__ / 16u)
 #define INPUT_REGS_NUM ()
 
     static Modbus* modbus;
 
     struct modbus_coils
     {
-        status_t status = 0;
+        bitfield_t commands = 0;
     };
-    struct modbus_registers
+    struct modbus_holding_registers
     {
-        float dac_setpoint = 0.2;
-        float depolarization_percent = 0;
-        float depolarization_setpoint = 0;
-        motor_params_t motors[MOTORS_NUM];
+        float dac_setpoints[MY_DAC_MAX_MODULES];
     };
-    modbus_registers regs = {};
+    struct modbus_holding_ptrs
+    {
+        motor_params_t* motor_params[MOTORS_NUM];
+        a_io::in_cal_t* analog_input_cals[a_io::in::INPUTS_NUM];
+        adc::ch_cal_t* adc_cals[MY_ADC_MAX_MODULES * MY_ADC_CHANNELS_PER_CHIP];
+        dac::cal_t* dac_cals[MY_DAC_MAX_MODULES];
+        float* depolarization_percent[MY_DAC_MAX_MODULES];
+        float* depolarization_setpoint[MY_DAC_MAX_MODULES];
+    };
+    struct modbus_input_registers
+    {
+        uint16_t max_motors_num = MOTORS_NUM;
+        uint16_t max_adc_modules = MY_ADC_MAX_MODULES;
+        uint16_t adc_channels_per_module = MY_ADC_CHANNELS_PER_CHIP;
+        uint16_t present_adc_channels = 0;
+        uint16_t max_dac_modules = MY_DAC_MAX_MODULES;
+        uint16_t present_dac_channels = 0;
+        float adc_voltages[MY_ADC_MAX_MODULES * MY_ADC_CHANNELS_PER_CHIP];
+    };
+    struct modbus_input_ptrs
+    {
+        const float* a_in[a_io::INPUTS_NUM];
+        const float* temperature;
+        const float* dac_currents[MY_DAC_MAX_MODULES];
+    };
     modbus_coils coils = {};
+    modbus_holding_registers holding = {};
+    modbus_holding_ptrs holding_ptrs = {};
+    modbus_input_registers input = {};
+    modbus_input_ptrs input_pts = {};
 
     void write_status_bit(size_t address, bool bit)
     {
-        if (bit) coils.status |= _BV(address);
-        else coils.status &= ~_BV(address);
+        if (bit) coils.commands |= _BV(address);
+        else coils.commands &= ~_BV(address);
     }
     void write_reg(size_t address, uint16_t val)
     {
-        uint16_t* p = reinterpret_cast<uint16_t*>(&regs);
+        uint16_t* p = reinterpret_cast<uint16_t*>(&holding);
         *(p + address) = val;
     }
 
@@ -91,11 +118,11 @@ namespace cmd
             }
             break;
         case FC_WRITE_REGISTER:
-            if (address >= REGISTERS_NUM) return STATUS_ILLEGAL_DATA_ADDRESS;
+            if (address >= HOLDING_REGISTERS_NUM) return STATUS_ILLEGAL_DATA_ADDRESS;
             write_reg(address, modbus->readRegisterFromBuffer(0));
             break;
         case FC_WRITE_MULTIPLE_REGISTERS:
-            if ((address + length) > REGISTERS_NUM) return STATUS_ILLEGAL_DATA_ADDRESS;
+            if ((address + length) > HOLDING_REGISTERS_NUM) return STATUS_ILLEGAL_DATA_ADDRESS;
             for (size_t i = 0; i < length; i++)
             {
                 write_reg(address + i, modbus->readRegisterFromBuffer(i));
@@ -115,8 +142,8 @@ namespace cmd
             modbus->writeDiscreteInputToBuffer(0, sr_io::get_input(static_cast<sr_io::in>(address)));
             break;
         case FC_READ_HOLDING_REGISTERS:
-            if ((address + length) > REGISTERS_NUM) return STATUS_ILLEGAL_DATA_ADDRESS;
-            modbus->writeArrayToBuffer(0, reinterpret_cast<uint16_t*>(&regs), length);
+            if ((address + length) > HOLDING_REGISTERS_NUM) return STATUS_ILLEGAL_DATA_ADDRESS;
+            modbus->writeArrayToBuffer(0, reinterpret_cast<uint16_t*>(&holding), length);
             break;
         case FC_READ_COILS:
             if ((address + length) > COILS_NUM) return STATUS_ILLEGAL_DATA_ADDRESS;
@@ -136,7 +163,7 @@ namespace cmd
             }
             break;
         case FC_READ_INPUT_REGISTERS:
-            //GPIO ADC
+            
             break;
         default:
             break;
@@ -144,11 +171,35 @@ namespace cmd
         return STATUS_OK;
     }
 
-    void init(user::Stream& stream, const motor_params_t* m)
+    void init(user::Stream& stream)
     {
-        static_assert(sizeof(modbus_registers) % 2 == 0);
+        static_assert(sizeof(modbus_holding_registers) % 2 == 0);
+        static_assert(sizeof(modbus_input_registers) % 2 == 0);
 
-        memcpy(regs.motors, m, sizeof(regs.motors));
+        for (size_t i = 0; i < array_size(holding_ptrs.motor_params); i++)
+        {
+            holding_ptrs.motor_params[i] = nvs::get_motor_params(i);
+        }
+        for (size_t i = 0; i < a_io::in::INPUTS_NUM; i++)
+        {
+            input_pts.a_in[i] = &a_io::voltages[i];
+            holding_ptrs.analog_input_cals[i] = nvs::get_analog_input_cal(i);
+        }
+        input_pts.temperature = &a_io::temperature;
+        for (size_t i = 0; i < MY_ADC_MAX_MODULES; i++)
+        {
+            for (size_t j = 0; j < MY_ADC_CHANNELS_PER_CHIP; j++)
+            {
+                size_t ch = i * MY_ADC_CHANNELS_PER_CHIP + j;
+                holding_ptrs.adc_cals[ch] = nvs::get_adc_channel_cal(ch);
+            }
+        }
+        for (size_t i = 0; i < MY_DAC_MAX_MODULES; i++)
+        {
+            holding_ptrs.dac_cals[i] = nvs::get_dac_cal(i);
+            holding_ptrs.depolarization_setpoint[i] = &dac::modules[i].depolarization_setpoint;
+            input_pts.dac_currents[i] = &dac::modules[i].current;
+        }
 
         if (modbus) return;
         modbus = new Modbus(stream);
@@ -168,35 +219,35 @@ namespace cmd
     void report_ready()
     {
         //user_usb_prints("READY...\n");
-        coils.status |= MY_CMD_STATUS_READY;
+        coils.commands |= MY_CMD_STATUS_READY;
     }
-    void set_status_bit(status_t mask)
+    void set_status_bit(bitfield_t mask)
     {
-        coils.status |= mask;
+        coils.commands |= mask;
     }
-    void reset_status_bit(status_t mask)
+    void reset_status_bit(bitfield_t mask)
     {
-        coils.status &=~ mask;
+        coils.commands &=~ mask;
     }
-    bool get_status_bit_set(status_t mask)
+    bool get_status_bit_set(bitfield_t mask)
     {
-        return coils.status & mask;
+        return coils.commands & mask;
     }
-    const motor_params_t* get_motor_params(size_t i)
+    void set_adc_channels_present(uint16_t num)
     {
-        return &(regs.motors[i]);
+        input.present_adc_channels = num;
     }
-    float get_dac_setpoint()
+    void set_dac_channels_present(uint16_t num)
     {
-        return regs.dac_setpoint;
+        input.present_dac_channels = num;
     }
-    float get_depolarization_percent()
+    float get_dac_setpoint(size_t i)
     {
-        return regs.depolarization_percent;
+        return holding.dac_setpoints[i];
     }
-    float get_depolarization_setpoint()
+    void set_adc_voltage(size_t i, float v)
     {
-        return regs.depolarization_setpoint;
+        input.adc_voltages[i] = v;
     }
 
     /*size_t report_depolarization_percent(char* output_buf, size_t max_len)
@@ -213,7 +264,7 @@ namespace cmd
         switch (c)
         {
         case 'A':
-            if (status & MY_CMD_ACQUIRE)
+            if (commands & MY_CMD_ACQUIRE)
             {
                 user_usb_prints("END.\n");
             }
@@ -221,7 +272,7 @@ namespace cmd
             {
                 user_usb_prints("ACQ.\n");
             }
-            status ^= MY_CMD_ACQUIRE;
+            commands ^= MY_CMD_ACQUIRE;
             break;
         case 'S':
             read_float(stream, &dac_setpoint);
@@ -247,7 +298,7 @@ namespace cmd
             HAL_NVIC_SystemReset();
             break;
         case 'E':
-            status |= MY_CMD_STATUS_DAC_CORRECT; //Single-shot
+            commands |= MY_CMD_STATUS_DAC_CORRECT; //Single-shot
             break;
         case 'I':
         {
@@ -258,8 +309,8 @@ namespace cmd
             break;
         }
         case 'M':
-            status ^= MY_CMD_STATUS_MOTOR_EN;
-            sr_io::set_output(sr_io::out::MOTOR_EN, status & MY_CMD_STATUS_MOTOR_EN);
+            commands ^= MY_CMD_STATUS_MOTOR_EN;
+            sr_io::set_output(sr_io::out::MOTOR_EN, commands & MY_CMD_STATUS_MOTOR_EN);
             break;
         default:
             break;

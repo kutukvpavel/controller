@@ -17,6 +17,13 @@
 
 namespace dac
 {
+    struct cal_t
+    {
+        float k;
+        float b;
+        float current_k;
+        float current_b;
+    };
     struct module_t
     {
         SPI_HandleTypeDef* hspi;
@@ -29,11 +36,9 @@ namespace dac
         float setpoint;
         float corrected_setpoint;
         float depolarization_setpoint;
-        float cal_coeff;
-        float cal_offset;
-        float current_cal_offset;
         float r_shunt;
         bool is_depolarizing;
+        const cal_t* cal;
     };
 
     //Globals
@@ -44,7 +49,7 @@ namespace dac
     extern module_t modules[];
 
     // Public methods
-    void init(SPI_HandleTypeDef* spi_instance, user::pin_t* spi_cs_pin, I2C_HandleTypeDef* i2c_instance);
+    void init(SPI_HandleTypeDef* spi_instance, user::pin_t* spi_cs_pin, I2C_HandleTypeDef* i2c_instance, const cal_t* c);
     void probe();
     void set_module(size_t i, float volts);
     void set_all(float volts);

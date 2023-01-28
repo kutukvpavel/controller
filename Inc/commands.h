@@ -28,20 +28,18 @@
 
 namespace cmd
 {
-    typedef uint8_t status_t;
+    typedef uint8_t bitfield_t;
 
-    void init(user::Stream&, const motor_params_t*);
+    void init(user::Stream&, motor_params_t*);
     void poll();
 
     void report_ready();
 
-    void set_status_bit(status_t mask);
-    void reset_status_bit(status_t mask);
-    bool get_status_bit_set(status_t bitmask);
-    const motor_params_t* get_motor_params(size_t i);
-    float get_dac_setpoint();
-    float get_depolarization_percent();
-    float get_depolarization_setpoint();
+    void set_status_bit(bitfield_t mask);
+    void reset_status_bit(bitfield_t mask);
+    bool get_status_bit_set(bitfield_t bitmask);
+    float get_dac_setpoint(size_t i);
+    void set_adc_voltage(size_t i, float v);
 
     //void process(user::Stream* stream, char* output_buf, size_t max_len);
     //size_t report_depolarization_percent(char* output_buf, size_t max_len);

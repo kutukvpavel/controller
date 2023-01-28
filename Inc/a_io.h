@@ -20,7 +20,9 @@ namespace a_io
         INPUTS_NUM
     };
 
-    void init(in_cal_t* cal);
+    extern float voltages[in::INPUTS_NUM];
+    extern float temperature;
 
-    float get_input(in i);
+    void init(ADC_HandleTypeDef* adc, const in_cal_t* cal, const in_cal_t* temp_cal);
+    void poll();
 } // namespace a_io

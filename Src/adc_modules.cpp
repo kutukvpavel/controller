@@ -43,8 +43,8 @@ void deactivate_cs(adc::module_t* m)
 float convert(int32_t adc_reading, adc::module_t* m)
 {
     float res = (adc_reading * REFERENCE_VOLTAGE) / FULL_SCALE;
-    if (m->channels[m->selected_channel].invert) res = -res;
-    return res * m->channels[m->selected_channel].cal_coeff + m->channels[m->selected_channel].cal_offset;
+    if (m->channels[m->selected_channel].cal->invert) res = -res;
+    return res * m->channels[m->selected_channel].cal->k + m->channels[m->selected_channel].cal->b;
 }
 
 //PUBLIC
@@ -64,24 +64,19 @@ namespace adc
             .drdy = &drdy_pin,
             .channels = {
                 {
-                    .mux_conf = ADS1220_MUX_AIN0_AIN1,
-                    .cal_coeff = 1,
-                    .cal_offset = -0.000010,
-                    .invert = false
+                    .mux_conf = ADS1220_MUX_AIN0_AIN1
                 },
                 {
-                    .mux_conf = ADS1220_MUX_AIN2_AIN3,
-                    .cal_coeff = 1,
-                    .cal_offset = +0.000020,
-                    .invert = true
+                    .mux_conf = ADS1220_MUX_AIN2_AIN3
                 }
             }
         }
     };
 
-    void init(SPI_HandleTypeDef* hspi, user::pin_t* spi_cs_pin)
+    void init(SPI_HandleTypeDef* hspi, user::pin_t* spi_cs_pin, const ch_cal_t* cals)
     {
         static_assert(array_size(modules) <= MY_ADC_MAX_MODULES, "Too many ADC modules.");
+
         if (!hspi) dbg_usb_prints("ADC SPI interface handle is NULL!\n");
         cs_pin = spi_cs_pin;
         LL_GPIO_SetOutputPin(cs_pin->port, cs_pin->mask); //Set /CS HIGH
@@ -95,6 +90,7 @@ namespace adc
             for (size_t j = 0; j < MY_ADC_CHANNELS_PER_CHIP; j++)
             {
                 m.channels[j].averaging_container = new average(MY_ADC_AVERAGING);
+                m.channels[j].cal = cals++;
             }
         }
         //Enable power and transievers
@@ -198,7 +194,7 @@ namespace adc
             {
                 auto& c = m.channels[j];
                 cbuf_p += snprintf(cbuf_p, sizeof(cbuf) - (cbuf_p - cbuf), OUTPUT_CHANNEL_FORMAT, 
-                    c.mux_conf, c.cal_coeff, c.cal_offset);
+                    c.mux_conf, c.cal->k, c.cal->b);
             }
             int w = snprintf(buf, max_len - written, OUTPUT_REPORT_FORMAT, i,
                 m.hspi, m.cs_mux_mask, m.drdy->port->MODER, m.drdy->mask, MY_ADC_CHANNELS_PER_CHIP, cbuf);

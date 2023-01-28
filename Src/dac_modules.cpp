@@ -1,6 +1,8 @@
 #include "dac_modules.h"
+
 #include "ad5061.h"
 #include "ina219.h"
+
 #include <math.h>
 
 //PRIVATE
@@ -75,16 +77,15 @@ namespace dac
             .cs_mux_mask = CS_MUX_MASK(0u),
             .addr = MY_DAC_1,
             .depolarization_setpoint = 0,
-            .cal_coeff = 1,
-            .current_cal_offset = -0.00000,
             .r_shunt = 1
         }
     };
 
     //Public methods
-    void init(SPI_HandleTypeDef* spi_instance, user::pin_t* spi_cs_pin, I2C_HandleTypeDef* i2c_instance)
+    void init(SPI_HandleTypeDef* spi_instance, user::pin_t* spi_cs_pin, I2C_HandleTypeDef* i2c_instance, const cal_t* c)
     {
         static_assert(array_size(modules) <= MY_DAC_MAX_MODULES, "Too many DAC modules.");
+
         if (!spi_instance || !i2c_instance || !spi_cs_pin) dbg_usb_prints("DAC SPI/I2C/CS pin interface handle is NULL!\n");
         cs_pin = spi_cs_pin;
         LL_GPIO_SetOutputPin(cs_pin->port, cs_pin->mask); //Set /CS HIGH
@@ -95,6 +96,7 @@ namespace dac
             auto& m = modules[i];
             m.hspi = spi_instance;
             m.hi2c = i2c_instance;
+            m.cal = c++;
         }
         //Enable power and transievers
         LL_GPIO_SetOutputPin(enable_pin.port, enable_pin.mask); //Set ENABLE high
@@ -130,7 +132,7 @@ namespace dac
         {
             auto& m = modules[i];
             if (!m.present) continue;
-            m.current = INA219_ReadCurrent(m.hi2c, m.addr) + m.current_cal_offset;
+            m.current = INA219_ReadCurrent(m.hi2c, m.addr) * m.cal->current_k + m.cal->current_b;
         }
     }
 
@@ -138,6 +140,7 @@ namespace dac
     {
         auto& m = modules[i];
         if (!m.present) return;
+        volts = m.cal->k * volts + m.cal->b;
         set_module_internal(&m, volts);
         m.setpoint = volts;
         m.corrected_setpoint = m.setpoint;
@@ -224,7 +227,7 @@ namespace dac
             auto& m = modules[i];
             if (!m.present) continue;
             int w = snprintf(buf, max_len - written, OUTPUT_REPORT_FORMAT, i,
-                m.hspi, m.cs_mux_mask, m.hi2c, m.addr, m.cal_coeff, m.cal_offset, m.r_shunt, m.current_cal_offset);
+                m.hspi, m.cs_mux_mask, m.hi2c, m.addr, m.cal->k, m.cal->b, m.r_shunt, m.cal->current_b);
             if (w > 0)
             {
                 buf += w;
