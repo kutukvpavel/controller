@@ -9,19 +9,6 @@
 
 #include <math.h>
 
-void clear_stream(user::Stream* stream)
-{
-    char c;
-    while ((c = stream->read()) != '\0') if (c == '\n') break;
-}
-
-void read_float(user::Stream* stream, float* val)
-{
-    char buf[9];
-    stream->readBytes(reinterpret_cast<uint8_t*>(buf), 8);
-    sscanf(buf, "%f", val);
-}
-
 namespace cmd
 {
 #define STATUS_BITS_NUM (sizeof(bitfield_t) * __CHAR_BIT__)
@@ -218,7 +205,7 @@ namespace cmd
 
     void report_ready()
     {
-        //user_usb_prints("READY...\n");
+        puts("READY...\n");
         coils.commands |= MY_CMD_STATUS_READY;
     }
     void set_status_bit(bitfield_t mask)
@@ -249,72 +236,4 @@ namespace cmd
     {
         input.adc_voltages[i] = v;
     }
-
-    /*size_t report_depolarization_percent(char* output_buf, size_t max_len)
-    {
-        return snprintf(output_buf, max_len, DEPOLARIZATION_REPORT_FORMAT, depolarization_percent);
-    }*/
-
-    /*void process(user::Stream* stream, char* output_buf, size_t max_len)
-    {
-        if (!stream->available()) return;
-        if (!stream->new_line_reached()) return;
-        char c = stream->read();
-        user_usb_prints("PARSED.\n");
-        switch (c)
-        {
-        case 'A':
-            if (commands & MY_CMD_ACQUIRE)
-            {
-                user_usb_prints("END.\n");
-            }
-            else
-            {
-                user_usb_prints("ACQ.\n");
-            }
-            commands ^= MY_CMD_ACQUIRE;
-            break;
-        case 'S':
-            read_float(stream, &dac_setpoint);
-            dac::set_all(dac_setpoint);
-            break;
-        case 'P':
-        {
-            float temp;
-            read_float(stream, &temp);
-            if (temp > 1) temp = 1;
-            depolarization_percent = temp;
-            if (depolarization_percent < 0.01) depolarization_percent = 0;
-            if (temp < 0.01) temp = 0.01; //So that the timer doesn't fire constantly
-            MY_TIM_DEPOLARIZATION->ARR = static_cast<uint16_t>(roundf(temp * 30000));
-            break;
-        }
-        case 'D': //Setting to DAC setpoint disables depolarization
-            read_float(stream, &depolarization_setpoint);
-            dac::set_depolarization(depolarization_setpoint);
-            break;
-        case 'R':
-            while (CDC_Can_Transmit() != HAL_OK); //Ensure the PARSED message gets transmitted
-            HAL_NVIC_SystemReset();
-            break;
-        case 'E':
-            commands |= MY_CMD_STATUS_DAC_CORRECT; //Single-shot
-            break;
-        case 'I':
-        {
-            size_t len = adc::dump_module_report(output_buf, max_len);
-            cdc_transmit_blocking(reinterpret_cast<uint8_t*>(output_buf), len);
-            len = dac::dump_module_report(output_buf, max_len);
-            cdc_transmit_blocking(reinterpret_cast<uint8_t*>(output_buf), len);
-            break;
-        }
-        case 'M':
-            commands ^= MY_CMD_STATUS_MOTOR_EN;
-            sr_io::set_output(sr_io::out::MOTOR_EN, commands & MY_CMD_STATUS_MOTOR_EN);
-            break;
-        default:
-            break;
-        }
-        clear_stream(stream);
-    }*/
 }

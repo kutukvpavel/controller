@@ -40,7 +40,4 @@ namespace cmd
     bool get_status_bit_set(bitfield_t bitmask);
     float get_dac_setpoint(size_t i);
     void set_adc_voltage(size_t i, float v);
-
-    //void process(user::Stream* stream, char* output_buf, size_t max_len);
-    //size_t report_depolarization_percent(char* output_buf, size_t max_len);
 }

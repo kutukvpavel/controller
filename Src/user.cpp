@@ -63,9 +63,9 @@ static void dbg_wait_for_input()
 {
 #if DEBUG_STEP_BY_STEP
     puts("Send anything to continue...\n");
-    while (!cdc_stream->available())
+    while (getchar() == EOF)
         LL_mDelay(10);
-    while (cdc_stream->read() != '\0')
+    while (getchar() != EOF)
         LL_mDelay(1);
     puts("Starting execution.\n");
 #endif
@@ -132,17 +132,6 @@ namespace user
 
         // PC commands
         cmd::poll();
-        // cmd::process(&cdc_stream, output_buf, sizeof(output_buf));
-
-        // Data output
-        /*if (status & MY_STATUS_DUMP_DATA)
-        {
-            send_output(adc::dump_last_data(output_buf, sizeof(output_buf)));
-            send_output(dac::dump_last_data(output_buf, sizeof(output_buf)));
-            send_output(cmd::report_depolarization_percent(output_buf, size_t(output_buf)));
-
-            status &= ~MY_STATUS_DUMP_DATA;
-        }*/
 
         // ADC
         adc::drdy_check();
@@ -153,13 +142,6 @@ namespace user
         }
 
         // DAC
-        /*if (status & MY_STATUS_DEPOLARIZE)
-        {
-            dac::read_current();
-            if (cmd::get_depolarization_percent() > 0)
-                dac::start_depolarization();
-            status &= ~MY_STATUS_DEPOLARIZE;
-        }*/
         if (status & MY_STATUS_CORRECT_DAC)
         {
             dac::stop_depolarization();
