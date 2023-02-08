@@ -128,7 +128,7 @@ int main(void)
   MX_TIM5_Init();
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
-  user::setup(&hspi1, &hspi1, &hi2c1);
+  user::setup(&hspi1, &hspi1, &hi2c1, &hadc1);
   /* USER CODE END 2 */
 
   /* Infinite loop */

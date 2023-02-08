@@ -42,7 +42,7 @@ namespace user
     extern volatile uint8_t status;
 
     //MAIN
-    void setup(SPI_HandleTypeDef* adc_spi, SPI_HandleTypeDef* dac_spi, I2C_HandleTypeDef* dac_i2c);
+    void setup(SPI_HandleTypeDef* adc_spi, SPI_HandleTypeDef* dac_spi, I2C_HandleTypeDef* dac_i2c, ADC_HandleTypeDef *adc);
     void main();
 
     //API

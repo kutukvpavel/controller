@@ -30,7 +30,7 @@ namespace cmd
 {
     typedef uint8_t bitfield_t;
 
-    void init(user::Stream&, motor_params_t*);
+    void init(user::Stream&);
     void poll();
 
     void report_ready();

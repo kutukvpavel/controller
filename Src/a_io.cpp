@@ -4,12 +4,12 @@
 
 _BEGIN_STD_C
 
-bool a_io_got_new_data = false;
+uint8_t a_io_got_new_data = 0; //uint8_t access on ARM is atomic, bool isn't (byte-aligned word)
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {
     if (hadc->Instance != ADC1) return;
-    a_io_got_new_data = true;
+    a_io_got_new_data = 1;
 }
 
 _END_STD_C
@@ -50,7 +50,7 @@ namespace a_io
     void poll()
     {
         if (!a_io_got_new_data) return;
-        a_io_got_new_data = false;
+        a_io_got_new_data = 0;
 
         for (size_t i = 0; i < in::INPUTS_NUM; i++)
         {

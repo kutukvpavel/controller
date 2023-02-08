@@ -33,7 +33,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
     if (htim->Instance == TIM3) // 0.1S timer: grab INA219 current data, and depolarize
     {
-        user::status |= MY_STATUS_DEPOLARIZE;
+        //user::status |= MY_STATUS_DEPOLARIZE;
     }
     if (htim->Instance == TIM4) // 0.1S+X offset timer for PWM, stop depolarization and correct DAC
     {
@@ -87,7 +87,7 @@ namespace user
         while (CDC_IsConnected() != USBD_OK); // Note: requires DTR (i.e. hardware handshake)
         CDC_Register_RX_Callback(cdc_receive);
         nvs::init(dac_i2c);
-        cmd::init(cdc_stream, nvs::get_motor_params(0));
+        cmd::init(cdc_stream);
         a_io::init(adc, nvs::get_analog_input_cal(0), nvs::get_temp_sensor_cal());
         puts("Hello World!\n");
         dbg_wait_for_input();
@@ -153,13 +153,13 @@ namespace user
         }
 
         // DAC
-        if (status & MY_STATUS_DEPOLARIZE)
+        /*if (status & MY_STATUS_DEPOLARIZE)
         {
             dac::read_current();
             if (cmd::get_depolarization_percent() > 0)
                 dac::start_depolarization();
             status &= ~MY_STATUS_DEPOLARIZE;
-        }
+        }*/
         if (status & MY_STATUS_CORRECT_DAC)
         {
             dac::stop_depolarization();
