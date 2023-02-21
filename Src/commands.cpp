@@ -6,6 +6,7 @@
 #include "a_io.h"
 #include "nvs.h"
 #include "../ModbusPort/src/ModbusSlave.h"
+#include "modbus_database.h"
 
 #include <math.h>
 
@@ -14,9 +15,9 @@ namespace cmd
 #define STATUS_BITS_NUM (sizeof(bitfield_t) * __CHAR_BIT__)
 #define COILS_NUM (STATUS_BITS_NUM + sr_io::out::OUTPUT_NUM)
 #define HOLDING_REGISTERS_NUM (sizeof(modbus_holding_registers) * __CHAR_BIT__ / 16u)
-#define INPUT_REGS_NUM ()
+#define INPUT_REGS_NUM (sizeof(modbus_input_registers) * __CHAR_BIT__ / 16u)
 
-    static Modbus* modbus;
+    static Modbus* bus;
 
     struct modbus_coils
     {
@@ -25,13 +26,21 @@ namespace cmd
     struct modbus_holding_registers
     {
         float dac_setpoints[MY_DAC_MAX_MODULES];
+        //To be updated manually:
+        adc::ch_cal_t adc_cals[MY_ADC_MAX_MODULES * MY_ADC_CHANNELS_PER_CHIP];
+        dac::cal_t dac_cals[MY_DAC_MAX_MODULES];
+        a_io::in_cal_t analog_input_cals[a_io::in::INPUTS_NUM];
+        motor_params_t motor_params[MOTORS_NUM];
+        float depolarization_percent[MY_DAC_MAX_MODULES];
+        float depolarization_setpoint[MY_DAC_MAX_MODULES];
     };
+    const size_t holding_man_offset = offsetof(modbus_holding_registers, adc_cals) / sizeof(uint16_t);
     struct modbus_holding_ptrs
     {
-        motor_params_t* motor_params[MOTORS_NUM];
-        a_io::in_cal_t* analog_input_cals[a_io::in::INPUTS_NUM];
         adc::ch_cal_t* adc_cals[MY_ADC_MAX_MODULES * MY_ADC_CHANNELS_PER_CHIP];
         dac::cal_t* dac_cals[MY_DAC_MAX_MODULES];
+        a_io::in_cal_t* analog_input_cals[a_io::in::INPUTS_NUM];
+        motor_params_t* motor_params[MOTORS_NUM];
         float* depolarization_percent[MY_DAC_MAX_MODULES];
         float* depolarization_setpoint[MY_DAC_MAX_MODULES];
     };
@@ -44,18 +53,44 @@ namespace cmd
         uint16_t max_dac_modules = MY_DAC_MAX_MODULES;
         uint16_t present_dac_channels = 0;
         float adc_voltages[MY_ADC_MAX_MODULES * MY_ADC_CHANNELS_PER_CHIP];
+        //To be updated manually:
+        float dac_currents[MY_DAC_MAX_MODULES];
+        float a_in[a_io::INPUTS_NUM];
+        float temperature;
     };
+    const size_t input_man_offset = offsetof(modbus_input_registers, dac_currents) / sizeof(uint16_t);
     struct modbus_input_ptrs
     {
+        const float* dac_currents[MY_DAC_MAX_MODULES];
         const float* a_in[a_io::INPUTS_NUM];
         const float* temperature;
-        const float* dac_currents[MY_DAC_MAX_MODULES];
     };
     modbus_coils coils = {};
     modbus_holding_registers holding = {};
     modbus_holding_ptrs holding_ptrs = {};
     modbus_input_registers input = {};
-    modbus_input_ptrs input_pts = {};
+    modbus_input_ptrs input_ptrs = {};
+
+    void write_holding_ptrs()
+    {
+
+    }
+    void read_holding_ptrs()
+    {
+
+    }
+    void read_input_ptrs()
+    {
+        for (size_t i = 0; i < MY_DAC_MAX_MODULES; i++)
+        {
+            input.dac_currents[i] = *input_ptrs.dac_currents[i];
+        }
+        for (size_t i = 0; i < a_io::INPUTS_NUM; i++)
+        {
+            input.a_in[i] = *input_ptrs.a_in[i];
+        }
+        input.temperature = *input_ptrs.temperature;
+    }
 
     void write_status_bit(size_t address, bool bit)
     {
@@ -75,7 +110,7 @@ namespace cmd
         case FC_WRITE_COIL:
         {
             if (address >= COILS_NUM) return STATUS_ILLEGAL_DATA_ADDRESS;
-            bool b = modbus->readCoilFromBuffer(0);
+            bool b = bus->readCoilFromBuffer(0);
             if (address < STATUS_BITS_NUM)
             {
                 write_status_bit(address, b);
@@ -92,7 +127,7 @@ namespace cmd
             for (size_t i = 0; i < length; i++)
             {
                 size_t a = address + i;
-                bool b = modbus->readCoilFromBuffer(i);
+                bool b = bus->readCoilFromBuffer(i);
                 if (a < STATUS_BITS_NUM)
                 {
                     write_status_bit(a, b);
@@ -106,13 +141,13 @@ namespace cmd
             break;
         case FC_WRITE_REGISTER:
             if (address >= HOLDING_REGISTERS_NUM) return STATUS_ILLEGAL_DATA_ADDRESS;
-            write_reg(address, modbus->readRegisterFromBuffer(0));
+            write_reg(address, bus->readRegisterFromBuffer(0));
             break;
         case FC_WRITE_MULTIPLE_REGISTERS:
             if ((address + length) > HOLDING_REGISTERS_NUM) return STATUS_ILLEGAL_DATA_ADDRESS;
             for (size_t i = 0; i < length; i++)
             {
-                write_reg(address + i, modbus->readRegisterFromBuffer(i));
+                write_reg(address + i, bus->readRegisterFromBuffer(i));
             }
             break;
         default:
@@ -126,11 +161,11 @@ namespace cmd
         {
         case FC_READ_DISCRETE_INPUT:
             if (address >= sr_io::in::INPUT_NUM) return STATUS_ILLEGAL_DATA_ADDRESS;
-            modbus->writeDiscreteInputToBuffer(0, sr_io::get_input(static_cast<sr_io::in>(address)));
+            bus->writeDiscreteInputToBuffer(0, sr_io::get_input(static_cast<sr_io::in>(address)));
             break;
         case FC_READ_HOLDING_REGISTERS:
             if ((address + length) > HOLDING_REGISTERS_NUM) return STATUS_ILLEGAL_DATA_ADDRESS;
-            modbus->writeArrayToBuffer(0, reinterpret_cast<uint16_t*>(&holding), length);
+            bus->writeArrayToBuffer(0, reinterpret_cast<uint16_t*>(&holding), length);
             break;
         case FC_READ_COILS:
             if ((address + length) > COILS_NUM) return STATUS_ILLEGAL_DATA_ADDRESS;
@@ -139,18 +174,21 @@ namespace cmd
                 size_t a = address + i;
                 if (a < STATUS_BITS_NUM)
                 {
-                    modbus->writeCoilToBuffer(i, get_status_bit_set(a));
+                    bus->writeCoilToBuffer(i, get_status_bit_set(a));
                     if (_BV(a) == MY_CMD_STATUS_HAVE_NEW_DATA) reset_status_bit(MY_CMD_STATUS_HAVE_NEW_DATA);
                 }
                 else
                 {
                     a -= STATUS_BITS_NUM;
-                    modbus->writeCoilToBuffer(i, sr_io::get_output(a));
+                    bus->writeCoilToBuffer(i, sr_io::get_output(a));
                 }
             }
             break;
         case FC_READ_INPUT_REGISTERS:
-            
+            if ((address + length) > input_man_offset)
+            {
+                
+            }
             break;
         default:
             break;
@@ -169,10 +207,10 @@ namespace cmd
         }
         for (size_t i = 0; i < a_io::in::INPUTS_NUM; i++)
         {
-            input_pts.a_in[i] = &a_io::voltages[i];
+            input_ptrs.a_in[i] = &a_io::voltages[i];
             holding_ptrs.analog_input_cals[i] = nvs::get_analog_input_cal(i);
         }
-        input_pts.temperature = &a_io::temperature;
+        input_ptrs.temperature = &a_io::temperature;
         for (size_t i = 0; i < MY_ADC_MAX_MODULES; i++)
         {
             for (size_t j = 0; j < MY_ADC_CHANNELS_PER_CHIP; j++)
@@ -185,22 +223,22 @@ namespace cmd
         {
             holding_ptrs.dac_cals[i] = nvs::get_dac_cal(i);
             holding_ptrs.depolarization_setpoint[i] = &dac::modules[i].depolarization_setpoint;
-            input_pts.dac_currents[i] = &dac::modules[i].current;
+            input_ptrs.dac_currents[i] = &dac::modules[i].current;
         }
 
-        if (modbus) return;
-        modbus = new Modbus(stream);
-        modbus->cbVector[CB_WRITE_COILS] = write_cb;
-        modbus->cbVector[CB_WRITE_HOLDING_REGISTERS] = write_cb;
-        modbus->cbVector[CB_READ_COILS] = read_cb;
-        modbus->cbVector[CB_READ_DISCRETE_INPUTS] = read_cb;
-        modbus->cbVector[CB_READ_HOLDING_REGISTERS] = read_cb;
-        modbus->cbVector[CB_READ_INPUT_REGISTERS] = read_cb;
-        modbus->begin(115200);
+        if (bus) return;
+        bus = new Modbus(stream);
+        bus->cbVector[CB_WRITE_COILS] = write_cb;
+        bus->cbVector[CB_WRITE_HOLDING_REGISTERS] = write_cb;
+        bus->cbVector[CB_READ_COILS] = read_cb;
+        bus->cbVector[CB_READ_DISCRETE_INPUTS] = read_cb;
+        bus->cbVector[CB_READ_HOLDING_REGISTERS] = read_cb;
+        bus->cbVector[CB_READ_INPUT_REGISTERS] = read_cb;
+        bus->begin(115200);
     }
     void poll()
     {
-        modbus->poll();
+        bus->poll();
     }
 
     void report_ready()
