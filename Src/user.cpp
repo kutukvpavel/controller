@@ -172,8 +172,12 @@ namespace user
             {
                 auto& m = dac::modules[i];
                 if (!m.present) continue;
-                /*m.current;
-                m.corrected_setpoint;*/
+                cmd::set_dac_current(i, m.current);
+                cmd::set_dac_corrected_current(i, m.corrected_setpoint);
+            }
+            for (size_t i = 0; i < a_io::in::INPUTS_NUM; i++)
+            {
+                cmd::set_analog_in(i, a_io::voltages[i]);   
             }
 
             cmd::set_status_bit(MY_CMD_STATUS_HAVE_NEW_DATA);

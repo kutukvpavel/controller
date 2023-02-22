@@ -13,6 +13,10 @@
 
 #include "user.h"
 #include "motor.h"
+#include "dac_modules.h"
+#include "adc_modules.h"
+#include "sr_io.h"
+#include "a_io.h"
 
 #include <inttypes.h>
 #include <stddef.h>
@@ -40,6 +44,9 @@ namespace cmd
     bool get_status_bit_set(bitfield_t bitmask);
     float get_dac_setpoint(size_t i);
     void set_adc_voltage(size_t i, float v);
+    void set_dac_current(size_t i, float v);
+    void set_dac_corrected_current(size_t i, float v);
+    void set_analog_in(size_t i, float v);
 
     motor_params_t* get_motor_params(size_t i);
     a_io::in_cal_t* get_analog_input_cal(size_t i);

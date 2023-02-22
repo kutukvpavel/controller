@@ -1,9 +1,5 @@
 #include "commands.h"
 
-#include "dac_modules.h"
-#include "adc_modules.h"
-#include "sr_io.h"
-#include "a_io.h"
 #include "nvs.h"
 #include "../ModbusPort/src/ModbusSlave.h"
 #include "modbus_database.h"
@@ -14,8 +10,8 @@ namespace cmd
 {
 #define STATUS_BITS_NUM (sizeof(bitfield_t) * __CHAR_BIT__)
 #define COILS_NUM (STATUS_BITS_NUM + sr_io::out::OUTPUT_NUM)
-#define HOLDING_REGISTERS_NUM (sizeof(modbus_holding_registers) * __CHAR_BIT__ / 16u)
-#define INPUT_REGS_NUM (sizeof(modbus_input_registers) * __CHAR_BIT__ / 16u)
+#define HOLDING_REGISTERS_NUM modbus::get_modbus_size<modbus_holding_registers>()
+#define INPUT_REGS_NUM modbus::get_modbus_size<modbus_input_registers>()
 
     static Modbus* bus;
 
@@ -44,6 +40,7 @@ namespace cmd
         uint16_t present_dac_channels = 0;
         float adc_voltages[MY_ADC_MAX_MODULES * MY_ADC_CHANNELS_PER_CHIP];
         float dac_currents[MY_DAC_MAX_MODULES];
+        float dac_corrected_currents[MY_DAC_MAX_MODULES];
         float a_in[a_io::INPUTS_NUM];
         float temperature;
     };
@@ -144,7 +141,8 @@ namespace cmd
             }
             break;
         case FC_READ_INPUT_REGISTERS:
-            
+            if ((address + length) > INPUT_REGS_NUM) return STATUS_ILLEGAL_DATA_ADDRESS;
+            bus->writeArrayToBuffer(0, reinterpret_cast<uint16_t*>(&input), length);
             break;
         default:
             break;
@@ -165,10 +163,8 @@ namespace cmd
         }
         for (size_t i = 0; i < a_io::in::INPUTS_NUM; i++)
         {
-            //input.a_in[i] = a_io::voltages[i];
             holding.analog_input_cals[i] = *nvs::get_analog_input_cal(i);
         }
-        //input.temperature = a_io::temperature;
         holding.temp_sensor_cal = *nvs::get_temp_sensor_cal();
         for (size_t i = 0; i < MY_ADC_MAX_MODULES; i++)
         {
@@ -181,8 +177,6 @@ namespace cmd
         for (size_t i = 0; i < MY_DAC_MAX_MODULES; i++)
         {
             holding.dac_cals[i] = *nvs::get_dac_cal(i);
-            /*holding.depolarization_setpoint[i] = dac::modules[i].depolarization_setpoint;
-            input.dac_currents[i] = dac::modules[i].current;*/
         }
 
         if (bus) return;
@@ -198,6 +192,11 @@ namespace cmd
     void poll()
     {
         bus->poll();
+        if (coils.commands & MY_CMD_STATUS_SAVE_EEPROM)
+        {
+            nvs::save();
+            coils.commands &= ~MY_CMD_STATUS_SAVE_EEPROM;
+        }
     }
 
     void report_ready()
@@ -232,6 +231,18 @@ namespace cmd
     void set_adc_voltage(size_t i, float v)
     {
         input.adc_voltages[i] = v;
+    }
+    void set_dac_current(size_t i, float v)
+    {
+        input.dac_currents[i] = v;
+    }
+    void set_dac_corrected_current(size_t i, float v)
+    {
+        input.dac_corrected_currents[i] = v;
+    }
+    void set_analog_in(size_t i, float v)
+    {
+        input.a_in[i] = v;
     }
 
     motor_params_t* get_motor_params(size_t i)
