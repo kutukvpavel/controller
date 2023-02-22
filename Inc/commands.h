@@ -30,7 +30,7 @@ namespace cmd
 {
     typedef uint8_t bitfield_t;
 
-    void init(user::Stream&);
+    void init(user::Stream&, I2C_HandleTypeDef*);
     void poll();
 
     void report_ready();
@@ -40,4 +40,10 @@ namespace cmd
     bool get_status_bit_set(bitfield_t bitmask);
     float get_dac_setpoint(size_t i);
     void set_adc_voltage(size_t i, float v);
+
+    motor_params_t* get_motor_params(size_t i);
+    a_io::in_cal_t* get_analog_input_cal(size_t i);
+    a_io::in_cal_t* get_temp_sensor_cal();
+    adc::ch_cal_t* get_adc_channel_cal(size_t i);
+    dac::cal_t* get_dac_cal(size_t i);
 }

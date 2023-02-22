@@ -26,23 +26,13 @@ namespace cmd
     struct modbus_holding_registers
     {
         float dac_setpoints[MY_DAC_MAX_MODULES];
-        //To be updated manually:
         adc::ch_cal_t adc_cals[MY_ADC_MAX_MODULES * MY_ADC_CHANNELS_PER_CHIP];
         dac::cal_t dac_cals[MY_DAC_MAX_MODULES];
         a_io::in_cal_t analog_input_cals[a_io::in::INPUTS_NUM];
+        a_io::in_cal_t temp_sensor_cal;
         motor_params_t motor_params[MOTORS_NUM];
         float depolarization_percent[MY_DAC_MAX_MODULES];
         float depolarization_setpoint[MY_DAC_MAX_MODULES];
-    };
-    const size_t holding_man_offset = offsetof(modbus_holding_registers, adc_cals) / sizeof(uint16_t);
-    struct modbus_holding_ptrs
-    {
-        adc::ch_cal_t* adc_cals[MY_ADC_MAX_MODULES * MY_ADC_CHANNELS_PER_CHIP];
-        dac::cal_t* dac_cals[MY_DAC_MAX_MODULES];
-        a_io::in_cal_t* analog_input_cals[a_io::in::INPUTS_NUM];
-        motor_params_t* motor_params[MOTORS_NUM];
-        float* depolarization_percent[MY_DAC_MAX_MODULES];
-        float* depolarization_setpoint[MY_DAC_MAX_MODULES];
     };
     struct modbus_input_registers
     {
@@ -53,44 +43,13 @@ namespace cmd
         uint16_t max_dac_modules = MY_DAC_MAX_MODULES;
         uint16_t present_dac_channels = 0;
         float adc_voltages[MY_ADC_MAX_MODULES * MY_ADC_CHANNELS_PER_CHIP];
-        //To be updated manually:
         float dac_currents[MY_DAC_MAX_MODULES];
         float a_in[a_io::INPUTS_NUM];
         float temperature;
     };
-    const size_t input_man_offset = offsetof(modbus_input_registers, dac_currents) / sizeof(uint16_t);
-    struct modbus_input_ptrs
-    {
-        const float* dac_currents[MY_DAC_MAX_MODULES];
-        const float* a_in[a_io::INPUTS_NUM];
-        const float* temperature;
-    };
     modbus_coils coils = {};
     modbus_holding_registers holding = {};
-    modbus_holding_ptrs holding_ptrs = {};
     modbus_input_registers input = {};
-    modbus_input_ptrs input_ptrs = {};
-
-    void write_holding_ptrs()
-    {
-
-    }
-    void read_holding_ptrs()
-    {
-
-    }
-    void read_input_ptrs()
-    {
-        for (size_t i = 0; i < MY_DAC_MAX_MODULES; i++)
-        {
-            input.dac_currents[i] = *input_ptrs.dac_currents[i];
-        }
-        for (size_t i = 0; i < a_io::INPUTS_NUM; i++)
-        {
-            input.a_in[i] = *input_ptrs.a_in[i];
-        }
-        input.temperature = *input_ptrs.temperature;
-    }
 
     void write_status_bit(size_t address, bool bit)
     {
@@ -185,10 +144,7 @@ namespace cmd
             }
             break;
         case FC_READ_INPUT_REGISTERS:
-            if ((address + length) > input_man_offset)
-            {
-                
-            }
+            
             break;
         default:
             break;
@@ -196,34 +152,37 @@ namespace cmd
         return STATUS_OK;
     }
 
-    void init(user::Stream& stream)
+    void init(user::Stream& stream, I2C_HandleTypeDef* dac_i2c)
     {
         static_assert(sizeof(modbus_holding_registers) % 2 == 0);
         static_assert(sizeof(modbus_input_registers) % 2 == 0);
 
-        for (size_t i = 0; i < array_size(holding_ptrs.motor_params); i++)
+        nvs::init(dac_i2c);
+
+        for (size_t i = 0; i < array_size(holding.motor_params); i++)
         {
-            holding_ptrs.motor_params[i] = nvs::get_motor_params(i);
+            holding.motor_params[i] = *nvs::get_motor_params(i);
         }
         for (size_t i = 0; i < a_io::in::INPUTS_NUM; i++)
         {
-            input_ptrs.a_in[i] = &a_io::voltages[i];
-            holding_ptrs.analog_input_cals[i] = nvs::get_analog_input_cal(i);
+            //input.a_in[i] = a_io::voltages[i];
+            holding.analog_input_cals[i] = *nvs::get_analog_input_cal(i);
         }
-        input_ptrs.temperature = &a_io::temperature;
+        //input.temperature = a_io::temperature;
+        holding.temp_sensor_cal = *nvs::get_temp_sensor_cal();
         for (size_t i = 0; i < MY_ADC_MAX_MODULES; i++)
         {
             for (size_t j = 0; j < MY_ADC_CHANNELS_PER_CHIP; j++)
             {
                 size_t ch = i * MY_ADC_CHANNELS_PER_CHIP + j;
-                holding_ptrs.adc_cals[ch] = nvs::get_adc_channel_cal(ch);
+                holding.adc_cals[ch] = *nvs::get_adc_channel_cal(ch);
             }
         }
         for (size_t i = 0; i < MY_DAC_MAX_MODULES; i++)
         {
-            holding_ptrs.dac_cals[i] = nvs::get_dac_cal(i);
-            holding_ptrs.depolarization_setpoint[i] = &dac::modules[i].depolarization_setpoint;
-            input_ptrs.dac_currents[i] = &dac::modules[i].current;
+            holding.dac_cals[i] = *nvs::get_dac_cal(i);
+            /*holding.depolarization_setpoint[i] = dac::modules[i].depolarization_setpoint;
+            input.dac_currents[i] = dac::modules[i].current;*/
         }
 
         if (bus) return;
@@ -273,5 +232,26 @@ namespace cmd
     void set_adc_voltage(size_t i, float v)
     {
         input.adc_voltages[i] = v;
+    }
+
+    motor_params_t* get_motor_params(size_t i)
+    {
+        return &(holding.motor_params[i]);
+    }
+    a_io::in_cal_t* get_analog_input_cal(size_t i)
+    {
+        return &(holding.analog_input_cals[i]);
+    }
+    a_io::in_cal_t* get_temp_sensor_cal()
+    {
+        return &holding.temp_sensor_cal;
+    }
+    adc::ch_cal_t* get_adc_channel_cal(size_t i)
+    {
+        return &(holding.adc_cals[i]);
+    }
+    dac::cal_t* get_dac_cal(size_t i)
+    {
+        return &(holding.dac_cals[i]);
     }
 }
