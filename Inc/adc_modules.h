@@ -48,7 +48,7 @@ namespace adc
     {
         float k;
         float b;
-        bool invert;
+        uint16_t invert;
     };
     struct channel_t
     {

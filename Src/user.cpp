@@ -16,7 +16,7 @@ user::pin_t cs_pin = {nCS_GPIO_Port, nCS_Pin};
 static uint8_t zero_arr[1] = {0};
 static user::pin_t led_pin = user::pin_t(MASTER_ENABLE_GPIO_Port, MASTER_ENABLE_Pin);
 static user::Stream cdc_stream = user::Stream();
-static bool dump_data = false;
+static volatile bool dump_data = false;
 
 /**
  * ISRs

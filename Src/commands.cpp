@@ -38,6 +38,7 @@ namespace cmd
         uint16_t present_adc_channels = 0;
         uint16_t max_dac_modules = MY_DAC_MAX_MODULES;
         uint16_t present_dac_channels = 0;
+        uint16_t aio_num = a_io::INPUTS_NUM;
         float adc_voltages[MY_ADC_MAX_MODULES * MY_ADC_CHANNELS_PER_CHIP];
         float dac_currents[MY_DAC_MAX_MODULES];
         float dac_corrected_currents[MY_DAC_MAX_MODULES];
