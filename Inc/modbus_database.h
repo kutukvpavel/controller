@@ -191,7 +191,7 @@ namespace cmd
             instance.set_reg(i % get_modbus_size<T>(), v);
         }
 
-        template<typename T> const param<T>* db::add_internal(param_type t, const char* name) = delete;
+        template<typename T> const param<T>* add_internal(param_type t, const char* name) = delete;
         template <> const param<uint16_t>* db::add_internal<uint16_t>(param_type t, const char* name)
         {
             switch (t)
@@ -218,8 +218,8 @@ namespace cmd
             }
             return NULL;
         }
-        template<typename T> const param<T>* db::add_external_holding(T* p, const char* name) = delete;
-        template<typename T> const param<T>* db::add_external_input(const T* p, const char* name) = delete;
+        template<typename T> const param<T>* add_external_holding(T* p, const char* name) = delete;
+        template<typename T> const param<T>* add_external_input(const T* p, const char* name) = delete;
         template <> const param<uint16_t>* db::add_external_holding<uint16_t>(uint16_t* p, const char* name)
         {
             return holding_uint->add(p, name, param_type::holding);

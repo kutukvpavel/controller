@@ -7,6 +7,7 @@
 #include "sr_io.h"
 #include "a_io.h"
 #include "../ModbusPort/src/ModbusSlave.h"
+#include "console.h"
 
 #define SR_SYNC_INTERVAL 50 // mS
 
@@ -84,13 +85,17 @@ namespace user
     /****
      * MAIN
      * */
-    void setup(SPI_HandleTypeDef *adc_spi, SPI_HandleTypeDef *dac_spi, I2C_HandleTypeDef *dac_i2c, ADC_HandleTypeDef *adc)
+    void setup(SPI_HandleTypeDef *adc_spi, SPI_HandleTypeDef *dac_spi, I2C_HandleTypeDef *dac_i2c, ADC_HandleTypeDef *adc,
+        UART_HandleTypeDef *console_uart)
     {
+        console_retarget_init(console_uart);
+        puts("Hello World!\n");
+
         while (CDC_IsConnected() != USBD_OK); // Note: requires DTR (i.e. hardware handshake)
         CDC_Register_RX_Callback(cdc_receive);
         cmd::init(cdc_stream, dac_i2c);
         a_io::init(adc, cmd::get_analog_input_cal(0), cmd::get_temp_sensor_cal());
-        puts("Hello World!\n");
+        puts("USB connected.\n");
         dbg_wait_for_input();
 
         // ADC

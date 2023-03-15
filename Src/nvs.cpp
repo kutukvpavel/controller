@@ -1,6 +1,6 @@
 #include "nvs.h"
 
-#define MY_NVS_I2C_ADDR(mem_addr) (((0b1010 << 3) | (mem_addr >> 8) & 0b111) << 1)
+#define MY_NVS_I2C_ADDR(mem_addr) (((0b1010 << 3) | ((mem_addr >> 8) & 0b111)) << 1)
 #define MY_NVS_VER_ADDR 0
 #define MY_NVS_START_ADDRESS (MY_NVS_VER_ADDR + 1)
 #define MY_NVS_VERSION 1
