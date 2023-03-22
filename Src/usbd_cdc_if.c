@@ -185,6 +185,8 @@ static int8_t CDC_DeInit_FS(void)
   */
 static int8_t CDC_Control_FS(uint8_t cmd, uint8_t* pbuf, uint16_t length)
 {
+  static uint8_t coding[7];
+
   /* USER CODE BEGIN 5 */
   switch(cmd)
   {
@@ -226,11 +228,11 @@ static int8_t CDC_Control_FS(uint8_t cmd, uint8_t* pbuf, uint16_t length)
   /* 6      | bDataBits  |   1   | Number Data bits (5, 6, 7, 8 or 16).          */
   /*******************************************************************************/
     case CDC_SET_LINE_CODING:
-
+      memcpy(coding, pbuf, sizeof(coding) / sizeof(*coding));
     break;
 
     case CDC_GET_LINE_CODING:
-
+      memcpy(pbuf, coding, sizeof(coding) / sizeof(*coding));
     break;
 
     case CDC_SET_CONTROL_LINE_STATE:
@@ -285,7 +287,7 @@ static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
   * @param  Len: Number of data to be sent (in bytes)
   * @retval USBD_OK if all operations are OK else USBD_FAIL or USBD_BUSY
   */
-uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len)
+uint8_t CDC_Transmit_FS(const uint8_t* Buf, uint16_t Len)
 {
   uint8_t result = USBD_OK;
   /* USER CODE BEGIN 7 */
@@ -293,7 +295,8 @@ uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len)
   if (hcdc->TxState != 0){
     return USBD_BUSY;
   }
-  USBD_CDC_SetTxBuffer(&hUsbDeviceFS, Buf, Len);
+  memcpy(UserTxBufferFS, Buf, Len);
+  USBD_CDC_SetTxBuffer(&hUsbDeviceFS, UserTxBufferFS, Len);
   result = USBD_CDC_TransmitPacket(&hUsbDeviceFS);
   /* USER CODE END 7 */
   return result;
@@ -340,6 +343,7 @@ void CDC_Register_RX_Callback(void (*func)(uint8_t*, uint32_t*))
 uint8_t CDC_Can_Transmit()
 {
   USBD_CDC_HandleTypeDef *hcdc = (USBD_CDC_HandleTypeDef*)hUsbDeviceFS.pClassData;
+  assert_param(hcdc);
   if (hcdc->TxState != 0){
     return USBD_BUSY;
   }

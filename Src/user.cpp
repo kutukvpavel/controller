@@ -10,6 +10,7 @@
 #include "console.h"
 
 #define SR_SYNC_INTERVAL 50 // mS
+#define HEATBEAT_INTERVAL 5000 //mS
 
 // Private vars
 char output_buf[256];
@@ -91,11 +92,9 @@ namespace user
         console_retarget_init(console_uart);
         puts("Hello World!\n");
 
-        while (CDC_IsConnected() != USBD_OK); // Note: requires DTR (i.e. hardware handshake)
         CDC_Register_RX_Callback(cdc_receive);
         cmd::init(cdc_stream, dac_i2c);
         a_io::init(adc, cmd::get_analog_input_cal(0), cmd::get_temp_sensor_cal());
-        puts("USB connected.\n");
         dbg_wait_for_input();
 
         // ADC
@@ -120,6 +119,11 @@ namespace user
         LL_mDelay(1000);
         cmd::report_ready();
         adc::increment_and_sync();
+
+        while (CDC_IsConnected() != USBD_OK); // Note: requires DTR (i.e. hardware handshake)
+        cdc_stream.write({ 0x00 }, 1); //Dumy byte to get CDC TxState (Can_Transmit) working
+        HAL_Delay(100);
+        printf("USB connected, can transmit = %u\n", (CDC_Can_Transmit() == USBD_OK) ? 1 : 0);
     }
     void main()
     {
@@ -190,7 +194,12 @@ namespace user
         }
 
         // Heartbeat
-        //puts("Cycle completed.\n");
+        static uint32_t last_heartbeat_tick = 0;
+        if (tick - last_heartbeat_tick > HEATBEAT_INTERVAL) 
+        {
+            printf(".%lu\n", micros());
+            last_heartbeat_tick = tick;
+        }
         dbg_wait_for_input();
     }
 
@@ -226,16 +235,19 @@ namespace user
         supervise_indexes(&_tail, &_head);
         return len;
     }
-    uint16_t Stream::write(uint8_t *buf, uint16_t len)
+    uint16_t Stream::write(const uint8_t *buf, uint16_t len)
     {
         while (CDC_Can_Transmit() != USBD_OK);
         if (CDC_Transmit_FS(buf, len) == USBD_OK)
+        {
             return len;
+        }
+        puts(">> Failed to send a CDC resp");
         return 0;
     }
     uint16_t Stream::availableForWrite()
     {
-        return CDC_Can_Transmit() ? SERIAL_BUFFER_SIZE : 0;
+        return (CDC_Can_Transmit() == USBD_OK) ? SERIAL_BUFFER_SIZE : 0;
     }
     void Stream::receive(uint8_t *buf, uint16_t len)
     {

@@ -6,8 +6,6 @@
 #define DEBUG_USB_SERIAL 0
 #define DEBUG_STEP_BY_STEP 0
 
-void cdc_transmit_blocking(uint8_t* buf, uint16_t len);
-
 //Shared API
 //#define user_usb_prints(str) { uint8_t _buf[] = (str); cdc_transmit_blocking(_buf, sizeof(_buf)); }
 #if DEBUG_USB_SERIAL
@@ -67,7 +65,7 @@ namespace user
         bool new_line_reached();
         uint8_t read();
         uint16_t readBytes(uint8_t* buf, uint16_t len);
-        uint16_t write(uint8_t* buf, uint16_t len);
+        uint16_t write(const uint8_t* buf, uint16_t len);
         uint16_t availableForWrite();
     };
 

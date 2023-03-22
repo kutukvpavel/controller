@@ -62,6 +62,8 @@ namespace cmd
 
     uint8_t write_cb(uint8_t fc, uint16_t address, uint16_t length)
     {
+        puts(">Modbus write\n");
+
         switch (fc)
         {
         case FC_WRITE_COIL:
@@ -114,6 +116,8 @@ namespace cmd
     }
     uint8_t read_cb(uint8_t fc, uint16_t address, uint16_t length)
     {
+        printf("> Modbus read: fc = %u, addr = %u, len = %u\n", fc, address, length);
+
         switch (fc)
         {
         case FC_READ_DISCRETE_INPUT:
@@ -131,8 +135,11 @@ namespace cmd
                 size_t a = address + i;
                 if (a < STATUS_BITS_NUM)
                 {
-                    bus->writeCoilToBuffer(i, get_status_bit_set(a));
-                    if (_BV(a) == MY_CMD_STATUS_HAVE_NEW_DATA) reset_status_bit(MY_CMD_STATUS_HAVE_NEW_DATA);
+                    bitfield_t mask = _BV(a);
+                    bool ret = get_status_bit_set(mask);
+                    printf("Modbus COIL READ: #%u = %u\n", a, ret ? 1 : 0);
+                    bus->writeCoilToBuffer(i, ret);
+                    if (mask == MY_CMD_STATUS_HAVE_NEW_DATA) reset_status_bit(MY_CMD_STATUS_HAVE_NEW_DATA);
                 }
                 else
                 {
@@ -156,6 +163,7 @@ namespace cmd
         static_assert(sizeof(modbus_holding_registers) % 2 == 0);
         static_assert(sizeof(modbus_input_registers) % 2 == 0);
 
+        puts("Modbus Regs Init...");
         nvs::init(dac_i2c);
 
         for (size_t i = 0; i < array_size(holding.motor_params); i++)
@@ -181,6 +189,8 @@ namespace cmd
         }
 
         if (bus) return;
+        puts("Modbus service init...");
+
         bus = new Modbus(stream);
         bus->cbVector[CB_WRITE_COILS] = write_cb;
         bus->cbVector[CB_WRITE_HOLDING_REGISTERS] = write_cb;
@@ -189,10 +199,15 @@ namespace cmd
         bus->cbVector[CB_READ_HOLDING_REGISTERS] = read_cb;
         bus->cbVector[CB_READ_INPUT_REGISTERS] = read_cb;
         bus->begin(115200);
+        puts("\tModbus initialized OK.");
     }
     void poll()
     {
-        bus->poll();
+        uint8_t w;
+        if (w = bus->poll())
+        {
+            printf("> Modbus resp sent, %u bytes written\n", w);
+        }
         if (coils.commands & MY_CMD_STATUS_SAVE_EEPROM)
         {
             nvs::save();
