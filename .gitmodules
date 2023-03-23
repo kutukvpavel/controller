@@ -4,3 +4,6 @@
 [submodule "ModbusPort"]
 	path = ModbusPort
 	url = https://github.com/kutukvpavel/ArduinoModbusSlave
+[submodule "cli"]
+	path = cli
+	url = https://gitlab.uliege.be/mdiepart1/ushell-stm32.git

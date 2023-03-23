@@ -7,7 +7,7 @@
 #include "sr_io.h"
 #include "a_io.h"
 #include "../ModbusPort/src/ModbusSlave.h"
-#include "console.h"
+#include "../cli/inc/sys_command_line.h"
 
 #define SR_SYNC_INTERVAL 50 // mS
 #define HEATBEAT_INTERVAL 5000 //mS
@@ -89,8 +89,9 @@ namespace user
     void setup(SPI_HandleTypeDef *adc_spi, SPI_HandleTypeDef *dac_spi, I2C_HandleTypeDef *dac_i2c, ADC_HandleTypeDef *adc,
         UART_HandleTypeDef *console_uart)
     {
-        console_retarget_init(console_uart);
-        puts("Hello World!");
+        CLI_INIT(console_uart);
+        //console_retarget_init(console_uart);
+        puts("Goodnight Moon!");
 
         CDC_Register_RX_Callback(cdc_receive);
         cmd::init(cdc_stream, dac_i2c);
@@ -131,6 +132,7 @@ namespace user
         static uint32_t last_gpio_sync = 0;
 
         tick = HAL_GetTick();
+        CLI_RUN();
 
         // GPIO
         if (tick - last_gpio_sync > SR_SYNC_INTERVAL)

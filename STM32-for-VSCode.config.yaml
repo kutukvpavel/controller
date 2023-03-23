@@ -76,6 +76,7 @@ includeDirectories:
   - Drivers/STM32F4xx_HAL_Driver/Inc/**
   - Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include**
   - Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/PrivateInclude
+  - cli/inc/**
 
 
 # Files that should be included in the compilation.
@@ -88,6 +89,7 @@ sourceFiles:
   - ModbusPort/src/**
   - Drivers/STM32F4xx_HAL_Driver/Src/**
   - Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source**
+  - cli/src/**
 
 
 # When no makefile is present it will show a warning pop-up.

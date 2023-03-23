@@ -100,14 +100,15 @@ Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SupportFunctions/SupportFunct
 Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/TransformFunctions/TransformFunctions.c \
 Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/TransformFunctions/TransformFunctionsF16.c \
 Src/assert.c \
-Src/console.c \
 Src/stm32f4xx_hal_msp.c \
 Src/stm32f4xx_it.c \
 Src/system_stm32f4xx.c \
 Src/usb_device.c \
 Src/usbd_cdc_if.c \
 Src/usbd_conf.c \
-Src/usbd_desc.c
+Src/usbd_desc.c \
+cli/src/sys_command_line.c \
+cli/src/sys_queue.c
 
 
 CPP_SOURCES = \
@@ -205,7 +206,8 @@ C_INCLUDES =  \
 -IMiddlewares/ST/STM32_USB_Device_Library/Core/Inc \
 -IMiddlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include \
 -IMiddlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/PrivateInclude \
--IModbusPort/src
+-IModbusPort/src \
+-Icli/inc
 
 
 
