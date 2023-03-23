@@ -99,6 +99,7 @@ Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SupportFunctions/SupportFunct
 Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/SupportFunctions/SupportFunctionsF16.c \
 Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/TransformFunctions/TransformFunctions.c \
 Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source/TransformFunctions/TransformFunctionsF16.c \
+Src/assert.c \
 Src/console.c \
 Src/stm32f4xx_hal_msp.c \
 Src/stm32f4xx_it.c \
@@ -178,6 +179,7 @@ AS_DEFS =
 # C defines
 C_DEFS =  \
 -DSTM32F401xC \
+-DUSE_FULL_ASSERT=1 \
 -DUSE_FULL_LL_DRIVER \
 -DUSE_HAL_DRIVER
 

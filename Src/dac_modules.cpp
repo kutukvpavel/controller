@@ -78,13 +78,31 @@ namespace dac
             .addr = MY_DAC_1,
             .depolarization_setpoint = 0,
             .r_shunt = 1
+        },
+        {
+            .cs_mux_mask = CS_MUX_MASK(1u),
+            .addr = MY_DAC_2,
+            .depolarization_setpoint = 0,
+            .r_shunt = 1
+        },
+        {
+            .cs_mux_mask = CS_MUX_MASK(2u),
+            .addr = MY_DAC_3,
+            .depolarization_setpoint = 0,
+            .r_shunt = 1
+        },
+        {
+            .cs_mux_mask = CS_MUX_MASK(3u),
+            .addr = MY_DAC_4,
+            .depolarization_setpoint = 0,
+            .r_shunt = 1
         }
     };
 
     //Public methods
     void init(SPI_HandleTypeDef* spi_instance, user::pin_t* spi_cs_pin, I2C_HandleTypeDef* i2c_instance, const cal_t* c)
     {
-        static_assert(array_size(modules) <= MY_DAC_MAX_MODULES, "Too many DAC modules.");
+        static_assert(array_size(modules) == MY_DAC_MAX_MODULES, "Check DAC module definitions.");
 
         if (!spi_instance || !i2c_instance || !spi_cs_pin) dbg_usb_prints("DAC SPI/I2C/CS pin interface handle is NULL!\n");
         cs_pin = spi_cs_pin;

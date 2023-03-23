@@ -110,7 +110,7 @@ namespace nvs
     HAL_StatusTypeDef init(I2C_HandleTypeDef* hi2c)
     {
         HAL_StatusTypeDef ret;
-        puts("NVS init...\n");
+        puts("NVS init...");
 
         i2c = hi2c;
         if ((ret = eeprom_read(MY_NVS_VER_ADDR, &nvs_ver, sizeof(nvs_ver))) != HAL_OK) return ret;

@@ -24,6 +24,7 @@ cDefinitions:
   - USE_FULL_LL_DRIVER
   - USE_HAL_DRIVER
   - STM32F401xC
+  - USE_FULL_ASSERT=1
 
 cxxDefinitions: []
 asDefinitions: []

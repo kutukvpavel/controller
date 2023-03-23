@@ -12,6 +12,7 @@ namespace cmd
 #define COILS_NUM (STATUS_BITS_NUM + sr_io::out::OUTPUT_NUM)
 #define HOLDING_REGISTERS_NUM modbus::get_modbus_size<modbus_holding_registers>()
 #define INPUT_REGS_NUM modbus::get_modbus_size<modbus_input_registers>()
+#define MY_ADC_MAX_CHANNELS (MY_ADC_MAX_MODULES * MY_ADC_CHANNELS_PER_CHIP)
 
     static Modbus* bus;
 
@@ -62,7 +63,7 @@ namespace cmd
 
     uint8_t write_cb(uint8_t fc, uint16_t address, uint16_t length)
     {
-        puts(">Modbus write\n");
+        printf("> Modbus write: fc = %u, addr = %u, len = %u\n", fc, address, length);
 
         switch (fc)
         {
@@ -73,11 +74,13 @@ namespace cmd
             if (address < STATUS_BITS_NUM)
             {
                 write_status_bit(address, b);
+                printf("> Status bit written: #%u = %u\n", address, b ? 1 : 0);
             }
             else
             {
                 address -= STATUS_BITS_NUM;
                 sr_io::set_output(static_cast<sr_io::out>(address), b);
+                printf("> SR_IO bit written: #%u = %u\n", address, b ? 1 : 0);
             }
             break;
         }
@@ -126,7 +129,7 @@ namespace cmd
             break;
         case FC_READ_HOLDING_REGISTERS:
             if ((address + length) > HOLDING_REGISTERS_NUM) return STATUS_ILLEGAL_DATA_ADDRESS;
-            bus->writeArrayToBuffer(0, reinterpret_cast<uint16_t*>(&holding), length);
+            bus->writeArrayToBuffer(0, reinterpret_cast<uint16_t*>(&holding) + address, length);
             break;
         case FC_READ_COILS:
             if ((address + length) > COILS_NUM) return STATUS_ILLEGAL_DATA_ADDRESS;
@@ -149,9 +152,13 @@ namespace cmd
             }
             break;
         case FC_READ_INPUT_REGISTERS:
+        {
             if ((address + length) > INPUT_REGS_NUM) return STATUS_ILLEGAL_DATA_ADDRESS;
-            bus->writeArrayToBuffer(0, reinterpret_cast<uint16_t*>(&input), length);
+            const uint16_t* p = reinterpret_cast<uint16_t*>(&input) + address;
+            printf("Modbus INPUT REG READ: #%u = %u, len = %u\n", address, *p, length);
+            bus->writeArrayToBuffer(0, p, length);
             break;
+        }
         default:
             break;
         }
@@ -204,7 +211,7 @@ namespace cmd
     void poll()
     {
         uint8_t w;
-        if (w = bus->poll())
+        if ((w = bus->poll()))
         {
             printf("> Modbus resp sent, %u bytes written\n", w);
         }
@@ -242,31 +249,38 @@ namespace cmd
     }
     float get_dac_setpoint(size_t i)
     {
+        assert_param(i < MY_DAC_MAX_MODULES);
         return holding.dac_setpoints[i];
     }
     void set_adc_voltage(size_t i, float v)
     {
+        assert_param(i < MY_ADC_MAX_CHANNELS);
         input.adc_voltages[i] = v;
     }
     void set_dac_current(size_t i, float v)
     {
+        assert_param(i < MY_DAC_MAX_MODULES);
         input.dac_currents[i] = v;
     }
     void set_dac_corrected_current(size_t i, float v)
     {
+        assert_param(i < MY_DAC_MAX_MODULES);
         input.dac_corrected_currents[i] = v;
     }
     void set_analog_in(size_t i, float v)
     {
+        assert_param(i < a_io::in::INPUTS_NUM);
         input.a_in[i] = v;
     }
 
     motor_params_t* get_motor_params(size_t i)
     {
+        assert_param(i < MOTORS_NUM);
         return &(holding.motor_params[i]);
     }
     a_io::in_cal_t* get_analog_input_cal(size_t i)
     {
+        assert_param(i < a_io::in::INPUTS_NUM);
         return &(holding.analog_input_cals[i]);
     }
     a_io::in_cal_t* get_temp_sensor_cal()
@@ -275,10 +289,12 @@ namespace cmd
     }
     adc::ch_cal_t* get_adc_channel_cal(size_t i)
     {
+        assert_param(i < MY_ADC_MAX_CHANNELS);
         return &(holding.adc_cals[i]);
     }
     dac::cal_t* get_dac_cal(size_t i)
     {
+        assert_param(i < MY_DAC_MAX_MODULES);
         return &(holding.dac_cals[i]);
     }
 }

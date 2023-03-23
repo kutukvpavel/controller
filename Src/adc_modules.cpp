@@ -70,12 +70,48 @@ namespace adc
                     .mux_conf = ADS1220_MUX_AIN2_AIN3
                 }
             }
+        },
+        {
+            .cs_mux_mask = CS_MUX_MASK(1u),
+            .drdy = &drdy_pin,
+            .channels = {
+                {
+                    .mux_conf = ADS1220_MUX_AIN0_AIN1
+                },
+                {
+                    .mux_conf = ADS1220_MUX_AIN2_AIN3
+                }
+            }
+        },
+        {
+            .cs_mux_mask = CS_MUX_MASK(2u),
+            .drdy = &drdy_pin,
+            .channels = {
+                {
+                    .mux_conf = ADS1220_MUX_AIN0_AIN1
+                },
+                {
+                    .mux_conf = ADS1220_MUX_AIN2_AIN3
+                }
+            }
+        },
+        {
+            .cs_mux_mask = CS_MUX_MASK(3u),
+            .drdy = &drdy_pin,
+            .channels = {
+                {
+                    .mux_conf = ADS1220_MUX_AIN0_AIN1
+                },
+                {
+                    .mux_conf = ADS1220_MUX_AIN2_AIN3
+                }
+            }
         }
     };
 
     void init(SPI_HandleTypeDef* hspi, user::pin_t* spi_cs_pin, const ch_cal_t* cals)
     {
-        static_assert(array_size(modules) <= MY_ADC_MAX_MODULES, "Too many ADC modules.");
+        static_assert(array_size(modules) == MY_ADC_MAX_MODULES, "Check ADC module definitions.");
 
         if (!hspi) dbg_usb_prints("ADC SPI interface handle is NULL!\n");
         cs_pin = spi_cs_pin;
