@@ -24,7 +24,6 @@ cDefinitions:
   - USE_FULL_LL_DRIVER
   - USE_HAL_DRIVER
   - STM32F401xC
-  - USE_FULL_ASSERT=1
 
 cxxDefinitions: []
 asDefinitions: []
@@ -76,6 +75,8 @@ includeDirectories:
   - Drivers/STM32F4xx_HAL_Driver/Inc/**
   - Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include**
   - Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/PrivateInclude
+  - Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc
+  - Middlewares/ST/STM32_USB_Device_Library/Core/Inc
   - cli/inc/**
 
 
@@ -89,6 +90,8 @@ sourceFiles:
   - ModbusPort/src/**
   - Drivers/STM32F4xx_HAL_Driver/Src/**
   - Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Source**
+  - Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/**
+  - Middlewares/ST/STM32_USB_Device_Library/Core/Src/**
   - cli/src/**
 
 

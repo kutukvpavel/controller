@@ -170,7 +170,7 @@ namespace cmd
         static_assert(sizeof(modbus_holding_registers) % 2 == 0);
         static_assert(sizeof(modbus_input_registers) % 2 == 0);
 
-        puts("Modbus Regs Init...");
+        DBG("Modbus Regs Init...");
         nvs::init(dac_i2c);
 
         for (size_t i = 0; i < array_size(holding.motor_params); i++)
@@ -196,7 +196,7 @@ namespace cmd
         }
 
         if (bus) return;
-        puts("Modbus service init...");
+        DBG("Modbus service init...");
 
         bus = new Modbus(stream);
         bus->cbVector[CB_WRITE_COILS] = write_cb;
@@ -206,7 +206,7 @@ namespace cmd
         bus->cbVector[CB_READ_HOLDING_REGISTERS] = read_cb;
         bus->cbVector[CB_READ_INPUT_REGISTERS] = read_cb;
         bus->begin(115200);
-        puts("\tModbus initialized OK.");
+        DBG("\tModbus initialized OK.");
     }
     void poll()
     {
@@ -224,7 +224,7 @@ namespace cmd
 
     void report_ready()
     {
-        puts("READY...\n");
+        DBG("READY...\n");
         coils.commands |= MY_CMD_STATUS_READY;
     }
     void set_status_bit(bitfield_t mask)

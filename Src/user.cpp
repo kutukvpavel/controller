@@ -7,7 +7,6 @@
 #include "sr_io.h"
 #include "a_io.h"
 #include "../ModbusPort/src/ModbusSlave.h"
-#include "../cli/inc/sys_command_line.h"
 
 #define SR_SYNC_INTERVAL 50 // mS
 #define HEATBEAT_INTERVAL 5000 //mS
@@ -90,8 +89,7 @@ namespace user
         UART_HandleTypeDef *console_uart)
     {
         CLI_INIT(console_uart);
-        //console_retarget_init(console_uart);
-        puts("Goodnight Moon!");
+        DBG("Goodnight Moon!");
 
         CDC_Register_RX_Callback(cdc_receive);
         cmd::init(cdc_stream, dac_i2c);
@@ -102,7 +100,7 @@ namespace user
         HAL_SPI_Transmit(adc_spi, zero_arr, 1, 100); // Get SPI pins into an approptiate idle state before any /CS is asserted (SPI_MspInit doesn't do that FSR)
         adc::init(adc_spi, &cs_pin, cmd::get_adc_channel_cal(0));
         LL_mDelay(1000); // Allow the boards to power up
-        puts("Probing ADC modules...");
+        DBG("Probing ADC modules...");
         adc::probe();
         //send_output(adc::dump_module_report(output_buf, sizeof(output_buf)));
         dbg_wait_for_input();
@@ -111,7 +109,7 @@ namespace user
         HAL_SPI_Transmit(dac_spi, zero_arr, 1, 100); // Get SPI pins into an approptiate idle state before any /CS is asserted (SPI_MspInit doesn't do that FSR)
         dac::init(dac_spi, &cs_pin, dac_i2c, cmd::get_dac_cal(0));
         LL_mDelay(1000); // Allow the boards to power up
-        puts("Probing DAC modules...");
+        DBG("Probing DAC modules...");
         dac::probe();
         //send_output(dac::dump_module_report(output_buf, sizeof(output_buf)));
         dbg_wait_for_input();
@@ -121,10 +119,10 @@ namespace user
         cmd::report_ready();
         adc::increment_and_sync();
 
-        while (CDC_IsConnected() != USBD_OK); // Note: requires DTR (i.e. hardware handshake)
+        while (CDC_IsConnected() != USBD_OK) CLI_RUN(); // Note: requires DTR (i.e. hardware handshake)
         cdc_stream.write({ 0x00 }, 1); //Dumy byte to get CDC TxState (Can_Transmit) working
         HAL_Delay(100);
-        printf("USB connected, can transmit = %u\n", (CDC_Can_Transmit() == USBD_OK) ? 1 : 0);
+        DBG("USB connected, can transmit = %u\n", (CDC_Can_Transmit() == USBD_OK) ? 1 : 0);
     }
     void main()
     {
