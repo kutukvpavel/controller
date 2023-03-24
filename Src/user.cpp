@@ -196,12 +196,12 @@ namespace user
         }
 
         // Heartbeat
-        static uint32_t last_heartbeat_tick = 0;
+        /*static uint32_t last_heartbeat_tick = 0;
         if (tick - last_heartbeat_tick > HEATBEAT_INTERVAL) 
         {
             printf(".%lu\n", micros());
             last_heartbeat_tick = tick;
-        }
+        }*/
         dbg_wait_for_input();
     }
 
