@@ -1,9 +1,10 @@
 #include "nvs.h"
 
-#define MY_NVS_I2C_ADDR(mem_addr) (((0b1010 << 3) | ((mem_addr >> 8) & 0b111)) << 1)
+#define MY_EEPROM_ADDR 0xA0
+#define MY_NVS_I2C_ADDR(mem_addr) (MY_EEPROM_ADDR | ((mem_addr & 0x700) >> 7))
 #define MY_NVS_VER_ADDR 0
 #define MY_NVS_START_ADDRESS (MY_NVS_VER_ADDR + 1)
-#define MY_NVS_VERSION 1
+#define MY_NVS_VERSION 1u
 
 namespace nvs
 {
@@ -79,19 +80,21 @@ namespace nvs
     uint8_t nvs_ver = 0;
     HAL_StatusTypeDef eeprom_read(uint16_t addr, uint8_t* buf, uint16_t len)
     {
-        return HAL_I2C_Mem_Read(i2c, MY_NVS_I2C_ADDR(addr), addr, 1, buf, len, 1000);
+        return HAL_I2C_Mem_Read(i2c, MY_NVS_I2C_ADDR(addr), addr & 0xFF, I2C_MEMADD_SIZE_8BIT, buf, len, 1000);
     }
     HAL_StatusTypeDef eeprom_write(uint16_t addr, uint8_t* buf, uint16_t len)
     {
-        return HAL_I2C_Mem_Write(i2c, MY_NVS_I2C_ADDR(addr), addr, 1, buf, len, 1000);
+        return HAL_I2C_Mem_Write(i2c, MY_NVS_I2C_ADDR(addr), addr & 0xFF, I2C_MEMADD_SIZE_8BIT, buf, len, 1000);
     }
 
     motor_params_t* get_motor_params(size_t i)
     {
+        assert_param(i < MOTORS_NUM);
         return &(storage.motors[i]);
     }
     a_io::in_cal_t* get_analog_input_cal(size_t i)
     {
+        assert_param(i < a_io::in::INPUTS_NUM);
         return &(storage.a_in_cal[i]);
     }
     a_io::in_cal_t* get_temp_sensor_cal()
@@ -100,10 +103,12 @@ namespace nvs
     }
     adc::ch_cal_t* get_adc_channel_cal(size_t i)
     {
+        assert_param(i < array_size(storage.adc_cal));
         return &(storage.adc_cal[i]);
     }
     dac::cal_t* get_dac_cal(size_t i)
     {
+        assert_param(i < MY_DAC_MAX_MODULES);
         return &(storage.dac_cal[i]);
     }
 
@@ -133,6 +138,8 @@ namespace nvs
 
         if (!i2c) return HAL_BUSY;
         if ((ret = eeprom_write(MY_NVS_START_ADDRESS, reinterpret_cast<uint8_t*>(&storage), sizeof(storage))) != HAL_OK) return ret;
-        return HAL_OK;
+        DBG("NVS Data written OK. Writing NVS version...");
+        uint8_t ver[] = { MY_NVS_VERSION };
+        return eeprom_write(MY_NVS_VER_ADDR, ver, 1);
     }
 } // namespace nvs

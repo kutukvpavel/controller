@@ -57,6 +57,7 @@ namespace adc
     user::pin_t enable_pin = { GPIOB, LL_GPIO_PIN_15 };
     user::pin_t* cs_pin; //main CS pin, not the MUX address pins
     GPIO_TypeDef* cs_mux_port = BOARD_ADDR0_GPIO_Port;
+    size_t total_channels_present = 0;
     module_t modules[] = 
     {
         {
@@ -136,6 +137,7 @@ namespace adc
     void probe()
     {
         status = MY_ADC_STATUS_INITIALIZING;
+        total_channels_present = 0;
         for (size_t i = 0; i < array_size(modules); i++)
         {
             auto& m = modules[i];
@@ -143,9 +145,16 @@ namespace adc
             activate_cs(&m);
             m.present = ADS1220_init(m.hspi, &regs_buffer);
             if (m.present)
+            {
+                total_channels_present += MY_ADC_CHANNELS_PER_CHIP;
                 ADS1220_set_data_rate(m.hspi, acquisition_speed, &regs_buffer);
+            }
             deactivate_cs(&m);
         }
+    }
+    size_t get_present_channels_count()
+    {
+        return total_channels_present;
     }
 
     void increment_and_sync()

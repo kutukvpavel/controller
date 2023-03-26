@@ -15,7 +15,7 @@
 char output_buf[256];
 user::pin_t cs_pin = {nCS_GPIO_Port, nCS_Pin};
 static uint8_t zero_arr[1] = {0};
-static user::pin_t led_pin = user::pin_t(MASTER_ENABLE_GPIO_Port, MASTER_ENABLE_Pin);
+static user::pin_t me_pin = user::pin_t(MASTER_ENABLE_GPIO_Port, MASTER_ENABLE_Pin);
 static user::Stream cdc_stream = user::Stream();
 static volatile bool dump_data = false;
 
@@ -29,7 +29,6 @@ void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
     {
         dump_data = true;
     }
-    LL_GPIO_TogglePin(led_pin.port, led_pin.mask);
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
@@ -88,12 +87,12 @@ namespace user
     void setup(SPI_HandleTypeDef *adc_spi, SPI_HandleTypeDef *dac_spi, I2C_HandleTypeDef *dac_i2c, ADC_HandleTypeDef *adc,
         UART_HandleTypeDef *console_uart)
     {
-        CLI_INIT(console_uart);
-        DBG("Goodnight Moon!");
+        my_cli_init(console_uart);
 
         CDC_Register_RX_Callback(cdc_receive);
         cmd::init(cdc_stream, dac_i2c);
         a_io::init(adc, cmd::get_analog_input_cal(0), cmd::get_temp_sensor_cal());
+        LL_GPIO_ResetOutputPin(me_pin.port, me_pin.mask);
         dbg_wait_for_input();
 
         // ADC
@@ -102,6 +101,7 @@ namespace user
         LL_mDelay(1000); // Allow the boards to power up
         DBG("Probing ADC modules...");
         adc::probe();
+        cmd::set_adc_channels_present(adc::get_present_channels_count());
         //send_output(adc::dump_module_report(output_buf, sizeof(output_buf)));
         dbg_wait_for_input();
 
@@ -111,6 +111,7 @@ namespace user
         LL_mDelay(1000); // Allow the boards to power up
         DBG("Probing DAC modules...");
         dac::probe();
+        cmd::set_dac_channels_present(dac::get_present_modules_count());
         //send_output(dac::dump_module_report(output_buf, sizeof(output_buf)));
         dbg_wait_for_input();
 

@@ -51,6 +51,7 @@ namespace dac
     // Public methods
     void init(SPI_HandleTypeDef* spi_instance, user::pin_t* spi_cs_pin, I2C_HandleTypeDef* i2c_instance, const cal_t* c);
     void probe();
+    size_t get_present_modules_count();
     void set_module(size_t i, float volts);
     void set_all(float volts);
     void start_depolarization();

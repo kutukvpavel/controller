@@ -42,6 +42,8 @@ namespace cmd
     void set_status_bit(bitfield_t mask);
     void reset_status_bit(bitfield_t mask);
     bool get_status_bit_set(bitfield_t bitmask);
+    void set_adc_channels_present(uint16_t num);
+    void set_dac_channels_present(uint16_t num);
     float get_dac_setpoint(size_t i);
     void set_adc_voltage(size_t i, float v);
     void set_dac_current(size_t i, float v);

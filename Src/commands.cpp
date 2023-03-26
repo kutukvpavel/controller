@@ -171,7 +171,19 @@ namespace cmd
         static_assert(sizeof(modbus_input_registers) % 2 == 0);
 
         DBG("Modbus Regs Init...");
-        nvs::init(dac_i2c);
+        if (nvs::init(dac_i2c) == HAL_OK)
+        {
+            if (nvs::load() != HAL_OK)
+            {
+                ERR("Failed to load NVS");
+                HAL_Delay(500);
+                abort();
+            }
+        }
+        else
+        {
+            ERR("NVS version mismatch! Defaults will be used.");
+        }
 
         for (size_t i = 0; i < array_size(holding.motor_params); i++)
         {

@@ -2,7 +2,7 @@
 
 #include "main.h"
 #include "usbd_cdc_if.h"
-#include "../cli/inc/sys_command_line.h"
+#include "cli.h"
 
 #define DEBUG_USB_SERIAL 0
 #define DEBUG_STEP_BY_STEP 0

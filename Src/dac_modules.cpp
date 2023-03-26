@@ -71,6 +71,7 @@ namespace dac
     user::pin_t enable_pin = { GPIOB, LL_GPIO_PIN_15 };
     user::pin_t* cs_pin;
     GPIO_TypeDef* cs_mux_port = BOARD_ADDR0_GPIO_Port;
+    size_t modules_present = 0;
     module_t modules[] = 
     {  
         {
@@ -134,6 +135,7 @@ namespace dac
             m.present = INA219_Init(m.hi2c, m.addr);
             if (m.present) 
             {
+                modules_present++;
                 INA219_setConfig(m.hi2c, m.addr, cfg);
                 INA219_setCalibration(m.hi2c, m.addr, 
                     static_cast<uint16_t>(roundf(MY_INA219_CAL_MAGIC / m.r_shunt)), 
@@ -142,6 +144,10 @@ namespace dac
             }
             deactivate_cs(&m);
         }
+    }
+    size_t get_present_modules_count()
+    {
+        return modules_present;
     }
 
     void read_current()

@@ -79,6 +79,7 @@ namespace adc
     //Public methods
     void init(SPI_HandleTypeDef* hspi, user::pin_t* spi_cs_pin, const ch_cal_t* cals);
     void probe();
+    size_t get_present_channels_count();
     void increment_and_sync();
     void read();
     void drdy_callback();
