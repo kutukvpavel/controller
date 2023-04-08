@@ -43,9 +43,11 @@ namespace a_io
 
     void init(ADC_HandleTypeDef* adc, const in_cal_t* cal, const in_cal_t* temp_cal)
     {
+        DBG("AIO init...");
         temp_sensor_cal = temp_cal;
         calibration_database = cal;
         HAL_ADC_Start_DMA(adc, reinterpret_cast<uint32_t*>(&buffer), sizeof(buffer) / sizeof(uint16_t));
+        DBG("\tAIO init OK.");
     }
     void poll()
     {

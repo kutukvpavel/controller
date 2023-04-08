@@ -4,7 +4,6 @@
 #include "commands.h"
 #include "adc_modules.h"
 #include "dac_modules.h"
-#include "sr_io.h"
 #include "a_io.h"
 #include "../ModbusPort/src/ModbusSlave.h"
 
@@ -13,7 +12,7 @@
 
 // Private vars
 char output_buf[256];
-user::pin_t cs_pin = {nCS_GPIO_Port, nCS_Pin};
+user::pin_t cs_pin = user::pin_t(nCS_GPIO_Port, nCS_Pin);
 static uint8_t zero_arr[1] = {0};
 static user::pin_t me_pin = user::pin_t(MASTER_ENABLE_GPIO_Port, MASTER_ENABLE_Pin);
 static user::Stream cdc_stream = user::Stream();
@@ -102,7 +101,7 @@ namespace user
         DBG("Probing ADC modules...");
         adc::probe();
         cmd::set_adc_channels_present(adc::get_present_channels_count());
-        //send_output(adc::dump_module_report(output_buf, sizeof(output_buf)));
+        adc::dump_module_report();
         dbg_wait_for_input();
 
         // DAC
@@ -280,18 +279,31 @@ namespace user
         while ((micros() - start) < us)
             ;
     }
-    void digitalWrite(pin_t p, uint8_t state)
+    void digitalWrite(pin_t& p, uint8_t state)
     {
         if (state)
             LL_GPIO_SetOutputPin(p.port, p.mask);
         else
             LL_GPIO_ResetOutputPin(p.port, p.mask);
     }
-    void pinMode(pin_t p, uint8_t mode)
+    void pinMode(pin_t& p, uint8_t mode)
     {
         if (mode == OUTPUT)
             LL_GPIO_SetPinMode(p.port, p.mask, LL_GPIO_MODE_OUTPUT);
     }
+    void pin_t::set(bool state)
+    {
+        if (sr)
+        {
+            sr_io::set_output(static_cast<sr_io::out>(mask), state);
+            sr_io::sync();
+        }
+        else
+        {
+            digitalWrite(*this, state);
+        }
+    }
+
     int min(int x, int y)
     {
         return x < y ? x : y;

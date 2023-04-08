@@ -13,7 +13,7 @@
     "\tSPI Handle: %p\n" \
     "\tCS MUX Mask: %u\n" \
     "\tDRDY Pin: %.4lX - %.4lX\n" \
-    "\tChannels (%u):\n%s"
+    "\tChannels (%u):\n"
 #define OUTPUT_CHANNEL_FORMAT "\t\tmux=%X cal={%.6f,%.6f};\n" // <tab>mux=X cal={1.000000,0.000000};<nl> 33 bytes/line min
 #define CS_MUX_MASK(index) ((index) << 3u) //Lower half of 8 addresses coded with PA3-PA5 (shifted accordingly)
 
@@ -53,8 +53,8 @@ namespace adc
     //Globals
     volatile uint8_t status = MY_ADC_STATUS_INITIALIZING;
     int16_t acquisition_speed = ADS1220_DR_20SPS;
-    user::pin_t drdy_pin = { nDRDY_GPIO_Port, nDRDY_Pin };
-    user::pin_t enable_pin = { GPIOB, LL_GPIO_PIN_15 };
+    user::pin_t drdy_pin = user::pin_t(nDRDY_GPIO_Port, nDRDY_Pin);
+    user::pin_t enable_pin = user::pin_t(sr_io::out::ADC_EN);
     user::pin_t* cs_pin; //main CS pin, not the MUX address pins
     GPIO_TypeDef* cs_mux_port = BOARD_ADDR0_GPIO_Port;
     size_t total_channels_present = 0;
@@ -113,10 +113,11 @@ namespace adc
     void init(SPI_HandleTypeDef* hspi, user::pin_t* spi_cs_pin, const ch_cal_t* cals)
     {
         static_assert(array_size(modules) == MY_ADC_MAX_MODULES, "Check ADC module definitions.");
+        DBG("ADC Modules init...");
 
         if (!hspi) dbg_usb_prints("ADC SPI interface handle is NULL!\n");
         cs_pin = spi_cs_pin;
-        LL_GPIO_SetOutputPin(cs_pin->port, cs_pin->mask); //Set /CS HIGH
+        cs_pin->set(true); //Set /CS HIGH
         LL_GPIO_ResetOutputPin(cs_mux_port, CS_MUX_MASK(3u)); //Clear CS MUX outputs (index = 0-3)
         //Configure communication members
         for (size_t i = 0; i < array_size(modules); i++)
@@ -131,7 +132,9 @@ namespace adc
             }
         }
         //Enable power and transievers
-        LL_GPIO_SetOutputPin(enable_pin.port, enable_pin.mask); //Set ENABLE high
+        enable_pin.set(true); //Set ENABLE high
+
+        DBG("\tADC Modules init OK.");
     }
 
     void probe()
@@ -226,29 +229,18 @@ namespace adc
         return written;
     }
 
-    size_t dump_module_report(char* buf, size_t max_len)
+    void dump_module_report()
     {
-        size_t written = 0;
         for (size_t i = 0; i < array_size(modules); i++)
         {
             auto& m = modules[i];
             if (!m.present) continue;
-            char cbuf[36 * MY_ADC_CHANNELS_PER_CHIP];
-            char* cbuf_p = cbuf;
+            printf(OUTPUT_REPORT_FORMAT, i, m.hspi, m.cs_mux_mask, m.drdy->port->MODER, m.drdy->mask, MY_ADC_CHANNELS_PER_CHIP);
             for (size_t j = 0; j < MY_ADC_CHANNELS_PER_CHIP; j++)
             {
                 auto& c = m.channels[j];
-                cbuf_p += snprintf(cbuf_p, sizeof(cbuf) - (cbuf_p - cbuf), OUTPUT_CHANNEL_FORMAT, 
-                    c.mux_conf, c.cal->k, c.cal->b);
-            }
-            int w = snprintf(buf, max_len - written, OUTPUT_REPORT_FORMAT, i,
-                m.hspi, m.cs_mux_mask, m.drdy->port->MODER, m.drdy->mask, MY_ADC_CHANNELS_PER_CHIP, cbuf);
-            if (w > 0) //On success, increment the variables, on error overwrite the bad line
-            {
-                written += w;
-                buf += w;
+                printf(OUTPUT_CHANNEL_FORMAT, c.mux_conf, c.cal->k, c.cal->b);
             }
         }
-        return written;
     }
 }

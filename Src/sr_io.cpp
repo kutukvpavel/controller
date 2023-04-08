@@ -72,12 +72,13 @@ namespace sr_io
         {
             if (i < in::INPUT_NUM)
             {
-                set_input(i, HAL_GPIO_ReadPin(IN_DATA_GPIO_Port, IN_DATA_Pin) == GPIO_PinState::GPIO_PIN_SET);
+                set_input(in::INPUT_NUM - i - 1, //SRs inherently invert bit order
+                    HAL_GPIO_ReadPin(IN_DATA_GPIO_Port, IN_DATA_Pin) == GPIO_PinState::GPIO_PIN_SET);
             }
             if (i < out::OUTPUT_NUM)
             {
                 HAL_GPIO_WritePin(OUT_DATA_GPIO_Port, OUT_DATA_Pin, 
-                    get_output(i) ? GPIO_PinState::GPIO_PIN_SET : GPIO_PinState::GPIO_PIN_RESET);
+                    get_output(out::OUTPUT_NUM - i - 1) ? GPIO_PinState::GPIO_PIN_SET : GPIO_PinState::GPIO_PIN_RESET);
             }
             pulse_output(GPIO_SHIFT_GPIO_Port, GPIO_SHIFT_Pin);
         }

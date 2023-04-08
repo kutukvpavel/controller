@@ -3,6 +3,7 @@
 #include "main.h"
 #include "usbd_cdc_if.h"
 #include "cli.h"
+#include "sr_io.h"
 
 #define DEBUG_USB_SERIAL 0
 #define DEBUG_STEP_BY_STEP 0
@@ -46,11 +47,15 @@ namespace user
     void main();
 
     //API
-    struct pin_t
+    class pin_t
     {
-        pin_t(GPIO_TypeDef* p, uint32_t m) : port(p), mask(m) {}
+    public:
         GPIO_TypeDef* port;
         uint32_t mask;
+        bool sr;
+        pin_t(uint32_t index) : port(NULL), mask(index), sr(true) {}
+        pin_t(GPIO_TypeDef* p, uint32_t m) : port(p), mask(m), sr(false) {}
+        void set(bool state);
     };
 
     class Stream
@@ -72,8 +77,8 @@ namespace user
 
     uint32_t micros();
     void uDelay(uint32_t us);
-    void digitalWrite(pin_t p, uint8_t state);
-    void pinMode(pin_t p, uint8_t mode);
+    void digitalWrite(pin_t& p, uint8_t state);
+    void pinMode(pin_t& p, uint8_t mode);
     int min(int x, int y);
     uint16_t word(uint8_t h, uint8_t l);
 }

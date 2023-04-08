@@ -68,7 +68,7 @@ namespace dac
 {
     //Globals
     volatile uint8_t status;
-    user::pin_t enable_pin = { GPIOB, LL_GPIO_PIN_15 };
+    user::pin_t enable_pin = user::pin_t(sr_io::out::DAC_EN);
     user::pin_t* cs_pin;
     GPIO_TypeDef* cs_mux_port = BOARD_ADDR0_GPIO_Port;
     size_t modules_present = 0;
@@ -104,10 +104,11 @@ namespace dac
     void init(SPI_HandleTypeDef* spi_instance, user::pin_t* spi_cs_pin, I2C_HandleTypeDef* i2c_instance, const cal_t* c)
     {
         static_assert(array_size(modules) == MY_DAC_MAX_MODULES, "Check DAC module definitions.");
+        DBG("DAC Modules init...");
 
         if (!spi_instance || !i2c_instance || !spi_cs_pin) dbg_usb_prints("DAC SPI/I2C/CS pin interface handle is NULL!\n");
         cs_pin = spi_cs_pin;
-        LL_GPIO_SetOutputPin(cs_pin->port, cs_pin->mask); //Set /CS HIGH
+        cs_pin->set(true); //Set /CS HIGH
         LL_GPIO_ResetOutputPin(cs_mux_port, CS_MUX_MASK(3u)); //Clear CS MUX outputs (index = 0-3)
         //Configure communication members
         for (size_t i = 0; i < array_size(modules); i++)
@@ -118,7 +119,9 @@ namespace dac
             m.cal = c++;
         }
         //Enable power and transievers
-        LL_GPIO_SetOutputPin(enable_pin.port, enable_pin.mask); //Set ENABLE high
+        enable_pin.set(true); //Set ENABLE high
+
+        DBG("\tDAC Modules init OK.");
     }
 
     void probe()

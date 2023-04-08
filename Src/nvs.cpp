@@ -84,7 +84,28 @@ namespace nvs
     }
     HAL_StatusTypeDef eeprom_write(uint16_t addr, uint8_t* buf, uint16_t len)
     {
-        return HAL_I2C_Mem_Write(i2c, MY_NVS_I2C_ADDR(addr), addr & 0xFF, I2C_MEMADD_SIZE_8BIT, buf, len, 1000);
+        const uint16_t page_size = 16u;
+
+        HAL_StatusTypeDef status = HAL_OK;
+
+        size_t full_pages = len / page_size;
+        size_t remainder = len % page_size;
+        uint16_t current_page_addr = addr;
+        for (size_t i = 0; i < full_pages; i++)
+        {
+            status = HAL_I2C_Mem_Write(i2c, MY_NVS_I2C_ADDR(current_page_addr), current_page_addr & 0xFF, I2C_MEMADD_SIZE_8BIT, 
+                buf, page_size, 1000);
+            buf += page_size;
+            current_page_addr += page_size;
+            HAL_Delay(5);
+        }
+        if (status != HAL_OK) return status;
+        if (remainder > 0)
+        {
+            status = HAL_I2C_Mem_Write(i2c, MY_NVS_I2C_ADDR(current_page_addr), current_page_addr & 0xFF, I2C_MEMADD_SIZE_8BIT, 
+                buf, remainder, 1000);
+        }
+        return status;
     }
 
     motor_params_t* get_motor_params(size_t i)
@@ -141,5 +162,12 @@ namespace nvs
         DBG("NVS Data written OK. Writing NVS version...");
         uint8_t ver[] = { MY_NVS_VERSION };
         return eeprom_write(MY_NVS_VER_ADDR, ver, 1);
+    }
+    void dump_hex()
+    {
+        for (size_t i = 0; i < sizeof(storage); i++)
+        {
+            printf("0x%02X\n", reinterpret_cast<uint8_t*>(&storage)[i]);
+        }
     }
 } // namespace nvs
