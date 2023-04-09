@@ -1,4 +1,5 @@
 #include "ads1220.h"
+#include "cli.h"
 
 ADS1220_regs ADS1220_default_regs = { 0x00, 0x04, 0x20, 0x00 }; //0x20 - 50Hz-only rejection
 
@@ -130,9 +131,11 @@ int32_t ADS1220_read_blocking(SPI_HandleTypeDef *hspi, GPIO_TypeDef *DRDY_PORT, 
 	while (HAL_GPIO_ReadPin(DRDY_PORT, DRDY_PIN) == GPIO_PIN_SET)
 	{
 		HAL_Delay(1); // This is a bit hacky
-		time++;
-		if (time >= timeout)
+		if (++time >= timeout)
+		{
+			DBG("\tADC read timeout!");
 			return 0;
+		}
 	}
 
     return ADS1220_read(hspi);

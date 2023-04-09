@@ -17,7 +17,7 @@
 
 namespace dac
 {
-    struct cal_t
+    struct PACKED_FOR_MODBUS cal_t
     {
         float k;
         float b;
@@ -38,7 +38,7 @@ namespace dac
         float depolarization_setpoint;
         float r_shunt;
         bool is_depolarizing;
-        const cal_t* cal;
+        const PACKED_FOR_MODBUS cal_t* cal;
     };
 
     //Globals

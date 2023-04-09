@@ -28,6 +28,8 @@ void motor::set_enable(bool v)
 
 motor::motor(TIM_TypeDef* t, motor_params_t* c, sr_io::in err, sr_io::out en, sr_io::out dir)
 {
+    static_assert(sizeof(motor_params_t) % sizeof(float) == 0);
+
     tim = t;
     cal = c;
     clk = static_cast<float>(HAL_RCC_GetSysClockFreq()) / tim->PSC;

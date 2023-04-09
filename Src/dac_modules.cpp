@@ -103,6 +103,7 @@ namespace dac
     //Public methods
     void init(SPI_HandleTypeDef* spi_instance, user::pin_t* spi_cs_pin, I2C_HandleTypeDef* i2c_instance, const cal_t* c)
     {
+        static_assert(sizeof(cal_t) % sizeof(float) == 0);
         static_assert(array_size(modules) == MY_DAC_MAX_MODULES, "Check DAC module definitions.");
         DBG("DAC Modules init...");
 

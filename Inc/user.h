@@ -16,7 +16,9 @@
     #define dbg_usb_prints(str)
 #endif
 
-#define _BV(i) (1u << (i))
+#ifndef _BV
+    #define _BV(i) (1u << (i))
+#endif
 #define MY_TIM_MICROS TIM5
 #define MY_TIM_DEPOLARIZATION TIM4
 #define SERIAL_BUFFER_SIZE APP_TX_DATA_SIZE
@@ -28,7 +30,8 @@
 #define MY_STATUS_CORRECT_DAC _BV(1)
 #define MY_STATUS_DEPOLARIZE _BV(2)
 #define MY_STATUS_ACQUIRE _BV(3)
-#define MY_STATUS_
+
+#define PACKED_FOR_MODBUS __attribute__((packed, aligned(sizeof(float))))
 
 template<typename T, size_t s> constexpr size_t array_size(const T(&arr)[s]);
 template<typename T, size_t s> constexpr size_t array_size(const T(&arr)[s]) { return s; }

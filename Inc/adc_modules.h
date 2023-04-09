@@ -44,7 +44,7 @@
 
 namespace adc
 {
-    struct ch_cal_t
+    struct PACKED_FOR_MODBUS ch_cal_t
     {
         float k;
         float b;
@@ -52,7 +52,7 @@ namespace adc
     };
     struct channel_t
     {
-        const ch_cal_t* cal;
+        const PACKED_FOR_MODBUS ch_cal_t* cal;
         int mux_conf;
         average* averaging_container;
     };

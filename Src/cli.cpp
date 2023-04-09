@@ -17,9 +17,9 @@ namespace cli_commands
         puts("ADC cals:");
         for (size_t i = 0; i < MY_ADC_MAX_MODULES * MY_ADC_CHANNELS_PER_CHIP; i++)
         {
-            auto cal = nvs::get_adc_channel_cal(i);
+            PACKED_FOR_MODBUS adc::ch_cal_t cal = *nvs::get_adc_channel_cal(i);
             printf("\tADC channel #%u: gain = %f, offset = %f, invert = %u\n", 
-                i, cal->k, cal->b, cal->invert);
+                i, cal.k, cal.b, cal.invert);
         }
         puts("DAC cals:");
         for (size_t i = 0; i < MY_DAC_MAX_MODULES; i++)
@@ -53,6 +53,19 @@ namespace cli_commands
     {
         LL_GPIO_TogglePin(MASTER_ENABLE_GPIO_Port, MASTER_ENABLE_Pin);
         return EXIT_SUCCESS;
+    }
+    uint8_t nvs_reset(int argc, char** argv)
+    {
+        return nvs::reset();
+    }
+    uint8_t nvs_dump_hex(int argc, char** argv)
+    {
+        nvs::dump_hex();
+        return EXIT_SUCCESS;
+    }
+    uint8_t nvs_test(int argc, char** argv)
+    {
+        return nvs::test();
     }
 
     uint8_t set_adc_cal(int argc, char** argv)
@@ -92,9 +105,13 @@ void my_cli_init(UART_HandleTypeDef* cli_uart)
     CLI_INIT(cli_uart);
 
     CLI_ADD_CMD("hw_report", "Report HW state", &cli_commands::hw_report);
+    CLI_ADD_CMD("me_toggle", "Toggle Master Enable (/ME) pin", &cli_commands::me_toggle);
+
     CLI_ADD_CMD("nvs_dump", "Dump NVS contents", &cli_commands::nvs_dump);
     CLI_ADD_CMD("nvs_save", "Save current calibrations and parameters to the NVS", &cli_commands::nvs_save);
-    CLI_ADD_CMD("me_toggle", "Toggle Master Enable (/ME) pin", &cli_commands::me_toggle);
+    CLI_ADD_CMD("nvs_reset", "Reset NVS to factory defaults. Reboot for this to take effect.", &cli_commands::nvs_reset);
+    CLI_ADD_CMD("nvs_dump_hex", "Dump NVS contents in HEX.", &cli_commands::nvs_dump_hex);
+    CLI_ADD_CMD("nvs_test", "Test NVS by writing consequtive numbers and reading them back.", &cli_commands::nvs_test);
 
     CLI_ADD_CMD("set_adc_cal", "Set ADC calibration. Expects 3 args (index gain offset)", &cli_commands::set_adc_cal);
     CLI_ADD_CMD("set_dac_cal", "Set DAC voltage calibration. Expects 3 args (index gain offset)", &cli_commands::set_dac_cal);

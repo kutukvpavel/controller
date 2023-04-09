@@ -113,6 +113,7 @@ namespace adc
     void init(SPI_HandleTypeDef* hspi, user::pin_t* spi_cs_pin, const ch_cal_t* cals)
     {
         static_assert(array_size(modules) == MY_ADC_MAX_MODULES, "Check ADC module definitions.");
+        static_assert(sizeof(ch_cal_t) % sizeof(float) == 0);
         DBG("ADC Modules init...");
 
         if (!hspi) dbg_usb_prints("ADC SPI interface handle is NULL!\n");

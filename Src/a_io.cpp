@@ -16,8 +16,8 @@ _END_STD_C
 
 namespace a_io
 {
-    const in_cal_t* calibration_database;
-    const in_cal_t* temp_sensor_cal;
+    PACKED_FOR_MODBUS const in_cal_t* calibration_database;
+    PACKED_FOR_MODBUS const in_cal_t* temp_sensor_cal;
     float voltages[in::INPUTS_NUM];
     float temperature;
 
@@ -43,6 +43,8 @@ namespace a_io
 
     void init(ADC_HandleTypeDef* adc, const in_cal_t* cal, const in_cal_t* temp_cal)
     {
+        static_assert(sizeof(in_cal_t) % sizeof(float) == 0);
+
         DBG("AIO init...");
         temp_sensor_cal = temp_cal;
         calibration_database = cal;

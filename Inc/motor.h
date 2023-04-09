@@ -7,7 +7,7 @@
 
 #define MOTORS_NUM 3
 
-struct motor_params_t
+struct PACKED_FOR_MODBUS motor_params_t
 {
     float rate_to_speed; //Characterizes tubing
     uint16_t microsteps;

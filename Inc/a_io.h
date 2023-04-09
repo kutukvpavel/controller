@@ -4,7 +4,7 @@
 
 namespace a_io
 {
-    struct in_cal_t
+    struct PACKED_FOR_MODBUS in_cal_t
     {
         float k;
         float b;

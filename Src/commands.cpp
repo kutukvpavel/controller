@@ -20,18 +20,18 @@ namespace cmd
     {
         bitfield_t commands = 0;
     };
-    struct modbus_holding_registers
+    struct PACKED_FOR_MODBUS modbus_holding_registers
     {
         float dac_setpoints[MY_DAC_MAX_MODULES];
-        adc::ch_cal_t adc_cals[MY_ADC_MAX_MODULES * MY_ADC_CHANNELS_PER_CHIP];
-        dac::cal_t dac_cals[MY_DAC_MAX_MODULES];
-        a_io::in_cal_t analog_input_cals[a_io::in::INPUTS_NUM];
-        a_io::in_cal_t temp_sensor_cal;
-        motor_params_t motor_params[MOTORS_NUM];
+        PACKED_FOR_MODBUS adc::ch_cal_t adc_cals[MY_ADC_MAX_MODULES * MY_ADC_CHANNELS_PER_CHIP];
+        PACKED_FOR_MODBUS dac::cal_t dac_cals[MY_DAC_MAX_MODULES];
+        PACKED_FOR_MODBUS a_io::in_cal_t analog_input_cals[a_io::in::INPUTS_NUM];
+        PACKED_FOR_MODBUS a_io::in_cal_t temp_sensor_cal;
+        PACKED_FOR_MODBUS motor_params_t motor_params[MOTORS_NUM];
         float depolarization_percent[MY_DAC_MAX_MODULES];
         float depolarization_setpoint[MY_DAC_MAX_MODULES];
     };
-    struct modbus_input_registers
+    struct PACKED_FOR_MODBUS modbus_input_registers
     {
         uint16_t max_motors_num = MOTORS_NUM;
         uint16_t max_adc_modules = MY_ADC_MAX_MODULES;
@@ -40,6 +40,7 @@ namespace cmd
         uint16_t max_dac_modules = MY_DAC_MAX_MODULES;
         uint16_t present_dac_channels = 0;
         uint16_t aio_num = a_io::INPUTS_NUM;
+        uint16_t reserved1; //For correct alignment
         float adc_voltages[MY_ADC_MAX_MODULES * MY_ADC_CHANNELS_PER_CHIP];
         float dac_currents[MY_DAC_MAX_MODULES];
         float dac_corrected_currents[MY_DAC_MAX_MODULES];
@@ -119,7 +120,7 @@ namespace cmd
     }
     uint8_t read_cb(uint8_t fc, uint16_t address, uint16_t length)
     {
-        printf("> Modbus read: fc = %u, addr = %u, len = %u\n", fc, address, length);
+        printf("Modbus read: fc = %u, addr = %u, len = %u\n", fc, address, length);
 
         switch (fc)
         {
@@ -140,7 +141,7 @@ namespace cmd
                 {
                     bitfield_t mask = _BV(a);
                     bool ret = get_status_bit_set(mask);
-                    printf("Modbus COIL READ: #%u = %u\n", a, ret ? 1 : 0);
+                    //printf("Modbus COIL READ: #%u = %u\n", a, ret ? 1 : 0);
                     bus->writeCoilToBuffer(i, ret);
                     if (mask == MY_CMD_STATUS_HAVE_NEW_DATA) reset_status_bit(MY_CMD_STATUS_HAVE_NEW_DATA);
                 }
@@ -155,7 +156,7 @@ namespace cmd
         {
             if ((address + length) > INPUT_REGS_NUM) return STATUS_ILLEGAL_DATA_ADDRESS;
             const uint16_t* p = reinterpret_cast<uint16_t*>(&input) + address;
-            printf("Modbus INPUT REG READ: #%u = %u, len = %u\n", address, *p, length);
+            //printf("Modbus INPUT REG READ: #%u = %u, len = %u\n", address, *p, length);
             bus->writeArrayToBuffer(0, p, length);
             break;
         }
@@ -167,8 +168,12 @@ namespace cmd
 
     void init(user::Stream& stream, I2C_HandleTypeDef* dac_i2c)
     {
-        static_assert(sizeof(modbus_holding_registers) % 2 == 0);
-        static_assert(sizeof(modbus_input_registers) % 2 == 0);
+        static_assert(sizeof(modbus_holding_registers) % sizeof(float) == 0);
+        static_assert(sizeof(modbus_input_registers) % sizeof(float) == 0);
+        const size_t input_offset_check = offsetof(modbus_input_registers, modbus_input_registers::adc_voltages);
+        static_assert(input_offset_check % sizeof(modbus_input_registers::adc_voltages[0]) == 0);
+        static_assert(offsetof(modbus_holding_registers, modbus_holding_registers::depolarization_percent) 
+            % sizeof(modbus_holding_registers::depolarization_percent[0]) == 0);
 
         DBG("Modbus Regs Init...");
         if (nvs::init(dac_i2c) == HAL_OK)
@@ -222,11 +227,7 @@ namespace cmd
     }
     void poll()
     {
-        uint8_t w;
-        if ((w = bus->poll()))
-        {
-            printf("> Modbus resp sent, %u bytes written\n", w);
-        }
+        bus->poll();
         if (coils.commands & MY_CMD_STATUS_SAVE_EEPROM)
         {
             nvs::save();

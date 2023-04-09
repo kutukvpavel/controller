@@ -154,7 +154,7 @@ namespace user
         // DAC
         if (status & MY_STATUS_CORRECT_DAC)
         {
-            dac::stop_depolarization();
+            //dac::stop_depolarization();
             if (cmd::get_status_bit_set(MY_CMD_STATUS_DAC_CORRECT))
             {
                 dac::correct_for_current(); // Single-shot
@@ -165,6 +165,7 @@ namespace user
 
         if (dump_data)
         {
+            //DBG("Dumping data...");
             //ADC
             for (size_t i = 0; i < MY_ADC_MAX_MODULES; i++)
             {
@@ -174,6 +175,7 @@ namespace user
                 {
                     assert_param(m.channels[j].averaging_container);
                     float res = m.channels[j].averaging_container->get_average();
+                    printf("ADC ch #%02u V = %8.6f\n", j, res);
                     cmd::set_adc_voltage(i * MY_ADC_CHANNELS_PER_CHIP + j, res);
                 }
             }
