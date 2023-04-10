@@ -125,8 +125,10 @@ Src/ina219.cpp \
 Src/main.cpp \
 Src/motor.cpp \
 Src/nvs.cpp \
+Src/pumps.cpp \
 Src/sr_io.cpp \
-Src/user.cpp
+Src/user.cpp \
+pid/PID_v1.cpp
 
 
 # ASM sources
@@ -207,7 +209,8 @@ C_INCLUDES =  \
 -IMiddlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include \
 -IMiddlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/PrivateInclude \
 -IModbusPort/src \
--Icli/inc
+-Icli/inc \
+-Ipid
 
 
 

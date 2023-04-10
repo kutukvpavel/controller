@@ -30,6 +30,7 @@ namespace cmd
         PACKED_FOR_MODBUS motor_params_t motor_params[MOTORS_NUM];
         float depolarization_percent[MY_DAC_MAX_MODULES];
         float depolarization_setpoint[MY_DAC_MAX_MODULES];
+        PACKED_FOR_MODBUS pumps::params_t regulator_params;
     };
     struct PACKED_FOR_MODBUS modbus_input_registers
     {
@@ -120,7 +121,7 @@ namespace cmd
     }
     uint8_t read_cb(uint8_t fc, uint16_t address, uint16_t length)
     {
-        printf("Modbus read: fc = %u, addr = %u, len = %u\n", fc, address, length);
+        //printf("Modbus read: fc = %u, addr = %u, len = %u\n", fc, address, length);
 
         switch (fc)
         {
@@ -164,6 +165,33 @@ namespace cmd
             break;
         }
         return STATUS_OK;
+    }
+
+    void save_registers_to_nvs()
+    {
+        for (size_t i = 0; i < array_size(holding.motor_params); i++)
+        {
+            *nvs::get_motor_params(i) = holding.motor_params[i];
+        }
+        for (size_t i = 0; i < a_io::in::INPUTS_NUM; i++)
+        {
+            *nvs::get_analog_input_cal(i) = holding.analog_input_cals[i];
+        }
+        *nvs::get_temp_sensor_cal() = holding.temp_sensor_cal;
+        for (size_t i = 0; i < MY_ADC_MAX_MODULES; i++)
+        {
+            for (size_t j = 0; j < MY_ADC_CHANNELS_PER_CHIP; j++)
+            {
+                size_t ch = i * MY_ADC_CHANNELS_PER_CHIP + j;
+                *nvs::get_adc_channel_cal(ch) = holding.adc_cals[ch];
+            }
+        }
+        for (size_t i = 0; i < MY_DAC_MAX_MODULES; i++)
+        {
+            *nvs::get_dac_cal(i) = holding.dac_cals[i];
+        }
+        *nvs::get_regulator_params() = holding.regulator_params;
+        nvs::save();
     }
 
     void init(user::Stream& stream, I2C_HandleTypeDef* dac_i2c)
@@ -211,6 +239,7 @@ namespace cmd
         {
             holding.dac_cals[i] = *nvs::get_dac_cal(i);
         }
+        holding.regulator_params = *nvs::get_regulator_params();
 
         if (bus) return;
         DBG("Modbus service init...");
@@ -230,7 +259,7 @@ namespace cmd
         bus->poll();
         if (coils.commands & MY_CMD_STATUS_SAVE_EEPROM)
         {
-            nvs::save();
+            save_registers_to_nvs();
             coils.commands &= ~MY_CMD_STATUS_SAVE_EEPROM;
         }
     }
@@ -309,5 +338,9 @@ namespace cmd
     {
         assert_param(i < MY_DAC_MAX_MODULES);
         return &(holding.dac_cals[i]);
+    }
+    pumps::params_t* get_pump_params()
+    {
+        return &(holding.regulator_params);
     }
 }

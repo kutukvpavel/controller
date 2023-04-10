@@ -4,6 +4,7 @@
 #include "a_io.h"
 #include "adc_modules.h"
 #include "dac_modules.h"
+#include "pumps.h"
 
 namespace nvs
 {
@@ -19,4 +20,5 @@ namespace nvs
     PACKED_FOR_MODBUS a_io::in_cal_t* get_temp_sensor_cal();
     PACKED_FOR_MODBUS adc::ch_cal_t* get_adc_channel_cal(size_t i);
     PACKED_FOR_MODBUS dac::cal_t* get_dac_cal(size_t i);
+    PACKED_FOR_MODBUS pumps::params_t* get_regulator_params();
 } // namespace nvs

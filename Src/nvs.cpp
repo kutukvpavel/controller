@@ -4,7 +4,7 @@
 #define MY_NVS_I2C_ADDR(mem_addr) (MY_EEPROM_ADDR | ((mem_addr & 0x700) >> 7))
 #define MY_NVS_VER_ADDR 0
 #define MY_NVS_START_ADDRESS 0x10
-#define MY_NVS_VERSION 1u
+#define MY_NVS_VERSION 2u
 #define MY_NVS_PAGE_SIZE 16u
 
 namespace nvs
@@ -16,6 +16,7 @@ namespace nvs
         PACKED_FOR_MODBUS a_io::in_cal_t a_in_cal[a_io::in::INPUTS_NUM];
         PACKED_FOR_MODBUS adc::ch_cal_t adc_cal[MY_ADC_MAX_MODULES * MY_ADC_CHANNELS_PER_CHIP];
         PACKED_FOR_MODBUS dac::cal_t dac_cal[MY_DAC_MAX_MODULES];
+        PACKED_FOR_MODBUS pumps::params_t regulator_params;
     };
     PACKED_FOR_MODBUS storage_t storage =
     {
@@ -74,6 +75,17 @@ namespace nvs
             { .k = 1, .b = 0, .current_k = 1, .current_b = 0 },
             { .k = 1, .b = 0, .current_k = 1, .current_b = 0 },
             { .k = 1, .b = 0, .current_k = 1, .current_b = 0 }
+        },
+        .regulator_params = {
+            .kP = 0.001,
+            .kI = 0,
+            .kD = 0,
+            .low_concentration_motor_index = 0,
+            .high_concentration_motor_index = 1,
+            .sensing_adc_channel_index = 0,
+            .low_concentration_dac_channel_index = 0,
+            .high_concentration_dac_channel_index = 1,
+            .total_flowrate = 100 //mL/min?
         }
     };
     
@@ -133,6 +145,10 @@ namespace nvs
     {
         assert_param(i < MY_DAC_MAX_MODULES);
         return &(storage.dac_cal[i]);
+    }
+    PACKED_FOR_MODBUS pumps::params_t* get_regulator_params()
+    {
+        return &(storage.regulator_params);
     }
 
     HAL_StatusTypeDef init(I2C_HandleTypeDef* hi2c)

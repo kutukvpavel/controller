@@ -247,21 +247,14 @@ namespace dac
         return written;
     }
 
-    size_t dump_module_report(char* buf, size_t max_len)
+    void dump_module_report()
     {
-        size_t written = 0;
         for (size_t i = 0; i < array_size(modules); i++)
         {
             auto& m = modules[i];
             if (!m.present) continue;
-            int w = snprintf(buf, max_len - written, OUTPUT_REPORT_FORMAT, i,
+            printf(OUTPUT_REPORT_FORMAT, i,
                 m.hspi, m.cs_mux_mask, m.hi2c, m.addr, m.cal->k, m.cal->b, m.r_shunt, m.cal->current_b);
-            if (w > 0)
-            {
-                buf += w;
-                written += w;
-            }
         }
-        return written;
     }
 }

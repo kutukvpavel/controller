@@ -5,13 +5,13 @@
 #include "adc_modules.h"
 #include "dac_modules.h"
 #include "a_io.h"
+#include "pumps.h"
 #include "../ModbusPort/src/ModbusSlave.h"
 
 #define SR_SYNC_INTERVAL 50 // mS
 #define HEATBEAT_INTERVAL 5000 //mS
 
 // Private vars
-char output_buf[256];
 user::pin_t cs_pin = user::pin_t(nCS_GPIO_Port, nCS_Pin);
 static uint8_t zero_arr[1] = {0};
 static user::pin_t me_pin = user::pin_t(MASTER_ENABLE_GPIO_Port, MASTER_ENABLE_Pin);
@@ -111,8 +111,21 @@ namespace user
         DBG("Probing DAC modules...");
         dac::probe();
         cmd::set_dac_channels_present(dac::get_present_modules_count());
-        //send_output(dac::dump_module_report(output_buf, sizeof(output_buf)));
+        dac::dump_module_report();
         dbg_wait_for_input();
+
+        //Pumps
+        DBG("Initializing pumps...");
+        if (pumps::init() == HAL_OK)
+        {
+            pumps::set_enable(true);
+            pumps::set_mode(pumps::mode_t::AUTOMATIC);
+            DBG("\tPumps initialized successfully.");
+        }
+        else
+        {
+            DBG("\tPump init failed!");
+        }
 
         // Last preparations
         LL_mDelay(1000);
@@ -149,6 +162,13 @@ namespace user
         {
             adc::read();
             adc::increment_and_sync();
+            const adc::channel_t* conc_sense_ch = adc::get_channel(pumps::get_sensing_adc_channel());
+            if (conc_sense_ch) 
+            {
+                pumps::update_tunings();
+                pumps::set_concentration_feedback(conc_sense_ch->averaging_container->get_average());
+                pumps::compute_pid();
+            }
         }
 
         // DAC
@@ -175,7 +195,7 @@ namespace user
                 {
                     assert_param(m.channels[j].averaging_container);
                     float res = m.channels[j].averaging_container->get_average();
-                    printf("ADC ch #%02u V = %8.6f\n", j, res);
+                    //printf("ADC ch #%02u V = %8.6f\n", j, res);
                     cmd::set_adc_voltage(i * MY_ADC_CHANNELS_PER_CHIP + j, res);
                 }
             }
@@ -197,13 +217,6 @@ namespace user
             dump_data = false;
         }
 
-        // Heartbeat
-        /*static uint32_t last_heartbeat_tick = 0;
-        if (tick - last_heartbeat_tick > HEATBEAT_INTERVAL) 
-        {
-            printf(".%lu\n", micros());
-            last_heartbeat_tick = tick;
-        }*/
         dbg_wait_for_input();
     }
 

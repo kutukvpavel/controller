@@ -59,6 +59,6 @@ namespace dac
     void read_current();
     void correct_for_current();
     void set_depolarization(float volts);
-    size_t dump_module_report(char* buf, size_t max_len);
+    void dump_module_report();
     size_t dump_last_data(char* buf, size_t max_len);
 }

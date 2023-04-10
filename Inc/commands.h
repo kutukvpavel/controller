@@ -17,6 +17,7 @@
 #include "adc_modules.h"
 #include "sr_io.h"
 #include "a_io.h"
+#include "pumps.h"
 
 #include <inttypes.h>
 #include <stddef.h>
@@ -55,4 +56,5 @@ namespace cmd
     a_io::in_cal_t* get_temp_sensor_cal();
     adc::ch_cal_t* get_adc_channel_cal(size_t i);
     dac::cal_t* get_dac_cal(size_t i);
+    pumps::params_t* get_pump_params();
 }

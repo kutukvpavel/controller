@@ -160,6 +160,14 @@ namespace adc
     {
         return total_channels_present;
     }
+    const channel_t* get_channel(size_t flat_index)
+    {
+        assert_param(flat_index < MY_ADC_MAX_MODULES * MY_ADC_CHANNELS_PER_CHIP);
+
+        auto& parent_module = modules[flat_index / MY_ADC_CHANNELS_PER_CHIP];
+        if (!parent_module.present) return NULL;
+        return &(parent_module.channels[flat_index % MY_ADC_CHANNELS_PER_CHIP]);
+    }
 
     void increment_and_sync()
     {

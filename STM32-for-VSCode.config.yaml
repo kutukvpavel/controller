@@ -78,6 +78,7 @@ includeDirectories:
   - Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc
   - Middlewares/ST/STM32_USB_Device_Library/Core/Inc
   - cli/inc/**
+  - pid
 
 
 # Files that should be included in the compilation.
@@ -93,6 +94,7 @@ sourceFiles:
   - Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/**
   - Middlewares/ST/STM32_USB_Device_Library/Core/Src/**
   - cli/src/**
+  - pid/**
 
 
 # When no makefile is present it will show a warning pop-up.
