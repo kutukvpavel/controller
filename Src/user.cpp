@@ -6,6 +6,7 @@
 #include "dac_modules.h"
 #include "a_io.h"
 #include "pumps.h"
+#include "my_math.h"
 #include "../ModbusPort/src/ModbusSlave.h"
 
 #define SR_SYNC_INTERVAL 50 // mS
@@ -166,7 +167,8 @@ namespace user
             if (conc_sense_ch) 
             {
                 pumps::update_tunings();
-                pumps::set_concentration_feedback(conc_sense_ch->averaging_container->get_average());
+                pumps::set_concentration_feedback(my_math::volts_to_volume_concentration(
+                    conc_sense_ch->averaging_container->get_average(), a_io::temperature));
                 pumps::compute_pid();
             }
         }
@@ -195,7 +197,7 @@ namespace user
                 {
                     assert_param(m.channels[j].averaging_container);
                     float res = m.channels[j].averaging_container->get_average();
-                    //printf("ADC ch #%02u V = %8.6f\n", j, res);
+                    printf("ADC ch #%02u V = %8.6f\n", i * MY_ADC_CHANNELS_PER_CHIP + j, res);
                     cmd::set_adc_voltage(i * MY_ADC_CHANNELS_PER_CHIP + j, res);
                 }
             }

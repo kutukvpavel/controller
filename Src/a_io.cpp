@@ -19,7 +19,7 @@ namespace a_io
     PACKED_FOR_MODBUS const in_cal_t* calibration_database;
     PACKED_FOR_MODBUS const in_cal_t* temp_sensor_cal;
     float voltages[in::INPUTS_NUM];
-    float temperature;
+    float temperature = 298; //K
 
     struct a_buffer_t
     {

@@ -124,6 +124,7 @@ Src/dac_modules.cpp \
 Src/ina219.cpp \
 Src/main.cpp \
 Src/motor.cpp \
+Src/my_math.cpp \
 Src/nvs.cpp \
 Src/pumps.cpp \
 Src/sr_io.cpp \
