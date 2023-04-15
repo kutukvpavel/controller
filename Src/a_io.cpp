@@ -1,6 +1,9 @@
 #include "a_io.h"
 
 #include "average.h"
+#include <math.h>
+
+#define PACKED_FOR_DMA __aligned(sizeof(uint32_t))
 
 _BEGIN_STD_C
 
@@ -19,9 +22,11 @@ namespace a_io
     PACKED_FOR_MODBUS const in_cal_t* calibration_database;
     PACKED_FOR_MODBUS const in_cal_t* temp_sensor_cal;
     float voltages[in::INPUTS_NUM];
+    average temp_average(10);
     float temperature = 298; //K
+    float vref = 3.3; //V
 
-    struct a_buffer_t
+    PACKED_FOR_DMA struct a_buffer_t
     {
         uint16_t vref_1;
         uint16_t ch_6;
@@ -33,7 +38,7 @@ namespace a_io
         uint16_t vref_3;
     };
 
-    a_buffer_t buffer = {};
+    PACKED_FOR_DMA a_buffer_t buffer = { };
     uint16_t* channels[in::INPUTS_NUM] = { &buffer.ch_6, &buffer.ch_7, &buffer.ch_8, &buffer.ch_9 };
 
     void apply_cal(in i, uint16_t v)
@@ -53,7 +58,6 @@ namespace a_io
     }
     void poll()
     {
-        assert_param(temp_sensor_cal->k > 0);
         if (!a_io_got_new_data) return;
         a_io_got_new_data = 0;
 
@@ -61,6 +65,11 @@ namespace a_io
         {
             apply_cal(static_cast<in>(i), *(channels[i]));
         }
-        temperature = (buffer.temp - temp_sensor_cal->b) / temp_sensor_cal->k + 25;
+        float vref_mv = __LL_ADC_CALC_VREFANALOG_VOLTAGE(
+            static_cast<uint16_t>(roundf((buffer.vref_1 + buffer.vref_2 + buffer.vref_3) / 3.0f)), LL_ADC_RESOLUTION_12B);
+        vref = vref_mv / 1000.0f;
+        float temp_c = __LL_ADC_CALC_TEMPERATURE(vref_mv, buffer.temp, LL_ADC_RESOLUTION_12B);
+        temp_average.enqueue((temp_c + 273.15) * temp_sensor_cal->k + temp_sensor_cal->b);
+        temperature = temp_average.get_average();
     }
 } // namespace a_io

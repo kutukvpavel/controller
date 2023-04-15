@@ -8,6 +8,7 @@
 #include "pumps.h"
 #include "my_math.h"
 #include "../ModbusPort/src/ModbusSlave.h"
+#include <math.h>
 
 #define SR_SYNC_INTERVAL 50 // mS
 #define HEATBEAT_INTERVAL 5000 //mS
@@ -166,10 +167,14 @@ namespace user
             const adc::channel_t* conc_sense_ch = adc::get_channel(pumps::get_sensing_adc_channel());
             if (conc_sense_ch) 
             {
-                pumps::update_tunings();
-                pumps::set_concentration_feedback(my_math::volts_to_volume_concentration(
-                    conc_sense_ch->averaging_container->get_average(), a_io::temperature));
-                pumps::compute_pid();
+                float sense_v = conc_sense_ch->averaging_container->get_average();
+                if (isfinite(sense_v)) //False if averaging container has no points yet
+                {
+                    pumps::update_tunings();
+                    pumps::set_concentration_feedback(my_math::volts_to_volume_concentration(
+                        sense_v, a_io::temperature));
+                    pumps::compute_pid();
+                }
             }
             dac::read_current();
         }

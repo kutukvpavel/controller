@@ -22,6 +22,7 @@ namespace a_io
 
     extern float voltages[in::INPUTS_NUM];
     extern float temperature;
+    extern float vref;
 
     void init(ADC_HandleTypeDef* adc, const in_cal_t* cal, const in_cal_t* temp_cal);
     void poll();

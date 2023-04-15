@@ -21,7 +21,9 @@ namespace cli_commands
                 i, instance.m->get_speed(),
                 instance.en, instance.dir, instance.err);
         }
-        printf("Temperature = %5.1f K\n", a_io::temperature);
+        printf("\tTemperature = %5.1f K\n"
+            "\tVref = %6.4f V\n", 
+            a_io::temperature, a_io::vref);
         return EXIT_SUCCESS;
     }
     uint8_t me_toggle(int argc, char** argv)
@@ -88,7 +90,8 @@ namespace cli_commands
         {
             auto motor = nvs::get_motor_params(i);
             printf("\tMotor #%u: rate-to-speed = %f, teeth = %u, microsteps = %u, dir = %u, inv_en = %u, inv_err = %u\n", 
-                i, motor->rate_to_speed, motor->teeth, motor->microsteps, motor->direction, motor->invert_enable, motor->invert_error);
+                i, 
+                motor->rate_to_speed, motor->teeth, motor->microsteps, motor->direction, motor->invert_enable, motor->invert_error);
         }
         auto ts_cal = nvs::get_temp_sensor_cal();
         printf("Temp sensor cal: gain = %f; offset = %f\n", ts_cal->k, ts_cal->b);
@@ -160,6 +163,14 @@ namespace cli_commands
         if (sscanf(argv[3], "%f", &buf->current_b) < 1) return EXIT_FAILURE;
         return EXIT_SUCCESS;
     }
+    uint8_t set_temp_cal(int argc, char** argv)
+    {
+        if (argc < 3) return EXIT_FAILURE;
+        auto buf = nvs::get_temp_sensor_cal();
+        if (sscanf(argv[1], "%f", &buf->k) < 1) return EXIT_FAILURE;
+        if (sscanf(argv[2], "%f", &buf->b) < 1) return EXIT_FAILURE;
+        return EXIT_SUCCESS;
+    }
 }
 
 void my_cli_init(UART_HandleTypeDef* cli_uart)
@@ -170,7 +181,8 @@ void my_cli_init(UART_HandleTypeDef* cli_uart)
     CLI_ADD_CMD("hw_report", "Report HW state", &cli_commands::hw_report);
     CLI_ADD_CMD("me_toggle", "Toggle Master Enable (/ME) pin", &cli_commands::me_toggle);
     CLI_ADD_CMD("set_dac", "Set DAC voltage(s). Expects 1 to 2 args: [module_index_uint] voltage_float.", &cli_commands::set_dac);
-    CLI_ADD_CMD("set_motor_speed", "Set motor speed in Hz (RPS). Expects 2 args: motor_index_uint hz_float.", &cli_commands::set_motor_speed);
+    CLI_ADD_CMD("set_motor_speed", "Set motor speed in Hz (RPS). Expects 2 args: motor_index_uint hz_float.", 
+        &cli_commands::set_motor_speed);
 
     //NVS
     CLI_ADD_CMD("nvs_dump", "Dump NVS contents", &cli_commands::nvs_dump);
@@ -182,7 +194,10 @@ void my_cli_init(UART_HandleTypeDef* cli_uart)
     //Cal
     CLI_ADD_CMD("set_adc_cal", "Set ADC calibration. Expects 3 args (index gain offset)", &cli_commands::set_adc_cal);
     CLI_ADD_CMD("set_dac_cal", "Set DAC voltage calibration. Expects 3 args (index gain offset)", &cli_commands::set_dac_cal);
-    CLI_ADD_CMD("set_dac_current_cal", "Set DAC current calibration. Expects 3 args (index gain offset)", &cli_commands::set_dac_current_cal);
+    CLI_ADD_CMD("set_dac_current_cal", "Set DAC current calibration. Expects 3 args (index gain offset)", 
+        &cli_commands::set_dac_current_cal);
+    CLI_ADD_CMD("set_temp_cal", "Set temperature sensor calibration. Expects 2 floats (k = 'average slope' in V/K, b = V @ 298K).",
+        &cli_commands::set_temp_cal);
 
     DBG("Goodnight Moon!");
 }

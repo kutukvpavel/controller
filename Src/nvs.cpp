@@ -47,7 +47,7 @@ namespace nvs
                 .direction = false
             }
         },
-        .temp_sensor_cal = { .k = 0.0025 /*V/K*/, .b = -0.76 /*V @ 25C*/ },
+        .temp_sensor_cal = { .k = 1, .b = 0 },
         .a_in_cal =
         {
             { .k = 1, .b = 0 },
