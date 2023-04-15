@@ -171,6 +171,7 @@ namespace user
                     conc_sense_ch->averaging_container->get_average(), a_io::temperature));
                 pumps::compute_pid();
             }
+            dac::read_current();
         }
 
         // DAC
@@ -197,7 +198,7 @@ namespace user
                 {
                     assert_param(m.channels[j].averaging_container);
                     float res = m.channels[j].averaging_container->get_average();
-                    printf("ADC ch #%02u V = %8.6f\n", i * MY_ADC_CHANNELS_PER_CHIP + j, res);
+                    //printf("ADC ch #%02u V = %8.6f\n", i * MY_ADC_CHANNELS_PER_CHIP + j, res);
                     cmd::set_adc_voltage(i * MY_ADC_CHANNELS_PER_CHIP + j, res);
                 }
             }
@@ -207,7 +208,7 @@ namespace user
                 auto& m = dac::modules[i];
                 if (!m.present) continue;
                 cmd::set_dac_current(i, m.current);
-                cmd::set_dac_corrected_current(i, m.corrected_setpoint);
+                cmd::set_dac_corrected_voltage(i, m.corrected_setpoint);
             }
             //AIO
             for (size_t i = 0; i < a_io::in::INPUTS_NUM; i++)

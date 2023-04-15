@@ -44,7 +44,7 @@ namespace cmd
         uint16_t reserved1; //For correct alignment
         float adc_voltages[MY_ADC_MAX_MODULES * MY_ADC_CHANNELS_PER_CHIP];
         float dac_currents[MY_DAC_MAX_MODULES];
-        float dac_corrected_currents[MY_DAC_MAX_MODULES];
+        float dac_corrected_voltages[MY_DAC_MAX_MODULES];
         float a_in[a_io::INPUTS_NUM];
         float temperature;
     };
@@ -304,10 +304,10 @@ namespace cmd
         assert_param(i < MY_DAC_MAX_MODULES);
         input.dac_currents[i] = v;
     }
-    void set_dac_corrected_current(size_t i, float v)
+    void set_dac_corrected_voltage(size_t i, float v)
     {
         assert_param(i < MY_DAC_MAX_MODULES);
-        input.dac_corrected_currents[i] = v;
+        input.dac_corrected_voltages[i] = v;
     }
     void set_analog_in(size_t i, float v)
     {

@@ -25,6 +25,7 @@ private:
     float clk;
     sr_io::in err_input;
     sr_io::out en_output;
+    float last_set_speed = 0;
 public:
     motor(TIM_TypeDef* t, motor_params_t* c, sr_io::in err, sr_io::out en, sr_io::out dir);
 
@@ -37,6 +38,7 @@ public:
 
     void set_enable(bool v);
     bool get_error();
+    float get_speed();
 
     ~motor();
 };

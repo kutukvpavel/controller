@@ -12,6 +12,16 @@ namespace cli_commands
             "\tADC modules present = %u\n"
             "\tDAC modules present = %u\n",
             adc::get_present_channels_count(), dac::get_present_modules_count());
+        for (size_t i = 0; i < MOTORS_NUM; i++)
+        {
+            auto& instance = pumps::instances[i];
+            printf("\tMotor #%u:\n"
+                "\t\tSpeed = %4.1f\n"
+                "\t\tEnable = %u, Dir = %u, Error = %u\n",
+                i, instance.m->get_speed(),
+                instance.en, instance.dir, instance.err);
+        }
+        printf("Temperature = %5.1f K\n", a_io::temperature);
         return EXIT_SUCCESS;
     }
     uint8_t me_toggle(int argc, char** argv)
@@ -82,6 +92,23 @@ namespace cli_commands
         }
         auto ts_cal = nvs::get_temp_sensor_cal();
         printf("Temp sensor cal: gain = %f; offset = %f\n", ts_cal->k, ts_cal->b);
+        const pumps::params_t* reg_params = nvs::get_regulator_params();
+        printf("Regulation params:\n"
+            "\tkP = %8.6f, kI = %8.6f, kD = %8.6F\n"
+            "\tLow conc motor = #%u\n"
+            "\tHigh conc motor = #%u\n"
+            "\tSensing ADC ch = #%u\n"
+            "\tLow conc DAC ch = #%u\n"
+            "\tHigh conc DAC ch = #%u\n"
+            "\tTotal flowrate = %5.2f\n",
+            reg_params->kP, reg_params->kI, reg_params->kD,
+            reg_params->low_concentration_motor_index,
+            reg_params->high_concentration_motor_index,
+            reg_params->sensing_adc_channel_index,
+            reg_params->low_concentration_dac_channel_index,
+            reg_params->high_concentration_dac_channel_index,
+            reg_params->total_flowrate
+            );
         return EXIT_SUCCESS;
     }
     uint8_t nvs_save(int argc, char** argv)

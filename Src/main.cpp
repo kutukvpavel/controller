@@ -645,7 +645,7 @@ static void MX_TIM9_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 0;
+  sConfigOC.Pulse = MOTOR_TIMER_PULSE_WIDTH;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim9, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
@@ -653,7 +653,8 @@ static void MX_TIM9_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN TIM9_Init 2 */
-
+  HAL_TIM_Base_Start(&htim9);
+  HAL_TIM_PWM_Start(&htim9, TIM_CHANNEL_1);
   /* USER CODE END TIM9_Init 2 */
   HAL_TIM_MspPostInit(&htim9);
 
@@ -691,7 +692,7 @@ static void MX_TIM10_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 0;
+  sConfigOC.Pulse = MOTOR_TIMER_PULSE_WIDTH;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim10, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
@@ -699,7 +700,8 @@ static void MX_TIM10_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN TIM10_Init 2 */
-
+  HAL_TIM_Base_Start(&htim10);
+  HAL_TIM_PWM_Start(&htim10, TIM_CHANNEL_1);
   /* USER CODE END TIM10_Init 2 */
   HAL_TIM_MspPostInit(&htim10);
 
@@ -737,7 +739,7 @@ static void MX_TIM11_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 0;
+  sConfigOC.Pulse = MOTOR_TIMER_PULSE_WIDTH;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim11, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
@@ -745,7 +747,8 @@ static void MX_TIM11_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN TIM11_Init 2 */
-
+  HAL_TIM_Base_Start(&htim11);
+  HAL_TIM_PWM_Start(&htim11, TIM_CHANNEL_1);
   /* USER CODE END TIM11_Init 2 */
   HAL_TIM_MspPostInit(&htim11);
 

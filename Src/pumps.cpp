@@ -1,5 +1,6 @@
 #include "pumps.h"
 
+#include <math.h>
 #include "commands.h"
 #include "../pid/PID_v1.h"
 
@@ -60,7 +61,9 @@ namespace pumps
     {
         if (regulator_instance.Compute() && (regulator_instance.GetMode() == PID_MODE_AUTOMATIC))
         {
-            //Output is a ratio of flow rates (?)
+            assert_param(isfinite(output));
+
+            //Output is a ratio of flow rates
             instances[params->high_concentration_motor_index].m->set_volume_rate(params->total_flowrate * output);
             instances[params->low_concentration_motor_index].m->set_volume_rate(params->total_flowrate * (1 - output));
         }

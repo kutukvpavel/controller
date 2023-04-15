@@ -53,6 +53,7 @@ namespace a_io
     }
     void poll()
     {
+        assert_param(temp_sensor_cal->k > 0);
         if (!a_io_got_new_data) return;
         a_io_got_new_data = 0;
 
@@ -60,6 +61,6 @@ namespace a_io
         {
             apply_cal(static_cast<in>(i), *(channels[i]));
         }
-        temperature = (buffer.temp - temp_sensor_cal->k) / temp_sensor_cal->b + 25;
+        temperature = (buffer.temp - temp_sensor_cal->b) / temp_sensor_cal->k + 25;
     }
 } // namespace a_io

@@ -4,10 +4,14 @@
 
 void motor::set_speed(float v)
 {
+    assert_param(isfinite(v));
+    
     float target_period = roundf(clk / (cal->microsteps * cal->teeth * v)) - 1;
     if (target_period > UINT16_MAX) target_period = UINT16_MAX;
     else if (target_period < MOTOR_TIMER_MIN_VALUE) target_period = MOTOR_TIMER_MIN_VALUE;
     tim->ARR = static_cast<uint16_t>(target_period);
+    //DBG("Computed ARR register: %lu", tim->ARR);
+    last_set_speed = v;
 }
 
 void motor::set_volume_rate(float v)
@@ -25,6 +29,10 @@ void motor::set_enable(bool v)
 {
     sr_io::set_output(en_output, cal->invert_enable ? !v : v);
 }
+float motor::get_speed()
+{
+    return last_set_speed;
+}
 
 motor::motor(TIM_TypeDef* t, motor_params_t* c, sr_io::in err, sr_io::out en, sr_io::out dir)
 {
@@ -36,6 +44,7 @@ motor::motor(TIM_TypeDef* t, motor_params_t* c, sr_io::in err, sr_io::out en, sr
     err_input = err;
     en_output = en;
     sr_io::set_output(dir, c->direction);
+    
 }
 motor::~motor()
 {

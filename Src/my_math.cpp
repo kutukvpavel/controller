@@ -1,6 +1,7 @@
 #include "my_math.h"
 
 #include <math.h>
+#include "user.h"
 
 namespace my_math
 {
@@ -10,6 +11,9 @@ namespace my_math
 
     float volts_to_volume_concentration(float v, float temperature)
     {
+        assert_param(temperature > 0);
+        assert_param(isfinite(v));
+
         float log_pressure_ratio = -v * (4 * faraday_constant / universal_gas_constant) / temperature;
         return exp(log_pressure_ratio) * atmospheric_oxygen_partial_pressure;
     }

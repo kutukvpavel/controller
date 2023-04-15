@@ -48,7 +48,7 @@ namespace cmd
     float get_dac_setpoint(size_t i);
     void set_adc_voltage(size_t i, float v);
     void set_dac_current(size_t i, float v);
-    void set_dac_corrected_current(size_t i, float v);
+    void set_dac_corrected_voltage(size_t i, float v);
     void set_analog_in(size_t i, float v);
 
     motor_params_t* get_motor_params(size_t i);
