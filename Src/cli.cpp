@@ -171,6 +171,64 @@ namespace cli_commands
         if (sscanf(argv[2], "%f", &buf->b) < 1) return EXIT_FAILURE;
         return EXIT_SUCCESS;
     }
+
+    //Regulation
+    uint8_t set_reg_kp(int argc, char** argv)
+    {
+        if (argc < 2) return EXIT_FAILURE;
+        auto buf = nvs::get_regulator_params();
+        if (sscanf(argv[1], "%f", &buf->kP) < 1) return EXIT_FAILURE;
+        return EXIT_SUCCESS;
+    }
+    uint8_t set_reg_ki(int argc, char** argv)
+    {
+        if (argc < 2) return EXIT_FAILURE;
+        auto buf = nvs::get_regulator_params();
+        if (sscanf(argv[1], "%f", &buf->kI) < 1) return EXIT_FAILURE;
+        return EXIT_SUCCESS;
+    }
+    uint8_t set_reg_kd(int argc, char** argv)
+    {
+        if (argc < 2) return EXIT_FAILURE;
+        auto buf = nvs::get_regulator_params();
+        if (sscanf(argv[1], "%f", &buf->kD) < 1) return EXIT_FAILURE;
+        return EXIT_SUCCESS;
+    }
+    uint8_t set_reg_total_flowrate(int argc, char** argv)
+    {
+        if (argc < 2) return EXIT_FAILURE;
+        auto buf = nvs::get_regulator_params();
+        if (sscanf(argv[1], "%f", &buf->total_flowrate) < 1) return EXIT_FAILURE;
+        return EXIT_SUCCESS;
+    }
+    uint8_t set_reg_hc_dac(int argc, char** argv)
+    {
+        if (argc < 2) return EXIT_FAILURE;
+        auto buf = nvs::get_regulator_params();
+        if (sscanf(argv[1], "%u", &buf->high_concentration_dac_channel_index) < 1) return EXIT_FAILURE;
+        return EXIT_SUCCESS;
+    }
+    uint8_t set_reg_lc_dac(int argc, char** argv)
+    {
+        if (argc < 2) return EXIT_FAILURE;
+        auto buf = nvs::get_regulator_params();
+        if (sscanf(argv[1], "%u", &buf->low_concentration_dac_channel_index) < 1) return EXIT_FAILURE;
+        return EXIT_SUCCESS;
+    }
+    uint8_t set_reg_hc_motor(int argc, char** argv)
+    {
+        if (argc < 2) return EXIT_FAILURE;
+        auto buf = nvs::get_regulator_params();
+        if (sscanf(argv[1], "%u", &buf->high_concentration_motor_index) < 1) return EXIT_FAILURE;
+        return EXIT_SUCCESS;
+    }
+    uint8_t set_reg_lc_motor(int argc, char** argv)
+    {
+        if (argc < 2) return EXIT_FAILURE;
+        auto buf = nvs::get_regulator_params();
+        if (sscanf(argv[1], "%u", &buf->low_concentration_motor_index) < 1) return EXIT_FAILURE;
+        return EXIT_SUCCESS;
+    }
 }
 
 void my_cli_init(UART_HandleTypeDef* cli_uart)
@@ -198,6 +256,16 @@ void my_cli_init(UART_HandleTypeDef* cli_uart)
         &cli_commands::set_dac_current_cal);
     CLI_ADD_CMD("set_temp_cal", "Set temperature sensor calibration. Expects 2 floats (k = 'average slope' in V/K, b = V @ 298K).",
         &cli_commands::set_temp_cal);
+
+    //Regulation
+    CLI_ADD_CMD("set_reg_kp", "Set regulator kP (float).", &cli_commands::set_reg_kp);
+    CLI_ADD_CMD("set_reg_ki", "Set regulator kI (float).", &cli_commands::set_reg_ki);
+    CLI_ADD_CMD("set_reg_kd", "Set regulator kD (float).", &cli_commands::set_reg_kd);
+    CLI_ADD_CMD("set_reg_total_flowrate", "Set regulator total flowrate (float).", &cli_commands::set_reg_total_flowrate);
+    CLI_ADD_CMD("set_reg_hc_dac", "Set regulator high conc DAC ch index (uint).", &cli_commands::set_reg_hc_dac);
+    CLI_ADD_CMD("set_reg_lc_dac", "Set regulator low conc DAC ch index (uint).", &cli_commands::set_reg_lc_dac);
+    CLI_ADD_CMD("set_reg_hc_motor", "Set regulator high conc motor index (uint).", &cli_commands::set_reg_hc_motor);
+    CLI_ADD_CMD("set_reg_lc_motor", "Set regulator low conc motor index (uint).", &cli_commands::set_reg_lc_motor);
 
     DBG("Goodnight Moon!");
 }
