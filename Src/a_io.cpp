@@ -24,6 +24,7 @@ namespace a_io
     float voltages[in::INPUTS_NUM];
     average temp_average(10);
     float temperature = 298; //K
+    average vref_average(10);
     float vref = 3.3; //V
 
     PACKED_FOR_DMA struct a_buffer_t
@@ -67,8 +68,9 @@ namespace a_io
         }
         float vref_mv = __LL_ADC_CALC_VREFANALOG_VOLTAGE(
             static_cast<uint16_t>(roundf((buffer.vref_1 + buffer.vref_2 + buffer.vref_3) / 3.0f)), LL_ADC_RESOLUTION_12B);
-        vref = vref_mv / 1000.0f;
-        float temp_c = __LL_ADC_CALC_TEMPERATURE(vref_mv, buffer.temp, LL_ADC_RESOLUTION_12B);
+        vref_average.enqueue(vref_mv / 1000.0f);
+        vref = vref_average.get_average();
+        float temp_c = __LL_ADC_CALC_TEMPERATURE(vref * 1000.0f, buffer.temp, LL_ADC_RESOLUTION_12B);
         temp_average.enqueue((temp_c + 273.15) * temp_sensor_cal->k + temp_sensor_cal->b);
         temperature = temp_average.get_average();
     }

@@ -19,7 +19,7 @@ namespace cli_commands
                 "\t\tSpeed = %4.1f\n"
                 "\t\tEnable = %u, Dir = %u, Error = %u\n",
                 i, instance.m->get_speed(),
-                instance.en, instance.dir, instance.err);
+                sr_io::get_output(instance.en), sr_io::get_output(instance.dir), sr_io::get_input(instance.err));
         }
         printf("\tTemperature = %5.1f K\n"
             "\tVref = %6.4f V\n", 
