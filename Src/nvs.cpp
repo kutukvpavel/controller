@@ -4,7 +4,7 @@
 #define MY_NVS_I2C_ADDR(mem_addr) (MY_EEPROM_ADDR | ((mem_addr & 0x700) >> 7))
 #define MY_NVS_VER_ADDR 0
 #define MY_NVS_START_ADDRESS 0x10
-#define MY_NVS_VERSION 2u
+#define MY_NVS_VERSION 3u
 #define MY_NVS_PAGE_SIZE 16u
 
 namespace nvs
@@ -16,6 +16,7 @@ namespace nvs
         PACKED_FOR_MODBUS a_io::in_cal_t a_in_cal[a_io::in::INPUTS_NUM];
         PACKED_FOR_MODBUS adc::ch_cal_t adc_cal[MY_ADC_MAX_MODULES * MY_ADC_CHANNELS_PER_CHIP];
         PACKED_FOR_MODBUS dac::cal_t dac_cal[MY_DAC_MAX_MODULES];
+        PACKED_FOR_MODBUS dac_persistent_t dac_persistent[MY_DAC_MAX_MODULES];
         PACKED_FOR_MODBUS pumps::params_t regulator_params;
     };
     PACKED_FOR_MODBUS storage_t storage =
@@ -23,7 +24,8 @@ namespace nvs
         .motors =
         {
             {
-                .rate_to_speed = 1,
+                //Assuming volume rate unit == [mL/min] and speed unit == [Hz] (rotations per second)
+                .rate_to_speed = 0.0166667, //Assuming 0.5mL effective tube volume. Formula: coef = 0.008(3)/dv, dv == [mL tube vol]
                 .microsteps = 4,
                 .teeth = 200,
                 .invert_enable = false,
@@ -31,7 +33,7 @@ namespace nvs
                 .direction = false
             },
             {
-                .rate_to_speed = 1,
+                .rate_to_speed = 0.0166667, //Assuming 0.5mL effective tube volume
                 .microsteps = 4,
                 .teeth = 200,
                 .invert_enable = false,
@@ -39,7 +41,7 @@ namespace nvs
                 .direction = false
             },
             {
-                .rate_to_speed = 1,
+                .rate_to_speed = 0.0166667, //Assuming 0.5mL effective tube volume
                 .microsteps = 4,
                 .teeth = 200,
                 .invert_enable = false,
@@ -76,6 +78,32 @@ namespace nvs
             { .k = 1, .b = 0, .current_k = 1, .current_b = 0 },
             { .k = 1, .b = 0, .current_k = 1, .current_b = 0 }
         },
+        .dac_persistent = {
+            {
+                .correction_interval = 1000,
+                .depolarization_setpoint = 0,
+                .depolarization_percent = 0,
+                .depolarization_interval = 5000
+            },
+            {
+                .correction_interval = 1000,
+                .depolarization_setpoint = 0,
+                .depolarization_percent = 0,
+                .depolarization_interval = 5000
+            },
+            {
+                .correction_interval = 1000,
+                .depolarization_setpoint = 0,
+                .depolarization_percent = 0,
+                .depolarization_interval = 5000
+            },
+            {
+                .correction_interval = 1000,
+                .depolarization_setpoint = 0,
+                .depolarization_percent = 0,
+                .depolarization_interval = 5000
+            }
+        },
         .regulator_params = {
             .kP = 0.001,
             .kI = 0,
@@ -85,7 +113,7 @@ namespace nvs
             .sensing_adc_channel_index = 0,
             .low_concentration_dac_channel_index = 0,
             .high_concentration_dac_channel_index = 1,
-            .total_flowrate = 100 //mL/min?
+            .total_flowrate = 100 //mL/min
         }
     };
     
@@ -149,6 +177,11 @@ namespace nvs
     PACKED_FOR_MODBUS pumps::params_t* get_regulator_params()
     {
         return &(storage.regulator_params);
+    }
+    PACKED_FOR_MODBUS dac_persistent_t* get_dac_persistent(size_t i)
+    {
+        assert_param(i < MY_DAC_MAX_MODULES);
+        return &(storage.dac_persistent[i]);
     }
 
     HAL_StatusTypeDef init(I2C_HandleTypeDef* hi2c)

@@ -37,8 +37,8 @@ namespace dac
         float corrected_setpoint;
         float r_shunt;
         uint32_t last_correction_tick;
-        float depolarization_setpoint;
         bool is_depolarizing;
+        uint32_t depo_start_tick;
         const PACKED_FOR_MODBUS cal_t* cal;
     };
 
@@ -53,13 +53,11 @@ namespace dac
     void init(SPI_HandleTypeDef* spi_instance, user::pin_t* spi_cs_pin, I2C_HandleTypeDef* i2c_instance, const cal_t* c);
     void probe();
     size_t get_present_modules_count();
+    void process();
     void set_module(size_t i, float volts);
     void set_all(float volts);
-    void start_depolarization();
-    void stop_depolarization();
     void read_current();
     void correct_for_current();
-    void set_depolarization(float volts);
     void dump_module_report();
     size_t dump_last_data(char* buf, size_t max_len);
 }

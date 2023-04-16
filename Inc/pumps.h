@@ -37,6 +37,7 @@ namespace pumps
     HAL_StatusTypeDef init();
     void deinit();
     void compute_pid();
+    void process();
 
     void set_mode(mode_t v);
     void set_enable(bool v);

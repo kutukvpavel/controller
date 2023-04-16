@@ -23,6 +23,7 @@ namespace cmd
     struct PACKED_FOR_MODBUS modbus_holding_registers
     {
         float dac_setpoints[MY_DAC_MAX_MODULES];
+        uint32_t dac_correction_intervals[MY_DAC_MAX_MODULES];
         PACKED_FOR_MODBUS adc::ch_cal_t adc_cals[MY_ADC_MAX_MODULES * MY_ADC_CHANNELS_PER_CHIP];
         PACKED_FOR_MODBUS dac::cal_t dac_cals[MY_DAC_MAX_MODULES];
         PACKED_FOR_MODBUS a_io::in_cal_t analog_input_cals[a_io::in::INPUTS_NUM];
@@ -30,7 +31,9 @@ namespace cmd
         PACKED_FOR_MODBUS motor_params_t motor_params[MOTORS_NUM];
         float depolarization_percent[MY_DAC_MAX_MODULES];
         float depolarization_setpoint[MY_DAC_MAX_MODULES];
+        uint32_t depolarization_interval[MY_DAC_MAX_MODULES];
         PACKED_FOR_MODBUS pumps::params_t regulator_params;
+        float regulator_setpoint;
     };
     struct PACKED_FOR_MODBUS modbus_input_registers
     {
@@ -167,7 +170,7 @@ namespace cmd
         return STATUS_OK;
     }
 
-    void save_registers_to_nvs()
+    HAL_StatusTypeDef save_registers_to_nvs()
     {
         for (size_t i = 0; i < array_size(holding.motor_params); i++)
         {
@@ -189,9 +192,14 @@ namespace cmd
         for (size_t i = 0; i < MY_DAC_MAX_MODULES; i++)
         {
             *nvs::get_dac_cal(i) = holding.dac_cals[i];
+            auto p = nvs::get_dac_persistent(i);
+            p->depolarization_setpoint = holding.depolarization_setpoint[i];
+            p->depolarization_percent = holding.depolarization_percent[i];
+            p->depolarization_interval = holding.depolarization_interval[i];
+            p->correction_interval = holding.dac_correction_intervals[i];
         }
         *nvs::get_regulator_params() = holding.regulator_params;
-        nvs::save();
+        return nvs::save();
     }
 
     void init(user::Stream& stream, I2C_HandleTypeDef* dac_i2c)
@@ -238,6 +246,11 @@ namespace cmd
         for (size_t i = 0; i < MY_DAC_MAX_MODULES; i++)
         {
             holding.dac_cals[i] = *nvs::get_dac_cal(i);
+            const nvs::dac_persistent_t* p = nvs::get_dac_persistent(i);
+            holding.depolarization_setpoint[i] = p->depolarization_setpoint;
+            holding.depolarization_percent[i] = p->depolarization_percent;
+            holding.depolarization_interval[i] = p->depolarization_interval;
+            holding.dac_correction_intervals[i] = p->correction_interval;
         }
         holding.regulator_params = *nvs::get_regulator_params();
 
@@ -294,6 +307,26 @@ namespace cmd
         assert_param(i < MY_DAC_MAX_MODULES);
         return holding.dac_setpoints[i];
     }
+    float get_dac_depo_setpoint(size_t i)
+    {
+        assert_param(i < MY_DAC_MAX_MODULES);
+        return holding.depolarization_setpoint[i];
+    }
+    float get_dac_depo_percent(size_t i)
+    {
+        assert_param(i < MY_DAC_MAX_MODULES);
+        return holding.depolarization_percent[i];
+    }
+    uint32_t get_dac_depo_interval(size_t i)
+    {
+        assert_param(i < MY_DAC_MAX_MODULES);
+        return holding.depolarization_interval[i];
+    }
+    uint32_t get_dac_correction_interval(size_t i)
+    {
+        assert_param(i < MY_DAC_MAX_MODULES);
+        return holding.dac_correction_intervals[i];
+    }
     void set_adc_voltage(size_t i, float v)
     {
         assert_param(i < MY_ADC_MAX_CHANNELS);
@@ -318,6 +351,10 @@ namespace cmd
     {
         assert_param(i < MY_DAC_MAX_MODULES);
         holding.dac_setpoints[i] = v;
+    }
+    float get_regulator_setpoint()
+    {
+        return holding.regulator_setpoint;
     }
 
     motor_params_t* get_motor_params(size_t i)

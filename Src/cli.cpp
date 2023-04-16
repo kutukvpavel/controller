@@ -13,6 +13,10 @@ namespace cli_commands
             "\tADC modules present = %u\n"
             "\tDAC modules present = %u\n",
             adc::get_present_channels_count(), dac::get_present_modules_count());
+        for (size_t i = 0; i < MY_DAC_MAX_MODULES; i++)
+        {
+            printf("\tDAC #%02u = %8.6f\n", i, cmd::get_dac_setpoint(i));
+        }
         for (size_t i = 0; i < MOTORS_NUM; i++)
         {
             auto& instance = pumps::instances[i];
@@ -137,6 +141,10 @@ namespace cli_commands
     {
         return nvs::test();
     }
+    uint8_t nvs_save_from_regs(int argc, char** argv)
+    {
+        return cmd::save_registers_to_nvs();
+    }
 
     //Cals
     uint8_t set_adc_cal(int argc, char** argv)
@@ -254,6 +262,7 @@ void my_cli_init(UART_HandleTypeDef* cli_uart)
     CLI_ADD_CMD("nvs_reset", "Reset NVS to factory defaults. Reboot for this to take effect.", &cli_commands::nvs_reset);
     CLI_ADD_CMD("nvs_dump_hex", "Dump NVS contents in HEX.", &cli_commands::nvs_dump_hex);
     CLI_ADD_CMD("nvs_test", "Test NVS by writing consequtive numbers and reading them back.", &cli_commands::nvs_test);
+    CLI_ADD_CMD("nvs_save_from_regs", "Save values from current modbus registers.", &cli_commands::nvs_save_from_regs);
 
     //Cal
     CLI_ADD_CMD("set_adc_cal", "Set ADC calibration. Expects 3 args (index gain offset)", &cli_commands::set_adc_cal);

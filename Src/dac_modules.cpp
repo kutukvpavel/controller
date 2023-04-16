@@ -2,6 +2,7 @@
 
 #include "ad5061.h"
 #include "ina219.h"
+#include "commands.h"
 
 #include <math.h>
 
@@ -25,6 +26,7 @@
 #define MY_INA219_CURRENT_THRESHOLD 0.00002
 #define DAC_CORRECTION_INTERVAL 2000 //mS
 #define DAC_TOLERANCE 0.000005
+#define DAC_SETPOINT_UPDATE_INTERVAL 500 //mS
 
 //User-friendly index to I2C address lower nibble mapping. Based on DIP switch board layout.
 enum : uint8_t
@@ -80,31 +82,29 @@ namespace dac
             .cs_mux_mask = CS_MUX_MASK(0u),
             .addr = MY_DAC_1,
             .r_shunt = 1,
-            .last_correction_tick = 0,
-            .depolarization_setpoint = 0
+            .last_correction_tick = 0
         },
         {
             .cs_mux_mask = CS_MUX_MASK(1u),
             .addr = MY_DAC_2,
             .r_shunt = 1,
-            .last_correction_tick = 0,
-            .depolarization_setpoint = 0
+            .last_correction_tick = 0
         },
         {
             .cs_mux_mask = CS_MUX_MASK(2u),
             .addr = MY_DAC_3,
             .r_shunt = 1,
-            .last_correction_tick = 0,
-            .depolarization_setpoint = 0
+            .last_correction_tick = 0
         },
         {
             .cs_mux_mask = CS_MUX_MASK(3u),
             .addr = MY_DAC_4,
             .r_shunt = 1,
-            .last_correction_tick = 0,
-            .depolarization_setpoint = 0
+            .last_correction_tick = 0
         }
     };
+    void stop_depolarization(size_t i);
+    void start_depolarization(size_t i);
 
     //Public methods
     void init(SPI_HandleTypeDef* spi_instance, user::pin_t* spi_cs_pin, I2C_HandleTypeDef* i2c_instance, const cal_t* c)
@@ -160,6 +160,41 @@ namespace dac
         return modules_present;
     }
 
+    void process()
+    {
+        static uint32_t last_dac_setpoint_update = 0;
+
+        //Correct
+        if (cmd::get_status_bit_set(MY_CMD_STATUS_DAC_CORRECT))
+        {
+            correct_for_current();
+        }
+        //Update
+        if (HAL_GetTick() - last_dac_setpoint_update > DAC_SETPOINT_UPDATE_INTERVAL)
+        {
+            for (size_t i = 0; i < MY_DAC_MAX_MODULES; i++)
+            {
+                set_module(i, cmd::get_dac_setpoint(i));
+            }
+            last_dac_setpoint_update = HAL_GetTick();
+        }
+        //Depolarize
+        for (size_t i = 0; i < MY_DAC_MAX_MODULES; i++)
+        {
+            auto& m = modules[i];
+            if (!m.present) continue;
+            uint32_t timespan = HAL_GetTick() - m.depo_start_tick;
+            if (timespan > cmd::get_dac_depo_interval(i))
+            {
+                if (cmd::get_status_bit_set(MY_CMD_STATUS_DEPOLARIZE)) start_depolarization(i);
+            }
+            else if (timespan > cmd::get_dac_depo_interval(i) * cmd::get_dac_depo_percent(i))
+            {
+                stop_depolarization(i);
+            }
+        }
+    }
+
     void read_current()
     {
         for (size_t i = 0; i < array_size(modules); i++)
@@ -197,8 +232,9 @@ namespace dac
         {
             auto& m = modules[i];
             if (!m.present) continue;
-            if ((tick - m.last_correction_tick) < DAC_CORRECTION_INTERVAL) continue;
+            if ((tick - m.last_correction_tick) < cmd::get_dac_correction_interval(i)) continue;
             if (abs(m.prev_current - m.current) <= MY_INA219_CURRENT_THRESHOLD) continue;
+            if (m.is_depolarizing) continue; //Do not correct for current when depolarizing
             DBG("Correcting DAC #%u:\n\tPrev I = %f, curr I = %f", i, m.prev_current, m.current);
             m.last_correction_tick = tick;
             m.prev_current = m.current;
@@ -208,40 +244,27 @@ namespace dac
         }
     }
 
-    void start_depolarization()
+    void start_depolarization(size_t i)
     {
-        for (size_t i = 0; i < array_size(modules); i++)
-        {
-            auto& m = modules[i];
-            if (!m.present) continue;
-            if (m.is_depolarizing) continue;
-            set_module_internal(&m, m.depolarization_setpoint);
-            m.is_depolarizing = true;
-        }
+        auto &m = modules[i];
+        if (!m.present) return;
+        if (m.is_depolarizing) return;
+        if (cmd::get_dac_depo_percent(i) <= 0) return;
+        set_module_internal(&m, cmd::get_dac_depo_setpoint(i));
+        m.is_depolarizing = true;
+        m.depo_start_tick = HAL_GetTick();
     }
 
-    void stop_depolarization()
+    void stop_depolarization(size_t i)
     {
-        for (size_t i = 0; i < array_size(modules); i++)
-        {
-            auto& m = modules[i];
-            if (!m.present) continue;
-            if (!m.is_depolarizing) continue;
-            set_module_internal(&m, m.corrected_setpoint);
-            m.is_depolarizing = false;
-        }
+        auto &m = modules[i];
+        if (!m.present) return;
+        if (!m.is_depolarizing) return;
+        set_module_internal(&m, m.corrected_setpoint);
+        m.is_depolarizing = false;
     }
 
-    void set_depolarization(float volts)
-    {
-        for (size_t i = 0; i < array_size(modules); i++)
-        {
-            auto& m = modules[i];
-            m.depolarization_setpoint = volts;
-        }
-    }
-
-    size_t dump_last_data(char* buf, size_t max_len)
+    /*size_t dump_last_data(char* buf, size_t max_len)
     {
         size_t written = 0;
         for (size_t i = 0; i < array_size(modules); i++)
@@ -258,7 +281,7 @@ namespace dac
             }
         }
         return written;
-    }
+    }*/
 
     void dump_module_report()
     {

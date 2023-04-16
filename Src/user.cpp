@@ -11,8 +11,7 @@
 #include <math.h>
 
 #define SR_SYNC_INTERVAL 50 // mS
-#define HEATBEAT_INTERVAL 5000 //mS
-#define DAC_SETPOINT_UPDATE_INTERVAL 500 //mS
+#define REGULATOR_UPDATE_INTERVAL 500 //mS
 
 // Private vars
 user::pin_t cs_pin = user::pin_t(nCS_GPIO_Port, nCS_Pin);
@@ -35,13 +34,13 @@ void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-    if (htim->Instance == TIM3) // 0.1S timer: grab INA219 current data, and depolarize
+    if (htim->Instance == TIM3) // 0.1S timer
     {
-        //user::status |= MY_STATUS_DEPOLARIZE;
+        
     }
-    if (htim->Instance == TIM4) // 0.1S+X offset timer for PWM, stop depolarization and correct DAC
+    if (htim->Instance == TIM4) // 0.1S+X offset timer
     {
-        user::status |= MY_STATUS_CORRECT_DAC;
+        
     }
 }
 
@@ -121,8 +120,6 @@ namespace user
         DBG("Initializing pumps...");
         if (pumps::init() == HAL_OK)
         {
-            pumps::set_enable(true);
-            pumps::set_mode(pumps::mode_t::AUTOMATIC);
             DBG("\tPumps initialized successfully.");
         }
         else
@@ -144,7 +141,7 @@ namespace user
     {
         static uint32_t tick;
         static uint32_t last_gpio_sync = 0;
-        static uint32_t last_dac_setpoint_update = 0;
+        static uint32_t last_regulator_update = 0;
 
         tick = HAL_GetTick();
         CLI_RUN();
@@ -167,12 +164,11 @@ namespace user
             adc::read();
             adc::increment_and_sync();
             const adc::channel_t* conc_sense_ch = adc::get_channel(pumps::get_sensing_adc_channel());
-            if (conc_sense_ch) 
+            if (conc_sense_ch)
             {
                 float sense_v = conc_sense_ch->averaging_container->get_average();
                 if (isfinite(sense_v)) //False if averaging container has no points yet
                 {
-                    pumps::update_tunings();
                     pumps::set_concentration_feedback(my_math::volts_to_volume_concentration(
                         sense_v, a_io::temperature));
                     pumps::compute_pid();
@@ -182,17 +178,13 @@ namespace user
         }
 
         // DAC
-        if (cmd::get_status_bit_set(MY_CMD_STATUS_DAC_CORRECT))
+        dac::process();
+
+        //Regulator
+        if (tick - last_regulator_update > REGULATOR_UPDATE_INTERVAL)
         {
-            dac::correct_for_current();
-        }
-        if (tick - last_dac_setpoint_update > DAC_SETPOINT_UPDATE_INTERVAL)
-        {
-            for (size_t i = 0; i < MY_DAC_MAX_MODULES; i++)
-            {
-                dac::set_module(i, cmd::get_dac_setpoint(i));
-            }
-            last_dac_setpoint_update = tick;
+            pumps::process();
+            last_regulator_update = tick;
         }
 
         if (dump_data)

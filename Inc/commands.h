@@ -28,6 +28,8 @@
 #define MY_CMD_STATUS_READY _BV(3)
 #define MY_CMD_STATUS_SAVE_EEPROM _BV(4)
 #define MY_CMD_STATUS_HAVE_NEW_DATA _BV(5)
+#define MY_CMD_STATUS_REGULATE _BV(6)
+#define MY_CMD_STATUS_DEPOLARIZE _BV(7)
 
 #define DEPOLARIZATION_REPORT_FORMAT "BFF: %3.2f\n"
 
@@ -39,6 +41,7 @@ namespace cmd
     void poll();
 
     void report_ready();
+    HAL_StatusTypeDef save_registers_to_nvs();
 
     void set_status_bit(bitfield_t mask);
     void reset_status_bit(bitfield_t mask);
@@ -46,11 +49,16 @@ namespace cmd
     void set_adc_channels_present(uint16_t num);
     void set_dac_channels_present(uint16_t num);
     float get_dac_setpoint(size_t i);
+    float get_dac_depo_setpoint(size_t i);
+    float get_dac_depo_percent(size_t i);
+    uint32_t get_dac_depo_interval(size_t i);
+    uint32_t get_dac_correction_interval(size_t i);
     void set_adc_voltage(size_t i, float v);
     void set_dac_current(size_t i, float v);
     void set_dac_corrected_voltage(size_t i, float v);
     void set_analog_in(size_t i, float v);
     void set_dac_setpoint(size_t i, float v);
+    float get_regulator_setpoint();
 
     motor_params_t* get_motor_params(size_t i);
     a_io::in_cal_t* get_analog_input_cal(size_t i);

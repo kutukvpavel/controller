@@ -68,6 +68,13 @@ namespace pumps
             instances[params->low_concentration_motor_index].m->set_volume_rate(params->total_flowrate * (1 - output));
         }
     }
+    void process()
+    {
+        set_mode(cmd::get_status_bit_set(MY_CMD_STATUS_REGULATE) ? pumps::mode_t::AUTOMATIC : pumps::mode_t::MANUAL);
+        update_tunings();
+        set_concentration_setpoint(cmd::get_regulator_setpoint());
+        set_enable(cmd::get_status_bit_set(MY_CMD_STATUS_MOTOR_EN));
+    }
 
     void set_enable(bool v)
     {
