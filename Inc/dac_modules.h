@@ -35,8 +35,9 @@ namespace dac
         float current;
         float setpoint;
         float corrected_setpoint;
-        float depolarization_setpoint;
         float r_shunt;
+        uint32_t last_correction_tick;
+        float depolarization_setpoint;
         bool is_depolarizing;
         const PACKED_FOR_MODBUS cal_t* cal;
     };

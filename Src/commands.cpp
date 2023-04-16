@@ -314,6 +314,11 @@ namespace cmd
         assert_param(i < a_io::in::INPUTS_NUM);
         input.a_in[i] = v;
     }
+    void set_dac_setpoint(size_t i, float v)
+    {
+        assert_param(i < MY_DAC_MAX_MODULES);
+        holding.dac_setpoints[i] = v;
+    }
 
     motor_params_t* get_motor_params(size_t i)
     {

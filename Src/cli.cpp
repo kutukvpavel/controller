@@ -1,5 +1,6 @@
 #include "cli.h"
 
+#include "commands.h"
 #include "nvs.h"
 #include "pumps.h"
 
@@ -40,6 +41,10 @@ namespace cli_commands
             if (sscanf(argv[1], "%f", &volts) != 1) return 3;
             printf("\tSet all DACs to %.6f V\n", volts);
             dac::set_all(volts);
+            for (size_t i = 0; i < MY_DAC_MAX_MODULES; i++)
+            {
+                cmd::set_dac_setpoint(i, volts);
+            }
             return EXIT_SUCCESS;
         }
         size_t module_index;
@@ -48,6 +53,7 @@ namespace cli_commands
         if (sscanf(argv[2], "%f", &volts) != 1) return 3;
         printf("\tSet DAC #%02u to %.6f V\n", module_index, volts);
         dac::set_module(module_index, volts);
+        cmd::set_dac_setpoint(module_index, volts);
         return EXIT_SUCCESS;
     }
     uint8_t set_motor_speed(int argc, char** argv)
@@ -205,28 +211,28 @@ namespace cli_commands
     {
         if (argc < 2) return EXIT_FAILURE;
         auto buf = nvs::get_regulator_params();
-        if (sscanf(argv[1], "%u", &buf->high_concentration_dac_channel_index) < 1) return EXIT_FAILURE;
+        if (sscanf(argv[1], "%hu", &buf->high_concentration_dac_channel_index) < 1) return EXIT_FAILURE;
         return EXIT_SUCCESS;
     }
     uint8_t set_reg_lc_dac(int argc, char** argv)
     {
         if (argc < 2) return EXIT_FAILURE;
         auto buf = nvs::get_regulator_params();
-        if (sscanf(argv[1], "%u", &buf->low_concentration_dac_channel_index) < 1) return EXIT_FAILURE;
+        if (sscanf(argv[1], "%hu", &buf->low_concentration_dac_channel_index) < 1) return EXIT_FAILURE;
         return EXIT_SUCCESS;
     }
     uint8_t set_reg_hc_motor(int argc, char** argv)
     {
         if (argc < 2) return EXIT_FAILURE;
         auto buf = nvs::get_regulator_params();
-        if (sscanf(argv[1], "%u", &buf->high_concentration_motor_index) < 1) return EXIT_FAILURE;
+        if (sscanf(argv[1], "%hu", &buf->high_concentration_motor_index) < 1) return EXIT_FAILURE;
         return EXIT_SUCCESS;
     }
     uint8_t set_reg_lc_motor(int argc, char** argv)
     {
         if (argc < 2) return EXIT_FAILURE;
         auto buf = nvs::get_regulator_params();
-        if (sscanf(argv[1], "%u", &buf->low_concentration_motor_index) < 1) return EXIT_FAILURE;
+        if (sscanf(argv[1], "%hu", &buf->low_concentration_motor_index) < 1) return EXIT_FAILURE;
         return EXIT_SUCCESS;
     }
 }

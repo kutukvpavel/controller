@@ -12,6 +12,7 @@
 
 #define SR_SYNC_INTERVAL 50 // mS
 #define HEATBEAT_INTERVAL 5000 //mS
+#define DAC_SETPOINT_UPDATE_INTERVAL 500 //mS
 
 // Private vars
 user::pin_t cs_pin = user::pin_t(nCS_GPIO_Port, nCS_Pin);
@@ -143,6 +144,7 @@ namespace user
     {
         static uint32_t tick;
         static uint32_t last_gpio_sync = 0;
+        static uint32_t last_dac_setpoint_update = 0;
 
         tick = HAL_GetTick();
         CLI_RUN();
@@ -180,15 +182,17 @@ namespace user
         }
 
         // DAC
-        if (status & MY_STATUS_CORRECT_DAC)
+        if (cmd::get_status_bit_set(MY_CMD_STATUS_DAC_CORRECT))
         {
-            //dac::stop_depolarization();
-            if (cmd::get_status_bit_set(MY_CMD_STATUS_DAC_CORRECT))
+            dac::correct_for_current();
+        }
+        if (tick - last_dac_setpoint_update > DAC_SETPOINT_UPDATE_INTERVAL)
+        {
+            for (size_t i = 0; i < MY_DAC_MAX_MODULES; i++)
             {
-                dac::correct_for_current(); // Single-shot
-                cmd::reset_status_bit(MY_CMD_STATUS_DAC_CORRECT);
+                dac::set_module(i, cmd::get_dac_setpoint(i));
             }
-            status &= ~MY_STATUS_CORRECT_DAC;
+            last_dac_setpoint_update = tick;
         }
 
         if (dump_data)

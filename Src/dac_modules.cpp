@@ -23,6 +23,8 @@
     "\tINA Cal: %.5f\n"
 #define CS_MUX_MASK(index) (((index) + 4u) << 3u) //Higher half of 8 addresses coded with PA3-PA5 (shifted accordingly)
 #define MY_INA219_CURRENT_THRESHOLD 0.00002
+#define DAC_CORRECTION_INTERVAL 2000 //mS
+#define DAC_TOLERANCE 0.000005
 
 //User-friendly index to I2C address lower nibble mapping. Based on DIP switch board layout.
 enum : uint8_t
@@ -77,26 +79,30 @@ namespace dac
         {
             .cs_mux_mask = CS_MUX_MASK(0u),
             .addr = MY_DAC_1,
-            .depolarization_setpoint = 0,
-            .r_shunt = 1
+            .r_shunt = 1,
+            .last_correction_tick = 0,
+            .depolarization_setpoint = 0
         },
         {
             .cs_mux_mask = CS_MUX_MASK(1u),
             .addr = MY_DAC_2,
-            .depolarization_setpoint = 0,
-            .r_shunt = 1
+            .r_shunt = 1,
+            .last_correction_tick = 0,
+            .depolarization_setpoint = 0
         },
         {
             .cs_mux_mask = CS_MUX_MASK(2u),
             .addr = MY_DAC_3,
-            .depolarization_setpoint = 0,
-            .r_shunt = 1
+            .r_shunt = 1,
+            .last_correction_tick = 0,
+            .depolarization_setpoint = 0
         },
         {
             .cs_mux_mask = CS_MUX_MASK(3u),
             .addr = MY_DAC_4,
-            .depolarization_setpoint = 0,
-            .r_shunt = 1
+            .r_shunt = 1,
+            .last_correction_tick = 0,
+            .depolarization_setpoint = 0
         }
     };
 
@@ -169,9 +175,11 @@ namespace dac
         auto& m = modules[i];
         if (!m.present) return;
         volts = m.cal->k * volts + m.cal->b;
+        if (abs(m.setpoint - volts) < DAC_TOLERANCE) return;
         set_module_internal(&m, volts);
         m.setpoint = volts;
         m.corrected_setpoint = m.setpoint;
+        m.prev_current = -1;
     }
 
     void set_all(float volts)
@@ -184,13 +192,18 @@ namespace dac
 
     void correct_for_current()
     {
+        uint32_t tick = HAL_GetTick();
         for (size_t i = 0; i < array_size(modules); i++)
         {
             auto& m = modules[i];
             if (!m.present) continue;
+            if ((tick - m.last_correction_tick) < DAC_CORRECTION_INTERVAL) continue;
             if (abs(m.prev_current - m.current) <= MY_INA219_CURRENT_THRESHOLD) continue;
+            DBG("Correcting DAC #%u:\n\tPrev I = %f, curr I = %f", i, m.prev_current, m.current);
+            m.last_correction_tick = tick;
             m.prev_current = m.current;
             m.corrected_setpoint = m.setpoint + m.current * (m.r_shunt + AD5061_INTERNAL_RESISTANCE); //V
+            DBG("\tSetpoint = %f, corrected setpoint = %f", m.setpoint, m.corrected_setpoint);
             set_module_internal(&m, m.corrected_setpoint);
         }
     }
