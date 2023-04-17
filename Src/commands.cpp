@@ -256,6 +256,7 @@ namespace cmd
             holding.dac_correction_intervals[i] = p->correction_interval;
         }
         holding.regulator_params = *nvs::get_regulator_params();
+        holding.regulator_setpoint = *nvs::get_regulator_setpoint();
 
         if (bus) return;
         DBG("Modbus service init...");
