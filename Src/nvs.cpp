@@ -18,6 +18,7 @@ namespace nvs
         PACKED_FOR_MODBUS dac::cal_t dac_cal[MY_DAC_MAX_MODULES];
         PACKED_FOR_MODBUS dac_persistent_t dac_persistent[MY_DAC_MAX_MODULES];
         PACKED_FOR_MODBUS pumps::params_t regulator_params;
+        float regulator_setpoint;
     };
     PACKED_FOR_MODBUS storage_t storage =
     {
@@ -114,7 +115,8 @@ namespace nvs
             .low_concentration_dac_channel_index = 0,
             .high_concentration_dac_channel_index = 1,
             .total_flowrate = 100 //mL/min
-        }
+        },
+        .regulator_setpoint = 0
     };
     
     I2C_HandleTypeDef* i2c = NULL;
@@ -182,6 +184,10 @@ namespace nvs
     {
         assert_param(i < MY_DAC_MAX_MODULES);
         return &(storage.dac_persistent[i]);
+    }
+    float* get_regulator_setpoint()
+    {
+        return &storage.regulator_setpoint;
     }
 
     HAL_StatusTypeDef init(I2C_HandleTypeDef* hi2c)

@@ -174,7 +174,9 @@ namespace cmd
     {
         for (size_t i = 0; i < array_size(holding.motor_params); i++)
         {
-            *nvs::get_motor_params(i) = holding.motor_params[i];
+            auto& p = holding.motor_params[i];
+            p.direction = sr_io::get_output(sr_io::out::MOTOR_DIR0 + i);
+            *nvs::get_motor_params(i) = p;
         }
         for (size_t i = 0; i < a_io::in::INPUTS_NUM; i++)
         {
@@ -199,6 +201,7 @@ namespace cmd
             p->correction_interval = holding.dac_correction_intervals[i];
         }
         *nvs::get_regulator_params() = holding.regulator_params;
+        *nvs::get_regulator_setpoint() = holding.regulator_setpoint;
         return nvs::save();
     }
 
@@ -355,6 +358,10 @@ namespace cmd
     float get_regulator_setpoint()
     {
         return holding.regulator_setpoint;
+    }
+    void set_temperature(float kelvin)
+    {
+        input.temperature = kelvin;
     }
 
     motor_params_t* get_motor_params(size_t i)

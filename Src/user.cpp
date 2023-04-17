@@ -216,6 +216,7 @@ namespace user
             {
                 cmd::set_analog_in(i, a_io::voltages[i]);   
             }
+            cmd::set_temperature(a_io::temperature);
 
             cmd::set_status_bit(MY_CMD_STATUS_HAVE_NEW_DATA);
             dump_data = false;

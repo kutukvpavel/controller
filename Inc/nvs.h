@@ -30,4 +30,5 @@ namespace nvs
     PACKED_FOR_MODBUS dac::cal_t* get_dac_cal(size_t i);
     PACKED_FOR_MODBUS pumps::params_t* get_regulator_params();
     PACKED_FOR_MODBUS dac_persistent_t* get_dac_persistent(size_t i);
+    float* get_regulator_setpoint();
 } // namespace nvs

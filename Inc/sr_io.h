@@ -5,7 +5,7 @@
 
 namespace sr_io
 {
-    enum in
+    enum in : size_t
     {
         MOTOR_ERR0,
         MOTOR_ERR1,
@@ -18,7 +18,7 @@ namespace sr_io
 
         INPUT_NUM
     };
-    enum out
+    enum out : size_t
     {
         ADC_RES,
         ADC_EN,

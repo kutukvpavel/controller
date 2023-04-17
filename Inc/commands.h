@@ -59,6 +59,7 @@ namespace cmd
     void set_analog_in(size_t i, float v);
     void set_dac_setpoint(size_t i, float v);
     float get_regulator_setpoint();
+    void set_temperature(float kelvin);
 
     motor_params_t* get_motor_params(size_t i);
     a_io::in_cal_t* get_analog_input_cal(size_t i);
