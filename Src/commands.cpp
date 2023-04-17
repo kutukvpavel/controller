@@ -174,9 +174,7 @@ namespace cmd
     {
         for (size_t i = 0; i < array_size(holding.motor_params); i++)
         {
-            auto& p = holding.motor_params[i];
-            p.direction = sr_io::get_output(sr_io::out::MOTOR_DIR0 + i);
-            *nvs::get_motor_params(i) = p;
+            *nvs::get_motor_params(i) = holding.motor_params[i];
         }
         for (size_t i = 0; i < a_io::in::INPUTS_NUM; i++)
         {

@@ -122,6 +122,7 @@ namespace cli_commands
             reg_params->high_concentration_dac_channel_index,
             reg_params->total_flowrate
             );
+        printf("Regulator setpoint = %f\n", *nvs::get_regulator_setpoint());
         return EXIT_SUCCESS;
     }
     uint8_t nvs_save(int argc, char** argv)
