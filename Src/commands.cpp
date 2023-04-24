@@ -34,6 +34,7 @@ namespace cmd
         uint32_t depolarization_interval[MY_DAC_MAX_MODULES];
         PACKED_FOR_MODBUS pumps::params_t regulator_params;
         float regulator_setpoint;
+        float motor_speed[MOTORS_NUM];
     };
     struct PACKED_FOR_MODBUS modbus_input_registers
     {
@@ -361,6 +362,15 @@ namespace cmd
     void set_temperature(float kelvin)
     {
         input.temperature = kelvin;
+    }
+    void set_motor_speed(float s, size_t i)
+    {
+        assert_param(i < MOTORS_NUM);
+        holding.motor_speed[i] = s;
+    }
+    float get_motor_speed(size_t i)
+    {
+        return holding.motor_speed[i];
     }
 
     motor_params_t* get_motor_params(size_t i)

@@ -70,7 +70,22 @@ namespace pumps
     }
     void process()
     {
-        set_mode(cmd::get_status_bit_set(MY_CMD_STATUS_REGULATE) ? pumps::mode_t::AUTOMATIC : pumps::mode_t::MANUAL);
+        bool automatic = cmd::get_status_bit_set(MY_CMD_STATUS_REGULATE);
+        set_mode(automatic ? pumps::mode_t::AUTOMATIC : pumps::mode_t::MANUAL);
+        if (automatic)
+        {
+            for (size_t i = 0; i < MOTORS_NUM; i++)
+            {
+                cmd::set_motor_speed(instances[i].m->get_volume_rate());
+            }
+        }
+        else
+        {
+            for (size_t i = 0; i < MOTORS_NUM; i++)
+            {
+                instances[i].m->set_volume_rate(cmd::get_volume_rate(i));
+            }
+        }
         update_tunings();
         set_concentration_setpoint(cmd::get_regulator_setpoint());
         set_enable(cmd::get_status_bit_set(MY_CMD_STATUS_MOTOR_EN));

@@ -39,6 +39,7 @@ public:
     void set_enable(bool v);
     bool get_error();
     float get_speed();
+    float get_volume_rate();
 
     ~motor();
 };

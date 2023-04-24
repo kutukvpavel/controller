@@ -33,6 +33,11 @@ float motor::get_speed()
 {
     return last_set_speed;
 }
+float motor::get_volume_rate()
+{
+    assert_param(cal->rate_to_speed > 0);
+    return last_set_speed / cal->rate_to_speed;
+}
 
 motor::motor(TIM_TypeDef* t, motor_params_t* c, sr_io::in err, sr_io::out en, sr_io::out dir)
 {
