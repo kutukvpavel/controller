@@ -27,7 +27,7 @@ namespace a_io
     average vref_average(10);
     float vref = 3.3; //V
 
-    PACKED_FOR_DMA struct a_buffer_t
+    struct PACKED_FOR_DMA a_buffer_t
     {
         uint16_t vref_1;
         uint16_t ch_6;

@@ -76,14 +76,14 @@ namespace pumps
         {
             for (size_t i = 0; i < MOTORS_NUM; i++)
             {
-                cmd::set_motor_speed(instances[i].m->get_volume_rate());
+                cmd::set_motor_speed(instances[i].m->get_volume_rate(), i);
             }
         }
         else
         {
             for (size_t i = 0; i < MOTORS_NUM; i++)
             {
-                instances[i].m->set_volume_rate(cmd::get_volume_rate(i));
+                instances[i].m->set_volume_rate(cmd::get_motor_speed(i));
             }
         }
         update_tunings();
