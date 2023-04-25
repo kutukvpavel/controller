@@ -156,6 +156,7 @@ namespace user
 
         // PC commands
         cmd::poll();
+        if (cmd::get_status_bit_set(MY_CMD_STATUS_RESET)) HAL_NVIC_SystemReset();
 
         // ADC
         adc::drdy_check();

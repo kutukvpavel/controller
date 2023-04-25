@@ -23,19 +23,20 @@
 #include <stddef.h>
 
 #define MY_CMD_ACQUIRE _BV(0)
-#define MY_CMD_STATUS_DAC_CORRECT _BV(1) //Single-shot
+#define MY_CMD_STATUS_DAC_CORRECT _BV(1)
 #define MY_CMD_STATUS_MOTOR_EN _BV(2)
 #define MY_CMD_STATUS_READY _BV(3)
 #define MY_CMD_STATUS_SAVE_EEPROM _BV(4)
 #define MY_CMD_STATUS_HAVE_NEW_DATA _BV(5)
 #define MY_CMD_STATUS_REGULATE _BV(6)
 #define MY_CMD_STATUS_DEPOLARIZE _BV(7)
+#define MY_CMD_STATUS_RESET _BV(8)
 
 #define DEPOLARIZATION_REPORT_FORMAT "BFF: %3.2f\n"
 
 namespace cmd
 {
-    typedef uint8_t bitfield_t;
+    typedef uint32_t bitfield_t;
 
     void init(user::Stream&, I2C_HandleTypeDef*);
     void poll();
