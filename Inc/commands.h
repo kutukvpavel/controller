@@ -63,6 +63,8 @@ namespace cmd
     void set_temperature(float kelvin);
     void set_motor_speed(float s, size_t i);
     float get_motor_speed(size_t i);
+    void set_furnace_temperature(float kelvin);
+    float get_furnace_temperature();
 
     motor_params_t* get_motor_params(size_t i);
     a_io::in_cal_t* get_analog_input_cal(size_t i);

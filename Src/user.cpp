@@ -6,7 +6,6 @@
 #include "dac_modules.h"
 #include "a_io.h"
 #include "pumps.h"
-#include "my_math.h"
 #include "../ModbusPort/src/ModbusSlave.h"
 #include <math.h>
 
@@ -164,17 +163,6 @@ namespace user
         {
             adc::read();
             adc::increment_and_sync();
-            const adc::channel_t* conc_sense_ch = adc::get_channel(pumps::get_sensing_adc_channel());
-            if (conc_sense_ch)
-            {
-                float sense_v = conc_sense_ch->averaging_container->get_average();
-                if (isfinite(sense_v)) //False if averaging container has no points yet
-                {
-                    pumps::set_concentration_feedback(my_math::volts_to_volume_concentration(
-                        sense_v, a_io::temperature));
-                    pumps::compute_pid();
-                }
-            }
             dac::read_current();
         }
 

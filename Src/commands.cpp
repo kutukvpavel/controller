@@ -35,6 +35,7 @@ namespace cmd
         PACKED_FOR_MODBUS pumps::params_t regulator_params;
         float regulator_setpoint;
         float motor_speed[MOTORS_NUM];
+        float furnace_temperature;
     };
     struct PACKED_FOR_MODBUS modbus_input_registers
     {
@@ -176,6 +177,7 @@ namespace cmd
         for (size_t i = 0; i < array_size(holding.motor_params); i++)
         {
             *nvs::get_motor_params(i) = holding.motor_params[i];
+            *nvs::get_motor_manual_speed(i) = holding.motor_speed[i];
         }
         for (size_t i = 0; i < a_io::in::INPUTS_NUM; i++)
         {
@@ -193,6 +195,7 @@ namespace cmd
         for (size_t i = 0; i < MY_DAC_MAX_MODULES; i++)
         {
             *nvs::get_dac_cal(i) = holding.dac_cals[i];
+            *nvs::get_dac_manual_setpoint(i) = holding.dac_setpoints[i];
             auto p = nvs::get_dac_persistent(i);
             p->depolarization_setpoint = holding.depolarization_setpoint[i];
             p->depolarization_percent = holding.depolarization_percent[i];
@@ -201,6 +204,7 @@ namespace cmd
         }
         *nvs::get_regulator_params() = holding.regulator_params;
         *nvs::get_regulator_setpoint() = holding.regulator_setpoint;
+        *nvs::get_furnace_temperature() = holding.furnace_temperature;
         return nvs::save();
     }
 
@@ -231,6 +235,7 @@ namespace cmd
         for (size_t i = 0; i < array_size(holding.motor_params); i++)
         {
             holding.motor_params[i] = *nvs::get_motor_params(i);
+            holding.motor_speed[i] = *nvs::get_motor_manual_speed(i);
         }
         for (size_t i = 0; i < a_io::in::INPUTS_NUM; i++)
         {
@@ -248,6 +253,7 @@ namespace cmd
         for (size_t i = 0; i < MY_DAC_MAX_MODULES; i++)
         {
             holding.dac_cals[i] = *nvs::get_dac_cal(i);
+            holding.dac_setpoints[i] = *nvs::get_dac_manual_setpoint(i);
             const nvs::dac_persistent_t* p = nvs::get_dac_persistent(i);
             holding.depolarization_setpoint[i] = p->depolarization_setpoint;
             holding.depolarization_percent[i] = p->depolarization_percent;
@@ -256,6 +262,7 @@ namespace cmd
         }
         holding.regulator_params = *nvs::get_regulator_params();
         holding.regulator_setpoint = *nvs::get_regulator_setpoint();
+        holding.furnace_temperature = *nvs::get_furnace_temperature();
 
         if (bus) return;
         DBG("Modbus service init...");
@@ -371,6 +378,14 @@ namespace cmd
     float get_motor_speed(size_t i)
     {
         return holding.motor_speed[i];
+    }
+    void set_furnace_temperature(float kelvin)
+    {
+        holding.furnace_temperature = kelvin;
+    }
+    float get_furnace_temperature()
+    {
+        return holding.furnace_temperature;
     }
 
     motor_params_t* get_motor_params(size_t i)

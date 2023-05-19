@@ -16,6 +16,8 @@ namespace pumps
         uint16_t sensing_adc_channel_index;
         uint16_t low_concentration_dac_channel_index;
         uint16_t high_concentration_dac_channel_index;
+        uint16_t low_conc_adc_ch_index;
+        uint16_t high_conc_adc_ch_index;
         uint16_t reserved1; //Alignment
         float total_flowrate;
     };
@@ -36,13 +38,10 @@ namespace pumps
 
     HAL_StatusTypeDef init();
     void deinit();
-    void compute_pid();
     void process();
+    void log();
 
     void set_mode(mode_t v);
     void set_enable(bool v);
-    void set_concentration_setpoint(float v);
-    void set_concentration_feedback(float v);
     void update_tunings();
-    size_t get_sensing_adc_channel();
 }

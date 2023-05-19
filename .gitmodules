@@ -6,7 +6,7 @@
 	url = https://github.com/kutukvpavel/ArduinoModbusSlave
 [submodule "cli"]
 	path = cli
-	url = https://gitlab.uliege.be/mdiepart1/ushell-stm32.git
+	url = https://github.com/kutukvpavel/ushell-stm32.git
 [submodule "pid"]
 	path = pid
 	url = https://github.com/kutukvpavel/PID_Library.git

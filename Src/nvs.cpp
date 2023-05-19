@@ -4,7 +4,7 @@
 #define MY_NVS_I2C_ADDR(mem_addr) (MY_EEPROM_ADDR | ((mem_addr & 0x700) >> 7))
 #define MY_NVS_VER_ADDR 0
 #define MY_NVS_START_ADDRESS 0x10
-#define MY_NVS_VERSION 3u
+#define MY_NVS_VERSION 4u
 #define MY_NVS_PAGE_SIZE 16u
 
 namespace nvs
@@ -19,6 +19,9 @@ namespace nvs
         PACKED_FOR_MODBUS dac_persistent_t dac_persistent[MY_DAC_MAX_MODULES];
         PACKED_FOR_MODBUS pumps::params_t regulator_params;
         float regulator_setpoint;
+        float motor_manual_speed[MOTORS_NUM];
+        float dac_manual_setpoint[MY_DAC_MAX_MODULES];
+        float furnace_temperature;
     };
     PACKED_FOR_MODBUS storage_t storage =
     {
@@ -111,12 +114,21 @@ namespace nvs
             .kD = 0,
             .low_concentration_motor_index = 1,
             .high_concentration_motor_index = 2,
-            .sensing_adc_channel_index = 0,
+            .sensing_adc_channel_index = 2,
             .low_concentration_dac_channel_index = 0,
             .high_concentration_dac_channel_index = 1,
+            .low_conc_adc_ch_index = 0,
+            .high_conc_adc_ch_index = 1,
             .total_flowrate = 100 //mL/min
         },
-        .regulator_setpoint = 0
+        .regulator_setpoint = 0,
+        .motor_manual_speed = {
+            0, 0, 0
+        },
+        .dac_manual_setpoint = {
+            0, 0, 0, 0
+        },
+        .furnace_temperature = 1100 //K
     };
     
     I2C_HandleTypeDef* i2c = NULL;
@@ -188,6 +200,18 @@ namespace nvs
     float* get_regulator_setpoint()
     {
         return &storage.regulator_setpoint;
+    }
+    float* get_motor_manual_speed(size_t i)
+    {
+        return &(storage.motor_manual_speed[i]);
+    }
+    float* get_dac_manual_setpoint(size_t i)
+    {
+        return &(storage.dac_manual_setpoint[i]);
+    }
+    float* get_furnace_temperature()
+    {
+        return &(storage.furnace_temperature);
     }
 
     HAL_StatusTypeDef init(I2C_HandleTypeDef* hi2c)

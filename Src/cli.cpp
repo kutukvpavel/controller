@@ -29,6 +29,7 @@ namespace cli_commands
         printf("\tTemperature = %5.1f K\n"
             "\tVref = %6.4f V\n", 
             a_io::temperature, a_io::vref);
+        pumps::log();
         return EXIT_SUCCESS;
     }
     uint8_t me_toggle(int argc, char** argv)

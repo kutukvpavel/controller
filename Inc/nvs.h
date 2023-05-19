@@ -31,4 +31,7 @@ namespace nvs
     PACKED_FOR_MODBUS pumps::params_t* get_regulator_params();
     PACKED_FOR_MODBUS dac_persistent_t* get_dac_persistent(size_t i);
     float* get_regulator_setpoint();
+    float* get_motor_manual_speed(size_t i);
+    float* get_dac_manual_setpoint(size_t i);
+    float* get_furnace_temperature();
 } // namespace nvs
