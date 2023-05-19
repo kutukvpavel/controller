@@ -49,7 +49,7 @@ namespace pumps
         }
         params = cmd::get_pump_params();
         regulator_instance.SetOutputLimits(0, 1);
-        regulator_instance.SetControllerDirection(PID_DIR_REVERSE);
+        //regulator_instance.SetControllerDirection(PID_DIR_REVERSE);
         regulator_instance.SetMaxITerm(0.5);
         regulator_instance.SetSampleTime(500);
         update_tunings();
@@ -95,12 +95,11 @@ namespace pumps
             float adc_low_p = my_math::volts_to_partial_pressure(adc_low_ch->averaging_container->get_average(), cmd::get_furnace_temperature());
             if (isfinite(sense_p) && isfinite(adc_high_p) && isfinite(adc_low_p)) // False if averaging container has no points yet
             {
-                input = sense_p;
-                ideal_mix_ratio = (adc_high_p - setpoint) / (adc_high_p - adc_low_p);
-                /*if (ideal_mix_ratio < 0) ideal_mix_ratio = 0;
-                else if (ideal_mix_ratio > 1) ideal_mix_ratio = 1;*/
+                input = (adc_high_p - sense_p) / (adc_high_p - adc_low_p); //Actual mix ratio
+                if (input < 0) input = 0;
+                setpoint = (adc_high_p - cmd::get_regulator_setpoint()) / (adc_high_p - adc_low_p); //Ideal mix ratio
                 regulator_instance.Compute();
-                float corrected_ratio = ideal_mix_ratio + output;
+                float corrected_ratio = setpoint + output;
                 if (corrected_ratio < 0) corrected_ratio = 0;
                 else if (corrected_ratio > 1) corrected_ratio = 1;
                 instances[params->high_concentration_motor_index].m->set_volume_rate(params->total_flowrate * (1 - corrected_ratio));
@@ -114,7 +113,6 @@ namespace pumps
 
         //Update modbus registers
         update_tunings();
-        setpoint = cmd::get_regulator_setpoint();
         if (!automatic)
         {
             for (size_t i = 0; i < MOTORS_NUM; i++)
