@@ -92,7 +92,7 @@ namespace pumps
         {
             float sense_p = my_math::volts_to_partial_pressure(conc_sense_ch->averaging_container->get_average(), cmd::get_furnace_temperature());
             float adc_high_p = my_math::volts_to_partial_pressure(adc_high_ch->averaging_container->get_average(), cmd::get_furnace_temperature());
-            float adc_low_p = my_math::volts_to_partial_pressure(adc_high_ch->averaging_container->get_average(), cmd::get_furnace_temperature());
+            float adc_low_p = my_math::volts_to_partial_pressure(adc_low_ch->averaging_container->get_average(), cmd::get_furnace_temperature());
             if (isfinite(sense_p) && isfinite(adc_high_p) && isfinite(adc_low_p)) // False if averaging container has no points yet
             {
                 input = sense_p;
