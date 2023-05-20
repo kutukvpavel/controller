@@ -103,11 +103,12 @@ namespace pumps
                 float corrected_ratio = setpoint + output;
                 if (corrected_ratio < MIN_PUMP_RATIO) corrected_ratio = MIN_PUMP_RATIO;
                 else if (corrected_ratio > MAX_PUMP_RATIO) corrected_ratio = MAX_PUMP_RATIO;
-                float high_conc_percent = 1 - corrected_ratio;
-                if ((high_conc_percent * 100.0f) < params->low_clip_percent) high_conc_percent = params->low_clip_percent / 100.0f;
-                if ((corrected_ratio * 100.0f) < params->low_clip_percent) corrected_ratio = params->low_clip_percent / 100.0f;
-                instances[params->high_concentration_motor_index].m->set_volume_rate(params->total_flowrate * high_conc_percent);
-                instances[params->low_concentration_motor_index].m->set_volume_rate(params->total_flowrate * corrected_ratio);
+                float high_flowrate = params->total_flowrate * (1 - corrected_ratio);
+                if (high_flowrate < params->flowrate_low_limit) high_flowrate = params->flowrate_low_limit;
+                float low_flowrate = params->total_flowrate * corrected_ratio;
+                if (low_flowrate < params->flowrate_low_limit) low_flowrate = params->flowrate_low_limit;
+                instances[params->high_concentration_motor_index].m->set_volume_rate(high_flowrate);
+                instances[params->low_concentration_motor_index].m->set_volume_rate(low_flowrate);
                 for (size_t i = 0; i < MOTORS_NUM; i++)
                 {
                     cmd::set_motor_speed(instances[i].m->get_volume_rate(), i);
