@@ -18,7 +18,7 @@ namespace pumps
         uint16_t high_concentration_dac_channel_index;
         uint16_t low_conc_adc_ch_index;
         uint16_t high_conc_adc_ch_index;
-        uint16_t reserved1; //Alignment
+        uint16_t low_clip_percent;
         float total_flowrate;
     };
     enum mode_t

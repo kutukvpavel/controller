@@ -5,11 +5,12 @@
 #include "../pid/PID_v1.h"
 #include "my_math.h"
 
+#define MAX_PUMP_RATIO 1.0f
+#define MIN_PUMP_RATIO 0.0f
 
 static float setpoint;
 static float input = 0;
 static float output = 0;
-static float ideal_mix_ratio = 0;
 PID regulator_instance(&input, &output, &setpoint, 0, 0, 0, PID_DIR_DIRECT, HAL_GetTick);
 
 namespace pumps
@@ -100,9 +101,12 @@ namespace pumps
                 setpoint = (adc_high_p - cmd::get_regulator_setpoint()) / (adc_high_p - adc_low_p); //Ideal mix ratio
                 regulator_instance.Compute();
                 float corrected_ratio = setpoint + output;
-                if (corrected_ratio < 0) corrected_ratio = 0;
-                else if (corrected_ratio > 1) corrected_ratio = 1;
-                instances[params->high_concentration_motor_index].m->set_volume_rate(params->total_flowrate * (1 - corrected_ratio));
+                if (corrected_ratio < MIN_PUMP_RATIO) corrected_ratio = MIN_PUMP_RATIO;
+                else if (corrected_ratio > MAX_PUMP_RATIO) corrected_ratio = MAX_PUMP_RATIO;
+                float high_conc_percent = 1 - corrected_ratio;
+                if ((high_conc_percent * 100.0f) < params->low_clip_percent) high_conc_percent = params->low_clip_percent / 100.0f;
+                if ((corrected_ratio * 100.0f) < params->low_clip_percent) corrected_ratio = params->low_clip_percent / 100.0f;
+                instances[params->high_concentration_motor_index].m->set_volume_rate(params->total_flowrate * high_conc_percent);
                 instances[params->low_concentration_motor_index].m->set_volume_rate(params->total_flowrate * corrected_ratio);
                 for (size_t i = 0; i < MOTORS_NUM; i++)
                 {
@@ -123,7 +127,8 @@ namespace pumps
     }
     void log()
     {
-        printf("Ideal r = %5.3f, PID input = %5.2e\n", ideal_mix_ratio, input);
+        printf("PID setpoint = %5.3e Pa, Ideal r = %5.3f, PID input (actual r) = %5.3f, PID output = %5.3f\n",
+            cmd::get_regulator_setpoint(), setpoint, input, output);
     }
 
     void set_enable(bool v)
